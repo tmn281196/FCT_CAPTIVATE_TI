@@ -201,12 +201,7 @@ namespace Touch_Panel.View_Model
                           Model.Devices.ResumeMICOM(2)
                         );
 
-                        await Task.Delay(500);
-
-                        //await Task.WhenAll(
-                        //  Model.Devices.RecalibMICOM(1),
-                        //  Model.Devices.RecalibMICOM(2)
-                        //);
+                     
 
 
                         stopwatch.Start();
@@ -222,6 +217,13 @@ namespace Touch_Panel.View_Model
                         stopwatch.Stop();
                         taktTimer.Stop();
 
+
+                        //await Task.WhenAll(
+                        //  Model.Devices.RecalibMICOM(1),
+                        //  Model.Devices.RecalibMICOM(2)
+                        //);
+
+                        await Task.Delay(2000);
                         await Task.WhenAll(
                             Model.Devices.HaltMICOM(1),
                             Model.Devices.HaltMICOM(2)
@@ -246,7 +248,7 @@ namespace Touch_Panel.View_Model
 
 
                         Status = "Fail";
-                        await Task.Delay(2000);
+                        await Task.Delay(500);
                         Fail += 1;
                         SaveLog(false);
                         //firstTime = true;
@@ -260,7 +262,7 @@ namespace Touch_Panel.View_Model
                         await Model.Devices.ResetMainCylinder();
 
                         Status = "Pass";
-                        await Task.Delay(2000);
+                        await Task.Delay(500);
                         Pass += 1;
                         SaveLog(true);
                         //firstTime = true;
@@ -274,7 +276,7 @@ namespace Touch_Panel.View_Model
 
                         Status = "Stop";
 
-                        await Task.Delay(3000);
+                        await Task.Delay(2000);
                         //firstTime = true;
                         stopwatch.Reset();
                         State.Test = TestState.Wait;

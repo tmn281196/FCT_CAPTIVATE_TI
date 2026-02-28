@@ -172,7 +172,7 @@
               "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\AutoPageViewModel.cs",
               "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\AutoPageViewModel.cs",
               "RelativeToolTip": "Touch Panel\\ViewModel\\AutoPageViewModel.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAqwI0AAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAANIAAAAAAAAAAAAAAOEAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-21T12:49:57.738Z",
               "EditorCaption": ""
@@ -187,8 +187,7 @@
               "RelativeToolTip": "Touch Panel\\View\\MainWindow.xaml.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAtwBMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T02:52:01.554Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-19T02:52:01.554Z"
             },
             {
               "$type": "Document",
@@ -199,8 +198,7 @@
               "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\ManualPageView.xaml",
               "RelativeToolTip": "Touch Panel\\View\\ManualPageView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-19T03:14:04.438Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-19T03:14:04.438Z"
             },
             {
               "$type": "Document",
@@ -211,8 +209,7 @@
               "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\AutoPageView.xaml",
               "RelativeToolTip": "Touch Panel\\View\\AutoPageView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-24T06:56:21.822Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-24T06:56:21.822Z"
             },
             {
               "$type": "Document",
@@ -224,8 +221,7 @@
               "RelativeToolTip": "Touch Panel\\ViewModel\\MainViewModel.cs",
               "ViewState": "AgIAABgBAAAAAAAAAAASwCsBAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-21T06:24:03.177Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-21T06:24:03.177Z"
             },
             {
               "$type": "Document",
@@ -248,8 +244,7 @@
               "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\MainWindow.xaml",
               "RelativeToolTip": "Touch Panel\\View\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-23T10:22:14.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-23T10:22:14.827Z"
             },
             {
               "$type": "Document",
@@ -273,8 +268,7 @@
               "RelativeToolTip": "Touch Panel\\Model\\Devices.cs",
               "ViewState": "AgIAAG0EAAAAAAAAAAAswIQEAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T01:30:23.409Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T01:30:23.409Z"
             },
             {
               "$type": "Document",
@@ -286,8 +280,7 @@
               "RelativeToolTip": "Touch Panel\\Model\\TestLogic.cs",
               "ViewState": "AgIAAKIAAAAAAAAAAAAAAGAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T01:32:17.373Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T01:32:17.373Z"
             },
             {
               "$type": "Document",
@@ -299,8 +292,7 @@
               "RelativeToolTip": "Touch Panel\\ViewModel\\ManualPageViewModel.cs",
               "ViewState": "AgIAAIgAAAAAAAAAAAAgwBEAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T03:08:05.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-19T03:08:05.86Z"
             },
             {
               "$type": "Document",
@@ -335,8 +327,7 @@
               "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\NewModelPageView.xaml",
               "RelativeToolTip": "Touch Panel\\View\\NewModelPageView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-21T03:43:33.832Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-21T03:43:33.832Z"
             },
             {
               "$type": "Document",
@@ -347,8 +338,7 @@
               "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionList.xaml",
               "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionList.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-21T06:52:59.397Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-21T06:52:59.397Z"
             },
             {
               "$type": "Document",
@@ -383,8 +373,7 @@
               "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionView.xaml",
               "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-18T01:30:09.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-18T01:30:09.296Z"
             },
             {
               "$type": "Document",
@@ -454,8 +443,7 @@
               "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\SettingPageView.xaml",
               "RelativeToolTip": "Touch Panel\\View\\SettingPageView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-21T12:28:27.039Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-21T12:28:27.039Z"
             },
             {
               "$type": "Document",
