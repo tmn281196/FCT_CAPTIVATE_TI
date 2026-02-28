@@ -688,3 +688,69 @@ D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\ftd2xx.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\libftdi1.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\libusb-1.0.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.Console.exe
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_1\HUMAN_THAI__ME21K7010DS__241223_0199.txt
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_2\HUMAN_THAI__ME21K7010DS__241223_0199.txt
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\template_model.json
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.pdb
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.FirmwareTools.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\HidSharp.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\LibUsbDotNet.LibUsbDotNet.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\Ookii.Dialogs.Wpf.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\RJCP.SerialPortStream.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libftd2xx.so.1.4.8
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libftdi1.so.2.4.0
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libusb-1.0.so.0.1.0
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\ftd2xx.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libftdi1.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libusb-1.0.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\ftd2xx.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libftdi1.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libusb-1.0.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.AssemblyReference.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.ResolveComReference.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Template.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_Content.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.lref
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\App.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfoInputs.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfo.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.CoreCompileInputs.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.sourcelink.json
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Pa.F7880C5D.Up2Date
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll

@@ -228,6 +228,8 @@ namespace Touch_Panel.View_Model
                             Model.Devices.HaltMICOM(1),
                             Model.Devices.HaltMICOM(2)
                         );
+                        await Task.Delay(100);
+
 
 
                         if (TestLogic.TestResult == TestResult.Pass)
@@ -258,8 +260,8 @@ namespace Touch_Panel.View_Model
 
                     case TestState.OK:
 
-
                         await Model.Devices.ResetMainCylinder();
+
 
                         Status = "Pass";
                         await Task.Delay(500);
