@@ -194,16 +194,18 @@ namespace Touch_Panel.View_Model
 
                     case TestState.Testing:
 
-                        await Task.Delay(2000);
+                        await Task.Delay(1500);
 
                         await Task.WhenAll(
                           Model.Devices.ResumeMICOM(1),
                           Model.Devices.ResumeMICOM(2)
                         );
 
+                        await Task.Delay(500);
+
                         //await Task.WhenAll(
-                        //  Model.Devices.ResetMICOM(1),
-                        //  Model.Devices.ResetMICOM(2)
+                        //  Model.Devices.RecalibMICOM(1),
+                        //  Model.Devices.RecalibMICOM(2)
                         //);
 
 

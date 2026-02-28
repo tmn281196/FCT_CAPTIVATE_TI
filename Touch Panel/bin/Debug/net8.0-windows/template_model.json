@@ -390,7 +390,7 @@
         "Specvalue": null,
         "Timedelay": 1000,
         "Timetest": 0,
-        "Skip": false
+        "Skip": true
       },
       {
         "No": "2",
@@ -682,20 +682,21 @@
     "EnableResetCylinder": true,
     "Micom1FirmwareLog": null,
     "Micom2FirmwareLog": "OK",
-    "MicomCom1Port": "COM13",
-    "MicomCom2Port": "COM11",
-    "SystemComPort": "COM10",
-    "Solenoid1ComPort": "COM5",
-    "Solenoid2ComPort": "COM19",
-    "Solenoid3ComPort": "COM21",
+    "MicomCom1Port": "COM10",
+    "MicomCom2Port": "COM9",
+    "SystemComPort": "COM3",
+    "Solenoid1ComPort": "COM4",
+    "Solenoid2ComPort": "COM7",
+    "Solenoid3ComPort": "COM8",
     "ComPortList": [
       "Unset",
-      "COM10",
-      "COM19",
-      "COM5",
-      "COM21",
-      "COM13",
-      "COM11"
+      "COM1",
+      "COM7",
+      "COM8",
+      "COM3",
+      "COM4",
+      "COM9",
+      "COM10"
     ],
     "ListCAPSensor1": [
       {
@@ -706,13 +707,13 @@
               {
                 "Id": 0,
                 "StringId": "0.0.0",
-                "Delta": 2,
+                "Delta": 5,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.0.1",
-                "Delta": 152,
+                "Delta": 11,
                 "IsMax": false
               }
             ]
@@ -723,13 +724,13 @@
               {
                 "Id": 0,
                 "StringId": "0.1.0",
-                "Delta": 12,
+                "Delta": 2,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.1.1",
-                "Delta": 2,
+                "Delta": 3,
                 "IsMax": false
               }
             ]
@@ -740,13 +741,13 @@
               {
                 "Id": 0,
                 "StringId": "0.2.0",
-                "Delta": 30,
+                "Delta": 24,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.2.1",
-                "Delta": 12,
+                "Delta": 16,
                 "IsMax": false
               }
             ]
@@ -757,13 +758,13 @@
               {
                 "Id": 0,
                 "StringId": "0.3.0",
-                "Delta": 13,
-                "IsMax": false
+                "Delta": 46,
+                "IsMax": true
               },
               {
                 "Id": 1,
                 "StringId": "0.3.1",
-                "Delta": 5,
+                "Delta": 36,
                 "IsMax": false
               }
             ]
@@ -774,13 +775,13 @@
               {
                 "Id": 0,
                 "StringId": "0.4.0",
-                "Delta": 4,
+                "Delta": 40,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.4.1",
-                "Delta": 5,
+                "Delta": 27,
                 "IsMax": false
               }
             ]
@@ -791,13 +792,13 @@
               {
                 "Id": 0,
                 "StringId": "0.5.0",
-                "Delta": 24,
+                "Delta": 10,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.5.1",
-                "Delta": 3,
+                "Delta": 12,
                 "IsMax": false
               }
             ]
@@ -808,13 +809,13 @@
               {
                 "Id": 0,
                 "StringId": "0.6.0",
-                "Delta": 10,
+                "Delta": 15,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.6.1",
-                "Delta": 19,
+                "Delta": 15,
                 "IsMax": false
               }
             ]
@@ -825,13 +826,13 @@
               {
                 "Id": 0,
                 "StringId": "0.7.0",
-                "Delta": 244,
-                "IsMax": true
+                "Delta": 1,
+                "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.7.1",
-                "Delta": 13,
+                "Delta": 6,
                 "IsMax": false
               }
             ]
@@ -847,13 +848,13 @@
               {
                 "Id": 0,
                 "StringId": "1.0.0",
-                "Delta": 4,
+                "Delta": 14,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "1.0.1",
-                "Delta": 6,
+                "Delta": 22,
                 "IsMax": false
               }
             ]
@@ -864,13 +865,13 @@
               {
                 "Id": 0,
                 "StringId": "1.1.0",
-                "Delta": 6,
+                "Delta": 17,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "1.1.1",
-                "Delta": 7,
+                "Delta": 19,
                 "IsMax": false
               }
             ]
@@ -888,13 +889,13 @@
               {
                 "Id": 0,
                 "StringId": "0.0.0",
-                "Delta": 20,
+                "Delta": 8,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.0.1",
-                "Delta": 12,
+                "Delta": 7,
                 "IsMax": false
               }
             ]
@@ -905,13 +906,13 @@
               {
                 "Id": 0,
                 "StringId": "0.1.0",
-                "Delta": 35,
+                "Delta": 15,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.1.1",
-                "Delta": 34,
+                "Delta": 16,
                 "IsMax": false
               }
             ]
@@ -922,13 +923,13 @@
               {
                 "Id": 0,
                 "StringId": "0.2.0",
-                "Delta": 9,
+                "Delta": 6,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.2.1",
-                "Delta": 16,
+                "Delta": 5,
                 "IsMax": false
               }
             ]
@@ -939,13 +940,13 @@
               {
                 "Id": 0,
                 "StringId": "0.3.0",
-                "Delta": 15,
+                "Delta": 11,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.3.1",
-                "Delta": 7,
+                "Delta": 11,
                 "IsMax": false
               }
             ]
@@ -956,13 +957,13 @@
               {
                 "Id": 0,
                 "StringId": "0.4.0",
-                "Delta": 15,
+                "Delta": 7,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.4.1",
-                "Delta": 9,
+                "Delta": 7,
                 "IsMax": false
               }
             ]
@@ -973,13 +974,13 @@
               {
                 "Id": 0,
                 "StringId": "0.5.0",
-                "Delta": 22,
+                "Delta": 13,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.5.1",
-                "Delta": 79,
+                "Delta": 17,
                 "IsMax": false
               }
             ]
@@ -990,7 +991,7 @@
               {
                 "Id": 0,
                 "StringId": "0.6.0",
-                "Delta": 35,
+                "Delta": 1,
                 "IsMax": false
               },
               {
@@ -1012,14 +1013,14 @@
               {
                 "Id": 0,
                 "StringId": "1.0.0",
-                "Delta": 5,
+                "Delta": 7,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "1.0.1",
-                "Delta": 100,
-                "IsMax": true
+                "Delta": 6,
+                "IsMax": false
               }
             ]
           }

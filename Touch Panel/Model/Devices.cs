@@ -1033,7 +1033,7 @@ namespace Touch_Panel.Model
         }
 
 
-        internal async Task ResetMICOM(int id)
+        internal async Task RecalibMICOM(int id)
         {
             SerialPortStream micomPort = new SerialPortStream();
             if (id == 1)

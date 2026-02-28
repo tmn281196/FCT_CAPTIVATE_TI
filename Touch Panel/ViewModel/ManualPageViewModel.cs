@@ -151,7 +151,7 @@ namespace Touch_Panel.View_Model
         private void ResetMICOM(object parameter)
         {
             int testerId = int.Parse((string)parameter);
-            Model.Devices.ResetMICOM(testerId);
+            Model.Devices.RecalibMICOM(testerId);
         }
 
 

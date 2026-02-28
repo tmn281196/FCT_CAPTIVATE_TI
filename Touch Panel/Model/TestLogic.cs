@@ -209,7 +209,7 @@ namespace Touch_Panel.Model
         private async Task CALIB(Step step, int testerID)
         {
             await PendingStep(step);
-            await Model.Devices.ResetMICOM(testerID+1);
+            await Model.Devices.RecalibMICOM(testerID+1);
             step.Result = "Pass";
         }
 
