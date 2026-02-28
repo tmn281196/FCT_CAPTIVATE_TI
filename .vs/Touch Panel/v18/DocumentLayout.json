@@ -1,0 +1,652 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\viewmodel\\autopageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\autopageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\autopageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\autopageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\autopageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\autopageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\manualpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\manualpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\manualpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\manualpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\model\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\viewmodel\\manualpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\manualpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\model\\testlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\testlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\viewmodel\\newmodelpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\newmodelpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\newmodelpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\newmodelpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\newmodelpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\newmodelpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\deviceconnectionlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\deviceconnectionlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\deviceconnectionview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\deviceconnectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\model\\devicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\devicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\model\\devicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\devicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\0b2ddf37-0b94-399e-fcef-aec16562dc94\\Touch_Panel.View_Model.AutoPageViewModel.ForceStop.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\settingpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\settingpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\model\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\view\\settingpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\settingpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\viewmodel\\settingpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\settingpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\touch panel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\touch panel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\a73ddf78b00f31d03776fc176d55827e368077187d45f43dcda7f552bdd97545\\BSL430NET.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\33302e15e247fa61617faba9cb882b542b73ade39ffde0b0cfeccc66113b24bc\\SerialStream.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\22c8aa2a-22ac-5c6c-8e0a-167f79a4646a\\Touch_Panel.Model.Devices.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\52fc85c2-cce1-3e26-fae5-9973ba8910d5\\Touch_Panel.Model.Model.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\21ae026d-b33a-17d2-68fd-f30cad253dc8\\Touch_Panel.Model.Model.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\682e52d4-416e-5375-f7e1-8b76c1a9c2f8\\Touch_Panel.Model.DeviceStatus.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\ed9c16b3-8504-3658-cfa6-cb1a39a148b2\\Touch_Panel.View_Model.NewModelPageViewModel.WriteFirmware.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\SourceServer\\132a9e30bafc6dc5f41450fb43e815a9ad379ac44f93e4283573a9e7b3442ca6\\src\\libraries\\System.Private.CoreLib\\src\\System\\Runtime\\ExceptionServices\\ExceptionDispatchInfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\906992c13c69c262f1b946846dd1380940cb6c7646b27e9fc071d7f564cf4d09\\CommSerial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\obj\\debug\\net8.0-windows\\view\\deviceconnectionlist.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\obj\\debug\\net8.0-windows\\view\\deviceconnectionlist.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\viewmodel\\deviceconnectionlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\deviceconnectionlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\abc\\human_touch_system\\c#\\human-touch_panel\\touch panel\\touch panel.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\touch panel.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\e4bcfe5fa909b6ce58d12727ba5a4ecf78f07727c12e68f2b64a2c14c658a6a5\\List.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\90793c3eb31d7122de8c9fc198b40ef620e753d16ec471ad4ebd91d387ca3092\\ThrowHelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AutoPageViewModel.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\AutoPageViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\AutoPageViewModel.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\AutoPageViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\AutoPageViewModel.cs",
+              "ViewState": "AgIAALgAAAAAAAAAAAAcwMoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T12:49:57.738Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\MainWindow.xaml.cs",
+              "RelativeToolTip": "Touch Panel\\View\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAtwBMAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T02:52:01.554Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ManualPageView.xaml",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\ManualPageView.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\ManualPageView.xaml",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\ManualPageView.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\ManualPageView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-19T03:14:04.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ManualPageView.xaml.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\ManualPageView.xaml.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\ManualPageView.xaml.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\ManualPageView.xaml.cs",
+              "RelativeToolTip": "Touch Panel\\View\\ManualPageView.xaml.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAiwBcAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T12:57:40.641Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AutoPageView.xaml",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\AutoPageView.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\AutoPageView.xaml",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\AutoPageView.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\AutoPageView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-24T06:56:21.822Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\MainWindow.xaml",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\MainWindow.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-23T10:22:14.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\MainViewModel.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAAPsAAAAAAAAAAAAjwBYBAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T06:24:03.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AutoPageView.xaml.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\AutoPageView.xaml.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\AutoPageView.xaml.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\AutoPageView.xaml.cs",
+              "RelativeToolTip": "Touch Panel\\View\\AutoPageView.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T06:20:53.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Devices.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\Devices.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\Model\\Devices.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\Devices.cs",
+              "RelativeToolTip": "Touch Panel\\Model\\Devices.cs",
+              "ViewState": "AgIAAG0EAAAAAAAAAAAswIQEAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T01:30:23.409Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TestLogic.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\TestLogic.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\Model\\TestLogic.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\TestLogic.cs",
+              "RelativeToolTip": "Touch Panel\\Model\\TestLogic.cs",
+              "ViewState": "AgIAAKIAAAAAAAAAAAAAAGAAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T01:32:17.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ManualPageViewModel.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\ManualPageViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\ManualPageViewModel.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\ManualPageViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\ManualPageViewModel.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAgwBEAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T03:08:05.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "NewModelPageViewModel.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
+              "ViewState": "AgIAAC8BAAAAAAAAAAAEwC0BAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-25T07:16:19.797Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NewModelPageView.xaml.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\NewModelPageView.xaml.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\NewModelPageView.xaml.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\NewModelPageView.xaml.cs",
+              "RelativeToolTip": "Touch Panel\\View\\NewModelPageView.xaml.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAqwBcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:43:38.925Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "NewModelPageView.xaml",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\NewModelPageView.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\NewModelPageView.xaml",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\NewModelPageView.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\NewModelPageView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-21T03:43:33.832Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DeviceConnectionList.xaml",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\DeviceConnectionList.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionList.xaml",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\DeviceConnectionList.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionList.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-21T06:52:59.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DeviceConnectionList.xaml.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\DeviceConnectionList.xaml.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionList.xaml.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\DeviceConnectionList.xaml.cs",
+              "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionList.xaml.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAgwBcAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T01:30:14.245Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DeviceConnectionView.xaml.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\DeviceConnectionView.xaml.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionView.xaml.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\DeviceConnectionView.xaml.cs",
+              "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionView.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T01:30:06.801Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DeviceConnectionView.xaml",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\DeviceConnectionView.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionView.xaml",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\DeviceConnectionView.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-18T01:30:09.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "DeviceStatus.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\DeviceStatus.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\Model\\DeviceStatus.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\DeviceStatus.cs",
+              "RelativeToolTip": "Touch Panel\\Model\\DeviceStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T03:36:14.844Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "Settings.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\Settings.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\Model\\Settings.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\Settings.cs",
+              "RelativeToolTip": "Touch Panel\\Model\\Settings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:40:57.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Model.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\Model.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\Model\\Model.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\Model.cs",
+              "RelativeToolTip": "Touch Panel\\Model\\Model.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBUAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:40:57.594Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "SettingPageView.xaml.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\SettingPageView.xaml.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\SettingPageView.xaml.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\SettingPageView.xaml.cs",
+              "RelativeToolTip": "Touch Panel\\View\\SettingPageView.xaml.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-24T06:22:56.044Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Touch_Panel.View_Model.AutoPageViewModel.ForceStop.g.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\0b2ddf37-0b94-399e-fcef-aec16562dc94\\Touch_Panel.View_Model.AutoPageViewModel.ForceStop.g.cs",
+              "ToolTip": "Touch_Panel.View_Model.AutoPageViewModel.ForceStop.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenToolTip": "Touch_Panel.View_Model.AutoPageViewModel.ForceStop.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator]",
+              "WhenOpened": "2026-02-24T12:18:58.572Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "SettingPageView.xaml",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\SettingPageView.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\SettingPageView.xaml",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\View\\SettingPageView.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\SettingPageView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-21T12:28:27.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SettingPageViewModel.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\SettingPageViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\SettingPageViewModel.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\SettingPageViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\SettingPageViewModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwBIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T11:51:46.009Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Touch Panel.csproj",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Touch Panel.csproj",
+              "RelativeDocumentMoniker": "Touch Panel\\Touch Panel.csproj",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Touch Panel.csproj",
+              "RelativeToolTip": "Touch Panel\\Touch Panel.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABwAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-23T18:16:11.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "DeviceManager.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\DeviceManager.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\Model\\DeviceManager.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Model\\DeviceManager.cs",
+              "RelativeToolTip": "Touch Panel\\Model\\DeviceManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAowAsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-23T18:46:43.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Touch_Panel.Model.Model.g.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\21ae026d-b33a-17d2-68fd-f30cad253dc8\\Touch_Panel.Model.Model.g.cs",
+              "ToolTip": "Touch_Panel.Model.Model.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenToolTip": "Touch_Panel.Model.Model.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "WhenOpened": "2026-02-22T09:57:01.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "Touch_Panel.View_Model.NewModelPageViewModel.WriteFirmware.g.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\ed9c16b3-8504-3658-cfa6-cb1a39a148b2\\Touch_Panel.View_Model.NewModelPageViewModel.WriteFirmware.g.cs",
+              "ToolTip": "Touch_Panel.View_Model.NewModelPageViewModel.WriteFirmware.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenToolTip": "Touch_Panel.View_Model.NewModelPageViewModel.WriteFirmware.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator]",
+              "WhenOpened": "2026-02-23T03:25:16.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Touch_Panel.Model.DeviceStatus.g.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\682e52d4-416e-5375-f7e1-8b76c1a9c2f8\\Touch_Panel.Model.DeviceStatus.g.cs",
+              "ToolTip": "Touch_Panel.Model.DeviceStatus.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenToolTip": "Touch_Panel.Model.DeviceStatus.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "WhenOpened": "2026-02-23T03:36:12.899Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ExceptionDispatchInfo.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\SourceServer\\132a9e30bafc6dc5f41450fb43e815a9ad379ac44f93e4283573a9e7b3442ca6\\src\\libraries\\System.Private.CoreLib\\src\\System\\Runtime\\ExceptionServices\\ExceptionDispatchInfo.cs",
+              "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\SourceServer\\132a9e30bafc6dc5f41450fb43e815a9ad379ac44f93e4283573a9e7b3442ca6\\src\\libraries\\System.Private.CoreLib\\src\\System\\Runtime\\ExceptionServices\\ExceptionDispatchInfo.cs [Read Only]",
+              "ViewState": "AgIAACcAAAAAAAAAAAAvwC8AAAAaAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T07:40:36.071Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "SerialStream.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\33302e15e247fa61617faba9cb882b542b73ade39ffde0b0cfeccc66113b24bc\\SerialStream.cs",
+              "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\33302e15e247fa61617faba9cb882b542b73ade39ffde0b0cfeccc66113b24bc\\SerialStream.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAhwMQAAAAFAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-22T06:15:31.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "DeviceConnectionList.g.i.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
+              "RelativeToolTip": "Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCcAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T12:38:52.426Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "CommSerial.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\906992c13c69c262f1b946846dd1380940cb6c7646b27e9fc071d7f564cf4d09\\CommSerial.cs",
+              "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\906992c13c69c262f1b946846dd1380940cb6c7646b27e9fc071d7f564cf4d09\\CommSerial.cs",
+              "ViewState": "AgIAAI8AAAAAAAAAAAAvwJsAAAADAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T06:30:42.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "BSL430NET.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\a73ddf78b00f31d03776fc176d55827e368077187d45f43dcda7f552bdd97545\\BSL430NET.cs",
+              "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\a73ddf78b00f31d03776fc176d55827e368077187d45f43dcda7f552bdd97545\\BSL430NET.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAhwEoAAAABAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T06:30:07.547Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "Touch_Panel.Model.Model.g.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\52fc85c2-cce1-3e26-fae5-9973ba8910d5\\Touch_Panel.Model.Model.g.cs",
+              "ToolTip": "Touch_Panel.Model.Model.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenToolTip": "Touch_Panel.Model.Model.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "WhenOpened": "2026-02-21T06:10:02.571Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "Touch_Panel.Model.Devices.g.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\22c8aa2a-22ac-5c6c-8e0a-167f79a4646a\\Touch_Panel.Model.Devices.g.cs",
+              "ToolTip": "Touch_Panel.Model.Devices.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenToolTip": "Touch_Panel.Model.Devices.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "WhenOpened": "2026-02-21T06:09:33.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "Touch Panel",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Touch Panel.csproj",
+              "RelativeDocumentMoniker": "Touch Panel\\Touch Panel.csproj",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\Touch Panel.csproj",
+              "RelativeToolTip": "Touch Panel\\Touch Panel.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-21T05:27:22.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "List.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\e4bcfe5fa909b6ce58d12727ba5a4ecf78f07727c12e68f2b64a2c14c658a6a5\\List.cs",
+              "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\e4bcfe5fa909b6ce58d12727ba5a4ecf78f07727c12e68f2b64a2c14c658a6a5\\List.cs",
+              "ViewState": "AgIAAGIDAAAAAAAAAAAhwHADAAADAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T05:00:52.261Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ThrowHelper.cs",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\90793c3eb31d7122de8c9fc198b40ef620e753d16ec471ad4ebd91d387ca3092\\ThrowHelper.cs",
+              "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\90793c3eb31d7122de8c9fc198b40ef620e753d16ec471ad4ebd91d387ca3092\\ThrowHelper.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAAhwN4AAAACAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T05:00:51.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "DeviceConnectionListViewModel.cs",
+              "DocumentMoniker": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
+              "ToolTip": "D:\\ABC\\HUMAN_TOUCH_SYSTEM\\C#\\HUMAN-TOUCH_PANEL\\Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAgwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-18T01:30:18.935Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

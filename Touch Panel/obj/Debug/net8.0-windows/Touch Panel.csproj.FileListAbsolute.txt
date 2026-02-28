@@ -1,0 +1,624 @@
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.pdb
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Ookii.Dialogs.Wpf.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Compute.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Core.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\GLWpfControl.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Graphics.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Input.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Mathematics.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.OpenAL.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Common.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Desktop.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.WPF.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\System.IO.Ports.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libHarfBuzzSharp.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libHarfBuzzSharp.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libHarfBuzzSharp.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libHarfBuzzSharp.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libglfw.so.3.3
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\glfw3.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\glfw3.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSkiaSharp.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSkiaSharp.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSkiaSharp.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSkiaSharp.so
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.IO.Ports.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.IO.Ports.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.AssemblyReference.cache
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.ResolveComReference.cache
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Template.baml
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.g.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.g.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.cache
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.lref
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.baml
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.baml
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.baml
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfoInputs.cache
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfo.cs
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.CoreCompileInputs.cache
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Pa.F7880C5D.Up2Date
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
+C:\Users\TNG RD\Desktop\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.pdb
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Ookii.Dialogs.Wpf.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Compute.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Core.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\GLWpfControl.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Graphics.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Input.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Mathematics.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.OpenAL.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Common.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Desktop.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.GraphicsLibraryFramework.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.WPF.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\System.IO.Ports.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libHarfBuzzSharp.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libHarfBuzzSharp.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libHarfBuzzSharp.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libHarfBuzzSharp.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libglfw.so.3.3
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libglfw.3.dylib
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\glfw3.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\glfw3.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSkiaSharp.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSkiaSharp.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSkiaSharp.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSkiaSharp.so
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.IO.Ports.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.IO.Ports.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.AssemblyReference.cache
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.ResolveComReference.cache
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Template.baml
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.g.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.g.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.cache
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.lref
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.baml
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.baml
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.baml
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfoInputs.cache
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfo.cs
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.CoreCompileInputs.cache
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Pa.F7880C5D.Up2Date
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+D:\MINHNHAT\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.pdb
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Ookii.Dialogs.Wpf.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Compute.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Core.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\GLWpfControl.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Graphics.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Input.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Mathematics.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.OpenAL.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Common.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Desktop.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.WPF.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\System.IO.Ports.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libglfw.so.3.3
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\glfw3.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\glfw3.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.IO.Ports.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.IO.Ports.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.AssemblyReference.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.ResolveComReference.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Template.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.lref
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfoInputs.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfo.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.CoreCompileInputs.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Pa.F7880C5D.Up2Date
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\human_machine\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\template_model.json
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\template_model.json
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.pdb
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\Ookii.Dialogs.Wpf.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Compute.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Core.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\GLWpfControl.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Graphics.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Input.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Mathematics.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\OpenTK.OpenAL.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Common.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Desktop.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.WPF.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\System.IO.Ports.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libglfw.so.3.3
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\glfw3.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\glfw3.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.IO.Ports.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.IO.Ports.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.AssemblyReference.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.ResolveComReference.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Template.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.lref
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\App.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfoInputs.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfo.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.CoreCompileInputs.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Pa.F7880C5D.Up2Date
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master - Copy\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\template_model.json
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.pdb
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\HarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Ookii.Dialogs.Wpf.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Compute.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Core.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\GLWpfControl.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Graphics.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Input.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Mathematics.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.OpenAL.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Common.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.Desktop.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\OpenTK.Windowing.GraphicsLibraryFramework.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\ScottPlot.WPF.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.HarfBuzz.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.Desktop.Common.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\SkiaSharp.Views.WPF.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\System.IO.Ports.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libHarfBuzzSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libHarfBuzzSharp.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libHarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libHarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libHarfBuzzSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libglfw.so.3.3
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libglfw.3.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\glfw3.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\glfw3.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\android-x86\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-bionic-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-arm64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSystem.IO.Ports.Native.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\maccatalyst-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-arm64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx-x64\native\libSystem.IO.Ports.Native.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-arm64\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-musl-x64\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libSkiaSharp.so
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\osx\native\libSkiaSharp.dylib
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-arm64\native\libSkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libSkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libSkiaSharp.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\unix\lib\net8.0\System.IO.Ports.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.IO.Ports.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.AssemblyReference.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.ResolveComReference.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Template.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.lref
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfoInputs.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfo.cs
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.CoreCompileInputs.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Pa.F7880C5D.Up2Date
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+C:\Users\tmnvi\OneDrive\Desktop\TNG\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.Console.exe
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.Console.exe
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\template_model.json
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.pdb
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Ookii.Dialogs.Wpf.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.AssemblyReference.cache
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.ResolveComReference.cache
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Template.baml
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.cache
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.lref
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\App.baml
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.baml
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.baml
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfoInputs.cache
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfo.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.CoreCompileInputs.cache
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Pa.F7880C5D.Up2Date
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\ftd2xx.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\libftdi1.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\libusb-1.0.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.FirmwareTools.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\HidSharp.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\LibUsbDotNet.LibUsbDotNet.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\RJCP.SerialPortStream.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libftd2xx.so.1.4.8
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libftdi1.so.2.4.0
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libusb-1.0.so.0.1.0
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\ftd2xx.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libftdi1.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libusb-1.0.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\ftd2xx.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libftdi1.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libusb-1.0.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_Content.g.cs
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_1\HUMAN_THAI__ME21K7010DS__241223_0199.txt
+D:\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL-master\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_2\HUMAN_THAI__ME21K7010DS__241223_0199.txt
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\ftd2xx.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\libftdi1.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\libusb-1.0.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.Console.exe
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_1\HUMAN_THAI__ME21K7010DS__241223_0199.txt
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_2\HUMAN_THAI__ME21K7010DS__241223_0199.txt
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\template_model.json
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.pdb
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.FirmwareTools.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\HidSharp.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\LibUsbDotNet.LibUsbDotNet.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\Ookii.Dialogs.Wpf.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\RJCP.SerialPortStream.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libftd2xx.so.1.4.8
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libftdi1.so.2.4.0
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libusb-1.0.so.0.1.0
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\ftd2xx.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libftdi1.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libusb-1.0.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\ftd2xx.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libftdi1.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libusb-1.0.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.AssemblyReference.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.ResolveComReference.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Template.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_Content.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.lref
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\App.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfoInputs.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfo.cs
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.CoreCompileInputs.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.sourcelink.json
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Pa.F7880C5D.Up2Date
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
+D:\ABC\HUMAN_TOUCH_SYSTEM\C#\HUMAN-TOUCH_PANEL\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
