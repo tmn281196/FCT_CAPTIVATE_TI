@@ -161,8 +161,6 @@ namespace Touch_Panel.View_Model
                     case TestState.Wait:
                         Status = "Wait";
 
-
-
                         bool allDevicesConnected = true;
                         foreach (var device in Model.Devices.DevicesStatus)
                         {
@@ -228,19 +226,12 @@ namespace Touch_Panel.View_Model
                         taktTimer.Stop();
 
 
-                        //await Task.WhenAll(
-                        //  Model.Devices.RecalibMICOM(1),
-                        //  Model.Devices.RecalibMICOM(2)
-                        //);
-
                         await Task.Delay(2000);
                         await Task.WhenAll(
                             Model.Devices.HaltMICOM(1),
                             Model.Devices.HaltMICOM(2)
                         );
                         await Task.Delay(100);
-
-
 
                         if (TestLogic.TestResult == TestResult.Pass)
                         {

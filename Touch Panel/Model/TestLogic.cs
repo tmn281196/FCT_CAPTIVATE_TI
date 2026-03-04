@@ -84,6 +84,9 @@ namespace Touch_Panel.Model
             await RunTestStep(selectedItem, tester);
         }
 
+
+        public bool StopTest = true;
+
         public async Task RunTester(Tester tester)
         {
             tester.stopTest = false;
@@ -92,20 +95,24 @@ namespace Touch_Panel.Model
 
             foreach (var step in tester.Steps)
             {
-                if (tester.stopTest)
+                if ((Model.Settings.ShouldStopAllWhenAnyFailedStep && StopTest)  || tester.stopTest)
                 {
                     break;
                 }
 
                 await RunTestStep(step, tester);
-                if (Model.Settings.ShouldStopAllWhenAnyFailedStep && step.Result == "Fail")
+                if (step.Result == "Fail")
                 {
-                    break;
+                    if(Model.Settings.ShouldStopAllWhenAnyFailedStep)
+                    {
+                        StopTest = false;
+                        break;
+                    }                   
                 }
                 tester.CurrStep++;
 
             }
-            if (!tester.stopTest)
+            if (!(tester.stopTest ||(Model.Settings.ShouldStopAllWhenAnyFailedStep && StopTest)))
             {
                 tester.TestResult = TestResult.Pass;
                 foreach (var step in tester.Steps)
@@ -134,6 +141,7 @@ namespace Touch_Panel.Model
 
         public async Task RunAllTestSteps()
         {
+            StopTest = false;
 
             Task t1 = RunTester(Tester1);
             Task t2 = RunTester(Tester2);

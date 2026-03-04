@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Touch Panel")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1250bdf8cd7b40c83eafc53d37dcbf54802863d2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2bb1a36ec4b0d186eec048da57efb405836e08ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("Touch Panel")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Touch Panel")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
