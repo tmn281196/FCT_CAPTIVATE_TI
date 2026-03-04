@@ -1,0 +1,29 @@
+#C:\Users\Com26\CapTIvateDesignCenter_1_83_00_08\CapTIvateDesignCenterWorkspace\TI_Examples\8TX4RX_RM_NEW/.plotProps/MSP430FR2633IDA_BarPlot.props Plotter Data
+#Tue Mar 03 18:37:02 ICT 2026
+Signal.alias.Touch\ Threshold=
+Signal.alias.GRID=
+xlabel=Time
+Delta=on
+horiz_data_grid=true
+ylabel=Channel Data
+vert_data_grid=true
+Signal.alias.Lta=
+GRID=on
+labelFont=helvetica-BOLD-12
+Signal.alias.Count=
+xrangetype=false
+Lta=on
+Count=on
+titleFont=helvetica-BOLD-24
+xmin=-1.000000
+xmax=16.000000
+legendFont=helvetica-BOLD-14
+ymin=0.000000
+Prox\ Threshold=on
+ymax=1000.000000
+yrangetype=false
+graphtype=PtsCon
+Touch\ Threshold=on
+Signal.alias.Prox\ Threshold=
+persistence=2000
+Signal.alias.Delta=
