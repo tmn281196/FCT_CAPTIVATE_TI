@@ -60,6 +60,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private async Task ForceStop()
         {
+            
             testLogic.Tester1.stopTest = true;
             testLogic.Tester2.stopTest = true;
         }

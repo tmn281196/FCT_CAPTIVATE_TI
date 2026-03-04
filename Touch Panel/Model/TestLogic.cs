@@ -67,6 +67,8 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private Tester tester2 = new Tester(1);
 
+        public bool FlagNG = true;
+
         partial void OnModelChanged(Model? oldValue, Model newValue)
         {
             Tester1 = new Tester(0);
@@ -85,7 +87,6 @@ namespace Touch_Panel.Model
         }
 
 
-        public bool StopTest = true;
 
         public async Task RunTester(Tester tester)
         {
@@ -95,7 +96,11 @@ namespace Touch_Panel.Model
 
             foreach (var step in tester.Steps)
             {
-                if ((Model.Settings.ShouldStopAllWhenAnyFailedStep && StopTest)  || tester.stopTest)
+                if((Model.Settings.ShouldStopAllWhenAnyFailedStep && FlagNG))
+                {
+                    break;
+                }
+                if (tester.stopTest)
                 {
                     break;
                 }
@@ -103,30 +108,40 @@ namespace Touch_Panel.Model
                 await RunTestStep(step, tester);
                 if (step.Result == "Fail")
                 {
-                    if(Model.Settings.ShouldStopAllWhenAnyFailedStep)
+                    if (Model.Settings.ShouldStopAllWhenAnyFailedStep)
                     {
-                        StopTest = false;
+                        FlagNG = true;
                         break;
                     }                   
                 }
                 tester.CurrStep++;
 
             }
-            if (!(tester.stopTest ||(Model.Settings.ShouldStopAllWhenAnyFailedStep && StopTest)))
+            // kéo theo
+            if((Model.Settings.ShouldStopAllWhenAnyFailedStep && FlagNG))
             {
-                tester.TestResult = TestResult.Pass;
-                foreach (var step in tester.Steps)
-                {
-                    if (step.Result == "Fail")
-                    {
-                        tester.TestResult = TestResult.Fail;
-                    }
-                }
+                tester.TestResult = TestResult.Fail;
             }
             else
             {
-                tester.TestResult = TestResult.Unknown;
+                if (!(tester.stopTest))
+                {
+                    tester.TestResult = TestResult.Pass;
+                    foreach (var step in tester.Steps)
+                    {
+                        if (step.Result == "Fail")
+                        {
+                            tester.TestResult = TestResult.Fail;
+                        }
+                    }
+                }
+                else
+                {
+                    tester.TestResult = TestResult.Unknown;
+                }
             }
+  
+            
         }
 
         public async void manualFullTest(Tester tester)
@@ -141,7 +156,7 @@ namespace Touch_Panel.Model
 
         public async Task RunAllTestSteps()
         {
-            StopTest = false;
+            FlagNG = false;
 
             Task t1 = RunTester(Tester1);
             Task t2 = RunTester(Tester2);
