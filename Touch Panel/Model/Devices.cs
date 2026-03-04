@@ -292,7 +292,7 @@ namespace Touch_Panel.Model
 
         const byte STX = 0x02;
         const byte ETX = 0x03;
-        const int MICOM_FRAME_LEN = 8;
+        const int MICOM_FRAME_LEN = 10;
 
 
         public Devices()
@@ -803,36 +803,82 @@ namespace Touch_Panel.Model
             }
         }
 
+        // Hàm tính CRC-16 CCITT (poly 0x1021, init 0xFFFF) - khớp với bên MSP430
+        private ushort CalculateCrc16(byte[] data, int length)
+        {
+            ushort crc = 0xFFFF;
+            const ushort poly = 0x1021;
+
+            for (int i = 0; i < length; i++)
+            {
+                crc ^= (ushort)(data[i] << 8);  // XOR byte vào MSB
+
+                for (int bit = 0; bit < 8; bit++)
+                {
+                    if ((crc & 0x8000) != 0)
+                    {
+                        crc = (ushort)((crc << 1) ^ poly);
+                    }
+                    else
+                    {
+                        crc <<= 1;
+                    }
+                }
+            }
+            return crc;
+        }
+
         void ParseMICOMFrame(byte[] frame, ObservableCollection<CAPSensor> listCAPSensor)
         {
             if (Application.Current == null) return;
 
             try
             {
+           
+                // === Kiểm tra CRC-16 ===
+                // Tính CRC trên phần data từ frame[0] đến frame[6] (7 bytes: STX + button_id + cycle + 4 delta)
+                ushort calculatedCrc = CalculateCrc16(frame, 7);  // data_len = 7
 
+                // CRC nhận được từ frame[7] (MSB) và frame[8] (LSB)
+                ushort receivedCrc = (ushort)((frame[7] << 8) | frame[8]);
 
+                if (calculatedCrc != receivedCrc)
+                {
+                    Debug.WriteLine($"CRC error: Calculated=0x{calculatedCrc:X4}, Received=0x{receivedCrc:X4}");
+                    return;  // Bỏ qua frame lỗi
+                }
+
+                //Debug.WriteLine("CRC OK");  // Optional: log khi pass
+
+                // Frame hợp lệ → xử lý tiếp
                 if (frame[1] == 0x00 || frame[1] == 0x01 || frame[1] == 0x02)
                 {
                     ushort sensorIndex = frame[1];
                     ushort cycleIndex = frame[2];
-                    var currentCycle = listCAPSensor[sensorIndex].ListCAPCycle[cycleIndex];
-                    var elements = currentCycle.ListCAPElement;
 
-                    // Update Delta trước (vẫn trên UI thread tạm thời)
-                    for (int elementID = 0; elementID < elements.Count; elementID++)
+                    // Kiểm tra index hợp lệ để tránh exception
+                    if (sensorIndex >= listCAPSensor.Count ||
+                        cycleIndex >= listCAPSensor[(int)sensorIndex].ListCAPCycle.Count)
                     {
-                        if (elementID * 2 + 4 >= frame.Length) break; // an toàn buffer overrun
-
-                        ushort delta = (ushort)((frame[elementID * 2 + 3] << 8) | frame[elementID * 2 + 4]);
-                        //elements[elementID].Delta = delta;
-
-                        elements[elementID].Delta = delta;
-
-                        Debug.WriteLine($"{sensorIndex}.{cycleIndex}.{elementID} : {delta}" );
-
+                        Debug.WriteLine("Invalid sensor or cycle index");
+                        return;
                     }
 
-                    // Tính Max chỉ 1 lần
+                    var currentCycle = listCAPSensor[(int)sensorIndex].ListCAPCycle[(int)cycleIndex];
+                    var elements = currentCycle.ListCAPElement;
+
+                    // Update Delta
+                    for (int elementID = 0; elementID < elements.Count; elementID++)
+                    {
+                        int offset = elementID * 2 + 3;
+                        if (offset + 1 >= frame.Length) break;  // An toàn
+
+                        ushort delta = (ushort)((frame[offset] << 8) | frame[offset + 1]);
+                        elements[elementID].Delta = delta;
+                        //Debug.WriteLine($"{sensorIndex}.{cycleIndex}.{elementID} : {delta}");
+                    }
+
+                    // Tính Max Delta chỉ 1 lần (optimize)
                     var allDeltas = listCAPSensor
                         .SelectMany(s => s.ListCAPCycle)
                         .SelectMany(c => c.ListCAPElement)
@@ -840,57 +886,24 @@ namespace Touch_Panel.Model
 
                     ushort maxDelta = allDeltas.Any() ? allDeltas.Max() : (ushort)0;
 
-
-                    // Update IsMax chỉ 1 lần
+                    // Update IsMax
                     foreach (var elem in elements)
                     {
                         elem.IsMax = (elem.Delta == maxDelta);
                     }
-
-                    //Application.Current.Dispatcher.InvokeAsync(() =>
-                    //{
-                    //    // Update Delta trước (vẫn trên UI thread tạm thời)
-                    //    for (int elementID = 0; elementID < elements.Count; elementID++)
-                    //    {
-                    //        if (elementID * 2 + 4 >= frame.Length) break; // an toàn buffer overrun
-
-                    //        ushort delta = (ushort)((frame[elementID * 2 + 3] << 8) | frame[elementID * 2 + 4]);
-                    //        //elements[elementID].Delta = delta;
-
-                    //        elements[elementID].Delta = delta;
-
-
-                    //    }
-
-                    //    // Tính Max chỉ 1 lần
-                    //    var allDeltas = listCAPSensor
-                    //        .SelectMany(s => s.ListCAPCycle)
-                    //        .SelectMany(c => c.ListCAPElement)
-                    //        .Select(e => e.Delta);
-
-                    //    ushort maxDelta = allDeltas.Any() ? allDeltas.Max() : (ushort)0;
-
-
-
-                    //    // Update IsMax chỉ 1 lần
-                    //    foreach (var elem in elements)
-                    //    {
-                    //        elem.IsMax = (elem.Delta == maxDelta);
-                    //    }
-                    //});
                 }
-
                 else if (frame[1] == (byte)'M')
                 {
                     if (frame[2] == (byte)'L')
                     {
-                        var verNum = (frame[6] | frame[5] << 8 | frame[4] << 16 | frame[3] << 32);
+                        // verNum = frame[3..6] little-endian? (cần confirm thứ tự byte)
+                        var verNum = (int)(frame[6] | (frame[5] << 8) | (frame[4] << 16) | (frame[3] << 24));
                         FirmwareMicom.Micom1 = View_Model.FirmwareMICOM.FirmwareList[verNum];
                         Debug.WriteLine($"MICOM 1: {FirmwareMicom.Micom1}");
                     }
                     if (frame[2] == (byte)'R')
                     {
-                        var verNum = (frame[6] | frame[5] << 8 | frame[4] << 16 | frame[3] << 32);
+                        var verNum = (int)(frame[6] | (frame[5] << 8) | (frame[4] << 16) | (frame[3] << 24));
                         FirmwareMicom.Micom2 = View_Model.FirmwareMICOM.FirmwareList[verNum];
                         Debug.WriteLine($"MICOM 2: {FirmwareMicom.Micom2}");
                     }
@@ -900,25 +913,18 @@ namespace Touch_Panel.Model
                     if (frame[2] == (byte)'L')
                     {
                         Micom1CalibResponse = true;
-
                     }
                     if (frame[2] == (byte)'R')
                     {
                         Micom2CalibResponse = true;
                     }
-
                 }
-
             }
-            catch
+            catch (Exception ex)
             {
-
+                Debug.WriteLine($"Frame parse error: {ex.Message}");
             }
-
-
-
         }
-
 
         void TryParseMICOMFrame(ObservableCollection<CAPSensor> listCAPSensor, List<byte> micomRXBuffer, ref int readIndex)
         {

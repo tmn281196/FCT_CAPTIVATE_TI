@@ -288,7 +288,7 @@ namespace Touch_Panel.View_Model
                         );
 
                         Status = "Stop";
-                        await Task.Delay(2000);
+                        //await Task.Delay(2000);
                         stopwatch.Reset();
                         State.Test = TestState.Wait;
                         break;

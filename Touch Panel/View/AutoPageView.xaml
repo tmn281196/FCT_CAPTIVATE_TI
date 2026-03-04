@@ -70,7 +70,7 @@
                 </Style.Triggers>
             </Style>
 
-            <Style x:Key="PrevStatusLabelStyle" TargetType="Label">
+            <Style x:Key="TestResultLabelStyle" TargetType="Label">
                 <Style.Triggers>
 
                     <DataTrigger Binding="{Binding StringTestResult}" Value="">
@@ -228,8 +228,8 @@
 
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="0.5, 0" >
             <Label HorizontalContentAlignment="Center" Content="Status" Foreground="White" Background="{StaticResource BaseBrush}" />
-            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Style="{StaticResource StatusLabelStyle}" />
-            <Label   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="70" Style="{StaticResource PrevStatusLabelStyle}" />
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40" Style="{StaticResource StatusLabelStyle}" />
+            <Label   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="80" Style="{StaticResource TestResultLabelStyle}" />
         </StackPanel>
 
       
