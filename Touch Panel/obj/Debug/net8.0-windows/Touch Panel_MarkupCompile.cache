@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\
+D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\
 Touch_Panel
 none
 false
 TRACE;DEBUG;NET;NET8_0;NETCOREAPP;WINDOWS;WINDOWS7_0;NET5_0_OR_GREATER;NET6_0_OR_GREATER;NET7_0_OR_GREATER;NET8_0_OR_GREATER;NETCOREAPP3_0_OR_GREATER;NETCOREAPP3_1_OR_GREATER;WINDOWS7_0_OR_GREATER
-D:\ABC\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\App.xaml
+D:\FCT_CAPTIVATE_TI\Touch Panel\App.xaml
 81324568171
-3-287450696
+31822148143
 24-647233902
-217727787472
+217-1957574604
 Template.xaml;View\AutoPageView.xaml;View\DeviceConnectionList.xaml;View\DeviceConnectionView.xaml;View\MainWindow.xaml;View\ManualPageView.xaml;View\NewModelPageView.xaml;View\SettingPageView.xaml;
 
 False

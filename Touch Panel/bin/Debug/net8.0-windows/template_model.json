@@ -3,6 +3,15 @@
     "Steps": [
       {
         "No": "1",
+        "Test": "CALIB",
+        "Objectid": null,
+        "Specvalue": null,
+        "Timedelay": 0,
+        "Timetest": 0,
+        "Skip": true
+      },
+      {
+        "No": "2",
         "Test": "NOP",
         "Objectid": null,
         "Specvalue": null,
@@ -11,7 +20,7 @@
         "Skip": true
       },
       {
-        "No": "2",
+        "No": "3",
         "Test": "KEY",
         "Objectid": "1",
         "Specvalue": "",
@@ -20,16 +29,16 @@
         "Skip": false
       },
       {
-        "No": "3",
+        "No": "4",
         "Test": "MEAS",
         "Objectid": "0.7.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "4",
+        "No": "5",
         "Test": "KEY",
         "Objectid": "2",
         "Specvalue": "",
@@ -38,16 +47,16 @@
         "Skip": false
       },
       {
-        "No": "5",
+        "No": "6",
         "Test": "MEAS",
         "Objectid": "0.6.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "6",
+        "No": "7",
         "Test": "KEY",
         "Objectid": "3",
         "Specvalue": "",
@@ -56,16 +65,16 @@
         "Skip": false
       },
       {
-        "No": "7",
+        "No": "8",
         "Test": "MEAS",
         "Objectid": "0.5.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "8",
+        "No": "9",
         "Test": "KEY",
         "Objectid": "4",
         "Specvalue": null,
@@ -74,16 +83,16 @@
         "Skip": false
       },
       {
-        "No": "9",
+        "No": "10",
         "Test": "MEAS",
         "Objectid": "0.0.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "10",
+        "No": "11",
         "Test": "KEY",
         "Objectid": "5",
         "Specvalue": null,
@@ -92,16 +101,16 @@
         "Skip": false
       },
       {
-        "No": "11",
+        "No": "12",
         "Test": "MEAS",
         "Objectid": "0.1.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "12",
+        "No": "13",
         "Test": "KEY",
         "Objectid": "6",
         "Specvalue": null,
@@ -110,16 +119,16 @@
         "Skip": false
       },
       {
-        "No": "13",
+        "No": "14",
         "Test": "MEAS",
         "Objectid": "0.2.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "14",
+        "No": "15",
         "Test": "KEY",
         "Objectid": "7",
         "Specvalue": null,
@@ -128,16 +137,16 @@
         "Skip": false
       },
       {
-        "No": "15",
+        "No": "16",
         "Test": "MEAS",
         "Objectid": "0.3.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "16",
+        "No": "17",
         "Test": "KEY",
         "Objectid": "8",
         "Specvalue": null,
@@ -146,16 +155,16 @@
         "Skip": false
       },
       {
-        "No": "17",
+        "No": "18",
         "Test": "MEAS",
         "Objectid": "0.4.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "18",
+        "No": "19",
         "Test": "KEY",
         "Objectid": "9",
         "Specvalue": null,
@@ -164,16 +173,16 @@
         "Skip": false
       },
       {
-        "No": "19",
+        "No": "20",
         "Test": "MEAS",
         "Objectid": "1.1.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "20",
+        "No": "21",
         "Test": "KEY",
         "Objectid": "10",
         "Specvalue": null,
@@ -182,16 +191,16 @@
         "Skip": false
       },
       {
-        "No": "21",
+        "No": "22",
         "Test": "MEAS",
         "Objectid": "1.1.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "22",
+        "No": "23",
         "Test": "KEY",
         "Objectid": "11",
         "Specvalue": null,
@@ -200,16 +209,16 @@
         "Skip": false
       },
       {
-        "No": "23",
+        "No": "24",
         "Test": "MEAS",
         "Objectid": "0.7.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "24",
+        "No": "25",
         "Test": "KEY",
         "Objectid": "12",
         "Specvalue": null,
@@ -218,16 +227,16 @@
         "Skip": false
       },
       {
-        "No": "25",
+        "No": "26",
         "Test": "MEAS",
         "Objectid": "0.6.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "26",
+        "No": "27",
         "Test": "KEY",
         "Objectid": "13",
         "Specvalue": null,
@@ -236,16 +245,16 @@
         "Skip": false
       },
       {
-        "No": "27",
+        "No": "28",
         "Test": "MEAS",
         "Objectid": "0.5.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "28",
+        "No": "29",
         "Test": "KEY",
         "Objectid": "14",
         "Specvalue": null,
@@ -254,16 +263,16 @@
         "Skip": false
       },
       {
-        "No": "29",
+        "No": "30",
         "Test": "MEAS",
         "Objectid": "0.0.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "30",
+        "No": "31",
         "Test": "KEY",
         "Objectid": "15",
         "Specvalue": null,
@@ -272,16 +281,16 @@
         "Skip": false
       },
       {
-        "No": "31",
+        "No": "32",
         "Test": "MEAS",
         "Objectid": "0.1.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "32",
+        "No": "33",
         "Test": "KEY",
         "Objectid": "16",
         "Specvalue": null,
@@ -290,16 +299,16 @@
         "Skip": false
       },
       {
-        "No": "33",
+        "No": "34",
         "Test": "MEAS",
         "Objectid": "0.2.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "34",
+        "No": "35",
         "Test": "KEY",
         "Objectid": "17",
         "Specvalue": null,
@@ -308,16 +317,16 @@
         "Skip": false
       },
       {
-        "No": "35",
+        "No": "36",
         "Test": "MEAS",
         "Objectid": "0.3.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "36",
+        "No": "37",
         "Test": "KEY",
         "Objectid": "18",
         "Specvalue": null,
@@ -326,16 +335,16 @@
         "Skip": false
       },
       {
-        "No": "37",
+        "No": "38",
         "Test": "MEAS",
         "Objectid": "0.4.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "38",
+        "No": "39",
         "Test": "KEY",
         "Objectid": "19",
         "Specvalue": null,
@@ -344,16 +353,16 @@
         "Skip": false
       },
       {
-        "No": "39",
+        "No": "40",
         "Test": "MEAS",
         "Objectid": "1.0.0",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "40",
+        "No": "41",
         "Test": "KEY",
         "Objectid": "20",
         "Specvalue": null,
@@ -362,16 +371,16 @@
         "Skip": false
       },
       {
-        "No": "41",
+        "No": "42",
         "Test": "MEAS",
         "Objectid": "1.0.1",
         "Specvalue": "50",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "42",
+        "No": "43",
         "Test": "KEY",
         "Objectid": "0",
         "Specvalue": null,
@@ -385,15 +394,24 @@
     "Steps": [
       {
         "No": "1",
-        "Test": "NOP",
+        "Test": "CALIB",
         "Objectid": null,
         "Specvalue": null,
-        "Timedelay": 1000,
+        "Timedelay": 0,
         "Timetest": 0,
-        "Skip": true
+        "Skip": false
       },
       {
         "No": "2",
+        "Test": "NOP",
+        "Objectid": null,
+        "Specvalue": null,
+        "Timedelay": 7000,
+        "Timetest": 0,
+        "Skip": false
+      },
+      {
+        "No": "3",
         "Test": "KEY",
         "Objectid": "1",
         "Specvalue": null,
@@ -402,16 +420,16 @@
         "Skip": false
       },
       {
-        "No": "3",
+        "No": "4",
         "Test": "MEAS",
         "Objectid": "1.0.1",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "4",
+        "No": "5",
         "Test": "KEY",
         "Objectid": "2",
         "Specvalue": null,
@@ -420,16 +438,16 @@
         "Skip": false
       },
       {
-        "No": "5",
+        "No": "6",
         "Test": "MEAS",
         "Objectid": "0.2.1",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "6",
+        "No": "7",
         "Test": "KEY",
         "Objectid": "3",
         "Specvalue": null,
@@ -438,7 +456,7 @@
         "Skip": false
       },
       {
-        "No": "7",
+        "No": "8",
         "Test": "MEAS",
         "Objectid": "0.1.1",
         "Specvalue": "20",
@@ -447,7 +465,7 @@
         "Skip": false
       },
       {
-        "No": "8",
+        "No": "9",
         "Test": "KEY",
         "Objectid": "4",
         "Specvalue": null,
@@ -456,7 +474,7 @@
         "Skip": false
       },
       {
-        "No": "9",
+        "No": "10",
         "Test": "MEAS",
         "Objectid": "0.0.1",
         "Specvalue": "20",
@@ -465,7 +483,7 @@
         "Skip": false
       },
       {
-        "No": "10",
+        "No": "11",
         "Test": "KEY",
         "Objectid": "5",
         "Specvalue": null,
@@ -474,16 +492,16 @@
         "Skip": false
       },
       {
-        "No": "11",
+        "No": "12",
         "Test": "MEAS",
         "Objectid": "0.3.1",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "12",
+        "No": "13",
         "Test": "KEY",
         "Objectid": "6",
         "Specvalue": null,
@@ -492,16 +510,16 @@
         "Skip": false
       },
       {
-        "No": "13",
+        "No": "14",
         "Test": "MEAS",
         "Objectid": "0.4.1",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "14",
+        "No": "15",
         "Test": "KEY",
         "Objectid": "7",
         "Specvalue": null,
@@ -510,16 +528,16 @@
         "Skip": false
       },
       {
-        "No": "15",
+        "No": "16",
         "Test": "MEAS",
         "Objectid": "0.5.1",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "16",
+        "No": "17",
         "Test": "KEY",
         "Objectid": "8",
         "Specvalue": null,
@@ -528,16 +546,16 @@
         "Skip": false
       },
       {
-        "No": "17",
+        "No": "18",
         "Test": "MEAS",
         "Objectid": "1.0.0",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "18",
+        "No": "19",
         "Test": "KEY",
         "Objectid": "9",
         "Specvalue": null,
@@ -546,16 +564,16 @@
         "Skip": false
       },
       {
-        "No": "19",
+        "No": "20",
         "Test": "MEAS",
         "Objectid": "0.2.0",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 3000,
         "Skip": false
       },
       {
-        "No": "20",
+        "No": "21",
         "Test": "KEY",
         "Objectid": "10",
         "Specvalue": null,
@@ -564,16 +582,16 @@
         "Skip": false
       },
       {
-        "No": "21",
+        "No": "22",
         "Test": "MEAS",
         "Objectid": "0.1.0",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "22",
+        "No": "23",
         "Test": "KEY",
         "Objectid": "11",
         "Specvalue": null,
@@ -582,16 +600,16 @@
         "Skip": false
       },
       {
-        "No": "23",
+        "No": "24",
         "Test": "MEAS",
         "Objectid": "0.0.0",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "24",
+        "No": "25",
         "Test": "KEY",
         "Objectid": "12",
         "Specvalue": null,
@@ -600,16 +618,16 @@
         "Skip": false
       },
       {
-        "No": "25",
+        "No": "26",
         "Test": "MEAS",
         "Objectid": "0.3.0",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "26",
+        "No": "27",
         "Test": "KEY",
         "Objectid": "13",
         "Specvalue": null,
@@ -618,16 +636,16 @@
         "Skip": false
       },
       {
-        "No": "27",
+        "No": "28",
         "Test": "MEAS",
         "Objectid": "0.4.0",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "28",
+        "No": "29",
         "Test": "KEY",
         "Objectid": "14",
         "Specvalue": null,
@@ -636,16 +654,16 @@
         "Skip": false
       },
       {
-        "No": "29",
+        "No": "30",
         "Test": "MEAS",
         "Objectid": "0.5.0",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "30",
+        "No": "31",
         "Test": "KEY",
         "Objectid": "15",
         "Specvalue": null,
@@ -654,16 +672,16 @@
         "Skip": false
       },
       {
-        "No": "31",
+        "No": "32",
         "Test": "MEAS",
-        "Objectid": "0.6.0",
+        "Objectid": "2.0.0",
         "Specvalue": "20",
         "Timedelay": 0,
-        "Timetest": 1000,
+        "Timetest": 2000,
         "Skip": false
       },
       {
-        "No": "32",
+        "No": "33",
         "Test": "KEY",
         "Objectid": "0",
         "Specvalue": "",
@@ -707,14 +725,14 @@
               {
                 "Id": 0,
                 "StringId": "0.0.0",
-                "Delta": 5,
+                "Delta": 62,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.0.1",
-                "Delta": 11,
-                "IsMax": false
+                "Delta": 85,
+                "IsMax": true
               }
             ]
           },
@@ -724,13 +742,13 @@
               {
                 "Id": 0,
                 "StringId": "0.1.0",
-                "Delta": 2,
+                "Delta": 1,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.1.1",
-                "Delta": 3,
+                "Delta": 7,
                 "IsMax": false
               }
             ]
@@ -741,13 +759,13 @@
               {
                 "Id": 0,
                 "StringId": "0.2.0",
-                "Delta": 24,
+                "Delta": 22,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.2.1",
-                "Delta": 16,
+                "Delta": 15,
                 "IsMax": false
               }
             ]
@@ -758,13 +776,13 @@
               {
                 "Id": 0,
                 "StringId": "0.3.0",
-                "Delta": 46,
-                "IsMax": true
+                "Delta": 20,
+                "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.3.1",
-                "Delta": 36,
+                "Delta": 30,
                 "IsMax": false
               }
             ]
@@ -775,13 +793,13 @@
               {
                 "Id": 0,
                 "StringId": "0.4.0",
-                "Delta": 40,
+                "Delta": 5,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.4.1",
-                "Delta": 27,
+                "Delta": 15,
                 "IsMax": false
               }
             ]
@@ -792,13 +810,13 @@
               {
                 "Id": 0,
                 "StringId": "0.5.0",
-                "Delta": 10,
+                "Delta": 16,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.5.1",
-                "Delta": 12,
+                "Delta": 9,
                 "IsMax": false
               }
             ]
@@ -809,13 +827,13 @@
               {
                 "Id": 0,
                 "StringId": "0.6.0",
-                "Delta": 15,
+                "Delta": 12,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.6.1",
-                "Delta": 15,
+                "Delta": 19,
                 "IsMax": false
               }
             ]
@@ -826,13 +844,13 @@
               {
                 "Id": 0,
                 "StringId": "0.7.0",
-                "Delta": 1,
+                "Delta": 29,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.7.1",
-                "Delta": 6,
+                "Delta": 20,
                 "IsMax": false
               }
             ]
@@ -848,13 +866,13 @@
               {
                 "Id": 0,
                 "StringId": "1.0.0",
-                "Delta": 14,
+                "Delta": 2,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "1.0.1",
-                "Delta": 22,
+                "Delta": 2,
                 "IsMax": false
               }
             ]
@@ -865,13 +883,13 @@
               {
                 "Id": 0,
                 "StringId": "1.1.0",
-                "Delta": 17,
+                "Delta": 4,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "1.1.1",
-                "Delta": 19,
+                "Delta": 4,
                 "IsMax": false
               }
             ]
@@ -889,14 +907,14 @@
               {
                 "Id": 0,
                 "StringId": "0.0.0",
-                "Delta": 8,
+                "Delta": 196,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.0.1",
-                "Delta": 7,
-                "IsMax": false
+                "Delta": 960,
+                "IsMax": true
               }
             ]
           },
@@ -906,13 +924,13 @@
               {
                 "Id": 0,
                 "StringId": "0.1.0",
-                "Delta": 15,
+                "Delta": 11,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.1.1",
-                "Delta": 16,
+                "Delta": 10,
                 "IsMax": false
               }
             ]
@@ -923,13 +941,13 @@
               {
                 "Id": 0,
                 "StringId": "0.2.0",
-                "Delta": 6,
+                "Delta": 0,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.2.1",
-                "Delta": 5,
+                "Delta": 7,
                 "IsMax": false
               }
             ]
@@ -946,7 +964,7 @@
               {
                 "Id": 1,
                 "StringId": "0.3.1",
-                "Delta": 11,
+                "Delta": 139,
                 "IsMax": false
               }
             ]
@@ -957,13 +975,13 @@
               {
                 "Id": 0,
                 "StringId": "0.4.0",
-                "Delta": 7,
+                "Delta": 26,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.4.1",
-                "Delta": 7,
+                "Delta": 91,
                 "IsMax": false
               }
             ]
@@ -974,30 +992,13 @@
               {
                 "Id": 0,
                 "StringId": "0.5.0",
-                "Delta": 13,
+                "Delta": 11,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.5.1",
-                "Delta": 17,
-                "IsMax": false
-              }
-            ]
-          },
-          {
-            "Id": 6,
-            "ListCAPElement": [
-              {
-                "Id": 0,
-                "StringId": "0.6.0",
-                "Delta": 1,
-                "IsMax": false
-              },
-              {
-                "Id": 1,
-                "StringId": "0.6.1",
-                "Delta": 0,
+                "Delta": 101,
                 "IsMax": false
               }
             ]
@@ -1013,19 +1014,41 @@
               {
                 "Id": 0,
                 "StringId": "1.0.0",
-                "Delta": 7,
-                "IsMax": false
+                "Delta": 148,
+                "IsMax": true
               },
               {
                 "Id": 1,
                 "StringId": "1.0.1",
-                "Delta": 6,
+                "Delta": 5,
                 "IsMax": false
               }
             ]
           }
         ],
         "Id": 1
+      },
+      {
+        "ListCAPCycle": [
+          {
+            "Id": 0,
+            "ListCAPElement": [
+              {
+                "Id": 0,
+                "StringId": "2.0.0",
+                "Delta": 5,
+                "IsMax": false
+              },
+              {
+                "Id": 1,
+                "StringId": "2.0.1",
+                "Delta": 0,
+                "IsMax": false
+              }
+            ]
+          }
+        ],
+        "Id": 2
       }
     ],
     "SelectedFirmwareMicom": "HUMAN_THAI__ME21K7010DS__241223_0199"

@@ -41,7 +41,7 @@ namespace Touch_Panel.Model
             this.ID = id;
         }
 
-      
+
 
         public void ClearSteps()
         {
@@ -58,7 +58,7 @@ namespace Touch_Panel.Model
     public partial class TestLogic : ObservableObject
     {
         [ObservableProperty]
-        private Model model;    
+        private Model model;
 
         [ObservableProperty]
         private Tester tester1 = new Tester(0);
@@ -73,9 +73,9 @@ namespace Touch_Panel.Model
 
             Tester1.Steps = Model.Step1.Steps;
             Tester2.Steps = Model.Step2.Steps;
-        }   
+        }
 
-        public TestResult TestResult =  TestResult.Unknown;
+        public TestResult TestResult = TestResult.Unknown;
 
 
         public async void manualSingleTest(Step selectedItem, Tester tester)
@@ -94,7 +94,7 @@ namespace Touch_Panel.Model
                 if (tester.stopTest)
                 {
                     break;
-                }              
+                }
 
                 await RunTestStep(step, tester);
                 if (Model.Settings.ShouldStopAllWhenAnyFailedStep && step.Result == "Fail")
@@ -139,24 +139,25 @@ namespace Touch_Panel.Model
 
             await Task.WhenAll(t1, t2);
 
-            if (Tester1.TestResult == TestResult.Pass && Tester2.TestResult == TestResult.Pass)
-            {
-                TestResult = TestResult.Pass;
-            }
-            if (Tester1.TestResult == TestResult.Fail || Tester2.TestResult == TestResult.Fail)
-            {
-                TestResult = TestResult.Fail;
-            }
-            if (Tester1.TestResult == TestResult.Unknown && Tester2.TestResult == TestResult.Unknown)
+
+            if (Tester1.TestResult == TestResult.Unknown || Tester2.TestResult == TestResult.Unknown)
             {
                 TestResult = TestResult.Unknown;
             }
-         
+            else if (Tester1.TestResult == TestResult.Pass && Tester2.TestResult == TestResult.Pass)
+            {
+                TestResult = TestResult.Pass;
+            }
+            else if (Tester1.TestResult == TestResult.Fail || Tester2.TestResult == TestResult.Fail)
+            {
+                TestResult = TestResult.Fail;
+            }
+
         }
 
- 
 
- 
+
+
 
         public async Task RunTestStep(Step step, Tester tester)
         {
@@ -196,20 +197,20 @@ namespace Touch_Panel.Model
             }
         }
 
-        private async Task KEY(Step step ,int testerID)
+        private async Task KEY(Step step, int testerID)
         {
             await PendingStep(step);
             string[] val = step.Objectid.Split(',');
             List<int> intArray = val.Select(int.Parse).ToList();
 
             ConvertChannelsToBytes(intArray, out byte data2, out byte data3, out byte data4);
-            MakeAndSendTx(step, (testerID+1).ToString(), data2, data3, data4);
+            MakeAndSendTx(step, (testerID + 1).ToString(), data2, data3, data4);
         }
 
         private async Task CALIB(Step step, int testerID)
         {
             await PendingStep(step);
-            await Model.Devices.RecalibMICOM(testerID+1);
+            await Model.Devices.RecalibMICOM(testerID + 1);
             step.Result = "Pass";
         }
 
@@ -224,7 +225,8 @@ namespace Touch_Panel.Model
             {
                 sol = Model.Devices.DeviceManager.Solenoid2Port;
             }
-            if (!sol.IsOpen) {
+            if (!sol.IsOpen)
+            {
                 step.Value = "CE";
                 step.Result = "Fail";
                 return;
@@ -258,7 +260,7 @@ namespace Touch_Panel.Model
                 var start = DateTime.Now;
                 while (DateTime.Now.Subtract(start).TotalMilliseconds < 5000)
                 {
-                    if (device.RxCount>0)
+                    if (device.RxCount > 0)
                     {
                         rx1Pass = true;
                         break;
@@ -323,9 +325,9 @@ namespace Touch_Panel.Model
                 step.Value = $"pending {delay} ms";
             }
         }
-        private async Task MEAS(Step step,int testerID)
+        private async Task MEAS(Step step, int testerID)
         {
-            ObservableCollection<CAPSensor> listCAPSensor = new ();
+            ObservableCollection<CAPSensor> listCAPSensor = new();
             if (testerID == 0)
             {
                 listCAPSensor = Model.Devices.ListCAPSensor1;
@@ -338,13 +340,14 @@ namespace Touch_Panel.Model
 
             var objectID = step.Objectid.Split(".");
 
-            if (objectID.Length != 3) {
+            if (objectID.Length != 3)
+            {
 
                 step.Value = "CE";
                 step.Result = "Fail";
                 return;
-            }           
-           
+            }
+
 
             try
             {
@@ -373,7 +376,7 @@ namespace Touch_Panel.Model
                         step.Value = elementSensor.Delta.ToString();
                         step.Result = "Pass";
                         break;
-                    }           
+                    }
 
                     if (sw.ElapsedMilliseconds > timeCheck)
                     {
@@ -400,7 +403,7 @@ namespace Touch_Panel.Model
 
 
             step.Value = string.Empty;
-            step.Result = step.Specvalue == "OK"?  "Pass" : (step.Specvalue == "NG" ? "Fail" : "Pass" );
+            step.Result = step.Specvalue == "OK" ? "Pass" : (step.Specvalue == "NG" ? "Fail" : "Pass");
 
         }
 

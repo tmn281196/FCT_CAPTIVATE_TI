@@ -130,21 +130,30 @@ namespace Touch_Panel.View_Model
         }
 
         public async void START()
-        {
-            await Task.WhenAll(
-                Model.Devices.HaltMICOM(1),
-                Model.Devices.HaltMICOM(2)
-            );
-
-
-            //await Model.Devices.ResetMainCylinder();
-            State.Test = TestState.Wait;
+        {         
             await Task.Run(TestStart);
         }
 
 
         private async void TestStart()
         {
+            State.Test = TestState.Wait;
+
+            await Task.WhenAll(
+                Model.Devices.HaltMICOM(1),
+                Model.Devices.HaltMICOM(2)
+            );
+
+            await Task.WhenAll(
+                Model.Devices.ResetSolenoid1(),
+                Model.Devices.ResetSolenoid2()
+            );
+
+            TestLogic.Tester1.ClearSteps();
+            TestLogic.Tester2.ClearSteps();
+
+            //await Model.Devices.ResetMainCylinder();
+
             while (runWhileLoop)
             {
                 switch (State.Test)
@@ -168,9 +177,10 @@ namespace Touch_Panel.View_Model
                             if (Model.Devices.SystemData.MainDirection == Direction.Up)
                             {
 
-                                //await Task.Delay(1000);
-                                Model.Devices.ResetSolenoid1();
-                                Model.Devices.ResetSolenoid2();
+                                await Task.WhenAll(
+                                     Model.Devices.ResetSolenoid1(),
+                                     Model.Devices.ResetSolenoid2()
+                                );
 
                                 Model.Devices.ConnectorAllUp();
                                 State.Test = TestState.Ready;
@@ -201,7 +211,7 @@ namespace Touch_Panel.View_Model
                           Model.Devices.ResumeMICOM(2)
                         );
 
-                     
+
 
 
                         stopwatch.Start();
@@ -248,38 +258,42 @@ namespace Touch_Panel.View_Model
 
                     case TestState.NG:
 
-
+                        await Task.WhenAll(
+                            Model.Devices.ResetSolenoid1(),
+                            Model.Devices.ResetSolenoid2()
+                        );
                         Status = "Fail";
                         await Task.Delay(500);
                         Fail += 1;
                         SaveLog(false);
-                        //firstTime = true;
                         stopwatch.Reset();
                         State.Test = TestState.Wait;
                         break;
 
                     case TestState.OK:
 
+                        await Task.WhenAll(
+                            Model.Devices.ResetSolenoid1(),
+                            Model.Devices.ResetSolenoid2()
+                        );
                         await Model.Devices.ResetMainCylinder();
-
-
                         Status = "Pass";
                         await Task.Delay(500);
                         Pass += 1;
                         SaveLog(true);
-                        //firstTime = true;
                         stopwatch.Reset();
                         State.Test = TestState.Wait;
                         break;
 
                     case TestState.Stop:
 
-
+                        await Task.WhenAll(
+                            Model.Devices.ResetSolenoid1(),
+                            Model.Devices.ResetSolenoid2()
+                        );
 
                         Status = "Stop";
-
                         await Task.Delay(2000);
-                        //firstTime = true;
                         stopwatch.Reset();
                         State.Test = TestState.Wait;
                         break;

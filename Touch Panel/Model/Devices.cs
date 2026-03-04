@@ -777,11 +777,11 @@ namespace Touch_Panel.Model
                             SystemData.MainTop = sensorData[1] == 0xFF;
                             SystemData.MainBottom = sensorData[2] == 0xFF;
 
-                            Debug.Write($"MainTop:{(SystemData.MainTop ? 1 : 0)}");
-                            Debug.Write($"   ");
-                            Debug.Write($"MainBottom:{(SystemData.MainBottom ? 1 :0)}");
-                            Debug.Write($"   ");
-                            Debug.WriteLine($"MainDirection:{SystemData.MainDirection}");
+                            //Debug.Write($"MainTop:{(SystemData.MainTop ? 1 : 0)}");
+                            //Debug.Write($"   ");
+                            //Debug.Write($"MainBottom:{(SystemData.MainBottom ? 1 :0)}");
+                            //Debug.Write($"   ");
+                            //Debug.WriteLine($"MainDirection:{SystemData.MainDirection}");
                         }
                         finally
                         {
@@ -803,40 +803,73 @@ namespace Touch_Panel.Model
             {
 
 
-                if (frame[1] == 0x00 || frame[1] == 0x01)
+                if (frame[1] == 0x00 || frame[1] == 0x01 || frame[1] == 0x02)
                 {
                     ushort sensorIndex = frame[1];
                     ushort cycleIndex = frame[2];
                     var currentCycle = listCAPSensor[sensorIndex].ListCAPCycle[cycleIndex];
                     var elements = currentCycle.ListCAPElement;
 
-                    Application.Current.Dispatcher.InvokeAsync(() =>
+                    // Update Delta trước (vẫn trên UI thread tạm thời)
+                    for (int elementID = 0; elementID < elements.Count; elementID++)
                     {
-                        // Update Delta trước (vẫn trên UI thread tạm thời)
-                        for (int elementID = 0; elementID < elements.Count; elementID++)
-                        {
-                            if (elementID * 2 + 4 >= frame.Length) break; // an toàn buffer overrun
+                        if (elementID * 2 + 4 >= frame.Length) break; // an toàn buffer overrun
 
-                            ushort delta = (ushort)((frame[elementID * 2 + 3] << 8) | frame[elementID * 2 + 4]);
-                            elements[elementID].Delta = delta;
-                        }
+                        ushort delta = (ushort)((frame[elementID * 2 + 3] << 8) | frame[elementID * 2 + 4]);
+                        //elements[elementID].Delta = delta;
 
-                        // Tính Max chỉ 1 lần
-                        var allDeltas = listCAPSensor
-                            .SelectMany(s => s.ListCAPCycle)
-                            .SelectMany(c => c.ListCAPElement)
-                            .Select(e => e.Delta);
+                        elements[elementID].Delta = delta;
 
-                        ushort maxDelta = allDeltas.Any() ? allDeltas.Max() : (ushort)0;
+                        Debug.WriteLine($"{sensorIndex}.{cycleIndex}.{elementID} : {delta}" );
+
+                    }
+
+                    // Tính Max chỉ 1 lần
+                    var allDeltas = listCAPSensor
+                        .SelectMany(s => s.ListCAPCycle)
+                        .SelectMany(c => c.ListCAPElement)
+                        .Select(e => e.Delta);
+
+                    ushort maxDelta = allDeltas.Any() ? allDeltas.Max() : (ushort)0;
+
+
+                    // Update IsMax chỉ 1 lần
+                    foreach (var elem in elements)
+                    {
+                        elem.IsMax = (elem.Delta == maxDelta);
+                    }
+
+                    //Application.Current.Dispatcher.InvokeAsync(() =>
+                    //{
+                    //    // Update Delta trước (vẫn trên UI thread tạm thời)
+                    //    for (int elementID = 0; elementID < elements.Count; elementID++)
+                    //    {
+                    //        if (elementID * 2 + 4 >= frame.Length) break; // an toàn buffer overrun
+
+                    //        ushort delta = (ushort)((frame[elementID * 2 + 3] << 8) | frame[elementID * 2 + 4]);
+                    //        //elements[elementID].Delta = delta;
+
+                    //        elements[elementID].Delta = delta;
+
+
+                    //    }
+
+                    //    // Tính Max chỉ 1 lần
+                    //    var allDeltas = listCAPSensor
+                    //        .SelectMany(s => s.ListCAPCycle)
+                    //        .SelectMany(c => c.ListCAPElement)
+                    //        .Select(e => e.Delta);
+
+                    //    ushort maxDelta = allDeltas.Any() ? allDeltas.Max() : (ushort)0;
 
 
 
-                        // Update IsMax chỉ 1 lần
-                        foreach (var elem in elements)
-                        {
-                            elem.IsMax = (elem.Delta == maxDelta);
-                        }
-                    });
+                    //    // Update IsMax chỉ 1 lần
+                    //    foreach (var elem in elements)
+                    //    {
+                    //        elem.IsMax = (elem.Delta == maxDelta);
+                    //    }
+                    //});
                 }
 
                 else if (frame[1] == (byte)'M')
@@ -1148,7 +1181,7 @@ namespace Touch_Panel.Model
         }
 
 
-        internal async void ResetSolenoid1()
+        internal async Task ResetSolenoid1()
         {
             if (!DeviceManager.Solenoid1Port.IsOpen) return;
 
@@ -1163,7 +1196,7 @@ namespace Touch_Panel.Model
 
         }
 
-        internal async void ResetSolenoid2()
+        internal async Task ResetSolenoid2()
         {
             if (!DeviceManager.Solenoid2Port.IsOpen) return;
 
