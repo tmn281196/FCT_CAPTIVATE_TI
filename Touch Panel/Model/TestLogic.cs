@@ -11,6 +11,7 @@ using System.Security.Permissions;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Touch_Panel.Model
 {
@@ -211,7 +212,38 @@ namespace Touch_Panel.Model
         {
             await PendingStep(step);
             await Model.Devices.RecalibMICOM(testerID + 1);
-            step.Result = "Pass";
+            int TIMEOUT_MILLISECONDS = step.Timetest;  // Timeout tối đa
+
+            var stopwatch = Stopwatch.StartNew();  // Bắt đầu đếm thời gian
+
+            bool micomResponse = false;
+
+            while (!micomResponse)
+            {
+                // Kiểm tra timeout bằng Stopwatch
+                var now = stopwatch.Elapsed.TotalMilliseconds;
+
+                step.Value = $"{now:0} ms";
+
+                if (now > TIMEOUT_MILLISECONDS)
+                {
+                    break;
+                }
+
+                micomResponse = testerID == 0 ? Model.Devices.Micom1CalibResponse : Model.Devices.Micom2CalibResponse;
+
+                if (micomResponse) break;
+                await Task.Delay(10); 
+            }
+
+            if (micomResponse)
+            {
+                step.Result = "Pass";
+            }
+            else
+            {
+                step.Result = "Fail";
+            }
         }
 
         private async void MakeAndSendTx(Step step, string solNum, byte data2, byte data3, byte data4)
@@ -313,17 +345,22 @@ namespace Touch_Panel.Model
 
 
 
-
         private async Task PendingStep(Step step)
         {
             int delayMs = step.Timedelay;
-            int delay = 0;
-            while (delay + 100 <= delayMs)
+
+            var sw = Stopwatch.StartNew();
+
+            while (sw.ElapsedMilliseconds < delayMs)
             {
-                await Task.Delay(100);
-                delay += 100;
-                step.Value = $"pending {delay} ms";
+                await Task.Delay(10);
+
+                step.Value = $"pending {sw.ElapsedMilliseconds:0} ms";
             }
+
+            sw.Stop();
+            step.Value = string.Empty;
+
         }
         private async Task MEAS(Step step, int testerID)
         {

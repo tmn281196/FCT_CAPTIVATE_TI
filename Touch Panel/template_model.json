@@ -7,7 +7,7 @@
         "Objectid": null,
         "Specvalue": null,
         "Timedelay": 0,
-        "Timetest": 0,
+        "Timetest": 7000,
         "Skip": false
       },
       {
@@ -15,7 +15,7 @@
         "Test": "NOP",
         "Objectid": null,
         "Specvalue": null,
-        "Timedelay": 7000,
+        "Timedelay": 1000,
         "Timetest": 0,
         "Skip": false
       },
@@ -398,7 +398,7 @@
         "Objectid": null,
         "Specvalue": null,
         "Timedelay": 0,
-        "Timetest": 0,
+        "Timetest": 7000,
         "Skip": false
       },
       {
@@ -406,7 +406,7 @@
         "Test": "NOP",
         "Objectid": null,
         "Specvalue": null,
-        "Timedelay": 7000,
+        "Timedelay": 1000,
         "Timetest": 0,
         "Skip": false
       },
@@ -725,13 +725,13 @@
               {
                 "Id": 0,
                 "StringId": "0.0.0",
-                "Delta": 15,
+                "Delta": 8,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.0.1",
-                "Delta": 16,
+                "Delta": 10,
                 "IsMax": false
               }
             ]
@@ -742,13 +742,13 @@
               {
                 "Id": 0,
                 "StringId": "0.1.0",
-                "Delta": 29,
+                "Delta": 2,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.1.1",
-                "Delta": 24,
+                "Delta": 4,
                 "IsMax": false
               }
             ]
@@ -759,13 +759,13 @@
               {
                 "Id": 0,
                 "StringId": "0.2.0",
-                "Delta": 19,
+                "Delta": 5,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.2.1",
-                "Delta": 11,
+                "Delta": 1,
                 "IsMax": false
               }
             ]
@@ -776,7 +776,7 @@
               {
                 "Id": 0,
                 "StringId": "0.3.0",
-                "Delta": 1,
+                "Delta": 2,
                 "IsMax": false
               },
               {
@@ -793,14 +793,14 @@
               {
                 "Id": 0,
                 "StringId": "0.4.0",
-                "Delta": 2,
+                "Delta": 17,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.4.1",
-                "Delta": 13,
-                "IsMax": false
+                "Delta": 27,
+                "IsMax": true
               }
             ]
           },
@@ -810,13 +810,13 @@
               {
                 "Id": 0,
                 "StringId": "0.5.0",
-                "Delta": 0,
+                "Delta": 1,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.5.1",
-                "Delta": 18,
+                "Delta": 0,
                 "IsMax": false
               }
             ]
@@ -827,13 +827,13 @@
               {
                 "Id": 0,
                 "StringId": "0.6.0",
-                "Delta": 16,
+                "Delta": 4,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.6.1",
-                "Delta": 11,
+                "Delta": 0,
                 "IsMax": false
               }
             ]
@@ -844,13 +844,13 @@
               {
                 "Id": 0,
                 "StringId": "0.7.0",
-                "Delta": 2,
+                "Delta": 16,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.7.1",
-                "Delta": 22,
+                "Delta": 5,
                 "IsMax": false
               }
             ]
@@ -866,13 +866,13 @@
               {
                 "Id": 0,
                 "StringId": "1.0.0",
-                "Delta": 0,
+                "Delta": 6,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "1.0.1",
-                "Delta": 3,
+                "Delta": 1,
                 "IsMax": false
               }
             ]
@@ -883,7 +883,7 @@
               {
                 "Id": 0,
                 "StringId": "1.1.0",
-                "Delta": 2,
+                "Delta": 5,
                 "IsMax": false
               },
               {
@@ -907,13 +907,13 @@
               {
                 "Id": 0,
                 "StringId": "0.0.0",
-                "Delta": 18,
+                "Delta": 16,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.0.1",
-                "Delta": 10,
+                "Delta": 9,
                 "IsMax": false
               }
             ]
@@ -924,13 +924,13 @@
               {
                 "Id": 0,
                 "StringId": "0.1.0",
-                "Delta": 8,
+                "Delta": 5,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.1.1",
-                "Delta": 12,
+                "Delta": 7,
                 "IsMax": false
               }
             ]
@@ -941,13 +941,13 @@
               {
                 "Id": 0,
                 "StringId": "0.2.0",
-                "Delta": 14,
+                "Delta": 6,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.2.1",
-                "Delta": 21,
+                "Delta": 14,
                 "IsMax": false
               }
             ]
@@ -958,14 +958,14 @@
               {
                 "Id": 0,
                 "StringId": "0.3.0",
-                "Delta": 16,
+                "Delta": 38,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.3.1",
-                "Delta": 22,
-                "IsMax": false
+                "Delta": 39,
+                "IsMax": true
               }
             ]
           },
@@ -975,13 +975,13 @@
               {
                 "Id": 0,
                 "StringId": "0.4.0",
-                "Delta": 9,
+                "Delta": 6,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.4.1",
-                "Delta": 20,
+                "Delta": 4,
                 "IsMax": false
               }
             ]
@@ -992,14 +992,14 @@
               {
                 "Id": 0,
                 "StringId": "0.5.0",
-                "Delta": 21,
+                "Delta": 10,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "0.5.1",
-                "Delta": 42,
-                "IsMax": true
+                "Delta": 6,
+                "IsMax": false
               }
             ]
           }
@@ -1014,13 +1014,13 @@
               {
                 "Id": 0,
                 "StringId": "1.0.0",
-                "Delta": 16,
+                "Delta": 15,
                 "IsMax": false
               },
               {
                 "Id": 1,
                 "StringId": "1.0.1",
-                "Delta": 25,
+                "Delta": 2,
                 "IsMax": false
               }
             ]
@@ -1036,7 +1036,7 @@
               {
                 "Id": 0,
                 "StringId": "2.0.0",
-                "Delta": 1,
+                "Delta": 7,
                 "IsMax": false
               },
               {

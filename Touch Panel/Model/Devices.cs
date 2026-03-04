@@ -257,8 +257,16 @@ namespace Touch_Panel.Model
             new DeviceStatus {Name = "Solenoid 2"},
         };
 
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private bool micom1CalibResponse = false;
+
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private bool micom2CalibResponse = false;
 
         public event EventHandler SensorElementDataUpdatedEventHandler;
+
 
         [property: JsonIgnore]
         [ObservableProperty]
@@ -887,9 +895,19 @@ namespace Touch_Panel.Model
                         Debug.WriteLine($"MICOM 2: {FirmwareMicom.Micom2}");
                     }
                 }
+                else if (frame[1] == (byte)'C')
+                {
+                    if (frame[2] == (byte)'L')
+                    {
+                        Micom1CalibResponse = true;
 
+                    }
+                    if (frame[2] == (byte)'R')
+                    {
+                        Micom2CalibResponse = true;
+                    }
 
-
+                }
 
             }
             catch
@@ -1066,16 +1084,21 @@ namespace Touch_Panel.Model
         }
 
 
+
         internal async Task RecalibMICOM(int id)
         {
+
             SerialPortStream micomPort = new SerialPortStream();
             if (id == 1)
             {
                 micomPort = DeviceManager.MicomPort1;
+                Micom1CalibResponse = false;
+
             }
             else if (id == 2)
             {
                 micomPort = DeviceManager.MicomPort2;
+                Micom2CalibResponse = false;
 
             }
             if (!micomPort.IsOpen) return;

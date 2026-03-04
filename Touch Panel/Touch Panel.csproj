@@ -7,6 +7,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -22,6 +23,10 @@
       <VersionMajor>2</VersionMajor>
       <Guid>215d64d2-031c-33c7-96e3-61794cd1ee61</Guid>
     </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="AppIcon.ico" />
   </ItemGroup>
 
   <ItemGroup>

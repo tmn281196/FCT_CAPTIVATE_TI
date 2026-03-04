@@ -8,6 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("appicon.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("ftd2xx.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("libftdi1.dll")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("libusb-1.0.dll")]

@@ -411,8 +411,8 @@ Margin="2">
                             <Button ToolTip="Resume MICOM 1"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="1">
                                 RESUME
                             </Button>
-                            <Button ToolTip="Recalibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="1">
-                                RECALIB
+                            <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="1">
+                                CALIB
                             </Button>
                         </StackPanel>
 
@@ -461,8 +461,8 @@ Margin="2">
                             <Button ToolTip="Resume MICOM 2"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="2">
                                 RESUME
                             </Button>
-                            <Button ToolTip="Recalibrate MICOM 2"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="2">
-                                RECALIB
+                            <Button ToolTip="Calibrate MICOM 2"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="2">
+                                CALIB
                             </Button>
                         </StackPanel>
                      
