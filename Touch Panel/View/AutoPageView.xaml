@@ -13,18 +13,11 @@
             <Style x:Key="StatusLabelStyle" TargetType="Label">
                 <Style.Triggers>
 
-                    <DataTrigger Binding="{Binding Status}" Value="Calibrate">
-                        <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="30" />
-
-                        <Setter Property="Background" Value="Orange" />
-                        <Setter Property="Content" Value="Calibrating..." />
-
-                    </DataTrigger>
+               
                     
                     <DataTrigger Binding="{Binding Status}" Value="Wait">
                         <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontSize" Value="20" />
 
                         <Setter Property="Background" Value="Orange" />
                         <Setter Property="Content" Value="WAIT" />
@@ -33,7 +26,7 @@
 
                     <DataTrigger Binding="{Binding Status}" Value="Ready">
                         <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontSize" Value="20" />
 
                         <Setter Property="Background" Value="#347474" />
                         <Setter Property="Content" Value="READY" />
@@ -42,16 +35,16 @@
 
                     <DataTrigger Binding="{Binding Status}" Value="Testing">
                         <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontSize" Value="20" />
 
                         <Setter Property="Background" Value="#f8da5b" />
                         <Setter Property="Content" Value="TESTING" />
 
                     </DataTrigger>
 
-                    <DataTrigger Binding="{Binding Status}" Value="Pass">
+                    <!--<DataTrigger Binding="{Binding Status}" Value="Pass">
                         <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontSize" Value="20" />
 
                         <Setter Property="Background" Value="LimeGreen" />
                         <Setter Property="Content" Value="PASS" />
@@ -60,19 +53,50 @@
 
                     <DataTrigger Binding="{Binding Status}" Value="Fail">
                         <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontSize" Value="20" />
                         <Setter Property="Background" Value="Red" />
                         <Setter Property="Content" Value="FAIL" />
 
-                    </DataTrigger>
+                    </DataTrigger>-->
                     <DataTrigger Binding="{Binding Status}" Value="Stop">
                         <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontSize" Value="20" />
 
                         <Setter Property="Background" Value="Black" />
                         <Setter Property="Content" Value="STOP" />
 
                     </DataTrigger>
+
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="PrevStatusLabelStyle" TargetType="Label">
+                <Style.Triggers>
+
+                    <DataTrigger Binding="{Binding StringTestResult}" Value="">
+                        <Setter Property="Foreground" Value="Beige" />
+                        <Setter Property="FontSize" Value="30" />
+
+                        <Setter Property="Background" Value="LightBlue" />
+
+                    </DataTrigger>
+
+                    <DataTrigger Binding="{Binding StringTestResult}" Value="Pass">
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="FontSize" Value="30" />
+
+                        <Setter Property="Background" Value="LimeGreen" />
+                        <Setter Property="Content" Value="PASS" />
+
+                    </DataTrigger>
+
+                    <DataTrigger Binding="{Binding StringTestResult}" Value="Fail">
+                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="Background" Value="Red" />
+                        <Setter Property="Content" Value="FAIL" />
+                    </DataTrigger>
+                 
 
                 </Style.Triggers>
             </Style>
@@ -86,7 +110,6 @@
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
-            <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -205,14 +228,11 @@
 
         <StackPanel Grid.Row="1" Grid.Column="2" Margin="0.5, 0" >
             <Label HorizontalContentAlignment="Center" Content="Status" Foreground="White" Background="{StaticResource BaseBrush}" />
-            <Label Content="{Binding PrevStatus}" x:Name="prevStatusLbl" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="120" Style="{StaticResource StatusLabelStyle}" />
+            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="50" Style="{StaticResource StatusLabelStyle}" />
+            <Label   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="70" Style="{StaticResource PrevStatusLabelStyle}" />
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Grid.Column="3" Margin="0.5, 0" >
-            <Label HorizontalContentAlignment="Center" Content="Status" Foreground="White" Background="{StaticResource BaseBrush}" />
-            <Label Content="{Binding CurrentStatus}" x:Name="statusLbl" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="120" Style="{StaticResource StatusLabelStyle}" />
-        </StackPanel>
-
+      
         <Grid Grid.Row="1">
 
             <!-- Chia layout theo chiều dọc -->

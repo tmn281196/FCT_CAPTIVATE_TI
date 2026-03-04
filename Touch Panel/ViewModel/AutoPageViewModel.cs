@@ -96,6 +96,9 @@ namespace Touch_Panel.View_Model
         private string status;
 
         [ObservableProperty]
+        private string stringTestResult = string.Empty;
+
+        [ObservableProperty]
         private TestLogic testLogic;
 
         public event EventHandler EscapTimeChange;
@@ -254,7 +257,7 @@ namespace Touch_Panel.View_Model
                             Model.Devices.ResetSolenoid1(),
                             Model.Devices.ResetSolenoid2()
                         );
-                        Status = "Fail";
+                        StringTestResult = "Fail";
                         await Task.Delay(500);
                         Fail += 1;
                         SaveLog(false);
@@ -269,7 +272,7 @@ namespace Touch_Panel.View_Model
                             Model.Devices.ResetSolenoid2()
                         );
                         await Model.Devices.ResetMainCylinder();
-                        Status = "Pass";
+                        StringTestResult = "Pass";
                         await Task.Delay(500);
                         Pass += 1;
                         SaveLog(true);
