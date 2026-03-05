@@ -138,6 +138,79 @@ namespace Touch_Panel.View_Model
         private int timeTestInput;
 
 
+        [RelayCommand]
+
+        private void SkipAllSteps(object parameter)
+        {
+            if (AutoState.Test == TestState.Testing)
+            {
+                MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            int testerId = int.Parse((string)parameter);
+            switch (testerId)
+            {
+                case 1:
+                    foreach (var item in Model.Step1.Steps)
+                    {
+                        item.NoSkip = false;
+                    }
+
+
+                    break;
+                case 2:
+                    foreach (var item in Model.Step2.Steps)
+                    {
+                        item.NoSkip = false;
+                    }
+
+                    break;
+                default:
+
+                    break;
+            }
+
+        }
+
+        [RelayCommand]
+
+        private void UnSkipAllSteps(object parameter)
+        {
+            if (AutoState.Test == TestState.Testing)
+            {
+                MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            int testerId = int.Parse((string)parameter);
+            switch (testerId)
+            {
+                case 1:
+                    foreach (var item in Model.Step1.Steps)
+                    {
+                        item.NoSkip = true;
+                    }
+
+
+                    break;
+                case 2:
+                    foreach (var item in Model.Step2.Steps)
+                    {
+                        item.NoSkip = true;
+                    }
+
+                    break;
+                default:
+
+                    break;
+            }
+
+        }
+
+
+
+
         [RelayCommand(CanExecute = nameof(CanAddStep))]
         private void AddStep(object parameter)
         {

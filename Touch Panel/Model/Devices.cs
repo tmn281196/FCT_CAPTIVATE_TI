@@ -208,10 +208,11 @@ namespace Touch_Panel.Model
 
 
 
+        [JsonIgnore]
         [ObservableProperty]
         private string micom1FirmwareLog;
 
-
+        [JsonIgnore]
         [ObservableProperty]
         private string micom2FirmwareLog;
 
@@ -1210,34 +1211,30 @@ namespace Touch_Panel.Model
         }
 
 
-        internal async Task ResetSolenoid1()
+        internal async Task ResetSolenoid(Tester tester)
         {
-            if (!DeviceManager.Solenoid1Port.IsOpen) return;
+            SerialPortStream serialPort = null;
+            if (tester.ID == 1)
+            {
+                serialPort = DeviceManager.Solenoid2Port;
+            }
+            if (tester.ID == 0)
+            {
+                serialPort = DeviceManager.Solenoid1Port;
+            }
 
-            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 1");
+            if (!serialPort.IsOpen) return;
+
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == $"Solenoid {tester.ID+1}");
             device.TxSent = true;
 
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
 
-            DeviceManager.Solenoid1Port.Write(tx, 0, tx.Length);
+            serialPort.Write(tx, 0, tx.Length);
             device.TxSent = false;
 
 
         }
-
-        internal async Task ResetSolenoid2()
-        {
-            if (!DeviceManager.Solenoid2Port.IsOpen) return;
-
-            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 2");
-            device.TxSent = true;
-
-            byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
-
-            DeviceManager.Solenoid2Port.Write(tx, 0, tx.Length);
-            device.TxSent = false;
-
-
-        }
+        
     }
 }

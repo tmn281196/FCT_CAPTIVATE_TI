@@ -60,7 +60,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private async Task ForceStop()
         {
-            
+
             testLogic.Tester1.stopTest = true;
             testLogic.Tester2.stopTest = true;
         }
@@ -134,14 +134,15 @@ namespace Touch_Panel.View_Model
         }
 
         public async void START()
-        {         
+        {
             await Task.Run(TestStart);
         }
 
 
         private async void TestStart()
         {
-            State.Test = TestState.Wait;
+            State.Test = TestState.Ready;
+            StringTestResult = "BEGIN";
 
             await Task.WhenAll(
                 Model.Devices.HaltMICOM(1),
@@ -149,14 +150,13 @@ namespace Touch_Panel.View_Model
             );
 
             await Task.WhenAll(
-                Model.Devices.ResetSolenoid1(),
-                Model.Devices.ResetSolenoid2()
+                Model.Devices.ResetSolenoid(testLogic.Tester1),
+                Model.Devices.ResetSolenoid(testLogic.Tester2)
             );
 
             TestLogic.Tester1.ClearSteps();
             TestLogic.Tester2.ClearSteps();
 
-            //await Model.Devices.ResetMainCylinder();
 
             while (runWhileLoop)
             {
@@ -180,8 +180,8 @@ namespace Touch_Panel.View_Model
                             {
 
                                 await Task.WhenAll(
-                                     Model.Devices.ResetSolenoid1(),
-                                     Model.Devices.ResetSolenoid2()
+                                      Model.Devices.ResetSolenoid(testLogic.Tester1),
+                                      Model.Devices.ResetSolenoid(testLogic.Tester2)
                                 );
 
                                 Model.Devices.ConnectorAllUp();
@@ -194,10 +194,12 @@ namespace Touch_Panel.View_Model
                         Status = "Ready";
                         if (Model.Devices.SystemData.MainUpFlag == true && Model.Devices.SystemData.MainBottom)
                         {
-                            await Task.Delay(1000);
+                            //await Task.Delay(1000);
 
 
                             Model.Devices.ConnectorAllDown();
+
+                            StringTestResult = "BEGIN";
 
                             State.Test = TestState.Testing;
                             Model.Devices.SystemData.MainUpFlag = false;
@@ -206,7 +208,7 @@ namespace Touch_Panel.View_Model
 
                     case TestState.Testing:
 
-                        await Task.Delay(1500);
+                        await Task.Delay(2000);
 
                         await Task.WhenAll(
                           Model.Devices.ResumeMICOM(1),
@@ -215,22 +217,23 @@ namespace Touch_Panel.View_Model
 
 
 
+                        Status = "Testing";
 
                         stopwatch.Start();
                         taktTimer.Start();
 
-
-
-                        Status = "Testing";
                         await TestLogic.RunAllTestSteps();
-
-
 
                         stopwatch.Stop();
                         taktTimer.Stop();
 
 
-                        await Task.Delay(2000);
+                        await Task.WhenAll(
+                            Model.Devices.ResetSolenoid(testLogic.Tester1),
+                            Model.Devices.ResetSolenoid(testLogic.Tester2)
+                        );
+
+                        await Task.Delay(100);
                         await Task.WhenAll(
                             Model.Devices.HaltMICOM(1),
                             Model.Devices.HaltMICOM(2)
@@ -253,10 +256,11 @@ namespace Touch_Panel.View_Model
 
                     case TestState.NG:
 
-                        await Task.WhenAll(
-                            Model.Devices.ResetSolenoid1(),
-                            Model.Devices.ResetSolenoid2()
-                        );
+                        if (Model.Settings.ShouldMainResetWhenFailTest)
+                        {
+                            await Model.Devices.ResetMainCylinder();
+
+                        }
                         StringTestResult = "Fail";
                         await Task.Delay(500);
                         Fail += 1;
@@ -267,11 +271,12 @@ namespace Touch_Panel.View_Model
 
                     case TestState.OK:
 
-                        await Task.WhenAll(
-                            Model.Devices.ResetSolenoid1(),
-                            Model.Devices.ResetSolenoid2()
-                        );
-                        await Model.Devices.ResetMainCylinder();
+                        if (Model.Settings.ShouldMainResetWhenPassTest)
+                        {
+                            await Model.Devices.ResetMainCylinder();
+
+                        }
+
                         StringTestResult = "Pass";
                         await Task.Delay(500);
                         Pass += 1;
@@ -281,14 +286,7 @@ namespace Touch_Panel.View_Model
                         break;
 
                     case TestState.Stop:
-
-                        await Task.WhenAll(
-                            Model.Devices.ResetSolenoid1(),
-                            Model.Devices.ResetSolenoid2()
-                        );
-
                         Status = "Stop";
-                        //await Task.Delay(2000);
                         stopwatch.Reset();
                         State.Test = TestState.Wait;
                         break;
@@ -303,6 +301,7 @@ namespace Touch_Panel.View_Model
 
         private void SaveLog(bool pass)
         {
+            if (!Model.Settings.ShouldSaveLog) return;
             string dir = Model.Settings.LogDir;
             if (dir == null) return;
             if (!Directory.Exists(dir))

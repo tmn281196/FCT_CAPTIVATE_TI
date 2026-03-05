@@ -18,5 +18,14 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private bool shouldStopAllWhenAnyFailedStep = false;
 
+
+        [ObservableProperty]
+        private bool shouldMainResetWhenPassTest = true;
+
+        [ObservableProperty]
+        private bool shouldMainResetWhenFailTest = false;
+
+        [ObservableProperty]
+        private bool shouldSaveLog = true;
     }
 }

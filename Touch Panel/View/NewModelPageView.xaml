@@ -100,7 +100,17 @@
                         <fa:IconImage Icon="Trash" Foreground="Gray" Width="25"/>
                     </StackPanel>
                 </Button>
-
+                <Button Command="{Binding SkipAllStepsCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                    <StackPanel Orientation="Horizontal" >
+                        <fa:IconImage Icon="Square" Foreground="Gray" Width="25"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding UnSkipAllStepsCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                    <StackPanel Orientation="Horizontal" >
+                        <fa:IconImage Icon="CheckSquare" Foreground="Gray" Width="25"/>
+                    </StackPanel>
+                </Button>
+           
             </StackPanel>
 
 
@@ -185,7 +195,16 @@ VerticalContentAlignment="Center" >
 
 
             <StackPanel   Orientation="Horizontal" Grid.Column="2"  HorizontalAlignment="Right">
-
+                <Button Command="{Binding UnSkipAllStepsCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                    <StackPanel Orientation="Horizontal" >
+                        <fa:IconImage Icon="CheckSquare" Foreground="Gray" Width="25"/>
+                    </StackPanel>
+                </Button>
+                <Button Command="{Binding SkipAllStepsCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                    <StackPanel Orientation="Horizontal" >
+                        <fa:IconImage Icon="Square" Foreground="Gray" Width="25"/>
+                    </StackPanel>
+                </Button>
                 <Button Command="{Binding AddStepCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="5">
                     <StackPanel Orientation="Horizontal" >
                         <fa:IconImage Icon="Add" Foreground="Gray" Width="25"/>
@@ -229,7 +248,7 @@ VerticalContentAlignment="Center" >
                     <DataGridTextColumn Binding="{Binding Objectid}" Width="*" Header="Object ID" />
                     <DataGridTextColumn Binding="{Binding Specvalue}" Width="*" Header="Spec Value" />
 
-                    <DataGridCheckBoxColumn Header="Skip" Binding="{Binding Skip, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="*" />
+                    <DataGridCheckBoxColumn Header="Enable" Binding="{Binding NoSkip, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="*" />
                 </DataGrid.Columns>
 
 
@@ -248,7 +267,7 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
 
                     <DataGridTextColumn Binding="{Binding Objectid, UpdateSourceTrigger=PropertyChanged}" Width="*"  Header="Object ID" />
                     <DataGridTextColumn Binding="{Binding Specvalue, UpdateSourceTrigger=PropertyChanged}" Width="*"  Header="Spec Value" />
-                    <DataGridCheckBoxColumn Header="Skip" Binding="{Binding Skip, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="*" />
+                    <DataGridCheckBoxColumn Header="Enable" Binding="{Binding NoSkip, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"  Width="*" />
                 </DataGrid.Columns>
 
 

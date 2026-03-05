@@ -96,7 +96,7 @@ namespace Touch_Panel.Model
         private string result;
 
         [ObservableProperty]
-        private bool skip;
+        private bool noSkip = true;
 
         public object Clone()
         {

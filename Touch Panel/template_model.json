@@ -699,7 +699,7 @@
   "Devices": {
     "EnableResetCylinder": true,
     "Micom1FirmwareLog": null,
-    "Micom2FirmwareLog": "OK",
+    "Micom2FirmwareLog": null,
     "MicomCom1Port": "COM10",
     "MicomCom2Port": "COM9",
     "SystemComPort": "COM3",

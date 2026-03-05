@@ -120,12 +120,12 @@ namespace Touch_Panel.View_Model
             switch (testerId)
             {
                 case 1:
-                    Model.Devices.ResetSolenoid1();
+                    Model.Devices.ResetSolenoid(testLogic.Tester1);
                     testLogic.Tester1.ClearSteps();
 
                     break;
                 case 2:
-                    Model.Devices.ResetSolenoid2();
+                    Model.Devices.ResetSolenoid(testLogic.Tester2);
                     testLogic.Tester2.ClearSteps();
 
                     break;
@@ -135,11 +135,6 @@ namespace Touch_Panel.View_Model
         }
 
 
-        [RelayCommand]
-        private void ResetTest()
-        {
-            testLogic.manualResetTest();
-        }
 
         [RelayCommand]
         private void ResetCylinder()

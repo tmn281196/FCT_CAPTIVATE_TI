@@ -14,7 +14,7 @@
 
         <StackPanel Orientation="Vertical"  Grid.ColumnSpan="2" >
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"> 
-                <Label HorizontalAlignment="Center" Content="Log Directory" Width="100" FontWeight="Bold"/>
+                <Label Padding="0" HorizontalAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Content="Log Directory" Width="100" FontWeight="Bold"/>
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBox   Text="{Binding Model.Settings.LogDir, Mode=OneWay}" IsReadOnly="True" x:Name="mesDirTxtBox" Width="500" Padding="0 2" VerticalAlignment="Center" />
@@ -26,16 +26,15 @@
             </StackPanel>
     
 
-            <!--<Label HorizontalAlignment="Center" Content="Value Minimum Offset" />-->
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
-                <!--<TextBox Text="{Binding Model.Settings.Offset}"  Margin="0, 0, 10, 0" Width="50" Height="20"  />-->
-            </StackPanel>
+
             <Separator/>
 
 
             <StackPanel  Orientation="Vertical">
-          
+
                 <StackPanel Margin="5">
+                    <Label Padding="0" Content="Communication" FontWeight="Bold"  />
+
                     <StackPanel Margin="0 5" Orientation="Horizontal">
                         <Label Content="Micom 1" Width="70"/>
                         <ComboBox  HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.MicomCom1Port}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
@@ -68,6 +67,7 @@
                         <Label Content="Solenoid 3" Width="70"/>
                         <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid3ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
                         <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 2" Margin="10, 0" Cursor="Hand"/>
+
                     </StackPanel>
                 </StackPanel>
                 <Button Command="{Binding RefreshComportCommand}" HorizontalAlignment="Left" Width="24" Height="24" Margin="10 0" Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Enumerate COM Ports">
@@ -77,14 +77,21 @@
             </StackPanel>
             <Separator/>
 
-            <StackPanel  Margin="5">
-                <StackPanel Margin="0 5" Orientation="Horizontal">
-                    <Label Content="Delay Before Test Begin (ms)" />
-                    <TextBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="50" Padding="2 2" Text="{Binding Model.Settings.DelayBeforeTestBegin}"/>
-                </StackPanel>
-                <CheckBox  Margin="0 5"  Content="Reset Cylinder When Test Pass" IsChecked="{Binding Model.Devices.EnableResetCylinder}"/>
-                <CheckBox  Margin="0 5"  Content="Should Stop All When Any Failed Step" IsChecked="{Binding Model.Settings.ShouldStopAllWhenAnyFailedStep}"/>
+            <StackPanel  >
 
+                <StackPanel Margin="5">
+                    <Label Padding="0" Content="Test Flow" FontWeight="Bold" />
+                    <StackPanel Margin="5 0"  >
+
+
+                        <CheckBox  Margin="0 5"  Content="Reset Cylinder When Test Pass" IsChecked="{Binding Model.Devices.EnableResetCylinder}"/>
+                        <CheckBox  Margin="0 5"  Content="Should Stop All When Any Failed Step" IsChecked="{Binding Model.Settings.ShouldStopAllWhenAnyFailedStep}"/>
+                        <CheckBox  Margin="0 5"  Content="Should Main Reset When Pass Test" IsChecked="{Binding Model.Settings.ShouldMainResetWhenPassTest}"/>
+                        <CheckBox  Margin="0 5"  Content="Should Main Reset When Fail Test" IsChecked="{Binding Model.Settings.ShouldMainResetWhenFailTest}"/>
+                        <CheckBox  Margin="0 5"  Content="Should Save Log File" IsChecked="{Binding Model.Settings.ShouldSaveLog}"/>
+
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
             
             

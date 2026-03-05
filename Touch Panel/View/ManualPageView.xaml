@@ -77,7 +77,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <DataGrid VerticalScrollBarVisibility="Visible" IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester1.CurrStep}" SelectedItem="{Binding SelectedItem1}"  Grid.Row="0" ItemsSource="{Binding Model.Step1.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+        <DataGrid  IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester1.CurrStep}" SelectedItem="{Binding SelectedItem1}"  Grid.Row="0" ItemsSource="{Binding Model.Step1.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}"
         ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding No}" Width="50" Header="No" />
@@ -127,7 +127,7 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>
-        <DataGrid VerticalScrollBarVisibility="Visible" IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester2.CurrStep}" SelectedItem="{Binding SelectedItem2}"  Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Model.Step2.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+        <DataGrid  IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester2.CurrStep}" SelectedItem="{Binding SelectedItem2}"  Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Model.Step2.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}"
      ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding No}" Width="50" Header="No" />
@@ -190,13 +190,13 @@
                     <ItemsControl ItemsSource="{Binding Model.Devices.ListCAPSensor1}" Margin="1">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  />
                             </ItemsPanelTemplate>
                         </ItemsControl.ItemsPanel>
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
 
-                                <Border Background="#F0F0F0"   BorderBrush="Gray"  Padding="1"  Margin="1" BorderThickness="1">
+                                <Border Background="#F0F0F0"   BorderBrush="Orange"  Padding="1"  Margin="1" BorderThickness="1">
                                     <StackPanel>
 
 
@@ -320,7 +320,7 @@ Margin="2">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
 
-                                <Border Background="#F0F0F0"   BorderBrush="Gray"  Padding="1"  Margin="1" BorderThickness="1">
+                                <Border Background="#F0F0F0"   BorderBrush="Orange"  Padding="1"  Margin="1" BorderThickness="1">
                                     <StackPanel>
 
 

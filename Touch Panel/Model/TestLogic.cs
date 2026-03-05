@@ -90,6 +90,8 @@ namespace Touch_Panel.Model
 
         public async Task RunTester(Tester tester)
         {
+            FlagNG = false;
+
             tester.stopTest = false;
             tester.ClearSteps();
             tester.CurrStep = 0;
@@ -146,7 +148,15 @@ namespace Touch_Panel.Model
 
         public async void manualFullTest(Tester tester)
         {
+            FlagNG = false;
+
+            await Model.Devices.ResetSolenoid(tester);
+
+
             await RunTester(tester);
+
+            await Model.Devices.ResetSolenoid(tester);
+
         }
         public void manualResetTest()
         {
@@ -186,8 +196,8 @@ namespace Touch_Panel.Model
         public async Task RunTestStep(Step step, Tester tester)
         {
             string stepName = step.Test;
-            bool stepSkip = step.Skip;
-            if (stepSkip)
+            bool stepNoSkip = step.NoSkip;
+            if (!stepNoSkip)
             {
                 step.Result = "Skip";
                 await Task.Delay(50);
@@ -299,10 +309,10 @@ namespace Touch_Panel.Model
 
             byte[] txFFinal = txFinal.ToArray();
 
-            foreach (var item in txFinal)
-            {
-                Debug.Write(item.ToString("X2") + " ");
-            }
+            //foreach (var item in txFinal)
+            //{
+            //    Debug.Write(item.ToString("X2") + " ");
+            //}
 
             if (solNum == "1")
             {
