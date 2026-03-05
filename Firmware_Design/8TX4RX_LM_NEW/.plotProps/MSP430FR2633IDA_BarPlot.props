@@ -1,5 +1,5 @@
-#C:\Users\Com26\CapTIvateDesignCenter_1_83_00_08\CapTIvateDesignCenterWorkspace\TI_Examples\8TX4RX_LM/.plotProps/MSP430FR2633IDA_BarPlot.props Plotter Data
-#Mon Mar 02 13:32:13 ICT 2026
+#C:\Users\Com26\CapTIvateDesignCenter_1_83_00_08\CapTIvateDesignCenterWorkspace\TI_Examples\8TX4RX_LM_NEW/.plotProps/MSP430FR2633IDA_BarPlot.props Plotter Data
+#Wed Mar 04 17:05:41 ICT 2026
 Signal.alias.Touch\ Threshold=
 Signal.alias.GRID=
 xlabel=Time
@@ -20,10 +20,10 @@ xmax=21.000000
 legendFont=helvetica-BOLD-14
 ymin=0.000000
 Prox\ Threshold=on
-yrangetype=false
 ymax=1200.000000
-Touch\ Threshold=on
+yrangetype=false
 graphtype=PtsCon
+Touch\ Threshold=on
 Signal.alias.Prox\ Threshold=
 persistence=2000
 Signal.alias.Delta=

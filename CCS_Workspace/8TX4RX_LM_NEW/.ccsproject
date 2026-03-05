@@ -6,9 +6,9 @@
 	<deviceFamily value="MSP430"/>
 	<executableActions value=""/>
 	<createSlaveProjects value=""/>
-	<templateProperties value="id=8TX4RX_LM.projectspec.8TX4RX_LM"/>
+	<templateProperties value="id=8TX4RX_LM_NEW.projectspec.8TX4RX_LM_NEW"/>
 	<connection value="common/targetdb/connections/TIMSP430-USB.xml"/>
 	<activeTargetConfiguration value="targetConfigs/MSP430FR2633.ccxml"/>
-	<origin value="C:\Users\Com26\CapTIvateDesignCenter_1_83_00_08\CapTIvateDesignCenterWorkspace\TI_Examples\8TX4RX_LM\src\CCS\8TX4RX_LM.projectspec"/>
+	<origin value="C:\Users\Com26\CapTIvateDesignCenter_1_83_00_08\CapTIvateDesignCenterWorkspace\TI_Examples\8TX4RX_LM_NEW\src\CCS\8TX4RX_LM_NEW.projectspec"/>
 	<filesToOpen value=""/>
 </projectOptions>

@@ -65,7 +65,7 @@
 //*****************************************************************************
 #define NUM_BUTTONS     2
 #define FRAMES_PER_BTN  12   // giả sử max cycles = 12, điều chỉnh theo thực tế
-#define FRAME_SIZE 8
+#define FRAME_SIZE 10
 
 static uint8_t tx_buf[NUM_BUTTONS][FRAMES_PER_BTN][FRAME_SIZE];
 static uint8_t tx_frame_counts[NUM_BUTTONS] = {0};   // đếm riêng cho từng button
@@ -86,32 +86,57 @@ static volatile uint8_t rx_tail = 0; // read index (main)
 extern volatile bool isFrozen;
 
 
+// Hàm tính CRC-16 CCITT (poly 0x1021, init 0xFFFF)
+static uint16_t calculate_crc16(const uint8_t *data, uint8_t len)
+{
+    uint16_t crc = 0xFFFF;
+    uint8_t i, j;
+
+    for (i = 0; i < len; i++)
+    {
+        crc ^= (uint16_t)data[i] << 8;  // XOR byte vào MSB của CRC
+
+        for (j = 0; j < 8; j++)
+        {
+            if (crc & 0x8000)
+            {
+                crc = (crc << 1) ^ 0x1021;
+            }
+            else
+            {
+                crc <<= 1;
+            }
+            crc &= 0xFFFF;  // Giữ trong 16 bit
+        }
+    }
+    return crc;
+}
 
 static void prepare_tx_for_button(tSensor *pSensor, uint8_t btn_idx, uint8_t button_id)
 {
     uint8_t *count_ptr = &tx_frame_counts[btn_idx];
     *count_ptr = 0;
-    uint8_t iCycle ;
-    for ( iCycle = 0; iCycle < pSensor->ui8NrOfCycles; iCycle++)
+    uint8_t iCycle;
+
+    for (iCycle = 0; iCycle < pSensor->ui8NrOfCycles; iCycle++)
     {
         if (*count_ptr >= FRAMES_PER_BTN) break;
-
         uint8_t *frame = tx_buf[btn_idx][*count_ptr];
 
         frame[0] = STX;
         frame[1] = button_id;
         frame[2] = iCycle;
+
         uint8_t iElement;
         for (iElement = 0; iElement < 2; iElement++)
         {
             if (iElement < pSensor->pCycle[iCycle]->ui8NrOfElements)
             {
-                uint16_t fc  = pSensor->pCycle[iCycle]->pElements[iElement]->filterCount.ui16Natural;
+                uint16_t fc = pSensor->pCycle[iCycle]->pElements[iElement]->filterCount.ui16Natural;
                 uint16_t lta = pSensor->pCycle[iCycle]->pElements[iElement]->LTA.ui16Natural;
                 uint16_t delta = (fc > lta) ? (fc - lta) : (lta - fc);
-
-                frame[3 + iElement * 2] = (uint8_t)(delta >> 8);
-                frame[4 + iElement * 2] = (uint8_t)(delta & 0xFF);
+                frame[3 + iElement * 2]     = (uint8_t)(delta >> 8);    // MSB
+                frame[4 + iElement * 2]     = (uint8_t)(delta & 0xFF);  // LSB
             }
             else
             {
@@ -120,14 +145,22 @@ static void prepare_tx_for_button(tSensor *pSensor, uint8_t btn_idx, uint8_t but
             }
         }
 
-        frame[FRAME_SIZE - 1] = ETX;
+        // === Chèn CRC-16 trước ETX ===
+        // Tính CRC trên toàn bộ frame từ STX đến byte cuối data (không tính CRC và ETX)
+        uint8_t crc_pos_start = FRAME_SIZE - 3;  // Vị trí bắt đầu của 2 bytes CRC
+        uint8_t data_len      = crc_pos_start;   // Độ dài data để tính CRC (từ frame[0] đến frame[crc_pos_start-1])
+
+        uint16_t crc = calculate_crc16(frame, data_len);
+
+        frame[crc_pos_start]     = (uint8_t)(crc >> 8);   // CRC MSB (high byte)
+        frame[crc_pos_start + 1] = (uint8_t)(crc & 0xFF); // CRC LSB (low byte)
+        frame[FRAME_SIZE - 1]    = ETX;                   // ETX ở cuối cùng
+
         (*count_ptr)++;
     }
 
     tx_pending_flags[btn_idx] = (*count_ptr > 0);
 }
-
-
 
 // callback functions for buttons
 void btn00_callback(tSensor *pSensor) { prepare_tx_for_button(pSensor, 0, 0x00); }
@@ -152,80 +185,112 @@ void transmit_pending_data(void)
 }
 
 void disable_handling(void) {
-  isFrozen = true;
-  static uint8_t frame[8];
-  frame[0] = STX;
-  frame[1] = 'D';
-  frame[2] = 'I';
-  frame[3] = 'S';
-  frame[4] = 'A';
-  frame[5] = 'L';
-  frame[6] = 'B';
-  frame[7] = ETX;
-  UART_transmitBuffer(frame, 8);
+    isFrozen = true;
+
+    static uint8_t frame[FRAME_SIZE];
+    frame[0] = STX;
+    frame[1] = 'D';
+    frame[2] = 'I';
+    frame[3] = 'S';
+    frame[4] = 'A';
+    frame[5] = 'L';
+    frame[6] = 'B';
+    // frame[7] và [8] sẽ là CRC
+    frame[9] = ETX;
+
+    // Tính CRC trên 7 bytes đầu (STX đến 'B')
+    uint16_t crc = calculate_crc16(frame, 7);
+
+    frame[7] = (uint8_t)(crc >> 8);   // MSB
+    frame[8] = (uint8_t)(crc & 0xFF); // LSB
+
+    UART_transmitBuffer(frame, FRAME_SIZE);
 }
 
 void enable_handling(void) {
     isFrozen = false;
 
-  static uint8_t frame[8];
-  frame[0] = STX;
-  frame[1] = 'E';
-  frame[2] = 'N';
-  frame[3] = 'A';
-  frame[4] = 'B';
-  frame[5] = 'L';
-  frame[6] = 'E';
-  frame[7] = ETX;
-  UART_transmitBuffer(frame, 8);
+    static uint8_t frame[FRAME_SIZE];
+    frame[0] = STX;
+    frame[1] = 'E';
+    frame[2] = 'N';
+    frame[3] = 'A';
+    frame[4] = 'B';
+    frame[5] = 'L';
+    frame[6] = 'E';
+    // frame[7] và [8] sẽ là CRC
+    frame[9] = ETX;
+
+    uint16_t crc = calculate_crc16(frame, 7);
+
+    frame[7] = (uint8_t)(crc >> 8);
+    frame[8] = (uint8_t)(crc & 0xFF);
+
+    UART_transmitBuffer(frame, FRAME_SIZE);
 }
 
 void recalib_handling(void) {
+    // Recalibrate toàn bộ UI
+    CAPT_calibrateUI(&g_uiApp);
 
-  // Recalibrate toàn bộ UI - cách đơn giản nhất
-  CAPT_calibrateUI(&g_uiApp);
+    static uint8_t frame[FRAME_SIZE];
+    frame[0] = STX;
+    frame[1] = 'C';
+    frame[2] = 'L';
+    frame[3] = 'C';
+    frame[4] = 'L';
+    frame[5] = 'C';
+    frame[6] = 'L';
+    // frame[7] và [8] sẽ là CRC
+    frame[9] = ETX;
 
-  static uint8_t frame[8];
-  frame[0] = STX;
-  frame[1] = 'R';
-  frame[2] = 'E';
-  frame[3] = 'S';
-  frame[4] = 'T';
-  frame[5] = 'O';
-  frame[6] = 'K';
-  frame[7] = ETX;
-  UART_transmitBuffer(frame, 8);
+    uint16_t crc = calculate_crc16(frame, 7);
+
+    frame[7] = (uint8_t)(crc >> 8);
+    frame[8] = (uint8_t)(crc & 0xFF);
+
+    UART_transmitBuffer(frame, FRAME_SIZE);
 }
 
 void verify_handling(void) {
+    static uint8_t frame[FRAME_SIZE];
+    frame[0] = STX;
+    frame[1] = 'M';
+    frame[2] = 'L';
+    frame[3] = 0x00;
+    frame[4] = 0x00;
+    frame[5] = 0x00;
+    frame[6] = 0x00;
+    // frame[7] và [8] sẽ là CRC
+    frame[9] = ETX;
 
-  static uint8_t frame[8];
-  frame[0] = STX;
-  frame[1] = 'M';
-  frame[2] = 'R';
-  frame[3] = 0x00;
-  frame[4] = 0x00;
-  frame[5] = 0x00;
-  frame[6] = 0x00;
-  frame[7] = ETX;
-  UART_transmitBuffer(frame, 8);
+    uint16_t crc = calculate_crc16(frame, 7);
 
+    frame[7] = (uint8_t)(crc >> 8);
+    frame[8] = (uint8_t)(crc & 0xFF);
+
+    UART_transmitBuffer(frame, FRAME_SIZE);
 }
 
 void unknown_handling(void) {
+    static uint8_t frame[FRAME_SIZE];
+    frame[0] = STX;
+    frame[1] = 'U';
+    frame[2] = 'N';
+    frame[3] = 'K';
+    frame[4] = 'N';
+    frame[5] = 'O';
+    frame[6] = 'W';
+    // frame[7] và [8] sẽ là CRC
+    frame[9] = ETX;
 
-  static uint8_t frame[8];
-  frame[0] = STX;
-  frame[1] = 'U';
-  frame[2] = 'N';
-  frame[3] = 'K';
-  frame[4] = 'N';
-  frame[5] = 'O';
-  frame[6] = 'W';
-  frame[7] = ETX;
-  UART_transmitBuffer(frame, 8);
+    uint16_t crc = calculate_crc16(frame, 7);
+
+    frame[7] = (uint8_t)(crc >> 8);
+    frame[8] = (uint8_t)(crc & 0xFF);
+
+    UART_transmitBuffer(frame, FRAME_SIZE);
 }
-
 
 typedef enum {
   CMD_UNKNOWN = 0,
