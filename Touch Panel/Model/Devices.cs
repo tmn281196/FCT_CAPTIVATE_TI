@@ -267,7 +267,7 @@ namespace Touch_Panel.Model
 
         public Devices()
         {
-      
+
         }
 
         public void RefreshComPort()
@@ -798,13 +798,19 @@ namespace Touch_Panel.Model
             return crc;
         }
 
-        void ParseMICOMFrame(byte[] frame, ObservableCollection<CAPSensor> listCAPSensor)
+        int CRCNG1Time = 0;
+        int CRCTotal1Time = 0;
+
+        int CRCNG2Time = 0;
+        int CRCTotal2Time = 0;
+
+        void ParseMICOMFrame(byte[] frame, ObservableCollection<CAPSensor> listCAPSensor, int testerID)
         {
             if (Application.Current == null) return;
 
             try
             {
-           
+
                 // === Kiểm tra CRC-16 ===
                 // Tính CRC trên phần data từ frame[0] đến frame[6] (7 bytes: STX + button_id + cycle + 4 delta)
                 ushort calculatedCrc = CalculateCrc16(frame, 7);  // data_len = 7
@@ -814,8 +820,59 @@ namespace Touch_Panel.Model
 
                 if (calculatedCrc != receivedCrc)
                 {
-                    Debug.WriteLine($"CRC error: Calculated=0x{calculatedCrc:X4}, Received=0x{receivedCrc:X4}");
+                    if (testerID == 0)
+                    {
+                        CRCNG1Time++;
+                        CRCTotal1Time++;
+                        if (CRCTotal1Time > 999)
+                        {
+                            CRCTotal1Time = 0;
+                            CRCNG1Time = 0;
+                        }
+                        MicomData1.SignalIntegrity = $"Data Loss: {CRCNG1Time:D3}/{CRCTotal1Time:D3}";
+
+                 
+                    }
+                    if (testerID == 1)
+                    {
+                        CRCNG2Time++;
+                        CRCTotal2Time++;
+                        if (CRCTotal2Time > 999)
+                        {
+                            CRCTotal2Time = 0;
+                            CRCNG2Time = 0;
+                        }
+                        MicomData2.SignalIntegrity = $"Data Loss: {CRCNG2Time:D3}/{CRCTotal2Time:D3}";
+                    }
+
+                    //Debug.WriteLine($"CRC error: Calculated=0x{calculatedCrc:X4}, Received=0x{receivedCrc:X4}");
                     return;  // Bỏ qua frame lỗi
+                }
+                else
+                {
+                    if (testerID == 0)
+                    {
+                        CRCTotal1Time++;
+                        if (CRCTotal1Time > 999)
+                        {
+                            CRCTotal1Time = 0;
+                            CRCNG1Time = 0;
+                        }
+                        MicomData1.SignalIntegrity = $"Data Loss: {CRCNG1Time:D3}/{CRCTotal1Time:D3}";
+
+                  
+
+                    }
+                    if (testerID == 1)
+                    {
+                        CRCTotal2Time++;
+                        if (CRCTotal2Time > 999)
+                        {
+                            CRCTotal2Time = 0;
+                            CRCNG2Time = 0;
+                        }
+                        MicomData2.SignalIntegrity = $"Data Loss: {CRCNG2Time:D3}/{CRCTotal2Time:D3}";
+                    }
                 }
 
                 //Debug.WriteLine("CRC OK");  // Optional: log khi pass
@@ -862,29 +919,35 @@ namespace Touch_Panel.Model
                         elem.IsMax = (elem.Delta == maxDelta);
                     }
                 }
-                else if (frame[1] == (byte)'M')
+                else if (frame[1] == (byte)'F')
                 {
-                    if (frame[2] == (byte)'L')
+                    if(frame[2] == (byte)'W')
                     {
-                        // verNum = frame[3..6] little-endian? (cần confirm thứ tự byte)
-                        var verNum = (int)(frame[6] | (frame[5] << 8) | (frame[4] << 16) | (frame[3] << 24));
-                        MicomData1.FirmwareName = FirmwareMICOM.FirmwareList[verNum];
-                        Debug.WriteLine($"MICOM 1: {MicomData1.FirmwareName}");
+                        if (testerID == 0)
+                        {
+                            // verNum = frame[3..6] little-endian? (cần confirm thứ tự byte)
+                            var verNum = (int)(frame[6] | (frame[5] << 8) | (frame[4] << 16) | (frame[3] << 24));
+                            MicomData1.FirmwareName = FirmwareMICOM.FirmwareList[verNum];
+                            Debug.WriteLine($"MICOM 1: {MicomData1.FirmwareName}");
+                        }
+                        if (testerID == 1)
+                        {
+                            // verNum = frame[3..6] little-endian? (cần confirm thứ tự byte)
+                            var verNum = (int)(frame[6] | (frame[5] << 8) | (frame[4] << 16) | (frame[3] << 24));
+                            MicomData2.FirmwareName = FirmwareMICOM.FirmwareList[verNum];
+                            Debug.WriteLine($"MICOM 2: {MicomData2.FirmwareName}");
+                        }
+
                     }
-                    if (frame[2] == (byte)'R')
-                    {
-                        var verNum = (int)(frame[6] | (frame[5] << 8) | (frame[4] << 16) | (frame[3] << 24));
-                        MicomData2.FirmwareName = FirmwareMICOM.FirmwareList[verNum];
-                        Debug.WriteLine($"MICOM 2: {MicomData2.FirmwareName}");
-                    }
+                
                 }
                 else if (frame[1] == (byte)'C')
                 {
-                    if (frame[2] == (byte)'L')
+                    if (testerID == 0)
                     {
                         MicomData1.CalibResponseFlag = true;
                     }
-                    if (frame[2] == (byte)'R')
+                    if (testerID == 1)
                     {
                         MicomData2.CalibResponseFlag = true;
                     }
@@ -896,7 +959,7 @@ namespace Touch_Panel.Model
             }
         }
 
-        void TryParseMICOMFrame(ObservableCollection<CAPSensor> listCAPSensor, List<byte> micomRXBuffer, ref int readIndex)
+        void TryParseMICOMFrame(ObservableCollection<CAPSensor> listCAPSensor, List<byte> micomRXBuffer, ref int readIndex, int testerID)
         {
             while (micomRXBuffer.Count - readIndex >= MICOM_FRAME_LEN)
             {
@@ -918,7 +981,7 @@ namespace Touch_Panel.Model
                 readIndex += MICOM_FRAME_LEN;
 
 
-                ParseMICOMFrame(frame, listCAPSensor);
+                ParseMICOMFrame(frame, listCAPSensor, testerID);
 
 
             }
@@ -951,7 +1014,7 @@ namespace Touch_Panel.Model
                 lock (micom1RXBuffer)
                 {
                     micom1RXBuffer.AddRange(temp);
-                    TryParseMICOMFrame(ListCAPSensor1, micom1RXBuffer, ref readIndex1);
+                    TryParseMICOMFrame(ListCAPSensor1, micom1RXBuffer, ref readIndex1, 0);
                 }
             }
 
@@ -972,7 +1035,7 @@ namespace Touch_Panel.Model
                 lock (micom2RXBuffer)
                 {
                     micom2RXBuffer.AddRange(temp);
-                    TryParseMICOMFrame(ListCAPSensor2, micom2RXBuffer, ref readIndex2);
+                    TryParseMICOMFrame(ListCAPSensor2, micom2RXBuffer, ref readIndex2, 1);
                 }
 
             }
@@ -1194,7 +1257,7 @@ namespace Touch_Panel.Model
 
             if (!serialPort.IsOpen) return;
 
-            var device = DevicesStatus.FirstOrDefault(d => d.Name == $"Solenoid {tester.ID+1}");
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == $"Solenoid {tester.ID + 1}");
             device.TxSent = true;
 
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
@@ -1204,6 +1267,6 @@ namespace Touch_Panel.Model
 
 
         }
-        
+
     }
 }

@@ -90,7 +90,7 @@ namespace Touch_Panel.Model
 
         [property: JsonIgnore]
         [ObservableProperty]
-        private long taktTime;
+        private string taktTime;
 
 
         [property:JsonIgnore]

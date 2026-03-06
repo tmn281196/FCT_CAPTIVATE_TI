@@ -217,8 +217,8 @@
             <Label   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="80" Style="{StaticResource TestResultLabelStyle}" />
         </StackPanel>
 
-      
-        <Grid Grid.Row="1" >
+
+        <Grid Grid.Row="1"  >
 
             <!-- Chia layout theo chiều dọc -->
             <Grid.RowDefinitions>
@@ -226,6 +226,7 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
+            
             <!-- Title -->
             <Label Grid.Row="0"
            Content="Statistics"

@@ -48,8 +48,9 @@ namespace Touch_Panel.Model
         {
             foreach (var step in Steps)
             {
-                step.Value = "";
-                step.Result = "";
+                step.Value = string.Empty;
+                step.Result = string.Empty;
+                step.TaktTime = string.Empty;
             }
         }
 
@@ -233,7 +234,7 @@ namespace Touch_Panel.Model
             }
 
             sw.Stop();
-            step.TaktTime = sw.ElapsedMilliseconds; 
+            step.TaktTime = sw.ElapsedMilliseconds.ToString(); 
         }
 
         private async Task KEY(Step step, int testerID)

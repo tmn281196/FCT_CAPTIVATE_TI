@@ -64,7 +64,7 @@
 // Function Implementations
 //*****************************************************************************
 #define NUM_BUTTONS     3
-#define FRAMES_PER_BTN  6   // giả sử max cycles = 6, điều chỉnh theo thực tế
+#define FRAMES_PER_BTN  6   // giả sử max cycles = 5, điều chỉnh theo thực tế
 #define FRAME_SIZE 10
 
 static uint8_t tx_buf[NUM_BUTTONS][FRAMES_PER_BTN][FRAME_SIZE];
@@ -235,11 +235,11 @@ void recalib_handling(void) {
     static uint8_t frame[FRAME_SIZE];
     frame[0] = STX;
     frame[1] = 'C';
-    frame[2] = 'L';
-    frame[3] = 'C';
-    frame[4] = 'L';
-    frame[5] = 'C';
-    frame[6] = 'L';
+    frame[2] = 'A';
+    frame[3] = 'L';
+    frame[4] = 'I';
+    frame[5] = 'B';
+    frame[6] = 'R';
     // frame[7] và [8] sẽ là CRC
     frame[9] = ETX;
 
@@ -254,8 +254,8 @@ void recalib_handling(void) {
 void verify_handling(void) {
     static uint8_t frame[FRAME_SIZE];
     frame[0] = STX;
-    frame[1] = 'M';
-    frame[2] = 'L';
+    frame[1] = 'F';
+    frame[2] = 'W';
     frame[3] = 0x00;
     frame[4] = 0x00;
     frame[5] = 0x00;

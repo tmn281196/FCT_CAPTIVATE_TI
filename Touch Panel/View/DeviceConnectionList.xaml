@@ -90,6 +90,7 @@
                         <TextBlock Foreground="White" FontSize="10"  Text="MICOM2 " VerticalAlignment="Center" />
 
                         <TextBlock   Foreground="White" FontSize="10"   Text="{Binding  Devices.MicomData2.FirmwareLog}" VerticalAlignment="Center" />
+                        <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData2.SignalIntegrity}" VerticalAlignment="Center" />
 
                     </StackPanel>
                 </Label.Content>
