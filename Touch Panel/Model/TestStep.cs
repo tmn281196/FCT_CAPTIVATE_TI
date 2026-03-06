@@ -84,8 +84,14 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private int timedelay;
 
+
         [ObservableProperty]
         private int timetest;
+
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private long taktTime;
+
 
         [property:JsonIgnore]
         [ObservableProperty]

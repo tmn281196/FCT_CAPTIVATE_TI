@@ -325,12 +325,12 @@ namespace Touch_Panel.View_Model
 
             if (Model.Devices.MicomCom1Port == com)
             {
-                Model.Devices.Micom1FirmwareLog = log;
+                Model.Devices.MicomData1.FirmwareLog = log;
 
             }
             if (Model.Devices.MicomCom2Port == com)
             {
-                Model.Devices.Micom2FirmwareLog = log;
+                Model.Devices.MicomData2.FirmwareLog = log;
 
             }
 
@@ -346,12 +346,12 @@ namespace Touch_Panel.View_Model
 
             if(portName == Model.Devices.MicomCom1Port)
             {
-                Model.Devices.Micom1FirmwareLog = log;
+                Model.Devices.MicomData1.FirmwareLog = log;
 
             }
             if (portName == Model.Devices.MicomCom2Port)
             {
-                Model.Devices.Micom2FirmwareLog = log;
+                Model.Devices.MicomData2.FirmwareLog = log;
 
             }
         }
@@ -375,14 +375,14 @@ namespace Touch_Panel.View_Model
                 await Model.Devices.VerifyMICOM(testerId);
 
                 var sw = Stopwatch.StartNew();
-                while (string.IsNullOrEmpty((string)Model.Devices.FirmwareMicom.Micom1))
+                while (string.IsNullOrEmpty((string)Model.Devices.MicomData1.FirmwareName))
                 {
                     if (sw.Elapsed > timeout)
                         break;
                     Thread.Sleep(10);
                 }
 
-                FirmwareLog = Model.Devices.FirmwareMicom.Micom1 == Model.Devices.SelectedFirmwareMicom ? "MICOM1 | Valid" : "MICOM1 | Invalid";
+                FirmwareLog = Model.Devices.MicomData1.FirmwareName == Model.Devices.SelectedFirmwareMicom ? "MICOM1 | Valid" : "MICOM1 | Invalid";
             }
             if (testerId == 2)
             {
@@ -390,14 +390,14 @@ namespace Touch_Panel.View_Model
 
                 await Model.Devices.VerifyMICOM(testerId);
                 var sw = Stopwatch.StartNew();
-                while (string.IsNullOrEmpty((string)Model.Devices.FirmwareMicom.Micom2))
+                while (string.IsNullOrEmpty((string)Model.Devices.MicomData2.FirmwareName))
                 {
                     if (sw.Elapsed > timeout)
                         break;
                     Thread.Sleep(10);
                 }
 
-                FirmwareLog = Model.Devices.FirmwareMicom.Micom2 == Model.Devices.SelectedFirmwareMicom ? "MICOM2 | Valid" : "MICOM2 | Invalid";
+                FirmwareLog = Model.Devices.MicomData2.FirmwareName == Model.Devices.SelectedFirmwareMicom ? "MICOM2 | Valid" : "MICOM2 | Invalid";
             }
         }
         [RelayCommand]
@@ -436,7 +436,7 @@ namespace Touch_Panel.View_Model
 
                     Model.Devices.ConnectDeviceByName("Micom1");
 
-                    Model.Devices.Micom1FirmwareLog = "OK";
+                    Model.Devices.MicomData1.FirmwareLog = "OK";
 
 
                     break;
@@ -462,7 +462,7 @@ namespace Touch_Panel.View_Model
 
                     Model.Devices.ConnectDeviceByName("Micom2");
 
-                    Model.Devices.Micom2FirmwareLog = "OK";
+                    Model.Devices.MicomData2.FirmwareLog = "OK";
 
                     break;
                 default:

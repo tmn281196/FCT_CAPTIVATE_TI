@@ -1,6 +1,7 @@
 ﻿using BSL430_NET;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using Microsoft.VisualBasic.Logging;
 using Microsoft.Win32;
 using RJCP.IO.Ports;
 using System;
@@ -138,12 +139,12 @@ namespace Touch_Panel.View_Model
 
             if (sharedModel.Devices.MicomCom1Port == com)
             {
-                sharedModel.Devices.Micom1FirmwareLog = log;
+                sharedModel.Devices.MicomData1.FirmwareLog = log;
 
             }
             if (sharedModel.Devices.MicomCom2Port == com)
             {
-                sharedModel.Devices.Micom2FirmwareLog = log;
+                sharedModel.Devices.MicomData2.FirmwareLog = log;
 
             }
 
@@ -159,12 +160,12 @@ namespace Touch_Panel.View_Model
 
             if (portName == sharedModel.Devices.MicomCom1Port)
             {
-                sharedModel.Devices.Micom1FirmwareLog = log;
+                sharedModel.Devices.MicomData1.FirmwareLog = log;
 
             }
             if (portName == sharedModel.Devices.MicomCom2Port)
             {
-                sharedModel.Devices.Micom2FirmwareLog = log;
+                sharedModel.Devices.MicomData2.FirmwareLog = log;
 
             }
         }
@@ -187,8 +188,8 @@ namespace Touch_Panel.View_Model
 
                     // Lấy giá trị firmware động dựa trên index
                     currentFirmware = index == 1
-                        ? (string)sharedModel.Devices.FirmwareMicom.Micom1
-                        : (string)sharedModel.Devices.FirmwareMicom.Micom2;
+                        ? (string)sharedModel.Devices.MicomData1.FirmwareName
+                        : (string)sharedModel.Devices.MicomData2.FirmwareName;
 
 
                     if (!string.IsNullOrEmpty(currentFirmware))
@@ -218,11 +219,11 @@ namespace Touch_Panel.View_Model
 
                     if (index == 1)
                     {
-                        sharedModel.Devices.Micom1FirmwareLog = "OK";
+                        sharedModel.Devices.MicomData1.FirmwareLog = "OK";
                     }
                     if (index == 2)
                     {
-                        sharedModel.Devices.Micom2FirmwareLog = "OK";
+                        sharedModel.Devices.MicomData2.FirmwareLog = "OK";
                     }
 
                 }

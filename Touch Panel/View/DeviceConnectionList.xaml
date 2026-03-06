@@ -75,7 +75,9 @@
 
                         <TextBlock Foreground="White" FontSize="10"  Text="MICOM1 " VerticalAlignment="Center" />
 
-                        <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.Micom1FirmwareLog}" VerticalAlignment="Center" />
+                        <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData1.FirmwareLog}" VerticalAlignment="Center" />
+                        <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData1.SignalIntegrity}" VerticalAlignment="Center" />
+
 
                     </StackPanel>
                 </Label.Content>
@@ -87,7 +89,7 @@
 
                         <TextBlock Foreground="White" FontSize="10"  Text="MICOM2 " VerticalAlignment="Center" />
 
-                        <TextBlock   Foreground="White" FontSize="10"   Text="{Binding Devices.Micom2FirmwareLog}" VerticalAlignment="Center" />
+                        <TextBlock   Foreground="White" FontSize="10"   Text="{Binding  Devices.MicomData2.FirmwareLog}" VerticalAlignment="Center" />
 
                     </StackPanel>
                 </Label.Content>

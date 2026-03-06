@@ -104,53 +104,29 @@ namespace Touch_Panel.Model
             }
         }
     }
-    public partial class FirmwareMICOM : INotifyPropertyChanged
+
+    public partial class MICOMData : ObservableObject
     {
-        public event PropertyChangedEventHandler PropertyChanged;
+        [ObservableProperty]
+        private string firmwareName;
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private bool calibResponseFlag = false;
 
-     
-
-        private string _Micom1;
-
-        public string Micom1
-        {
-            get
-            {
-                return _Micom1;
-
-            }
-            set
-            {
-                _Micom1 = value;
-                OnPropertyChanged("Micom1");
-            }
-        }
+        [JsonIgnore]
+        [ObservableProperty]
+        private string firmwareLog;
 
 
-        private string _Micom2;
-
-        public string Micom2
-        {
-            get
-            {
-
-                return _Micom2;
-            }
-            set
-            {
-
-                _Micom2 = value;
-                OnPropertyChanged("Micom2");
-            }
-        }
-
-
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private string signalIntegrity;
     }
+
+
+
+
     public partial class CAPElement : ObservableObject
     {
         [ObservableProperty]
@@ -208,14 +184,6 @@ namespace Touch_Panel.Model
 
 
 
-        [JsonIgnore]
-        [ObservableProperty]
-        private string micom1FirmwareLog;
-
-        [JsonIgnore]
-        [ObservableProperty]
-        private string micom2FirmwareLog;
-
         [ObservableProperty]
         private string micomCom1Port;
         [ObservableProperty]
@@ -260,18 +228,26 @@ namespace Touch_Panel.Model
 
         [property: JsonIgnore]
         [ObservableProperty]
-        private bool micom1CalibResponse = false;
+        private MICOMData micomData1 = new MICOMData();
 
         [property: JsonIgnore]
         [ObservableProperty]
-        private bool micom2CalibResponse = false;
-
-        public event EventHandler SensorElementDataUpdatedEventHandler;
+        private MICOMData micomData2 = new MICOMData();
 
 
         [property: JsonIgnore]
         [ObservableProperty]
         private SystemData systemData = new SystemData();
+
+
+
+
+        [ObservableProperty]
+        private string selectedFirmwareMicom = string.Empty;
+
+
+        public event EventHandler SensorElementDataUpdatedEventHandler;
+
 
         //[property: JsonIgnore]
         [ObservableProperty]
@@ -281,15 +257,8 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private ObservableCollection<CAPSensor> listCAPSensor2 = new ObservableCollection<CAPSensor>();
 
-        [property: JsonIgnore]
-        [ObservableProperty]
-        private FirmwareMICOM firmwareMicom = new FirmwareMICOM();
 
-        [ObservableProperty]
-        private string selectedFirmwareMicom = string.Empty;
 
-        private byte startPrefix = 0xAA;
-        private byte endPrefix = 0xFF;
 
         const byte STX = 0x02;
         const byte ETX = 0x03;
@@ -899,25 +868,25 @@ namespace Touch_Panel.Model
                     {
                         // verNum = frame[3..6] little-endian? (cần confirm thứ tự byte)
                         var verNum = (int)(frame[6] | (frame[5] << 8) | (frame[4] << 16) | (frame[3] << 24));
-                        FirmwareMicom.Micom1 = View_Model.FirmwareMICOM.FirmwareList[verNum];
-                        Debug.WriteLine($"MICOM 1: {FirmwareMicom.Micom1}");
+                        MicomData1.FirmwareName = FirmwareMICOM.FirmwareList[verNum];
+                        Debug.WriteLine($"MICOM 1: {MicomData1.FirmwareName}");
                     }
                     if (frame[2] == (byte)'R')
                     {
                         var verNum = (int)(frame[6] | (frame[5] << 8) | (frame[4] << 16) | (frame[3] << 24));
-                        FirmwareMicom.Micom2 = View_Model.FirmwareMICOM.FirmwareList[verNum];
-                        Debug.WriteLine($"MICOM 2: {FirmwareMicom.Micom2}");
+                        MicomData2.FirmwareName = FirmwareMICOM.FirmwareList[verNum];
+                        Debug.WriteLine($"MICOM 2: {MicomData2.FirmwareName}");
                     }
                 }
                 else if (frame[1] == (byte)'C')
                 {
                     if (frame[2] == (byte)'L')
                     {
-                        Micom1CalibResponse = true;
+                        MicomData1.CalibResponseFlag = true;
                     }
                     if (frame[2] == (byte)'R')
                     {
-                        Micom2CalibResponse = true;
+                        MicomData2.CalibResponseFlag = true;
                     }
                 }
             }
@@ -1021,13 +990,13 @@ namespace Touch_Panel.Model
             if (id == 1)
             {
                 lockObj = DeviceManager.PortLockMicom1;
-                FirmwareMicom.Micom1 = string.Empty;
+                MicomData1.FirmwareName = string.Empty;
                 micomPort = DeviceManager.MicomPort1;
             }
             if (id == 2)
             {
                 lockObj = DeviceManager.PortLockMicom2;
-                FirmwareMicom.Micom2 = string.Empty;
+                MicomData1.FirmwareName = string.Empty;
                 micomPort = DeviceManager.MicomPort2;
 
             }
@@ -1099,13 +1068,13 @@ namespace Touch_Panel.Model
             if (id == 1)
             {
                 micomPort = DeviceManager.MicomPort1;
-                Micom1CalibResponse = false;
+                MicomData1.CalibResponseFlag = false;
 
             }
             else if (id == 2)
             {
                 micomPort = DeviceManager.MicomPort2;
-                Micom2CalibResponse = false;
+                MicomData2.CalibResponseFlag = false;
 
             }
             if (!micomPort.IsOpen) return;

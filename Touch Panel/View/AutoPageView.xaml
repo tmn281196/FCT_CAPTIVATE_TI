@@ -121,6 +121,7 @@
                     <DataGridTextColumn Binding="{Binding Objectid}" Width="*"  Header="Object ID" />
                     <DataGridTextColumn Binding="{Binding Specvalue}" Width="*"  Header="Spec Value" />
                     <DataGridTextColumn Binding="{Binding Value}" Width="100"  Header="Value" />
+                    <DataGridTextColumn Binding="{Binding TaktTime}" Width="100"  Header="Takt Time" />
                     <DataGridTemplateColumn Width="80" Header="Result">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -166,6 +167,8 @@
                     <DataGridTextColumn Binding="{Binding Objectid}" Width="*"  Header="Object ID" />
                     <DataGridTextColumn Binding="{Binding Specvalue}" Width="*"  Header="Spec Value" />
                     <DataGridTextColumn Binding="{Binding Value}" Width="100"  Header="Value" />
+                    <DataGridTextColumn Binding="{Binding TaktTime}" Width="100"  Header="Takt Time" />
+
                     <DataGridTemplateColumn Width="80" Header="Result">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

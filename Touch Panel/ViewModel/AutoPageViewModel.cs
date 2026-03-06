@@ -141,6 +141,7 @@ namespace Touch_Panel.View_Model
 
         private async void TestStart()
         {
+            //Model.Devices.SystemData.MainUpFlag = true;
             State.Test = TestState.Ready;
             StringTestResult = "BEGIN";
 
@@ -194,8 +195,6 @@ namespace Touch_Panel.View_Model
                         Status = "Ready";
                         if (Model.Devices.SystemData.MainUpFlag == true && Model.Devices.SystemData.MainBottom)
                         {
-                            //await Task.Delay(1000);
-
 
                             Model.Devices.ConnectorAllDown();
 
@@ -287,6 +286,7 @@ namespace Touch_Panel.View_Model
 
                     case TestState.Stop:
                         Status = "Stop";
+                        await Task.Delay(500);
                         stopwatch.Reset();
                         State.Test = TestState.Wait;
                         break;

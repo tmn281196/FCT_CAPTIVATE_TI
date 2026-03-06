@@ -195,6 +195,8 @@ namespace Touch_Panel.Model
 
         public async Task RunTestStep(Step step, Tester tester)
         {
+            var sw = Stopwatch.StartNew();   // bắt đầu đo thời gian
+
             string stepName = step.Test;
             bool stepNoSkip = step.NoSkip;
             if (!stepNoSkip)
@@ -229,6 +231,9 @@ namespace Touch_Panel.Model
                 default:
                     break;
             }
+
+            sw.Stop();
+            step.TaktTime = sw.ElapsedMilliseconds; 
         }
 
         private async Task KEY(Step step, int testerID)
@@ -263,7 +268,7 @@ namespace Touch_Panel.Model
                     break;
                 }
 
-                micomResponse = testerID == 0 ? Model.Devices.Micom1CalibResponse : Model.Devices.Micom2CalibResponse;
+                micomResponse = testerID == 0 ? Model.Devices.MicomData1.CalibResponseFlag : Model.Devices.MicomData2.CalibResponseFlag;
 
                 if (micomResponse) break;
                 await Task.Delay(10); 
