@@ -108,20 +108,24 @@ namespace Touch_Panel.Model
     public partial class MICOMData : ObservableObject
     {
         [ObservableProperty]
+        private int id;
+
+        [ObservableProperty]
         private string firmwareName;
 
-        [property: JsonIgnore]
         [ObservableProperty]
         private bool calibResponseFlag = false;
 
-        [JsonIgnore]
         [ObservableProperty]
         private string firmwareLog;
 
-
-        [property: JsonIgnore]
         [ObservableProperty]
         private string signalIntegrity;
+
+        public MICOMData(int index)
+        {
+            id = index;
+        }
     }
 
 
@@ -228,11 +232,11 @@ namespace Touch_Panel.Model
 
         [property: JsonIgnore]
         [ObservableProperty]
-        private MICOMData micomData1 = new MICOMData();
+        private MICOMData micomData1 = new MICOMData(1);
 
         [property: JsonIgnore]
         [ObservableProperty]
-        private MICOMData micomData2 = new MICOMData();
+        private MICOMData micomData2 = new MICOMData(2);
 
 
         [property: JsonIgnore]
@@ -342,7 +346,7 @@ namespace Touch_Panel.Model
 
 
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                     }
                 }
@@ -404,7 +408,7 @@ namespace Touch_Panel.Model
 
                         dev.Connected = true;
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
                         dev.Connected = false;
 
@@ -513,19 +517,16 @@ namespace Touch_Panel.Model
 
 
 
-        List<byte> micom1RXBuffer = new();
-        List<byte> micom2RXBuffer = new();
+        private List<byte> micom1RXBuffer = new();
+        private List<byte> micom2RXBuffer = new();
 
 
-        private List<byte> systemRxBuffer = new List<byte>();
-        private List<byte> sol1RxBuffer = new List<byte>();
-        private List<byte> sol2RxBuffer = new List<byte>();
-        private List<byte> sol3RxBuffer = new List<byte>();
+        private List<byte> sysRxBuffer = new ();
+        private List<byte> sol1RxBuffer = new ();
+        private List<byte> sol2RxBuffer = new ();
+        private List<byte> sol3RxBuffer = new ();
 
-        //public bool reedAllDown = false;
-        //public bool cylinderLow = false;
         public bool cylinderReset = false;
-        public bool sol3RxPass = false;
 
 
         private async void Solenoid2Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -551,11 +552,7 @@ namespace Touch_Panel.Model
                 if (sol2RxBuffer.Count < startIndex + 6)
                     return;
 
-                byte b1 = sol2RxBuffer[startIndex];
                 byte b2 = sol2RxBuffer[startIndex + 1];
-                byte b3 = sol2RxBuffer[startIndex + 2];
-                byte b4 = sol2RxBuffer[startIndex + 3];
-                byte b5 = sol2RxBuffer[startIndex + 4];
                 byte b6 = sol2RxBuffer[startIndex + 5];
                 var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 2");
                 device.RxReceived = true;
@@ -599,11 +596,7 @@ namespace Touch_Panel.Model
                 if (sol1RxBuffer.Count < startIndex + 6)
                     return;
 
-                byte b1 = sol1RxBuffer[startIndex];
-                byte b2 = sol1RxBuffer[startIndex + 1];
-                byte b3 = sol1RxBuffer[startIndex + 2];
-                byte b4 = sol1RxBuffer[startIndex + 3];
-                byte b5 = sol1RxBuffer[startIndex + 4];
+                byte b2 = sol1RxBuffer[startIndex + 1];    
                 byte b6 = sol1RxBuffer[startIndex + 5];
                 var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 1");
                 device.RxReceived = true;
@@ -648,11 +641,7 @@ namespace Touch_Panel.Model
                 if (sol3RxBuffer.Count < startIndex + 6)
                     return;
 
-                byte b1 = sol3RxBuffer[startIndex];
                 byte b2 = sol3RxBuffer[startIndex + 1];
-                byte b3 = sol3RxBuffer[startIndex + 2];
-                byte b4 = sol3RxBuffer[startIndex + 3];
-                byte b5 = sol3RxBuffer[startIndex + 4];
                 byte b6 = sol3RxBuffer[startIndex + 5];
                 var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 3");
                 device.RxReceived = true;
@@ -677,7 +666,7 @@ namespace Touch_Panel.Model
 
         private void SystemPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            lock (systemRxBuffer)  // KHÔNG lock lồng, lock một lần cho toàn bộ
+            lock (sysRxBuffer)  // KHÔNG lock lồng, lock một lần cho toàn bộ
             {
                 if (DeviceManager?.SystemPort == null || !DeviceManager.SystemPort.IsOpen)
                     return;
@@ -687,7 +676,7 @@ namespace Touch_Panel.Model
                 {
                     while (DeviceManager.SystemPort.BytesToRead > 0)
                     {
-                        systemRxBuffer.Add((byte)DeviceManager.SystemPort.ReadByte());
+                        sysRxBuffer.Add((byte)DeviceManager.SystemPort.ReadByte());
                     }
                 }
                 catch (Exception ex) when (ex is IOException || ex is InvalidOperationException || ex is ObjectDisposedException)
@@ -697,16 +686,16 @@ namespace Touch_Panel.Model
                 }
 
                 // Parse frames
-                while (systemRxBuffer.Count >= SYSTEM_FRAME_SIZE)
+                while (sysRxBuffer.Count >= SYSTEM_FRAME_SIZE)
                 {
-                    int startIndex = systemRxBuffer.IndexOf(STX);
+                    int startIndex = sysRxBuffer.IndexOf(STX);
                     if (startIndex < 0)
                     {
                         // Không có STX → xóa rác nếu buffer quá dài
-                        if (systemRxBuffer.Count > 2048)  // ngưỡng tùy chỉnh
+                        if (sysRxBuffer.Count > 2048)  // ngưỡng tùy chỉnh
                         {
-                            Debug.WriteLine($"Clearing junk buffer: {systemRxBuffer.Count} bytes");
-                            systemRxBuffer.Clear();
+                            Debug.WriteLine($"Clearing junk buffer: {sysRxBuffer.Count} bytes");
+                            sysRxBuffer.Clear();
                         }
                         return;
                     }
@@ -714,23 +703,23 @@ namespace Touch_Panel.Model
                     // Bỏ byte rác trước STX
                     if (startIndex > 0)
                     {
-                        systemRxBuffer.RemoveRange(0, startIndex);
+                        sysRxBuffer.RemoveRange(0, startIndex);
                         startIndex = 0;
                     }
 
-                    if (systemRxBuffer.Count < SYSTEM_FRAME_SIZE)
+                    if (sysRxBuffer.Count < SYSTEM_FRAME_SIZE)
                         return;
 
-                    if (systemRxBuffer[SYSTEM_FRAME_SIZE - 1] != ETX)
+                    if (sysRxBuffer[SYSTEM_FRAME_SIZE - 1] != ETX)
                     {
                         // Frame hỏng → bỏ STX thôi, thử tìm frame tiếp theo
-                        systemRxBuffer.RemoveAt(0);
+                        sysRxBuffer.RemoveAt(0);
                         continue;
                     }
 
                     // Frame OK → extract an toàn
                     byte[] sensorData = new byte[11];
-                    systemRxBuffer.CopyTo(1, sensorData, 0, 11);
+                    sysRxBuffer.CopyTo(1, sensorData, 0, 11);
 
                     var device = DevicesStatus?.FirstOrDefault(d => d?.Name == "System");
                     if (device == null)
@@ -768,7 +757,7 @@ namespace Touch_Panel.Model
                     }
 
                     // Xóa frame đã xử lý
-                    systemRxBuffer.RemoveRange(0, SYSTEM_FRAME_SIZE);
+                    sysRxBuffer.RemoveRange(0, SYSTEM_FRAME_SIZE);
                 }
             }
         }
@@ -1043,38 +1032,18 @@ namespace Touch_Panel.Model
         }
 
 
-        internal async Task VerifyMICOM(int id)
+        internal async Task VerifyMICOM(MicomContext micomCtx)
         {
-            object lockObj = new object();
+            micomCtx.MICOMData.FirmwareName = string.Empty;  
 
-
-            SerialPortStream micomPort = new SerialPortStream();
-
-            if (id == 1)
+            lock (micomCtx.LockObject)
             {
-                lockObj = DeviceManager.PortLockMicom1;
-                MicomData1.FirmwareName = string.Empty;
-                micomPort = DeviceManager.MicomPort1;
-            }
-            if (id == 2)
-            {
-                lockObj = DeviceManager.PortLockMicom2;
-                MicomData1.FirmwareName = string.Empty;
-                micomPort = DeviceManager.MicomPort2;
-
-            }
-
-            lock (lockObj)
-            {
-                if (!micomPort.IsOpen) return;
-                var device = DevicesStatus.FirstOrDefault(d => d.Name == $"Micom{id}");
+                if (!micomCtx.SerialPort.IsOpen) return;
+                var device = DevicesStatus.FirstOrDefault(d => d.Name == $"Micom{micomCtx.MICOMData.Id}");
                 device.TxSent = true;
 
                 byte[] tx = System.Text.Encoding.ASCII.GetBytes("VERIFY\r\n");
-                micomPort.Write(tx, 0, tx.Length);
-
-
-
+                micomCtx.SerialPort.Write(tx, 0, tx.Length);
                 device.TxSent = false;
             }
 
@@ -1163,16 +1132,7 @@ namespace Touch_Panel.Model
                 device.TxSent = false;
 
                 var start = DateTime.Now;
-                while (DateTime.Now.Subtract(start).TotalMilliseconds < 2000)
-                {
-                    if (sol3RxPass)
-                    {
-                        sol3RxPass = false;
-                        break;
-                    }
-                    await Task.Delay(1);
-                }
-
+            
                 await Task.Delay(300);
 
                 device.TxSent = true;
@@ -1181,15 +1141,7 @@ namespace Touch_Panel.Model
                 device.TxSent = false;
 
                 var start2 = DateTime.Now;
-                while (DateTime.Now.Subtract(start2).TotalMilliseconds < 2000)
-                {
-                    if (sol3RxPass)
-                    {
-                        sol3RxPass = false;
-                        break;
-                    }
-                    await Task.Delay(1);
-                }
+         
             }
 
         }
@@ -1205,17 +1157,7 @@ namespace Touch_Panel.Model
 
             DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
             device.TxSent = false;
-
-            var start = DateTime.Now;
-            while (DateTime.Now.Subtract(start).TotalMilliseconds < 2000)
-            {
-                if (sol3RxPass)
-                {
-                    sol3RxPass = false;
-                    break;
-                }
-                await Task.Delay(1);
-            }
+           
         }
 
         internal async void ConnectorAllUp()
@@ -1228,18 +1170,7 @@ namespace Touch_Panel.Model
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
 
             DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
-            device.TxSent = false;
-
-            var start = DateTime.Now;
-            while (DateTime.Now.Subtract(start).TotalMilliseconds < 2000)
-            {
-                if (sol3RxPass)
-                {
-                    sol3RxPass = false;
-                    break;
-                }
-                await Task.Delay(1);
-            }
+            device.TxSent = false;           
         }
 
 

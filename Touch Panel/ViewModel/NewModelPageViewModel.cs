@@ -38,12 +38,13 @@ namespace Touch_Panel.View_Model
                     {
                         dev.ProgressChanged += new Bsl430NetEventHandler(progressChangedEventHandler);
 
-                        Status status_baud = dev.SetBaudRate(BaudRate.BAUD_9600);
-                        Status status_mcu = dev.SetMCU(MCU.MSP430_FR2x33);
-                        Status status_invoke = dev.SetInvokeMechanism(InvokeMechanism.SHARED_JTAG);                     
+                        dev.SetBaudRate(BaudRate.BAUD_9600);
+                        dev.SetMCU(MCU.MSP430_FR2x33);
+                        dev.SetInvokeMechanism(InvokeMechanism.SHARED_JTAG);
 
 
-                        if (File.Exists(firmwareFilePath)) {
+                        if (File.Exists(firmwareFilePath))
+                        {
                             StatusEx result = dev.Upload($"{firmwareFilePath}");
                         }
                         else
@@ -97,12 +98,12 @@ namespace Touch_Panel.View_Model
         [ObservableProperty]
         private List<string> firmwareList = FirmwareMICOM.FirmwareList;
 
-  
+
 
 
         [ObservableProperty]
         private string firmwareLog;
-       
+
 
 
 
@@ -314,7 +315,6 @@ namespace Touch_Panel.View_Model
 
         }
 
-        object firmwareLoglock = new object();
 
         private void ProgressFirmwareChanged(object source, Bsl430NetEventArgs args)
         {
@@ -326,79 +326,56 @@ namespace Touch_Panel.View_Model
             if (Model.Devices.MicomCom1Port == com)
             {
                 Model.Devices.MicomData1.FirmwareLog = log;
-
             }
             if (Model.Devices.MicomCom2Port == com)
             {
                 Model.Devices.MicomData2.FirmwareLog = log;
-
             }
-
-
         }
 
 
         private void ProgressFirmwareFailed(object? sender, string message)
         {
-            string portName = sender as string;
+            string? portName = sender as string;
 
             string log = $"Error: {message}";
 
-            if(portName == Model.Devices.MicomCom1Port)
+            if (portName == Model.Devices.MicomCom1Port)
             {
                 Model.Devices.MicomData1.FirmwareLog = log;
-
             }
             if (portName == Model.Devices.MicomCom2Port)
             {
                 Model.Devices.MicomData2.FirmwareLog = log;
-
             }
         }
-
-
-
-
 
         [RelayCommand]
         private async Task VerifyFirmware(object parameter)
         {
-
             int testerId = int.Parse((string)parameter);
             var timeout = TimeSpan.FromSeconds(5);
-
+            MicomContext micomCtx1 = new MicomContext() { MICOMData = Model.Devices.MicomData1, LockObject = Model.Devices.DeviceManager.PortLockMicom1, SerialPort = Model.Devices.DeviceManager.MicomPort1 };
+            MicomContext micomCtx2 = new MicomContext() { MICOMData = Model.Devices.MicomData2, LockObject = Model.Devices.DeviceManager.PortLockMicom2, SerialPort = Model.Devices.DeviceManager.MicomPort2 };
+            MicomContext micomCtx = (testerId == 1) ? micomCtx1 : micomCtx2;
 
             if (testerId == 1)
             {
-                if (!Model.Devices.DeviceManager.MicomPort1.IsOpen) return;
+                if (!micomCtx.SerialPort.IsOpen) return;
 
-                await Model.Devices.VerifyMICOM(testerId);
+                await Model.Devices.VerifyMICOM(micomCtx);
 
                 var sw = Stopwatch.StartNew();
-                while (string.IsNullOrEmpty((string)Model.Devices.MicomData1.FirmwareName))
+                while (string.IsNullOrEmpty((string)micomCtx.MICOMData.FirmwareName))
                 {
                     if (sw.Elapsed > timeout)
                         break;
                     Thread.Sleep(10);
                 }
 
-                FirmwareLog = Model.Devices.MicomData1.FirmwareName == Model.Devices.SelectedFirmwareMicom ? "MICOM1 | Valid" : "MICOM1 | Invalid";
+                FirmwareLog = micomCtx.MICOMData.FirmwareName == Model.Devices.SelectedFirmwareMicom ? "✓" : "✕";
             }
-            if (testerId == 2)
-            {
-                if (!Model.Devices.DeviceManager.MicomPort2.IsOpen) return;
 
-                await Model.Devices.VerifyMICOM(testerId);
-                var sw = Stopwatch.StartNew();
-                while (string.IsNullOrEmpty((string)Model.Devices.MicomData2.FirmwareName))
-                {
-                    if (sw.Elapsed > timeout)
-                        break;
-                    Thread.Sleep(10);
-                }
-
-                FirmwareLog = Model.Devices.MicomData2.FirmwareName == Model.Devices.SelectedFirmwareMicom ? "MICOM2 | Valid" : "MICOM2 | Invalid";
-            }
         }
         [RelayCommand]
         private async Task WriteFirmware(object parameter)
@@ -410,69 +387,34 @@ namespace Touch_Panel.View_Model
             }
 
             int testerId = int.Parse((string)parameter);
-            switch (testerId)
+            string deviceName = $"Micom{testerId}";
+            string portName = testerId == 1 ? Model.Devices.MicomCom1Port : Model.Devices.MicomCom2Port;
+            var mData = testerId == 1 ? Model.Devices.MicomData1 : Model.Devices.MicomData2;
+            string firmwarePath = $"firmware_bsl_{testerId}\\{Model.Devices.SelectedFirmwareMicom}.txt";
+
+            Model.Devices.CloseDeviceByName(deviceName);
+
+            try
             {
-                case 1:
-                    Model.Devices.CloseDeviceByName("Micom1");
+                FirmwareLog = string.Empty;
 
-
-                    try
-                    {
-
-                        FirmwareLog = string.Empty;
-
-                        await Task.Run(() =>
-                        {
-                            FirmwareMICOM.WriteFirmware(Model.Devices.MicomCom1Port, $"firmware_bsl_1\\{Model.Devices.SelectedFirmwareMicom}.txt" , ProgressFirmwareChanged, ProgressFirmwareFailed);
-                        });
-
-
-
-                    }
-                    catch (Exception ex)
-                    {
-                        FirmwareLog = ex.Message;
-                    }
-
-                    Model.Devices.ConnectDeviceByName("Micom1");
-
-                    Model.Devices.MicomData1.FirmwareLog = "OK";
-
-
-                    break;
-                case 2:
-
-
-                    Model.Devices.CloseDeviceByName("Micom2");
-
-                    try
-                    {
-                        FirmwareLog = string.Empty;
-
-                        await Task.Run(() =>
-                        {
-                            Model.Devices.DeviceManager.MicomPort2.PortName = Model.Devices.MicomCom2Port;
-                            FirmwareMICOM.WriteFirmware(Model.Devices.MicomCom2Port, $"firmware_bsl_2\\{Model.Devices.SelectedFirmwareMicom}.txt", ProgressFirmwareChanged, ProgressFirmwareFailed);
-                        });
-                    }
-                    catch (Exception ex)
-                    {
-                        FirmwareLog = ex.Message;
-                    }
-
-                    Model.Devices.ConnectDeviceByName("Micom2");
-
-                    Model.Devices.MicomData2.FirmwareLog = "OK";
-
-                    break;
-                default:
-
-                    break;
+                await Task.Run(() =>
+                {
+                    FirmwareMICOM.WriteFirmware(
+                        portName,
+                        firmwarePath,
+                        ProgressFirmwareChanged,
+                        ProgressFirmwareFailed);
+                });
+            }
+            catch (Exception ex)
+            {
+                FirmwareLog = ex.Message;
             }
 
+            Model.Devices.ConnectDeviceByName(deviceName);
 
-
-
+            mData.FirmwareLog = "✓";
         }
 
 

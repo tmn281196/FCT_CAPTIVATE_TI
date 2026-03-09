@@ -22,7 +22,13 @@ using Touch_Panel.View;
 
 namespace Touch_Panel.View_Model
 {
+    public partial class MicomContext
+    {
+        public object LockObject;
+        public SerialPortStream SerialPort;
+        public MICOMData MICOMData;
 
+    }
     public partial class MainViewModel : ObservableObject
     {
         AutoPageView autoPageView;
@@ -172,8 +178,11 @@ namespace Touch_Panel.View_Model
 
 
 
-        private async Task UpdateMicomAsync(int index, string port)
+        private async Task UpdateMicomAsync(MicomContext micomCtx)
         {
+            string portName = micomCtx.SerialPort.PortName;
+            var mData = micomCtx.MICOMData;
+            var index = mData.Id;
             var timeout = TimeSpan.FromSeconds(5);
             var micomName = $"Micom{index}";
 
@@ -184,12 +193,10 @@ namespace Touch_Panel.View_Model
                 // Vòng lặp kiểm tra firmware hiện tại
                 while (sw.Elapsed < timeout)
                 {
-                    await sharedModel.Devices.VerifyMICOM(index);
+                    await sharedModel.Devices.VerifyMICOM(micomCtx);
 
                     // Lấy giá trị firmware động dựa trên index
-                    currentFirmware = index == 1
-                        ? (string)sharedModel.Devices.MicomData1.FirmwareName
-                        : (string)sharedModel.Devices.MicomData2.FirmwareName;
+                    currentFirmware = micomCtx.MICOMData.FirmwareName;
 
 
                     if (!string.IsNullOrEmpty(currentFirmware))
@@ -202,35 +209,31 @@ namespace Touch_Panel.View_Model
                 }
 
 
-
-                //Debug.WriteLine($"MICOM{index}: {(!string.IsNullOrEmpty(currentFirmware) ? "OK" : "NG")}");
-
-
-
                 if (currentFirmware != sharedModel.Devices.SelectedFirmwareMicom)
                 {
                     sharedModel.Devices.CloseDeviceByName(micomName);
 
                     await Task.Run(() =>
-                        FirmwareMICOM.WriteFirmware(port, $"firmware_bsl_{index}\\{sharedModel.Devices.SelectedFirmwareMicom}.txt", ProgressFirmwareChanged, ProgressFirmwareFailed)
+                        FirmwareMICOM.WriteFirmware(portName, $"firmware_bsl_{index}\\{sharedModel.Devices.SelectedFirmwareMicom}.txt", ProgressFirmwareChanged, ProgressFirmwareFailed)
                     );
 
                     sharedModel.Devices.ConnectDeviceByName(micomName);
 
-                    if (index == 1)
+                    if (mData.FirmwareLog.Contains("100"))
                     {
-                        sharedModel.Devices.MicomData1.FirmwareLog = "OK";
+                        mData.FirmwareLog = "✓";
                     }
-                    if (index == 2)
+                    else
                     {
-                        sharedModel.Devices.MicomData2.FirmwareLog = "OK";
+                        mData.FirmwareLog = "✕";
+
                     }
 
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Log lỗi ở đây nếu cần
+                mData.FirmwareLog = "✕";
             }
         }
 
@@ -273,15 +276,18 @@ namespace Touch_Panel.View_Model
 
                     await Task.Delay(1000);
 
-                    // Chạy song song cả 2 task
-                    //Task task1 = UpdateMicomAsync(1, sharedModel.Devices.MicomCom1Port);
-                    //Task task2 = UpdateMicomAsync(2, sharedModel.Devices.MicomCom2Port);
+                    MicomContext micomCtx1 = new MicomContext() { LockObject = deviceManager.PortLockMicom1, SerialPort = deviceManager.MicomPort1, MICOMData = sharedModel.Devices.MicomData1 };
+                    MicomContext micomCtx2 = new MicomContext() { LockObject = deviceManager.PortLockMicom2, SerialPort = deviceManager.MicomPort2, MICOMData = sharedModel.Devices.MicomData2 };
 
-                    //await Task.WhenAll(task1, task2);
+                    //Chạy song song cả 2 task
+                    Task task1 = UpdateMicomAsync(micomCtx1);
+                    Task task2 = UpdateMicomAsync(micomCtx2);
+
+                    await Task.WhenAll(task1, task2);
 
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     MessageBox.Show("Failed to Call Model File!");
                 }

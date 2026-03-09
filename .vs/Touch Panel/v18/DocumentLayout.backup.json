@@ -1,132 +1,138 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\FCT_CAPTIVATE_TI\\",
+  "WorkspaceRootPath": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\model\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\model\\teststep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\teststep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\model\\testlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\testlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\viewmodel\\autopageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\autopageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\deviceconnectionlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\deviceconnectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\manualpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\manualpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\autopageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\autopageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\autopageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\autopageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\manualpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\manualpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\settingpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\settingpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\viewmodel\\manualpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\manualpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\model\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\newmodelpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\newmodelpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\newmodelpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\newmodelpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\viewmodel\\settingpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\settingpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\viewmodel\\newmodelpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\viewmodel\\newmodelpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\newmodelpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\model\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\devices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\mainviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\model\\devicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\devicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\0dc3a6bf-3ac6-2dcf-8c46-ecadc0822df4\\Touch_Panel.Model.MICOMData.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\viewmodel\\autopageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\autopageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\autopageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\autopageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\viewmodel\\manualpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\manualpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\model\\teststep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\teststep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\model\\testlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\testlogic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\manualpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\manualpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\10.0.103\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\deviceconnectionlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionlist.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\deviceconnectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\autopageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\autopageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\manualpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\manualpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\settingpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\settingpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\model\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\settings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\newmodelpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\newmodelpageview.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\newmodelpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\newmodelpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\model.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\viewmodel\\settingpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\settingpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\touch panel.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\touch panel.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\touch panel.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\touch panel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\touch panel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\touch panel.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\viewmodel\\deviceconnectionlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\viewmodel\\deviceconnectionlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\viewmodel\\deviceconnectionlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\deviceconnectionview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\deviceconnectionview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\deviceconnectionlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\deviceconnectionlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\deviceconnectionlist.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\model\\devicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\model\\devicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\devicestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\model\\devicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\model\\devicemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\0b2ddf37-0b94-399e-fcef-aec16562dc94\\Touch_Panel.View_Model.AutoPageViewModel.ForceStop.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\view\\settingpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\view\\settingpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\view\\settingpageview.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -157,7 +163,7 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\906992c13c69c262f1b946846dd1380940cb6c7646b27e9fc071d7f564cf4d09\\CommSerial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\fct_captivate_ti\\touch panel\\obj\\debug\\net8.0-windows\\view\\deviceconnectionlist.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|d:\\1abc\\tng\\#latest\\human_touch_system\\fct_captivate_ti\\touch panel\\obj\\debug\\net8.0-windows\\view\\deviceconnectionlist.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{763763E9-1D8C-482B-9216-BD106E1B0F66}|Touch Panel\\Touch Panel.csproj|solutionrelative:touch panel\\obj\\debug\\net8.0-windows\\view\\deviceconnectionlist.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -174,17 +180,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Devices.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Devices.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Devices.cs",
               "RelativeDocumentMoniker": "Touch Panel\\Model\\Devices.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Devices.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Devices.cs",
               "RelativeToolTip": "Touch Panel\\Model\\Devices.cs",
-              "ViewState": "AgIAADwDAAAAAAAAAAAtwFEDAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAGwEAAAAAAAAAAAvwHcEAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T01:30:23.409Z",
               "IsPinned": true,
@@ -204,60 +210,111 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Touch_Panel.Model.MICOMData.g.cs [generated]",
+              "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\0dc3a6bf-3ac6-2dcf-8c46-ecadc0822df4\\Touch_Panel.Model.MICOMData.g.cs",
+              "ToolTip": "Touch_Panel.Model.MICOMData.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "OverriddenToolTip": "Touch_Panel.Model.MICOMData.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
+              "WhenOpened": "2026-03-09T02:31:18.714Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "Touch Panel\\View\\MainWindow.xaml",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\MainWindow.xaml",
-              "RelativeToolTip": "Touch Panel\\View\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-23T10:22:14.827Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DeviceConnectionList.xaml",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionList.xaml",
-              "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionList.xaml",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionList.xaml",
-              "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionList.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-21T06:52:59.397Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "DeviceConnectionView.xaml",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionView.xaml",
-              "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionView.xaml",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionView.xaml",
-              "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-18T01:30:09.296Z",
+              "Title": "MainViewModel.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\MainViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\MainViewModel.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\MainViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\MainViewModel.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAAAOMAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T06:24:03.177Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "TestLogic.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\TestLogic.cs",
-              "RelativeDocumentMoniker": "Touch Panel\\Model\\TestLogic.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\TestLogic.cs",
-              "RelativeToolTip": "Touch Panel\\Model\\TestLogic.cs",
-              "ViewState": "AgIAALkAAAAAAAAAAAAuwMsAAAANAAAAAAAAAA==",
+              "Title": "DeviceManager.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\DeviceManager.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\Model\\DeviceManager.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\DeviceManager.cs",
+              "RelativeToolTip": "Touch Panel\\Model\\DeviceManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T01:32:17.373Z",
+              "WhenOpened": "2026-02-23T18:46:43.974Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
+              "Title": "NewModelPageViewModel.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
+              "ViewState": "AgIAAFcBAAAAAAAAAAAAAG8BAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-05T03:51:42.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AutoPageViewModel.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\AutoPageViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\AutoPageViewModel.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\AutoPageViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\AutoPageViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T03:46:09.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AutoPageView.xaml",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\AutoPageView.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\AutoPageView.xaml",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\AutoPageView.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\AutoPageView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-24T06:56:21.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ManualPageViewModel.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\ManualPageViewModel.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\ManualPageViewModel.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\ManualPageViewModel.cs",
+              "RelativeToolTip": "Touch Panel\\ViewModel\\ManualPageViewModel.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAjwFUAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-19T03:08:05.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ManualPageView.xaml",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\ManualPageView.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\ManualPageView.xaml",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\ManualPageView.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\ManualPageView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-19T03:14:04.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "TestStep.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\TestStep.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\TestStep.cs",
               "RelativeDocumentMoniker": "Touch Panel\\Model\\TestStep.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\TestStep.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\TestStep.cs",
               "RelativeToolTip": "Touch Panel\\Model\\TestStep.cs",
               "ViewState": "AgIAAEoAAAAAAAAAAAAAwFwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -266,48 +323,67 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ManualPageView.xaml",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\ManualPageView.xaml",
-              "RelativeDocumentMoniker": "Touch Panel\\View\\ManualPageView.xaml",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\ManualPageView.xaml",
-              "RelativeToolTip": "Touch Panel\\View\\ManualPageView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-19T03:14:04.438Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "AutoPageView.xaml",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\AutoPageView.xaml",
-              "RelativeDocumentMoniker": "Touch Panel\\View\\AutoPageView.xaml",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\AutoPageView.xaml",
-              "RelativeToolTip": "Touch Panel\\View\\AutoPageView.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-02-24T06:56:21.822Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AutoPageViewModel.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\AutoPageViewModel.cs",
-              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\AutoPageViewModel.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\AutoPageViewModel.cs",
-              "RelativeToolTip": "Touch Panel\\ViewModel\\AutoPageViewModel.cs",
-              "ViewState": "AgIAAIsAAAAAAAAAAAAnwJ0AAAAmAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "TestLogic.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\TestLogic.cs",
+              "RelativeDocumentMoniker": "Touch Panel\\Model\\TestLogic.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\TestLogic.cs",
+              "RelativeToolTip": "Touch Panel\\Model\\TestLogic.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAuwMsAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-06T03:46:09.892Z",
+              "WhenOpened": "2026-02-18T01:32:17.373Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\MainWindow.xaml",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\MainWindow.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-23T10:22:14.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "DeviceConnectionView.xaml",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionView.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionView.xaml",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionView.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionView.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-18T01:30:09.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DeviceConnectionList.xaml",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionList.xaml",
+              "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionList.xaml",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionList.xaml",
+              "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionList.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2026-02-21T06:52:59.397Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Microsoft.PackageDependencyResolution.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\10.0.103\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\10.0.103\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
+              "ViewState": "AgIAAPMAAAAAAAAAAAAMwAkBAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2026-03-06T09:34:35.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "ManualPageView.xaml.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\ManualPageView.xaml.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\ManualPageView.xaml.cs",
               "RelativeDocumentMoniker": "Touch Panel\\View\\ManualPageView.xaml.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\ManualPageView.xaml.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\ManualPageView.xaml.cs",
               "RelativeToolTip": "Touch Panel\\View\\ManualPageView.xaml.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAiwBcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -315,11 +391,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 15,
               "Title": "AutoPageView.xaml.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\AutoPageView.xaml.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\AutoPageView.xaml.cs",
               "RelativeDocumentMoniker": "Touch Panel\\View\\AutoPageView.xaml.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\AutoPageView.xaml.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\AutoPageView.xaml.cs",
               "RelativeToolTip": "Touch Panel\\View\\AutoPageView.xaml.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -327,22 +403,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 17,
               "Title": "SettingPageView.xaml",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\SettingPageView.xaml",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\SettingPageView.xaml",
               "RelativeDocumentMoniker": "Touch Panel\\View\\SettingPageView.xaml",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\SettingPageView.xaml",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\SettingPageView.xaml",
               "RelativeToolTip": "Touch Panel\\View\\SettingPageView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-21T12:28:27.039Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 18,
               "Title": "Settings.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Settings.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Settings.cs",
               "RelativeDocumentMoniker": "Touch Panel\\Model\\Settings.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Settings.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Settings.cs",
               "RelativeToolTip": "Touch Panel\\Model\\Settings.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -350,34 +426,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ManualPageViewModel.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\ManualPageViewModel.cs",
-              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\ManualPageViewModel.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\ManualPageViewModel.cs",
-              "RelativeToolTip": "Touch Panel\\ViewModel\\ManualPageViewModel.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAjwFUAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T03:08:05.86Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 19,
               "Title": "NewModelPageView.xaml",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\NewModelPageView.xaml",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\NewModelPageView.xaml",
               "RelativeDocumentMoniker": "Touch Panel\\View\\NewModelPageView.xaml",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\NewModelPageView.xaml",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\NewModelPageView.xaml",
               "RelativeToolTip": "Touch Panel\\View\\NewModelPageView.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-21T03:43:33.832Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 21,
               "Title": "Model.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Model.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Model.cs",
               "RelativeDocumentMoniker": "Touch Panel\\Model\\Model.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Model.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\Model.cs",
               "RelativeToolTip": "Touch Panel\\Model\\Model.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAQwBUAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -385,11 +449,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 22,
               "Title": "SettingPageViewModel.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\SettingPageViewModel.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\SettingPageViewModel.cs",
               "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\SettingPageViewModel.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\SettingPageViewModel.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\SettingPageViewModel.cs",
               "RelativeToolTip": "Touch Panel\\ViewModel\\SettingPageViewModel.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAqwBIAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -397,11 +461,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 20,
               "Title": "NewModelPageView.xaml.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\NewModelPageView.xaml.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\NewModelPageView.xaml.cs",
               "RelativeDocumentMoniker": "Touch Panel\\View\\NewModelPageView.xaml.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\NewModelPageView.xaml.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\NewModelPageView.xaml.cs",
               "RelativeToolTip": "Touch Panel\\View\\NewModelPageView.xaml.cs",
               "ViewState": "AgIAABUAAAAAAAAAAAA6wBcAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -409,35 +473,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "NewModelPageViewModel.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
-              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
-              "RelativeToolTip": "Touch Panel\\ViewModel\\NewModelPageViewModel.cs",
-              "ViewState": "AgIAANwAAAAAAAAAAADwv+MAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-05T03:51:42.187Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "MainViewModel.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\MainViewModel.cs",
-              "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\MainViewModel.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\MainViewModel.cs",
-              "RelativeToolTip": "Touch Panel\\ViewModel\\MainViewModel.cs",
-              "ViewState": "AgIAABsBAAAAAAAAAAAjwCMBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-21T06:24:03.177Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 23,
               "Title": "App.xaml.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\App.xaml.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\App.xaml.cs",
               "RelativeDocumentMoniker": "Touch Panel\\App.xaml.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\App.xaml.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\App.xaml.cs",
               "RelativeToolTip": "Touch Panel\\App.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -445,11 +485,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 24,
               "Title": "App.xaml",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\App.xaml",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\App.xaml",
               "RelativeDocumentMoniker": "Touch Panel\\App.xaml",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\App.xaml",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\App.xaml",
               "RelativeToolTip": "Touch Panel\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-04T04:58:21.455Z",
@@ -457,11 +497,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 27,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "Touch Panel\\View\\MainWindow.xaml.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\MainWindow.xaml.cs",
               "RelativeToolTip": "Touch Panel\\View\\MainWindow.xaml.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAtwBMAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -469,22 +509,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 25,
               "Title": "Touch Panel",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Touch Panel.csproj",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Touch Panel.csproj",
               "RelativeDocumentMoniker": "Touch Panel\\Touch Panel.csproj",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Touch Panel.csproj",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Touch Panel.csproj",
               "RelativeToolTip": "Touch Panel\\Touch Panel.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-02-21T05:27:22.575Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 26,
               "Title": "Touch Panel.csproj",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Touch Panel.csproj",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Touch Panel.csproj",
               "RelativeDocumentMoniker": "Touch Panel\\Touch Panel.csproj",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Touch Panel.csproj",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Touch Panel.csproj",
               "RelativeToolTip": "Touch Panel\\Touch Panel.csproj",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACEAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -492,11 +532,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 30,
               "Title": "DeviceConnectionList.xaml.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionList.xaml.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionList.xaml.cs",
               "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionList.xaml.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionList.xaml.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionList.xaml.cs",
               "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionList.xaml.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAgwBcAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -504,11 +544,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
               "Title": "DeviceConnectionView.xaml.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionView.xaml.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionView.xaml.cs",
               "RelativeDocumentMoniker": "Touch Panel\\View\\DeviceConnectionView.xaml.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionView.xaml.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\DeviceConnectionView.xaml.cs",
               "RelativeToolTip": "Touch Panel\\View\\DeviceConnectionView.xaml.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -516,11 +556,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 28,
               "Title": "DeviceConnectionListViewModel.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
               "RelativeDocumentMoniker": "Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
               "RelativeToolTip": "Touch Panel\\ViewModel\\DeviceConnectionListViewModel.cs",
               "ViewState": "AgIAAAQAAAAAAAAAAAAgwA8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -528,11 +568,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 31,
               "Title": "DeviceStatus.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\DeviceStatus.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\DeviceStatus.cs",
               "RelativeDocumentMoniker": "Touch Panel\\Model\\DeviceStatus.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\DeviceStatus.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\DeviceStatus.cs",
               "RelativeToolTip": "Touch Panel\\Model\\DeviceStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -540,11 +580,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 33,
               "Title": "SettingPageView.xaml.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\SettingPageView.xaml.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\SettingPageView.xaml.cs",
               "RelativeDocumentMoniker": "Touch Panel\\View\\SettingPageView.xaml.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\SettingPageView.xaml.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\View\\SettingPageView.xaml.cs",
               "RelativeToolTip": "Touch Panel\\View\\SettingPageView.xaml.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAAABcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -552,7 +592,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 32,
               "Title": "Touch_Panel.View_Model.AutoPageViewModel.ForceStop.g.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\0b2ddf37-0b94-399e-fcef-aec16562dc94\\Touch_Panel.View_Model.AutoPageViewModel.ForceStop.g.cs",
               "ToolTip": "Touch_Panel.View_Model.AutoPageViewModel.ForceStop.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator]",
@@ -563,19 +603,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "DeviceManager.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\DeviceManager.cs",
-              "RelativeDocumentMoniker": "Touch Panel\\Model\\DeviceManager.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\Model\\DeviceManager.cs",
-              "RelativeToolTip": "Touch Panel\\Model\\DeviceManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAowAsAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-23T18:46:43.974Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 38,
               "Title": "Touch_Panel.Model.Model.g.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\21ae026d-b33a-17d2-68fd-f30cad253dc8\\Touch_Panel.Model.Model.g.cs",
               "ToolTip": "Touch_Panel.Model.Model.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
@@ -586,7 +614,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 40,
               "Title": "Touch_Panel.View_Model.NewModelPageViewModel.WriteFirmware.g.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\ed9c16b3-8504-3658-cfa6-cb1a39a148b2\\Touch_Panel.View_Model.NewModelPageViewModel.WriteFirmware.g.cs",
               "ToolTip": "Touch_Panel.View_Model.NewModelPageViewModel.WriteFirmware.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.RelayCommandGenerator]",
@@ -597,7 +625,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 39,
               "Title": "Touch_Panel.Model.DeviceStatus.g.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\682e52d4-416e-5375-f7e1-8b76c1a9c2f8\\Touch_Panel.Model.DeviceStatus.g.cs",
               "ToolTip": "Touch_Panel.Model.DeviceStatus.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
@@ -608,7 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 41,
               "Title": "ExceptionDispatchInfo.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\SourceServer\\132a9e30bafc6dc5f41450fb43e815a9ad379ac44f93e4283573a9e7b3442ca6\\src\\libraries\\System.Private.CoreLib\\src\\System\\Runtime\\ExceptionServices\\ExceptionDispatchInfo.cs",
               "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\SourceServer\\132a9e30bafc6dc5f41450fb43e815a9ad379ac44f93e4283573a9e7b3442ca6\\src\\libraries\\System.Private.CoreLib\\src\\System\\Runtime\\ExceptionServices\\ExceptionDispatchInfo.cs [Read Only]",
@@ -619,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 35,
               "Title": "SerialStream.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\33302e15e247fa61617faba9cb882b542b73ade39ffde0b0cfeccc66113b24bc\\SerialStream.cs",
               "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\33302e15e247fa61617faba9cb882b542b73ade39ffde0b0cfeccc66113b24bc\\SerialStream.cs",
@@ -629,11 +657,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 43,
               "Title": "DeviceConnectionList.g.i.cs",
-              "DocumentMoniker": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
+              "DocumentMoniker": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
               "RelativeDocumentMoniker": "Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
-              "ToolTip": "D:\\FCT_CAPTIVATE_TI\\Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
+              "ToolTip": "D:\\1ABC\\TNG\\#LATEST\\HUMAN_TOUCH_SYSTEM\\FCT_CAPTIVATE_TI\\Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
               "RelativeToolTip": "Touch Panel\\obj\\Debug\\net8.0-windows\\View\\DeviceConnectionList.g.i.cs",
               "ViewState": "AgIAAB0AAAAAAAAAAAAwwCcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -641,7 +669,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 42,
               "Title": "CommSerial.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\906992c13c69c262f1b946846dd1380940cb6c7646b27e9fc071d7f564cf4d09\\CommSerial.cs",
               "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\906992c13c69c262f1b946846dd1380940cb6c7646b27e9fc071d7f564cf4d09\\CommSerial.cs",
@@ -651,7 +679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 34,
               "Title": "BSL430NET.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\a73ddf78b00f31d03776fc176d55827e368077187d45f43dcda7f552bdd97545\\BSL430NET.cs",
               "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\a73ddf78b00f31d03776fc176d55827e368077187d45f43dcda7f552bdd97545\\BSL430NET.cs",
@@ -661,7 +689,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 37,
               "Title": "Touch_Panel.Model.Model.g.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\52fc85c2-cce1-3e26-fae5-9973ba8910d5\\Touch_Panel.Model.Model.g.cs",
               "ToolTip": "Touch_Panel.Model.Model.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
@@ -672,7 +700,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 36,
               "Title": "Touch_Panel.Model.Devices.g.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\VSGeneratedDocuments\\22c8aa2a-22ac-5c6c-8e0a-167f79a4646a\\Touch_Panel.Model.Devices.g.cs",
               "ToolTip": "Touch_Panel.Model.Devices.g.cs [generated by CommunityToolkit.Mvvm.SourceGenerators.ObservablePropertyGenerator]",
@@ -683,7 +711,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 44,
               "Title": "List.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\e4bcfe5fa909b6ce58d12727ba5a4ecf78f07727c12e68f2b64a2c14c658a6a5\\List.cs",
               "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\e4bcfe5fa909b6ce58d12727ba5a4ecf78f07727c12e68f2b64a2c14c658a6a5\\List.cs",
@@ -693,7 +721,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 45,
               "Title": "ThrowHelper.cs",
               "DocumentMoniker": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\90793c3eb31d7122de8c9fc198b40ef620e753d16ec471ad4ebd91d387ca3092\\ThrowHelper.cs",
               "ToolTip": "C:\\Users\\tmnvi\\AppData\\Local\\Temp\\.vsdbgsrc\\90793c3eb31d7122de8c9fc198b40ef620e753d16ec471ad4ebd91d387ca3092\\ThrowHelper.cs",

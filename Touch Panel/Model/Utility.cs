@@ -27,7 +27,7 @@ namespace Touch_Panel.Model
                 File.WriteAllText(filePath, json);
                 MessageBox.Show("Model Save Success!");
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("Model Save Failed!");
             }

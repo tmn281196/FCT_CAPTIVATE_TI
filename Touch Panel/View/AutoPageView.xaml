@@ -13,8 +13,8 @@
             <Style x:Key="StatusLabelStyle" TargetType="Label">
                 <Style.Triggers>
 
-               
-                    
+
+
                     <DataTrigger Binding="{Binding Status}" Value="Wait">
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="FontSize" Value="20" />
@@ -42,7 +42,7 @@
 
                     </DataTrigger>
 
-              
+
                     <DataTrigger Binding="{Binding Status}" Value="Stop">
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="FontSize" Value="20" />
@@ -84,7 +84,7 @@
                         <Setter Property="Background" Value="Red" />
                         <Setter Property="Content" Value="FAIL" />
                     </DataTrigger>
-                 
+
 
                 </Style.Triggers>
             </Style>
@@ -94,7 +94,7 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
-    <Grid>
+    <Grid >
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
@@ -111,7 +111,7 @@
         <Grid Grid.ColumnSpan="3" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>    
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <DataGrid IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester1.CurrStep}"  SelectionChanged="DataGrid_SelectionChanged"  ItemsSource="{Binding Model.Step1.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}" Grid.Column="0"
     ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
@@ -205,151 +205,145 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
-       
-        
+
+
         </Grid>
 
-        
-
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="0.5, 0" >
-            <Label HorizontalContentAlignment="Center" Content="Status" Foreground="White" Background="{StaticResource BaseBrush}" />
-            <Label HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="40" Style="{StaticResource StatusLabelStyle}" />
-            <Label   HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Height="80" Style="{StaticResource TestResultLabelStyle}" />
-        </StackPanel>
 
 
-        <Grid Grid.Row="1"  >
 
-            <!-- Chia layout theo chiều dọc -->
+
+        <Grid Grid.Row="1" >
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
-            </Grid.RowDefinitions>
-
+            </Grid.RowDefinitions> 
             
-            <!-- Title -->
             <Label Grid.Row="0"
            Content="Statistics"
            HorizontalContentAlignment="Center"
            Foreground="White"
            Background="{StaticResource BaseBrush}" />
 
-            <!-- Nội dung căn giữa theo chiều dọc -->
-            <Grid Grid.Row="1"
-          VerticalAlignment="Center"
-          HorizontalAlignment="Center">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
 
-                <StackPanel Orientation="Horizontal"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center">
-
-                
-     
-
-
-                    <!-- Statistics -->
-                    <StackPanel Orientation="Horizontal">
-
-                        <StackPanel Width="150"
+                <StackPanel Width="150"
                             Orientation="Vertical"
                             VerticalAlignment="Center">
-                            <Label Content="TOTAL"
+                    <Label Content="TOTAL"
                            FontSize="20"
                            Background="White"
                            HorizontalContentAlignment="Center" />
-                            <Label Content="{Binding Total}"
+                    <Label Content="{Binding Total}"
                            FontSize="20"
                            FontWeight="SemiBold"
                            Background="White"
                            HorizontalContentAlignment="Center" />
-                        </StackPanel>
-
-                        <StackPanel Width="150"
-                            Orientation="Vertical"
-                            VerticalAlignment="Center">
-                            <Label Content="PASS"
-                           FontSize="20"
-                           Foreground="Green"
-                           Background="White"
-                           HorizontalContentAlignment="Center" />
-                            <Label Content="{Binding Pass}"
-                           FontSize="20"
-                           FontWeight="SemiBold"
-                           Foreground="Green"
-                           Background="White"
-                           HorizontalContentAlignment="Center" />
-                        </StackPanel>
-
-                        <StackPanel Width="150"
-                            Orientation="Vertical"
-                            VerticalAlignment="Center">
-                            <Label Content="NG"
-                           FontSize="20"
-                           Foreground="Red"
-                           Background="White"
-                           HorizontalContentAlignment="Center" />
-                            <Label Content="{Binding Fail}"
-                           FontSize="20"
-                           FontWeight="SemiBold"
-                           Foreground="Red"
-                           Background="White"
-                           HorizontalContentAlignment="Center" />
-                        </StackPanel>
-
-                        <StackPanel Width="150"
-                            Orientation="Vertical"
-                            VerticalAlignment="Center">
-                            <Label Content="PASS %"
-                           FontSize="20"
-                           Foreground="DarkGoldenrod"
-                           Background="White"
-                           HorizontalContentAlignment="Center" />
-                            <Label Content="{Binding PassPercent}"
-                           FontSize="20"
-                           FontWeight="SemiBold"
-                           Foreground="DarkGoldenrod"
-                           Background="White"
-                           HorizontalContentAlignment="Center" />
-                        </StackPanel>
-
-                    </StackPanel>
-
                 </StackPanel>
-            </Grid>
+
+                <StackPanel Width="150"
+                            Orientation="Vertical"
+                            VerticalAlignment="Center">
+                    <Label Content="PASS"
+                           FontSize="20"
+                           Foreground="Green"
+                           Background="White"
+                           HorizontalContentAlignment="Center" />
+                    <Label Content="{Binding Pass}"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="Green"
+                           Background="White"
+                           HorizontalContentAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Width="150"
+                            Orientation="Vertical"
+                            VerticalAlignment="Center">
+                    <Label Content="NG"
+                           FontSize="20"
+                           Foreground="Red"
+                           Background="White"
+                           HorizontalContentAlignment="Center" />
+                    <Label Content="{Binding Fail}"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="Red"
+                           Background="White"
+                           HorizontalContentAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Width="150"
+                            Orientation="Vertical"
+                            VerticalAlignment="Center">
+                    <Label Content="PASS %"
+                           FontSize="20"
+                           Foreground="DarkGoldenrod"
+                           Background="White"
+                           HorizontalContentAlignment="Center" />
+                    <Label Content="{Binding PassPercent}"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="DarkGoldenrod"
+                           Background="White"
+                           HorizontalContentAlignment="Center" />
+                </StackPanel>
+
+            </StackPanel>
+
+
         </Grid>
 
+        <Grid Grid.Row="1" Grid.Column="1" Margin="0.5, 0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="80"/>
+            </Grid.RowDefinitions>
+            <Label HorizontalContentAlignment="Center" Content="Status" Foreground="White" Background="{StaticResource BaseBrush}" />
+            <Label Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Style="{StaticResource StatusLabelStyle}" />
+            <Label Grid.Row="2"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Style="{StaticResource TestResultLabelStyle}" />
+        </Grid>
 
-        <Grid Grid.Row="1" Grid.Column="2" >
+        <Grid Grid.Row="1" Grid.Column="2"  Margin="0.5 0">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
-            <StackPanel >
 
+            <Grid Grid.Column="0" Margin="0.5 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="120"/>
+                </Grid.RowDefinitions>
+                
                 <Label HorizontalContentAlignment="Center" Content="Elapsed Time" Foreground="White" Background="{StaticResource BaseBrush}" />
-                <Label Content="{Binding ElapsedTime}" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  x:Name="elapsedTimeLbl"  Background="White" Height="120" />
+                <Label Grid.Row="1" Content="{Binding ElapsedTime}" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  x:Name="elapsedTimeLbl"  Background="White"  />
 
-            </StackPanel>
+            </Grid>
 
 
 
-            <StackPanel Orientation="Vertical" Grid.Column="1" >
-
+            <Grid Grid.Column="1" Margin="0.5 0" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="120"/>
+                </Grid.RowDefinitions>
                 <Label HorizontalContentAlignment="Center" Content="Test Control" Foreground="White" Background="{StaticResource BaseBrush}" />
 
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Height="120" HorizontalAlignment="Center">
-                    <Button Background="Transparent" BorderThickness="0" Padding="5 0" Margin="2"  FontSize="16" Height="50" Width="50"  Cursor="Hand" Command="{Binding ForceStartCommand}"   HorizontalContentAlignment="Center">
+                <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Height="120" HorizontalAlignment="Center">
+                    <Button Background="Transparent" BorderThickness="0" Padding="5 0" Margin="2"  FontSize="16" Height="60" Width="60"  Cursor="Hand" Command="{Binding ForceStartCommand}"   HorizontalContentAlignment="Center">
                         <fa:IconImage Icon="CirclePlay" Foreground="Lime"/>
                     </Button>
-                    <Button Background="Transparent" BorderThickness="0" Padding="5 0" Margin="2"  FontSize="16" Height="50" Width="50"  Cursor="Hand" Command="{Binding ForceStopCommand}"   HorizontalContentAlignment="Center">
+                    <Button Background="Transparent" BorderThickness="0" Padding="5 0" Margin="2"  FontSize="16" Height="60" Width="60"  Cursor="Hand" Command="{Binding ForceStopCommand}"   HorizontalContentAlignment="Center">
                         <fa:IconImage Icon="CircleStop" Foreground="Red"/>
                     </Button>
 
                 </StackPanel>
-  
-            </StackPanel>
+
+            </Grid>
 
         </Grid>
 

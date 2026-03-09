@@ -820,3 +820,69 @@ D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\REPO\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\ftd2xx.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\libftdi1.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\libusb-1.0.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.Console.exe
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_1\HUMAN_THAI__ME21K7010DS__241223_0199.txt
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_2\HUMAN_THAI__ME21K7010DS__241223_0199.txt
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\template_model.json
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.pdb
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\BSL430.NET.FirmwareTools.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\CommunityToolkit.Mvvm.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\FontAwesome.Sharp.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\HidSharp.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\LibUsbDotNet.LibUsbDotNet.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Ookii.Dialogs.Wpf.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\RJCP.SerialPortStream.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libftd2xx.so.1.4.8
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libftdi1.so.2.4.0
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\runtimes\linux-x64\native\libusb-1.0.so.0.1.0
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\ftd2xx.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libftdi1.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x64\native\libusb-1.0.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\ftd2xx.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libftdi1.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\runtimes\win-x86\native\libusb-1.0.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.AssemblyReference.cache
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.ResolveComReference.cache
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Template.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_Content.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.cache
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_MarkupCompile.lref
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\App.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\AutoPageView.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionList.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfoInputs.cache
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.AssemblyInfo.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.csproj.CoreCompileInputs.cache
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.sourcelink.json
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Pa.F7880C5D.Up2Date
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\refint\Touch Panel.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
