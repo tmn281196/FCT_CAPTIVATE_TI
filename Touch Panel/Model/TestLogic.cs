@@ -75,8 +75,8 @@ namespace Touch_Panel.Model
             Tester1 = new Tester(0);
             Tester2 = new Tester(1);
 
-            Tester1.Steps = Model.Step1.Steps;
-            Tester2.Steps = Model.Step2.Steps;
+            Tester1.Steps = Model.Micom1TestStep.Steps;
+            Tester2.Steps = Model.Micom2TestStep.Steps;
         }
 
         public TestResult TestResult = TestResult.Unknown;
@@ -406,11 +406,11 @@ namespace Touch_Panel.Model
             ObservableCollection<CAPSensor> listCAPSensor = new();
             if (testerID == 0)
             {
-                listCAPSensor = Model.Devices.ListCAPSensor1;
+                listCAPSensor = Model.Devices.MicomData1.ListCAPSensor;
             }
             if (testerID == 1)
             {
-                listCAPSensor = Model.Devices.ListCAPSensor2;
+                listCAPSensor = Model.Devices.MicomData2.ListCAPSensor;
             }
             await PendingStep(step);
 

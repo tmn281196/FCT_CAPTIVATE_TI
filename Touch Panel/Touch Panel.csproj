@@ -65,6 +65,9 @@
     <None Update="firmware_bsl_right\HUMAN_THAI__ME21K7010DS__241223_0199.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="MicomDatabase.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="template_model.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

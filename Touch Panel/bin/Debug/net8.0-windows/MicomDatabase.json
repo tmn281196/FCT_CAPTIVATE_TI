@@ -1,0 +1,366 @@
+{
+  "Revision": "0.0",
+  "MicomDatabaseList": [
+    {
+      "FirmwareMicom": "HUMAN_THAI__DE96-01151A__250409_0287",
+      "MicomData1": {
+        "Id": 1,
+        "FrameLen": 14,
+        "ListCAPSensor": [
+          {
+            "Id": 0,
+            "ListCAPCycle": [
+              {
+                "Id": 0,
+                "StringId": "0.0",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.0.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.0.1"
+                  },
+                  {
+                    "Id": 2,
+                    "StringId": "0.0.2"
+                  },
+                  {
+                    "Id": 3,
+                    "StringId": "0.0.3"
+                  }
+                ]
+              },
+              {
+                "Id": 1,
+                "StringId": "0.1",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.1.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.1.1"
+                  },
+                  {
+                    "Id": 2,
+                    "StringId": "0.1.2"
+                  },
+                  {
+                    "Id": 3,
+                    "StringId": "0.1.3"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "MicomData2": {}
+    },
+    {
+      "FirmwareMicom": "HUMAN_THAI__ME21K7010DS__241223_0199",
+      "MicomData1": {
+        "Id": 1,
+        "FrameLen": 10,
+        "ListCAPSensor": [
+          {
+            "Id": 0,
+            "ListCAPCycle": [
+              {
+                "Id": 0,
+                "StringId": "0.0",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.0.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.0.1"
+                  }
+                ]
+              },
+              {
+                "Id": 1,
+                "StringId": "0.1",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.1.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.1.1"
+                  }
+                ]
+              },
+              {
+                "Id": 2,
+                "StringId": "0.2",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.2.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.2.1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Id": 1,
+            "ListCAPCycle": [
+              {
+                "Id": 0,
+                "StringId": "1.0",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.0.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "1.0.1"
+                  }
+                ]
+              },
+              {
+                "Id": 1,
+                "StringId": "1.1",
+
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.1.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "1.1.1"
+                  }
+                ]
+              },
+              {
+                "Id": 2,
+                "StringId": "1.2",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.2.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "1.2.1"
+                  }
+                ]
+              },
+              {
+                "Id": 3,
+                "StringId": "1.3",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.3.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "1.3.1"
+                  }
+                ]
+              },
+              {
+                "Id": 4,
+                "StringId": "1.4",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.4.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "1.4.1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Id": 2,
+            "ListCAPCycle": [
+              {
+                "Id": 0,
+                "StringId": "2.0",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "2.0.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "2.0.1"
+                  }
+                ]
+              },
+              {
+                "Id": 1,
+                "StringId": "2.1",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "2.1.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "2.1.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "MicomData2": {
+        "Id": 2,
+        "FrameLen": 10,
+        "ListCAPSensor": [
+          {
+            "Id": 0,
+            "ListCAPCycle": [
+              {
+                "Id": 0,
+                "StringId": "0.0",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.0.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.0.1"
+                  }
+                ]
+              },
+              {
+                "Id": 1,
+                "StringId": "0.1",
+
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.1.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.1.1"
+                  }
+                ]
+              },
+              {
+                "Id": 2,
+                "StringId": "0.2",
+
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.2.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.2.1"
+                  }
+                ]
+              },
+              {
+                "Id": 3,
+                "StringId": "0.3",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.3.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.3.1"
+                  }
+                ]
+              },
+              {
+                "Id": 4,
+                "StringId": "0.4",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.4.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.4.1"
+                  }
+                ]
+              },
+              {
+                "Id": 5,
+                "StringId": "0.5",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.5.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "0.5.1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Id": 1,
+            "ListCAPCycle": [
+              {
+                "Id": 0,
+                "StringId": "1.0",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.0.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "1.0.1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Id": 2,
+
+            "ListCAPCycle": [
+              {
+                "Id": 0,
+                "StringId": "2.0",
+
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "2.0.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "2.0.1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

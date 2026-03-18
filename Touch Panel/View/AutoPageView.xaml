@@ -113,7 +113,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <DataGrid IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester1.CurrStep}"  SelectionChanged="DataGrid_SelectionChanged"  ItemsSource="{Binding Model.Step1.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}" Grid.Column="0"
+            <DataGrid IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester1.CurrStep}"  SelectionChanged="DataGrid_SelectionChanged"  ItemsSource="{Binding Model.Micom1TestStep.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}" Grid.Column="0"
     ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding No}" Width="50" Header="No" />
@@ -159,7 +159,7 @@
                 </DataGrid.Columns>
             </DataGrid>
 
-            <DataGrid IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester2.CurrStep}"  SelectionChanged="DataGrid_SelectionChanged"  ItemsSource="{Binding Model.Step2.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}" Grid.Column="1"
+            <DataGrid IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester2.CurrStep}"  SelectionChanged="DataGrid_SelectionChanged"  ItemsSource="{Binding Model.Micom2TestStep.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}" Grid.Column="1"
     ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding No}" Width="50" Header="No" />

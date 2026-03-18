@@ -67,34 +67,50 @@
                 </Label.Content>
             </Label>
         </StackPanel>
-        <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
+        <StackPanel Grid.Column="1"  Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Right" Orientation="Horizontal">
             <Label>
                 <Label.Content>
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Microchip" Foreground="White" Width="15" VerticalAlignment="Center" Margin="2 0" />
+                      
 
-                        <TextBlock Foreground="White" FontSize="10"  Text="MICOM1 " VerticalAlignment="Center" />
-
-                        <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData1.FirmwareLog}" VerticalAlignment="Center" />
-                        <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData1.SignalIntegrity}" VerticalAlignment="Center" />
+                        <TextBlock  Foreground="White"  Text="Hex file:" VerticalAlignment="Center"   />
+                        <TextBlock Text="{Binding Devices.SelectedFirmwareMicom}" VerticalAlignment="Center" Foreground="Orange" Margin="5 0"/>
 
 
                     </StackPanel>
                 </Label.Content>
             </Label>
-            <Label>
-                <Label.Content>
-                    <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Microchip" Foreground="White" Width="15" VerticalAlignment="Center" Margin="2 0" />
+            
+            <StackPanel Orientation="Horizontal">
+                <Label>
+                    <Label.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Microchip" Foreground="White" Width="15" VerticalAlignment="Center" Margin="2 0" />
 
-                        <TextBlock Foreground="White" FontSize="10"  Text="MICOM2 " VerticalAlignment="Center" />
+                            <TextBlock Foreground="White" FontSize="10"  Text="MICOM1 " VerticalAlignment="Center" />
 
-                        <TextBlock   Foreground="White" FontSize="10"   Text="{Binding  Devices.MicomData2.FirmwareLog}" VerticalAlignment="Center" />
-                        <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData2.SignalIntegrity}" VerticalAlignment="Center" />
+                            <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData1.FirmwareLog}" VerticalAlignment="Center"   />
+                            <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData1.SignalIntegrity}" VerticalAlignment="Center" Padding="2 0" />
 
-                    </StackPanel>
-                </Label.Content>
-            </Label>
+
+                        </StackPanel>
+                    </Label.Content>
+                </Label>
+                <Label>
+                    <Label.Content>
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconImage Icon="Microchip" Foreground="White" Width="15" VerticalAlignment="Center" Margin="2 0" />
+
+                            <TextBlock Foreground="White" FontSize="10"  Text="MICOM2 " VerticalAlignment="Center" />
+
+                            <TextBlock   Foreground="White" FontSize="10"   Text="{Binding  Devices.MicomData2.FirmwareLog}" VerticalAlignment="Center"   />
+                            <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData2.SignalIntegrity}" VerticalAlignment="Center" Padding="2 0" />
+
+                        </StackPanel>
+                    </Label.Content>
+                </Label>
+            </StackPanel>
+            
         </StackPanel>
     </Grid>
 </UserControl>

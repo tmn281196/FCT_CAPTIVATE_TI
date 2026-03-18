@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using Touch_Panel.Model;
 using Touch_Panel.View;
+using Touch_Panel.ViewModel;
 
 
 namespace Touch_Panel.View_Model
@@ -34,12 +35,12 @@ namespace Touch_Panel.View_Model
         AutoPageView autoPageView;
         ManualPageView manualPageView;
         SettingPageView settingPageView;
-        NewModelPageView newModelPageView;
+        StepsPageView newModelPageView;
 
         AutoPageViewModel autoPageViewModel;
         ManualPageViewModel manualPageViewModel;
         SettingPageViewModel settingPageViewModel;
-        NewModelPageViewModel newModelPageViewModel;
+        StepsPageViewModel stepsPageViewModel;
 
         DeviceConnectionListViewModel deviceConnectionListViewModel;
 
@@ -51,11 +52,24 @@ namespace Touch_Panel.View_Model
 
         DeviceManager deviceManager;
 
+        MicomDatabases sharedMicomDatabases;
+
 
 
 
         public MainViewModel()
         {
+            try
+            {
+                string databaseString = File.ReadAllText("MicomDatabase.json");
+
+                sharedMicomDatabases = Utility.ConvertFromJson<MicomDatabases>(databaseString);
+            }
+            catch
+            {
+                sharedMicomDatabases = new MicomDatabases();
+            }
+
 
             deviceManager = new DeviceManager();
             try
@@ -63,27 +77,40 @@ namespace Touch_Panel.View_Model
                 string modelStr = File.ReadAllText("template_model.json");
 
                 sharedModel = Utility.ConvertFromJson<Model.Model>(modelStr);
-                sharedModel.Devices.DeviceManager = deviceManager;
             }
             catch
             {
                 sharedModel = new Model.Model();
             }
+
+            var micomDatabaseSelected = sharedMicomDatabases.MicomDatabaseList.Where(item => item.FirmwareMicom == sharedModel.Devices.SelectedFirmwareMicom).FirstOrDefault();
+            if (micomDatabaseSelected != null)
+            {
+                sharedModel.Devices.MicomData1 = micomDatabaseSelected.MicomData1;
+                sharedModel.Devices.MicomData2 = micomDatabaseSelected.MicomData2;
+
+            }
+
+            sharedModel.Devices.DeviceManager = deviceManager;
+            sharedModel.Devices.FirmwareList = sharedMicomDatabases.MicomDatabaseList.Select(item => item.FirmwareMicom).ToList();
+
+
             autoPageViewModel = new AutoPageViewModel(sharedModel);
             manualPageViewModel = new ManualPageViewModel(sharedModel);
             settingPageViewModel = new SettingPageViewModel(sharedModel);
-            newModelPageViewModel = new NewModelPageViewModel(sharedModel);
+            stepsPageViewModel = new StepsPageViewModel(sharedModel);
 
             sharedAutoState = new AutoState();
             autoPageViewModel.State = sharedAutoState;
-            newModelPageViewModel.AutoState = sharedAutoState;
+            stepsPageViewModel.AutoState = sharedAutoState;
+            settingPageViewModel.AutoState = sharedAutoState;
 
             deviceConnectionListViewModel = new DeviceConnectionListViewModel(sharedModel.Devices);
 
             autoPageView = new AutoPageView(autoPageViewModel);
             manualPageView = new ManualPageView(manualPageViewModel);
             settingPageView = new SettingPageView(settingPageViewModel);
-            newModelPageView = new NewModelPageView(newModelPageViewModel);
+            newModelPageView = new StepsPageView(stepsPageViewModel);
             deviceConnectionList = new DeviceConnectionList(deviceConnectionListViewModel);
             testLogic.Model = sharedModel;
             autoPageViewModel.TestLogic = testLogic;
@@ -186,22 +213,19 @@ namespace Touch_Panel.View_Model
             var timeout = TimeSpan.FromSeconds(5);
             var micomName = $"Micom{index}";
 
+            mData.SignalIntegrity = string.Empty;
+            mData.FirmwareLog = string.Empty;
+
             try
             {
                 var sw = Stopwatch.StartNew();
-                string currentFirmware = string.Empty;
                 // Vòng lặp kiểm tra firmware hiện tại
                 while (sw.Elapsed < timeout)
                 {
                     await sharedModel.Devices.VerifyMICOM(micomCtx);
 
-                    // Lấy giá trị firmware động dựa trên index
-                    currentFirmware = micomCtx.MICOMData.FirmwareName;
-
-
-                    if (!string.IsNullOrEmpty(currentFirmware))
+                    if (micomCtx.MICOMData.MatchFirmware)
                     {
-
                         break;
                     }
 
@@ -209,7 +233,7 @@ namespace Touch_Panel.View_Model
                 }
 
 
-                if (currentFirmware != sharedModel.Devices.SelectedFirmwareMicom)
+                if (!micomCtx.MICOMData.MatchFirmware)
                 {
                     sharedModel.Devices.CloseDeviceByName(micomName);
 
@@ -229,6 +253,10 @@ namespace Touch_Panel.View_Model
 
                     }
 
+                }
+                else
+                {
+                    mData.FirmwareLog = "✓";
                 }
             }
             catch (Exception)
@@ -258,19 +286,31 @@ namespace Touch_Panel.View_Model
 
                     sharedModel = Utility.ConvertFromJson<Model.Model>(modelStr);
 
+                    var micomDatabaseSelected = sharedMicomDatabases.MicomDatabaseList.Where(item => item.FirmwareMicom == sharedModel.Devices.SelectedFirmwareMicom).FirstOrDefault();
+                    if (micomDatabaseSelected != null)
+                    {
+                        sharedModel.Devices.MicomData1 = micomDatabaseSelected.MicomData1;
+                        sharedModel.Devices.MicomData2 = micomDatabaseSelected.MicomData2;
+
+                    }
+
+
                     deviceManager.Dispose();
 
                     deviceManager = new DeviceManager();
 
                     sharedModel.Devices.DeviceManager = deviceManager;
+                    sharedModel.Devices.FirmwareList = sharedMicomDatabases.MicomDatabaseList.Select(item => item.FirmwareMicom).ToList();
 
                     autoPageViewModel.Model = sharedModel;
                     manualPageViewModel.Model = sharedModel;
                     settingPageViewModel.Model = sharedModel;
-                    newModelPageViewModel.Model = sharedModel;
+                    stepsPageViewModel.Model = sharedModel;
 
                     testLogic.Model = sharedModel;
                     deviceConnectionListViewModel.Devices = sharedModel.Devices;
+
+
 
                     await sharedModel.Devices.ConnectAll();
 

@@ -13,10 +13,10 @@ namespace Touch_Panel.Model
  
 
         [ObservableProperty]
-        private TestStep step1 = new TestStep();
+        private TestStep micom1TestStep = new TestStep();
 
         [ObservableProperty]
-        private TestStep step2 = new TestStep();
+        private TestStep micom2TestStep = new TestStep();
 
         [ObservableProperty]
         private Settings settings = new Settings();

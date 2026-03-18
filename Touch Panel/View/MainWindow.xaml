@@ -28,9 +28,6 @@
                 <Button Cursor="Hand" FontSize="20" Margin="0 10" Content="AUTO" Width="100" Height="30" Command="{Binding HomePageCommand}"/>
                 <Button Cursor="Hand" FontSize="20" Margin="0 0" Content="MANUAL" Width="100" Height="30" Command="{Binding ManualPageCommand}" />
                     <Button Cursor="Hand" FontSize="20" Margin="0 10" Content="MODEL" Width="100"  Height="30" Command="{Binding NewModelPageCommand}"/>
-
-
-
                 <Button Cursor="Hand" FontSize="20" Margin="0 0"  Content="SETTING" Width="100" Height="30" Command="{Binding SettingPageCommand}"/>
 
                 <Label Content="v2.0" Foreground="White" HorizontalContentAlignment="Center" Margin="0, 690, 0, 0"/>

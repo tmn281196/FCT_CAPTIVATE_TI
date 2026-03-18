@@ -859,7 +859,6 @@ D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\ne
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
-D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_Content.g.cs
@@ -872,7 +871,6 @@ D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\ne
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
-D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
@@ -886,3 +884,6 @@ D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\ne
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.baml
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\MicomDatabase.json

@@ -13,9 +13,6 @@ namespace Touch_Panel.Model
         private string logDir;
 
         [ObservableProperty]
-        private int delayBeforeTestBegin = 1000;
-
-        [ObservableProperty]
         private bool shouldStopAllWhenAnyFailedStep = false;
 
 
@@ -27,5 +24,6 @@ namespace Touch_Panel.Model
 
         [ObservableProperty]
         private bool shouldSaveLog = true;
+
     }
 }

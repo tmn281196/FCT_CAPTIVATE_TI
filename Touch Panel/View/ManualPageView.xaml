@@ -10,58 +10,48 @@
              >
     <UserControl.Resources>
         <ResourceDictionary>
+            <!-- MergedDictionaries phải đặt TRÊN CÙNG -->
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Template.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Sau đó mới đặt các resource -->
+            <local:CountToOrientationConverter x:Key="CountToOrientationConverter"/>
 
             <Style x:Key="StatusLabelStyle" TargetType="Label">
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding Status}" Value="Wait">
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="FontSize" Value="30" />
-
                         <Setter Property="Background" Value="Orange" />
                         <Setter Property="Content" Value="WAIT" />
-
                     </DataTrigger>
-
                     <DataTrigger Binding="{Binding Status}" Value="Ready">
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="FontSize" Value="30" />
-
                         <Setter Property="Background" Value="#347474" />
                         <Setter Property="Content" Value="READY" />
-
                     </DataTrigger>
-
                     <DataTrigger Binding="{Binding Status}" Value="Testing">
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="FontSize" Value="30" />
-
                         <Setter Property="Background" Value="#f8da5b" />
                         <Setter Property="Content" Value="TESTING" />
-
                     </DataTrigger>
-
                     <DataTrigger Binding="{Binding Status}" Value="Pass">
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="FontSize" Value="30" />
-
                         <Setter Property="Background" Value="LimeGreen" />
                         <Setter Property="Content" Value="PASS" />
-
                     </DataTrigger>
-
                     <DataTrigger Binding="{Binding Status}" Value="Fail">
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="FontSize" Value="30" />
                         <Setter Property="Background" Value="Red" />
                         <Setter Property="Content" Value="FAIL" />
-
                     </DataTrigger>
                 </Style.Triggers>
             </Style>
-
-            <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="../Template.xaml" />
-            </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </UserControl.Resources>
 
@@ -77,7 +67,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <DataGrid  IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester1.CurrStep}" SelectedItem="{Binding SelectedItem1}"  Grid.Row="0" ItemsSource="{Binding Model.Step1.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+        <DataGrid  IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester1.CurrStep}" SelectedItem="{Binding SelectedItem1}"  Grid.Row="0" ItemsSource="{Binding Model.Micom1TestStep.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}"
         ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding No}" Width="50" Header="No" />
@@ -127,7 +117,7 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </DataGrid>
-        <DataGrid  IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester2.CurrStep}" SelectedItem="{Binding SelectedItem2}"  Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Model.Step2.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+        <DataGrid  IsReadOnly="True" SelectedIndex="{Binding TestLogic.Tester2.CurrStep}" SelectedItem="{Binding SelectedItem2}"  Grid.Row="0" Grid.Column="1" ItemsSource="{Binding Model.Micom2TestStep.Steps}" Background="White" Style="{StaticResource CustomDataGridStyle}"
      ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding No}" Width="50" Header="No" />
@@ -187,7 +177,7 @@
             <StackPanel   Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
 
                 <StackPanel  HorizontalAlignment="Left"   VerticalAlignment="Center" >
-                    <ItemsControl ItemsSource="{Binding Model.Devices.ListCAPSensor1}" Margin="1">
+                    <ItemsControl ItemsSource="{Binding Model.Devices.MicomData1.ListCAPSensor}" Margin="1">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  />
@@ -218,7 +208,8 @@ Margin="2">
                                                             <ItemsControl ItemsSource="{Binding ListCAPElement}">
                                                                 <ItemsControl.ItemsPanel>
                                                                     <ItemsPanelTemplate>
-                                                                        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center"/>
+                                                                        <StackPanel Orientation="{Binding ListCAPElement.Count, 
+                        Converter={StaticResource CountToOrientationConverter}}" HorizontalAlignment="Center"/>
                                                                     </ItemsPanelTemplate>
                                                                 </ItemsControl.ItemsPanel>
                                                                 <ItemsControl.ItemTemplate>
@@ -311,7 +302,7 @@ Margin="2">
                       HorizontalAlignment="Right"
                       VerticalAlignment="Center" >
 
-                    <ItemsControl ItemsSource="{Binding Model.Devices.ListCAPSensor2}" Margin="1">
+                    <ItemsControl ItemsSource="{Binding Model.Devices.MicomData2.ListCAPSensor}" Margin="1">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
@@ -332,17 +323,12 @@ Margin="2">
                                             </ItemsControl.ItemsPanel>
                                             <ItemsControl.ItemTemplate>
                                                 <DataTemplate>
-                                                    <Border Background="#F7F7F7" 
-BorderBrush="Gray" 
-BorderThickness="1" 
-Padding="5,5" 
-Margin="2">
+                                                    <Border Background="#F7F7F7"  BorderBrush="Gray"  BorderThickness="1"  Padding="5,5"  Margin="2">
                                                         <StackPanel>
-
                                                             <ItemsControl ItemsSource="{Binding ListCAPElement}">
                                                                 <ItemsControl.ItemsPanel>
                                                                     <ItemsPanelTemplate>
-                                                                        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center"/>
+                                                                        <StackPanel Orientation="{Binding ListCAPElement.Count,  Converter={StaticResource CountToOrientationConverter}}" HorizontalAlignment="Center"/>
                                                                     </ItemsPanelTemplate>
                                                                 </ItemsControl.ItemsPanel>
                                                                 <ItemsControl.ItemTemplate>

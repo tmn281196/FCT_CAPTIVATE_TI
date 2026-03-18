@@ -329,8 +329,8 @@ namespace Touch_Panel.View_Model
             using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.UTF8))
             {
                 sw.WriteLine("Group,No,Test,Content,Spec,Value,Result");
-                var data1 = Model.Step1.Steps as IEnumerable<Step>;
-                var data2 = Model.Step2.Steps as IEnumerable<Step>;
+                var data1 = Model.Micom1TestStep.Steps as IEnumerable<Step>;
+                var data2 = Model.Micom2TestStep.Steps as IEnumerable<Step>;
 
                 foreach (var row in data1)
                 {
