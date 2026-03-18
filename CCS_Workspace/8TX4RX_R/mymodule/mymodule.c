@@ -65,7 +65,8 @@
 //*****************************************************************************
 #define NUM_BUTTONS     3
 #define FRAMES_PER_BTN  7   // giả sử max cycles = 6, điều chỉnh theo thực tế
-#define FRAME_SIZE 10
+#define ELEMENTS_PER_CYCLE 2
+#define FRAME_SIZE (2 * ELEMENTS_PER_CYCLE + 6) // 2*ELEMENTS_PER_CYCLE  + 6 (STX + BTN_ID + CYCLE_ID + CRC16 + ETX)
 
 static uint8_t tx_buf[NUM_BUTTONS][FRAMES_PER_BTN][FRAME_SIZE];
 static uint8_t tx_frame_counts[NUM_BUTTONS] = {0};   // đếm riêng cho từng button
@@ -127,7 +128,7 @@ static void prepare_tx_for_button(tSensor *pSensor, uint8_t btn_idx, uint8_t but
         frame[2] = iCycle;
 
         uint8_t iElement;
-        for (iElement = 0; iElement < 2; iElement++)
+        for (iElement = 0; iElement < ELEMENTS_PER_CYCLE; iElement++)
         {
             if (iElement < pSensor->pCycle[iCycle]->ui8NrOfElements)
             {
@@ -192,17 +193,12 @@ void disable_handling(void) {
     frame[1] = 'D';
     frame[2] = 'I';
     frame[3] = 'S';
-    frame[4] = 'A';
-    frame[5] = 'L';
-    frame[6] = 'B';
-    // frame[7] và [8] sẽ là CRC
-    frame[9] = ETX;
 
-    // Tính CRC trên 7 bytes đầu (STX đến 'B')
-    uint16_t crc = calculate_crc16(frame, 7);
+    frame[FRAME_SIZE-1] = ETX;
+    uint16_t crc = calculate_crc16(frame, FRAME_SIZE-3);
 
-    frame[7] = (uint8_t)(crc >> 8);   // MSB
-    frame[8] = (uint8_t)(crc & 0xFF); // LSB
+    frame[FRAME_SIZE-3] = (uint8_t)(crc >> 8);   // MSB
+    frame[FRAME_SIZE-2] = (uint8_t)(crc & 0xFF); // LSB
 
     UART_transmitBuffer(frame, FRAME_SIZE);
 }
@@ -215,16 +211,12 @@ void enable_handling(void) {
     frame[1] = 'E';
     frame[2] = 'N';
     frame[3] = 'A';
-    frame[4] = 'B';
-    frame[5] = 'L';
-    frame[6] = 'E';
-    // frame[7] và [8] sẽ là CRC
-    frame[9] = ETX;
 
-    uint16_t crc = calculate_crc16(frame, 7);
+    frame[FRAME_SIZE-1] = ETX;
+    uint16_t crc = calculate_crc16(frame, FRAME_SIZE-3);
 
-    frame[7] = (uint8_t)(crc >> 8);
-    frame[8] = (uint8_t)(crc & 0xFF);
+    frame[FRAME_SIZE-3] = (uint8_t)(crc >> 8);   // MSB
+    frame[FRAME_SIZE-2] = (uint8_t)(crc & 0xFF); // LSB
 
     UART_transmitBuffer(frame, FRAME_SIZE);
 }
@@ -238,16 +230,12 @@ void recalib_handling(void) {
     frame[1] = 'C';
     frame[2] = 'A';
     frame[3] = 'L';
-    frame[4] = 'I';
-    frame[5] = 'B';
-    frame[6] = 'R';
-    // frame[7] và [8] sẽ là CRC
-    frame[9] = ETX;
 
-    uint16_t crc = calculate_crc16(frame, 7);
+    frame[FRAME_SIZE-1] = ETX;
+    uint16_t crc = calculate_crc16(frame, FRAME_SIZE-3);
 
-    frame[7] = (uint8_t)(crc >> 8);
-    frame[8] = (uint8_t)(crc & 0xFF);
+    frame[FRAME_SIZE-3] = (uint8_t)(crc >> 8);   // MSB
+    frame[FRAME_SIZE-2] = (uint8_t)(crc & 0xFF); // LSB
 
     UART_transmitBuffer(frame, FRAME_SIZE);
 }
@@ -257,17 +245,14 @@ void verify_handling(void) {
     frame[0] = STX;
     frame[1] = 'F';
     frame[2] = 'W';
-    frame[3] = 0x00;
-    frame[4] = 0x00;
-    frame[5] = 0x00;
-    frame[6] = 0x00;
-    // frame[7] và [8] sẽ là CRC
-    frame[9] = ETX;
+    frame[3] = 'M';
+  
 
-    uint16_t crc = calculate_crc16(frame, 7);
+    frame[FRAME_SIZE-1] = ETX;
+    uint16_t crc = calculate_crc16(frame, FRAME_SIZE-3);
 
-    frame[7] = (uint8_t)(crc >> 8);
-    frame[8] = (uint8_t)(crc & 0xFF);
+    frame[FRAME_SIZE-3] = (uint8_t)(crc >> 8);   // MSB
+    frame[FRAME_SIZE-2] = (uint8_t)(crc & 0xFF); // LSB
 
     UART_transmitBuffer(frame, FRAME_SIZE);
 }
@@ -278,16 +263,12 @@ void unknown_handling(void) {
     frame[1] = 'U';
     frame[2] = 'N';
     frame[3] = 'K';
-    frame[4] = 'N';
-    frame[5] = 'O';
-    frame[6] = 'W';
-    // frame[7] và [8] sẽ là CRC
-    frame[9] = ETX;
 
-    uint16_t crc = calculate_crc16(frame, 7);
+    frame[FRAME_SIZE-1] = ETX;
+    uint16_t crc = calculate_crc16(frame, FRAME_SIZE-3);
 
-    frame[7] = (uint8_t)(crc >> 8);
-    frame[8] = (uint8_t)(crc & 0xFF);
+    frame[FRAME_SIZE-3] = (uint8_t)(crc >> 8);   // MSB
+    frame[FRAME_SIZE-2] = (uint8_t)(crc & 0xFF); // LSB
 
     UART_transmitBuffer(frame, FRAME_SIZE);
 }
@@ -304,18 +285,17 @@ typedef enum {
 command_t parse_command(char *cmd) {
   if (strcmp(cmd, "RESET") == 0)
     return CMD_RESET;
-
   if (strcmp(cmd, "DISABLE") == 0)
     return CMD_DISABLE;
   if (strcmp(cmd, "ENABLE") == 0)
     return CMD_ENABLE;
-  if (strcmp(cmd, "VERIFY") == 0)
+  if (strcmp(cmd, "ID0000") == 0)
     return CMD_VERIFY;
   return CMD_UNKNOWN;
 }
 
 void process_command(char *cmd) {
-  command_t command = parse_command(cmd);
+  command_t command = parse_command(cmd);       
 
   switch (command) {
   case CMD_RESET:
