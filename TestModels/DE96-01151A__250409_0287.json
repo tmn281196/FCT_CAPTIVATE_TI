@@ -1,5 +1,8 @@
 {
   "Micom1TestStep": {
+    "Steps": []
+  },
+  "Micom2TestStep": {
     "Steps": [
       {
         "No": "1",
@@ -31,8 +34,8 @@
       {
         "No": "4",
         "Test": "MEAS",
-        "Objectid": "0.0.0",
-        "Specvalue": "200",
+        "Objectid": "0.2.0",
+        "Specvalue": "120",
         "Timedelay": 0,
         "Timetest": 5000,
         "NoSkip": true
@@ -49,8 +52,8 @@
       {
         "No": "6",
         "Test": "MEAS",
-        "Objectid": "0.0.1",
-        "Specvalue": "200",
+        "Objectid": "0.0.0",
+        "Specvalue": "120",
         "Timedelay": 0,
         "Timetest": 5000,
         "NoSkip": true
@@ -67,8 +70,8 @@
       {
         "No": "8",
         "Test": "MEAS",
-        "Objectid": "0.0.2",
-        "Specvalue": "100",
+        "Objectid": "0.1.0",
+        "Specvalue": "120",
         "Timedelay": 0,
         "Timetest": 5000,
         "NoSkip": true
@@ -85,8 +88,8 @@
       {
         "No": "10",
         "Test": "MEAS",
-        "Objectid": "0.0.3",
-        "Specvalue": "100",
+        "Objectid": "1.0.0",
+        "Specvalue": "120",
         "Timedelay": 0,
         "Timetest": 5000,
         "NoSkip": true
@@ -103,8 +106,8 @@
       {
         "No": "12",
         "Test": "MEAS",
-        "Objectid": "0.1.0",
-        "Specvalue": "100",
+        "Objectid": "1.1.0",
+        "Specvalue": "120",
         "Timedelay": 0,
         "Timetest": 5000,
         "NoSkip": true
@@ -121,8 +124,8 @@
       {
         "No": "14",
         "Test": "MEAS",
-        "Objectid": "0.1.1",
-        "Specvalue": "100",
+        "Objectid": "1.2.0",
+        "Specvalue": "120",
         "Timedelay": 0,
         "Timetest": 2000,
         "NoSkip": true
@@ -139,8 +142,8 @@
       {
         "No": "16",
         "Test": "MEAS",
-        "Objectid": "0.1.2",
-        "Specvalue": "100",
+        "Objectid": "1.3.0",
+        "Specvalue": "120",
         "Timedelay": 0,
         "Timetest": 2000,
         "NoSkip": true
@@ -157,16 +160,13 @@
       {
         "No": "18",
         "Test": "MEAS",
-        "Objectid": "0.1.3",
-        "Specvalue": "100",
+        "Objectid": "1.0.1",
+        "Specvalue": "120",
         "Timedelay": 0,
         "Timetest": 2000,
         "NoSkip": true
       }
     ]
-  },
-  "Micom2TestStep": {
-    "Steps": []
   },
   "Settings": {
     "LogDir": "D:\\Logs",
@@ -176,13 +176,26 @@
     "ShouldSaveLog": false
   },
   "Devices": {
-    "MicomCom1Port": "COM12",
-    "MicomCom2Port": "Unset",
-    "SystemComPort": "Unset",
-    "Solenoid1ComPort": "Unset",
-    "Solenoid2ComPort": "Unset",
-    "Solenoid3ComPort": "Unset",
-    "ComPortList": ["Unset", "Unset", "Unset", "Unset", "COM12"],
+    "FirmwareList": [
+      "HUMAN_THAI__DE96-01151A__250409_0287",
+      "HUMAN_THAI__ME21K7010DS__241223_0199"
+    ],
+    "MicomCom1Port": "COM10",
+    "MicomCom2Port": "COM13",
+    "SystemComPort": "COM3",
+    "Solenoid1ComPort": "COM7",
+    "Solenoid2ComPort": "COM4",
+    "Solenoid3ComPort": "COM8",
+    "ComPortList": [
+      "Unset",
+      "COM1",
+      "COM7",
+      "COM8",
+      "COM3",
+      "COM4",
+      "COM10",
+      "COM13"
+    ],
     "SelectedFirmwareMicom": "HUMAN_THAI__DE96-01151A__250409_0287"
   }
 }

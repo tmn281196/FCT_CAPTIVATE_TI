@@ -6,6 +6,12 @@
       "MicomData1": {
         "Id": 1,
         "FrameLen": 14,
+        "ListCAPSensor": [          
+        ]
+      },
+      "MicomData2": {
+        "Id": 1,
+        "FrameLen": 10,
         "ListCAPSensor": [
           {
             "Id": 0,
@@ -21,14 +27,6 @@
                   {
                     "Id": 1,
                     "StringId": "0.0.1"
-                  },
-                  {
-                    "Id": 2,
-                    "StringId": "0.0.2"
-                  },
-                  {
-                    "Id": 3,
-                    "StringId": "0.0.3"
                   }
                 ]
               },
@@ -43,22 +41,88 @@
                   {
                     "Id": 1,
                     "StringId": "0.1.1"
+                  }
+                ]
+              },
+              {
+                "Id": 2,
+                "StringId": "0.2",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "0.2.0"
                   },
                   {
-                    "Id": 2,
-                    "StringId": "0.1.2"
+                    "Id": 1,
+                    "StringId": "0.2.1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Id": 1,
+            "ListCAPCycle": [
+              {
+                "Id": 0,
+                "StringId": "1.0",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.0.0"
                   },
                   {
-                    "Id": 3,
-                    "StringId": "0.1.3"
+                    "Id": 1,
+                    "StringId": "1.0.1"
+                  }
+                ]
+              },
+              {
+                "Id": 1,
+                "StringId": "1.1",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.1.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "1.1.1"
+                  }
+                ]
+              },
+              {
+                "Id": 2,
+                "StringId": "1.2",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.2.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "1.2.1"
+                  }
+                ]
+              },
+              {
+                "Id": 3,
+                "StringId": "1.3",
+                "ListCAPElement": [
+                  {
+                    "Id": 0,
+                    "StringId": "1.3.0"
+                  },
+                  {
+                    "Id": 1,
+                    "StringId": "1.3.1"
                   }
                 ]
               }
             ]
           }
         ]
-      },
-      "MicomData2": {}
+      }
     },
     {
       "FirmwareMicom": "HUMAN_THAI__ME21K7010DS__241223_0199",
@@ -133,7 +197,6 @@
               {
                 "Id": 1,
                 "StringId": "1.1",
-
                 "ListCAPElement": [
                   {
                     "Id": 0,
@@ -248,7 +311,6 @@
               {
                 "Id": 1,
                 "StringId": "0.1",
-
                 "ListCAPElement": [
                   {
                     "Id": 0,
@@ -263,7 +325,6 @@
               {
                 "Id": 2,
                 "StringId": "0.2",
-
                 "ListCAPElement": [
                   {
                     "Id": 0,
@@ -340,12 +401,10 @@
           },
           {
             "Id": 2,
-
             "ListCAPCycle": [
               {
                 "Id": 0,
                 "StringId": "2.0",
-
                 "ListCAPElement": [
                   {
                     "Id": 0,

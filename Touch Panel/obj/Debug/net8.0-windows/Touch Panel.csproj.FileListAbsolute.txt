@@ -727,7 +727,6 @@ D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionLi
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.g.cs
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.g.cs
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.g.cs
-D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.g.cs
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.g.cs
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\App.g.cs
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel_Content.g.cs
@@ -740,7 +739,6 @@ D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionLi
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\DeviceConnectionView.baml
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\MainWindow.baml
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\ManualPageView.baml
-D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\NewModelPageView.baml
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\SettingPageView.baml
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.g.resources
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.GeneratedMSBuildEditorConfig.editorconfig
@@ -887,3 +885,6 @@ D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\ne
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.g.cs
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.baml
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\MicomDatabase.json
+D:\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\MicomDatabase.json
+D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.g.cs
+D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.baml

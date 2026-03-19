@@ -174,7 +174,7 @@ namespace Touch_Panel.View_Model
                                 allDevicesConnected = false;
                             }
                         }
-                        if (allDevicesConnected && Model.Settings.LogDir != "")
+                        if ( Model.Settings.LogDir != "")
                         {
 
                             if (Model.Devices.SystemData.MainDirection == Direction.Up)
