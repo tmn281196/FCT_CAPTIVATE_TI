@@ -166,17 +166,20 @@ namespace Touch_Panel.View_Model
                     case TestState.Wait:
                         Status = "Wait";
 
-                        bool allDevicesConnected = true;
-                        foreach (var device in Model.Devices.DevicesStatus)
-                        {
-                            if (!device.Connected)
-                            {
-                                allDevicesConnected = false;
-                            }
-                        }
-                        if ( Model.Settings.LogDir != "")
-                        {
 
+                        bool micom1 = testLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort1.IsOpen : true;
+                        bool micom2 = testLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort2.IsOpen : true;
+                        bool soleinod1 = testLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid1Port.IsOpen : true; 
+                        bool soleinod2 = testLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid2Port.IsOpen : true;
+                        bool soleinod3 = Model.Devices.DeviceManager.Solenoid3Port.IsOpen;
+                        bool system = Model.Devices.DeviceManager.SystemPort.IsOpen;
+
+
+                        bool allDevicesConnected = micom1 && soleinod1 && micom2 && soleinod2 && soleinod3 && system;
+
+
+                        if (allDevicesConnected &&  Model.Settings.LogDir != "")
+                        {
                             if (Model.Devices.SystemData.MainDirection == Direction.Up)
                             {
 
