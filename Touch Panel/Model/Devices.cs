@@ -275,8 +275,8 @@ namespace Touch_Panel.Model
         private SystemData systemData = new SystemData(); 
 
 
-        const byte STX = 0x02;
-        const byte ETX = 0x03;
+        const byte STX = 0xAA;
+        const byte ETX = 0x55;
 
         public void RefreshComPort()
         {
@@ -812,7 +812,7 @@ namespace Touch_Panel.Model
                     }
                     mData.SignalIntegrity = $"Data Loss: {mData.CrcNGTime:D3}/{mData.CrcTotalTime:D3}";
 
-                    //Debug.WriteLine($"CRC error: Calculated=0x{calculatedCrc:X4}, Received=0x{receivedCrc:X4}");
+                    Debug.WriteLine($"CRC error: Calculated=0x{calculatedCrc:X4}, Received=0x{receivedCrc:X4}");
                     return;  // Bỏ qua frame lỗi
                 }
                 else
@@ -922,7 +922,7 @@ namespace Touch_Panel.Model
             }
 
             // Dọn buffer khi index lớn
-            if (readIndex > 100)
+            if (readIndex > 1000)
             {
                 micomRXBuffer.RemoveRange(0, readIndex);
                 readIndex = 0;

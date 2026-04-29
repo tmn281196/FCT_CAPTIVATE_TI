@@ -210,7 +210,7 @@ namespace Touch_Panel.View_Model
 
                     case TestState.Testing:
 
-                        await Task.Delay(2000);
+                        await Task.Delay(1000);
 
                         await Task.WhenAll(
                           Model.Devices.ResumeMICOM(1),

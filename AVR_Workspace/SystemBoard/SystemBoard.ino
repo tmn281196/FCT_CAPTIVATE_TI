@@ -1,5 +1,5 @@
-#define STX 0x02
-#define ETX 0x03
+#define STX 0xAA
+#define ETX 0x55
 
 // Giá trị gửi đi
 // 0x00 = STOP (đã dừng ở trên hoặc dưới)

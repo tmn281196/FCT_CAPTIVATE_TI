@@ -275,6 +275,8 @@ namespace Touch_Panel.Model
                 await Task.Delay(10); 
             }
 
+            step.Value = string.Empty;
+
             if (micomResponse)
             {
                 step.Result = "Pass";
