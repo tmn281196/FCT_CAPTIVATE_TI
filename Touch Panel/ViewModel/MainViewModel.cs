@@ -34,11 +34,13 @@ namespace Touch_Panel.View_Model
     {
         AutoPageView autoPageView;
         ManualPageView manualPageView;
+        TunningPageView tunningPageView;
         SettingPageView settingPageView;
         StepsPageView newModelPageView;
 
         AutoPageViewModel autoPageViewModel;
         ManualPageViewModel manualPageViewModel;
+        TunningPageViewModel tunningPageViewModel;
         SettingPageViewModel settingPageViewModel;
         StepsPageViewModel stepsPageViewModel;
 
@@ -97,6 +99,7 @@ namespace Touch_Panel.View_Model
 
             autoPageViewModel = new AutoPageViewModel(sharedModel);
             manualPageViewModel = new ManualPageViewModel(sharedModel);
+            tunningPageViewModel = new TunningPageViewModel(sharedModel);
             settingPageViewModel = new SettingPageViewModel(sharedModel);
             stepsPageViewModel = new StepsPageViewModel(sharedModel);
 
@@ -109,12 +112,15 @@ namespace Touch_Panel.View_Model
 
             autoPageView = new AutoPageView(autoPageViewModel);
             manualPageView = new ManualPageView(manualPageViewModel);
+            tunningPageView = new TunningPageView(tunningPageViewModel);
             settingPageView = new SettingPageView(settingPageViewModel);
             newModelPageView = new StepsPageView(stepsPageViewModel);
             deviceConnectionList = new DeviceConnectionList(deviceConnectionListViewModel);
             testLogic.Model = sharedModel;
+
             autoPageViewModel.TestLogic = testLogic;
             manualPageViewModel.TestLogic = testLogic;
+            tunningPageViewModel.TestLogic = testLogic;
             deviceConnectionPage = deviceConnectionList;
 
 
@@ -137,6 +143,11 @@ namespace Touch_Panel.View_Model
         private string modelName;
 
 
+        [RelayCommand]
+        private void TunningPage()
+        {
+            Navigate("Tunning");
+        }
         [RelayCommand]
         private void SettingPage()
         {
@@ -304,6 +315,7 @@ namespace Touch_Panel.View_Model
 
                     autoPageViewModel.Model = sharedModel;
                     manualPageViewModel.Model = sharedModel;
+                    tunningPageViewModel.Model = sharedModel;
                     settingPageViewModel.Model = sharedModel;
                     stepsPageViewModel.Model = sharedModel;
 
@@ -357,6 +369,10 @@ namespace Touch_Panel.View_Model
                     break;
                 case "NewModel":
                     CurrentPage = newModelPageView;
+                    autoPageViewModel.runWhileLoop = false;
+                    break;
+                case "Tunning":
+                    CurrentPage = tunningPageView;
                     autoPageViewModel.runWhileLoop = false;
                     break;
                 default:

@@ -1,16 +1,23 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using RJCP.IO.Ports;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Common;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Reflection.Metadata;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Channels;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Windows.Threading;
+using System.Xml.Linq;
 using Touch_Panel.Model;
 
 namespace Touch_Panel.View_Model
@@ -34,20 +41,19 @@ namespace Touch_Panel.View_Model
 
         partial void OnModelChanged(Model.Model? oldModel, Model.Model newModel)
         {
-           
+
         }
 
 
 
         [ObservableProperty]
         private Step selectedItem1;
-        
+
         [ObservableProperty]
         private Step selectedItem2;
 
         [ObservableProperty]
         private TestLogic testLogic;
-
 
         [RelayCommand]
         private void DoubleClick(object parameter)
@@ -71,10 +77,10 @@ namespace Touch_Panel.View_Model
 
                     break;
             }
-          
+
         }
 
-      
+
 
         [RelayCommand]
         private void FullTest(object parameter)
@@ -177,7 +183,6 @@ namespace Touch_Panel.View_Model
             Model.Devices.ConnectorAllUp();
         }
 
-       
 
     }
 }

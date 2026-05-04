@@ -45,5 +45,7 @@ namespace Touch_Panel.View
             InitializeComponent();
             this.DataContext = vm;
         }
+
+   
     }
 }

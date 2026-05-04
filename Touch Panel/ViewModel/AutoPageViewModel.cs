@@ -151,8 +151,8 @@ namespace Touch_Panel.View_Model
             );
 
             await Task.WhenAll(
-                Model.Devices.ResetSolenoid(testLogic.Tester1),
-                Model.Devices.ResetSolenoid(testLogic.Tester2)
+                Model.Devices.ResetSolenoid(TestLogic.Tester1),
+                Model.Devices.ResetSolenoid(TestLogic.Tester2)
             );
 
             TestLogic.Tester1.ClearSteps();
@@ -167,10 +167,10 @@ namespace Touch_Panel.View_Model
                         Status = "Wait";
 
 
-                        bool micom1 = testLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort1.IsOpen : true;
-                        bool micom2 = testLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort2.IsOpen : true;
-                        bool soleinod1 = testLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid1Port.IsOpen : true; 
-                        bool soleinod2 = testLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid2Port.IsOpen : true;
+                        bool micom1 = TestLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort1.IsOpen : true;
+                        bool micom2 = TestLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort2.IsOpen : true;
+                        bool soleinod1 = TestLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid1Port.IsOpen : true;
+                        bool soleinod2 = TestLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid2Port.IsOpen : true;
                         bool soleinod3 = Model.Devices.DeviceManager.Solenoid3Port.IsOpen;
                         bool system = Model.Devices.DeviceManager.SystemPort.IsOpen;
 
@@ -178,14 +178,14 @@ namespace Touch_Panel.View_Model
                         bool allDevicesConnected = micom1 && soleinod1 && micom2 && soleinod2 && soleinod3 && system;
 
 
-                        if (allDevicesConnected &&  Model.Settings.LogDir != "")
+                        if (allDevicesConnected && Model.Settings.LogDir != "")
                         {
                             if (Model.Devices.SystemData.MainDirection == Direction.Up)
                             {
 
                                 await Task.WhenAll(
-                                      Model.Devices.ResetSolenoid(testLogic.Tester1),
-                                      Model.Devices.ResetSolenoid(testLogic.Tester2)
+                                      Model.Devices.ResetSolenoid(TestLogic.Tester1),
+                                      Model.Devices.ResetSolenoid(TestLogic.Tester2)
                                 );
 
                                 Model.Devices.ConnectorAllUp();
@@ -217,6 +217,10 @@ namespace Touch_Panel.View_Model
                           Model.Devices.ResumeMICOM(2)
                         );
 
+                        await Task.WhenAll(
+                          Model.Devices.SetAllTunningValuesToMicom(TestLogic.Tester1),
+                          Model.Devices.SetAllTunningValuesToMicom(TestLogic.Tester2)
+                        );
 
 
                         Status = "Testing";
@@ -231,9 +235,17 @@ namespace Touch_Panel.View_Model
 
 
                         await Task.WhenAll(
-                            Model.Devices.ResetSolenoid(testLogic.Tester1),
-                            Model.Devices.ResetSolenoid(testLogic.Tester2)
+                            Model.Devices.ResetSolenoid(TestLogic.Tester1),
+                            Model.Devices.ResetSolenoid(TestLogic.Tester2)
                         );
+
+
+
+                        //await Task.WhenAll(
+                        //  Model.Devices.GetTunningValueIfPass(TestLogic.Tester1),
+                        //  Model.Devices.GetTunningValueIfPass(TestLogic.Tester2)
+                        //);
+
 
                         await Task.Delay(100);
                         await Task.WhenAll(

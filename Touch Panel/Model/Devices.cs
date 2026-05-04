@@ -1,5 +1,6 @@
 ﻿using BSL430_NET;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using HidSharp;
 using RJCP.IO.Ports;
 using System;
@@ -104,6 +105,21 @@ namespace Touch_Panel.Model
         }
     }
 
+
+    public enum TuningField
+    {
+        OffsetTap,
+        CoarseGainRatio,
+        FineGainRatio
+    }
+
+    public class ElementMedian
+    {
+        public string ElementId { get; set; }
+        public TuningField Field { get; set; }
+        public double Median { get; set; }
+    }
+
     public partial class MICOMData : ObservableObject
     {
         [ObservableProperty]
@@ -139,9 +155,22 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private string signalIntegrity = string.Empty;
 
-
+     
     }
 
+
+
+    public partial class TunningParameter : ObservableObject
+    {
+        [ObservableProperty]
+        private UInt16 offsetTap;
+
+        [ObservableProperty]
+        private UInt16 coarseGainRatio;
+
+        [ObservableProperty]
+        private UInt16 fineGainRatio;
+    }
 
     public partial class CAPElement : ObservableObject
     {
@@ -151,13 +180,45 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private string stringId;
 
-        [JsonIgnore]
+        [ObservableProperty]
+        private UInt16 offsetTap;
+
+        [ObservableProperty]
+        private UInt16 coarseGainRatio;
+
+        [ObservableProperty]
+        private UInt16 fineGainRatio;
+
+        [ObservableProperty]
+        private ObservableCollection<TunningParameter> listTunningParameter = new ObservableCollection<TunningParameter>();
+
+
+
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private UInt16 calculatedOffsetTap;
+
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private UInt16 calculatedCoarseGainRatio;
+
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private UInt16 calculatedFineGainRatio;
+
+
+
+
+        [property: JsonIgnore]
         [ObservableProperty]
         private UInt16 delta;
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         [ObservableProperty]
         private bool isMax;
+
+      
+
     }
     public partial class CAPCycle : ObservableObject
     {
@@ -184,7 +245,7 @@ namespace Touch_Panel.Model
     public partial class ElementSensor : ObservableObject
     {
         [ObservableProperty]
-        private int id;   
+        private int id;
 
         [ObservableProperty]
         private UInt16 lta;
@@ -209,7 +270,7 @@ namespace Touch_Panel.Model
         private List<byte> sol2RxBuffer = new();
         private List<byte> sol3RxBuffer = new();
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         [ObservableProperty]
         private List<string> firmwareList;
 
@@ -272,7 +333,7 @@ namespace Touch_Panel.Model
 
         [property: JsonIgnore]
         [ObservableProperty]
-        private SystemData systemData = new SystemData(); 
+        private SystemData systemData = new SystemData();
 
 
         const byte STX = 0xAA;
@@ -591,7 +652,7 @@ namespace Touch_Panel.Model
                 if (sol1RxBuffer.Count < startIndex + 6)
                     return;
 
-                byte b2 = sol1RxBuffer[startIndex + 1];    
+                byte b2 = sol1RxBuffer[startIndex + 1];
                 byte b6 = sol1RxBuffer[startIndex + 5];
                 var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 1");
                 device.RxReceived = true;
@@ -782,7 +843,7 @@ namespace Touch_Panel.Model
             return crc;
         }
 
-    
+
 
         void ParseMICOMFrame(byte[] frame, MICOMData mData)
         {
@@ -795,7 +856,7 @@ namespace Touch_Panel.Model
 
                 // === Kiểm tra CRC-16 ===
                 // Tính CRC trên phần data từ frame[0] đến frame[6] (7 bytes: STX + button_id + cycle + 4 delta)
-                ushort calculatedCrc = CalculateCrc16(frame, mData.FrameLen-3);  // data_len = 7
+                ushort calculatedCrc = CalculateCrc16(frame, mData.FrameLen - 3);  // data_len = 7
 
                 // CRC nhận được từ frame[7] (MSB) và frame[8] (LSB)
                 ushort receivedCrc = (ushort)((frame[mData.FrameLen - 3] << 8) | frame[mData.FrameLen - 2]);
@@ -872,19 +933,84 @@ namespace Touch_Panel.Model
                 }
                 else if (frame[1] == (byte)'F')
                 {
-                    if(frame[2] == (byte)'W')
+                    if (frame[2] == (byte)'W')
                     {
                         if (frame[3] == (byte)'M')
                         {
                             mData.MatchFirmware = true;
-                            Debug.WriteLine($"MICOM {mData.Id}: {(mData.MatchFirmware ? "Match":"Mismatch")}");     
-                        }             
+                            Debug.WriteLine($"MICOM {mData.Id}: {(mData.MatchFirmware ? "Match" : "Mismatch")}");
+                        }
                     }
-                
+
                 }
                 else if (frame[1] == (byte)'C')
                 {
                     mData.CalibResponseFlag = true;
+
+                }
+                else if (frame[1] == (byte)'X')
+                {
+                    ushort sensorIndex = frame[2];
+                    ushort cycleIndex = frame[3];
+                    ushort elementID = frame[4];
+
+                    // Kiểm tra index hợp lệ để tránh exception
+                    if (sensorIndex >= listCAPSensor.Count ||
+                        cycleIndex >= listCAPSensor[(int)sensorIndex].ListCAPCycle.Count || elementID >= listCAPSensor[(int)sensorIndex].ListCAPCycle[cycleIndex].ListCAPElement.Count)
+                    {
+                        Debug.WriteLine("Invalid sensor or cycle index or element ID");
+                        return;
+                    }
+
+                    var currentCycle = listCAPSensor[(int)sensorIndex].ListCAPCycle[(int)cycleIndex];
+                    var elements = currentCycle.ListCAPElement;
+
+                    elements[elementID].OffsetTap = (ushort)((frame[5] << 8) | frame[6]);
+
+
+                }
+                else if (frame[1] == (byte)'Y')
+                {
+                    ushort sensorIndex = frame[2];
+                    ushort cycleIndex = frame[3];
+                    ushort elementID = frame[4];
+
+                    // Kiểm tra index hợp lệ để tránh exception
+                    if (sensorIndex >= listCAPSensor.Count ||
+                        cycleIndex >= listCAPSensor[(int)sensorIndex].ListCAPCycle.Count || elementID >= listCAPSensor[(int)sensorIndex].ListCAPCycle[cycleIndex].ListCAPElement.Count)
+                    {
+                        Debug.WriteLine("Invalid sensor or cycle index or element ID");
+                        return;
+                    }
+
+                    var currentCycle = listCAPSensor[(int)sensorIndex].ListCAPCycle[(int)cycleIndex];
+                    var elements = currentCycle.ListCAPElement;
+
+                    elements[elementID].CoarseGainRatio = (ushort)((frame[5]));
+
+
+
+                }
+                else if (frame[1] == (byte)'Z')
+                {
+                    ushort sensorIndex = frame[2];
+                    ushort cycleIndex = frame[3];
+                    ushort elementID = frame[4];
+
+                    // Kiểm tra index hợp lệ để tránh exception
+                    if (sensorIndex >= listCAPSensor.Count ||
+                        cycleIndex >= listCAPSensor[(int)sensorIndex].ListCAPCycle.Count || elementID >= listCAPSensor[(int)sensorIndex].ListCAPCycle[cycleIndex].ListCAPElement.Count)
+                    {
+                        Debug.WriteLine("Invalid sensor or cycle index or element ID");
+                        return;
+                    }
+
+                    var currentCycle = listCAPSensor[(int)sensorIndex].ListCAPCycle[(int)cycleIndex];
+                    var elements = currentCycle.ListCAPElement;
+
+                    elements[elementID].FineGainRatio = (ushort)((frame[5]));
+
+
 
                 }
             }
@@ -982,9 +1108,9 @@ namespace Touch_Panel.Model
         {
             int index = FirmwareList.FindIndex(item => item == SelectedFirmwareMicom);
 
-            string firmwareID = index >= 0 ? index.ToString("D4") : "FFFF"; 
+            string firmwareID = index >= 0 ? index.ToString("D4") : "FFFF";
 
-            micomCtx.MICOMData.MatchFirmware = false;  
+            micomCtx.MICOMData.MatchFirmware = false;
 
             lock (micomCtx.LockObject)
             {
@@ -1003,7 +1129,7 @@ namespace Touch_Panel.Model
         {
 
             SerialPortStream micomPort = new SerialPortStream();
-      
+
 
             if (id == 1)
             {
@@ -1042,6 +1168,62 @@ namespace Touch_Panel.Model
             byte[] tx = System.Text.Encoding.ASCII.GetBytes("ENABLE\r\n");
             micomPort.Write(tx, 0, tx.Length);
             device.TxSent = false;
+        }
+
+
+
+        internal async Task GetAllTunningValuesFromMicom(Tester tester)
+        {
+            MICOMData micomData = new MICOMData();
+            if (tester.ID == 0)
+            {
+                micomData = MicomData1;
+            }
+            if (tester.ID == 1)
+            {
+                micomData = MicomData2;
+            }
+
+            foreach (var sensor in micomData.ListCAPSensor)
+            {
+                foreach (var cycle in sensor.ListCAPCycle)
+                {
+                    foreach (var element in cycle.ListCAPElement)
+                    {
+                        await GetTunningValueFromMicom(tester.ID + 1, 'X', element.StringId);
+                        await GetTunningValueFromMicom(tester.ID + 1, 'Y', element.StringId);
+                        await GetTunningValueFromMicom(tester.ID + 1, 'Z', element.StringId);
+                    }
+                }
+            }
+
+        }
+
+        internal async Task SetAllTunningValuesToMicom(Tester tester)
+        {
+            MICOMData micomData = new MICOMData();
+            if (tester.ID == 0)
+            {
+                micomData = MicomData1;
+            }
+            if (tester.ID == 1)
+            {
+                micomData = MicomData2;
+            }
+
+            foreach (var sensor in micomData.ListCAPSensor)
+            {
+                foreach (var cycle in sensor.ListCAPCycle)
+                {
+                    foreach (var element in cycle.ListCAPElement)
+                    {
+                        await SetTunningValueToMicom(tester.ID + 1, 'X', element.StringId, element.OffsetTap);
+                        await SetTunningValueToMicom(tester.ID + 1, 'Y', element.StringId, element.CoarseGainRatio);
+                        await SetTunningValueToMicom(tester.ID + 1, 'Z', element.StringId, element.FineGainRatio);
+                    }
+                }
+            }
+
         }
 
 
@@ -1105,7 +1287,7 @@ namespace Touch_Panel.Model
 
             DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
             device.TxSent = false;
-           
+
         }
 
         internal async void ConnectorAllUp()
@@ -1118,7 +1300,7 @@ namespace Touch_Panel.Model
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
 
             DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
-            device.TxSent = false;           
+            device.TxSent = false;
         }
 
 
@@ -1145,6 +1327,69 @@ namespace Touch_Panel.Model
             device.TxSent = false;
 
 
+        }
+
+
+        internal async Task GetTunningValueFromMicom(int testerId, char fieldName, string elementID)
+        {
+            SerialPortStream micomPort = null;
+            if (testerId == 2)
+            {
+                micomPort = DeviceManager.MicomPort2;
+            }
+            if (testerId == 1)
+            {
+                micomPort = DeviceManager.MicomPort1;
+            }
+
+            if (micomPort == null || !micomPort.IsOpen) return;
+
+
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == $"Micom{testerId}");
+
+            if (device != null)
+            {
+                device.TxSent = true;
+                string cmd = $"GET_TUNING:{elementID.Replace('.', ':')}:{fieldName}\r\n";
+
+                Debug.WriteLine(cmd);
+                byte[] tx = System.Text.Encoding.ASCII.GetBytes(cmd);
+                micomPort.Write(tx, 0, tx.Length);
+                device.TxSent = false;
+
+            }
+        }
+
+
+
+        internal async Task SetTunningValueToMicom(int testerId, char fieldName, string elementID, UInt16 value)
+        {
+            SerialPortStream micomPort = null;
+            if (testerId == 2)
+            {
+                micomPort = DeviceManager.MicomPort2;
+            }
+            if (testerId == 1)
+            {
+                micomPort = DeviceManager.MicomPort1;
+            }
+
+            if (micomPort == null || !micomPort.IsOpen) return;
+
+
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == $"Micom{testerId}");
+
+            if (device != null)
+            {
+                device.TxSent = true;
+                string cmd = $"SET_TUNING:{elementID.Replace('.', ':')}:{fieldName}:{value}\r\n";
+
+                Debug.WriteLine(cmd);
+                byte[] tx = System.Text.Encoding.ASCII.GetBytes(cmd);
+                micomPort.Write(tx, 0, tx.Length);
+                device.TxSent = false;
+
+            }
         }
 
     }

@@ -173,13 +173,13 @@
         <Grid  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.5*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
             <StackPanel   Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
 
-                <StackPanel  HorizontalAlignment="Left"   VerticalAlignment="Center" >
+                <StackPanel  HorizontalAlignment="Right"   VerticalAlignment="Center" >
                     <ItemsControl ItemsSource="{Binding Model.Devices.MicomData1.ListCAPSensor}" Margin="1">
                         <ItemsControl.ItemsPanel>
                             <ItemsPanelTemplate>
@@ -254,7 +254,9 @@ Margin="2">
                         </ItemsControl.ItemTemplate>
                     </ItemsControl>
                 </StackPanel>
-                <StackPanel  HorizontalAlignment="Center" Margin="2 0"  VerticalAlignment="Center"  Orientation="Vertical" Grid.Row="2">
+
+        
+                <StackPanel  HorizontalAlignment="Center" Margin="2 6"  VerticalAlignment="Bottom"  Orientation="Vertical" Grid.Row="2">
 
                     <Button Cursor="Hand"  HorizontalAlignment="Left"   Margin="1"    Height="30"  Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent"    >
                         <Button.Content>
@@ -266,9 +268,9 @@ Margin="2">
                             <fa:IconImage Icon="CircleStop" Foreground="Red"/>
                         </Button.Content>
                     </Button>
-                    <Button Cursor="Hand"  HorizontalAlignment="Left"  Margin="1"   Height="30" Command="{Binding ResetCommand}" CommandParameter="1"  Background="Transparent" >
+                    <Button Cursor="Hand"  HorizontalAlignment="Left"  Margin="1"   Height="24" Command="{Binding ResetCommand}" CommandParameter="1"  Background="Transparent" >
                         <Button.Content>
-                            <fa:IconImage Icon="Refresh" Foreground="Blue"/>
+                            <fa:IconImage Icon="ArrowUpWideShort" Foreground="Blue"/>
                         </Button.Content>
                     </Button>
 
@@ -280,7 +282,7 @@ Margin="2">
 
 
             <StackPanel   Grid.Column="2"  Orientation="Horizontal" HorizontalAlignment="Left">
-                <StackPanel  HorizontalAlignment="Center" Margin="2 0"  VerticalAlignment="Center"  Orientation="Vertical" Grid.Row="2">
+                <StackPanel  HorizontalAlignment="Center" Margin="2 6"  VerticalAlignment="Bottom"  Orientation="Vertical" Grid.Row="2">
 
                     <Button Cursor="Hand"  HorizontalAlignment="Left"   Margin="1"    Height="30"  Command="{Binding FullTestCommand}" CommandParameter="2" Background="Transparent"    >
                         <Button.Content>
@@ -292,18 +294,19 @@ Margin="2">
                             <fa:IconImage Icon="CircleStop" Foreground="Red"/>
                         </Button.Content>
                     </Button>
-                    <Button Cursor="Hand"  HorizontalAlignment="Left"  Margin="1"   Height="30" Command="{Binding ResetCommand}" CommandParameter="2"  Background="Transparent" >
+                    <Button Cursor="Hand"  HorizontalAlignment="Left"  Margin="1"   Height="24" Command="{Binding ResetCommand}" CommandParameter="2"  Background="Transparent" >
                         <Button.Content>
-                            <fa:IconImage Icon="Refresh" Foreground="Blue"/>
+                            <fa:IconImage Icon="ArrowUpWideShort" Foreground="Blue"/>
                         </Button.Content>
                     </Button>
 
 
 
                 </StackPanel>
+
                 <StackPanel Grid.Row="2" Grid.Column="1"
-                      HorizontalAlignment="Right"
-                      VerticalAlignment="Center" >
+HorizontalAlignment="Left"
+VerticalAlignment="Center" >
 
                     <ItemsControl ItemsSource="{Binding Model.Devices.MicomData2.ListCAPSensor}" Margin="1">
                         <ItemsControl.ItemsPanel>
@@ -376,90 +379,101 @@ Margin="2">
                     </ItemsControl>
                 </StackPanel>
 
-            
-
-            </StackPanel>
 
 
 
 
 
-
-            <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5 5"  Grid.Column="1" Orientation="Horizontal" Grid.Row="2">
-                <StackPanel>
-                    <Label HorizontalAlignment="Center" Padding="0">MICOM1</Label>
-                    <StackPanel Orientation="Horizontal">
-                       
-
-                        <StackPanel>
+                </StackPanel>
 
 
-                            <Button ToolTip="Halt MICOM 1"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="1">
-                                HALT
-                            </Button>
-                            <Button ToolTip="Resume MICOM 1"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="1">
-                                RESUME
-                            </Button>
-                            <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="1">
-                                CALIB
-                            </Button>
+
+
+
+
+
+
+
+            <StackPanel Margin="5 5"  Grid.Column="1" Grid.Row="2">
+                <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center"  Orientation="Horizontal" >
+                    <StackPanel>
+                        <Label HorizontalAlignment="Center" Padding="0">MICOM1</Label>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel>
+                                <Button ToolTip="Halt MICOM 1"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="1">
+                                    HALT
+                                </Button>
+                                <Button ToolTip="Resume MICOM 1"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="1">
+                                    RESUME
+                                </Button>
+                                <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="1">
+                                    CALIB
+                                </Button>
+                            </StackPanel>
+
                         </StackPanel>
 
                     </StackPanel>
-                  
-                </StackPanel>
-               
 
 
-                <StackPanel VerticalAlignment="Center">
-                    <StackPanel Orientation="Vertical">
-                        <Label HorizontalAlignment="Center" Padding="0">AIR</Label>
 
-                        <Button ToolTip="Connector Up" Cursor="Hand" HorizontalAlignment="Center"  Width="50"   Height="25" Margin="1" Command="{Binding ConnectorAllUpCommand}">
-                            <StackPanel Orientation="Horizontal">
-                                <fa:IconImage Icon="PlugCircleXmark" Foreground="Black"/>
+                    <StackPanel VerticalAlignment="Center" >
+                        <StackPanel Orientation="Vertical">
+                            <Label HorizontalAlignment="Center" Padding="0">ACTUATOR</Label>
 
-                            </StackPanel>
+                            <Button ToolTip="Connector Up" Cursor="Hand" HorizontalAlignment="Center"  Width="60"   Height="25" Margin="1" Command="{Binding ConnectorAllUpCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="PlugCircleXmark" Foreground="Black"/>
+
+                                </StackPanel>
+                            </Button>
+                            <Button ToolTip="Connector Down" Cursor="Hand" HorizontalAlignment="Center"   Width="60"  Height="25" Margin="1" Command="{Binding ConnectorAllDownCommand}">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="Plug" Foreground="Black" />
+
+                                </StackPanel>
+
+                            </Button>
+                        </StackPanel>
+
+                        <Button ToolTip="Reset Fixture"  Cursor="Hand" HorizontalAlignment="Center"   Width="60"  Height="25" Margin="1" Command="{Binding ResetCylinderCommand}">
+                            <fa:IconImage Icon="UpDown" Foreground="Black" />
+
                         </Button>
-                        <Button ToolTip="Connector Down" Cursor="Hand" HorizontalAlignment="Center"   Width="50"  Height="25" Margin="1" Command="{Binding ConnectorAllDownCommand}">
-                            <StackPanel Orientation="Horizontal">
-                                <fa:IconImage Icon="Plug" Foreground="Black" />
 
+
+
+
+
+
+                    </StackPanel>
+
+
+                    <StackPanel>
+                        <Label HorizontalAlignment="Center" Padding="0">MICOM2</Label>
+                        <StackPanel Orientation="Horizontal">
+
+                            <StackPanel>
+
+
+                                <Button ToolTip="Halt MICOM 2"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="2">
+                                    HALT
+                                </Button>
+                                <Button ToolTip="Resume MICOM 2"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="2">
+                                    RESUME
+                                </Button>
+                                <Button ToolTip="Calibrate MICOM 2"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="2">
+                                    CALIB
+                                </Button>
                             </StackPanel>
 
-                        </Button>   
-                    </StackPanel>
 
-                    <Button ToolTip="Reset Fixture"  Cursor="Hand" HorizontalAlignment="Center"   Width="50"  Height="25" Margin="1" Command="{Binding ResetCylinderCommand}">
-                        <fa:IconImage Icon="UpDown" Foreground="Black" />
-
-                    </Button>
-
-
-                </StackPanel>
-                <StackPanel>
-                    <Label HorizontalAlignment="Center" Padding="0">MICOM2</Label>
-                    <StackPanel Orientation="Horizontal">
-                       
-                        <StackPanel>
-
-
-                            <Button ToolTip="Halt MICOM 2"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="2">
-                                HALT
-                            </Button>
-                            <Button ToolTip="Resume MICOM 2"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="2">
-                                RESUME
-                            </Button>
-                            <Button ToolTip="Calibrate MICOM 2"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="2">
-                                CALIB
-                            </Button>
                         </StackPanel>
-                     
 
                     </StackPanel>
 
                 </StackPanel>
-
+             
             </StackPanel>
 
         </Grid>

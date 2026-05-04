@@ -180,21 +180,21 @@
       "HUMAN_THAI__DE96-01151A__250409_0287",
       "HUMAN_THAI__ME21K7010DS__241223_0199"
     ],
-    "MicomCom1Port": "COM13",
-    "MicomCom2Port": "COM10",
-    "SystemComPort": "COM3",
-    "Solenoid1ComPort": "COM7",
-    "Solenoid2ComPort": "COM4",
-    "Solenoid3ComPort": "COM8",
+    "MicomCom1Port": "Unset",
+    "MicomCom2Port": "COM19",
+    "SystemComPort": "Unset",
+    "Solenoid1ComPort": "Unset",
+    "Solenoid2ComPort": "Unset",
+    "Solenoid3ComPort": "Unset",
     "ComPortList": [
       "Unset",
-      "COM1",
-      "COM7",
-      "COM8",
-      "COM3",
-      "COM4",
+      "COM36",
+      "COM35",
+      "COM11",
       "COM10",
-      "COM13"
+      "COM19",
+      "COM11",
+      "COM10"
     ],
     "SelectedFirmwareMicom": "HUMAN_THAI__DE96-01151A__250409_0287"
   }
