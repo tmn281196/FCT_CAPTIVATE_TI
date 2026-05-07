@@ -151,10 +151,21 @@ namespace Touch_Panel.Model
         {
             FlagNG = false;
 
+        
             await Model.Devices.ResetSolenoid(tester);
 
 
+
+
+            await Model.Devices.ResumeMICOM(tester.ID+1);
+
+            await Model.Devices.SetAllTunningValuesToMicom(tester);
+
             await RunTester(tester);
+
+            await Task.Delay(1000);
+
+            await Model.Devices.HaltMICOM(tester.ID + 1);
 
             await Model.Devices.ResetSolenoid(tester);
 

@@ -11,6 +11,7 @@ using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -93,6 +94,7 @@ namespace Touch_Panel.View_Model
 
             }
 
+
             sharedModel.Devices.DeviceManager = deviceManager;
             sharedModel.Devices.FirmwareList = sharedMicomDatabases.MicomDatabaseList.Select(item => item.FirmwareMicom).ToList();
 
@@ -123,6 +125,7 @@ namespace Touch_Panel.View_Model
             tunningPageViewModel.TestLogic = testLogic;
             deviceConnectionPage = deviceConnectionList;
 
+            tunningPageViewModel.MainViewModel = this;
 
             Navigate("Home");
         }
@@ -276,6 +279,25 @@ namespace Touch_Panel.View_Model
             }
         }
 
+        public void SaveMicomDatabase()
+        {
+            try
+            {
+                string json = JsonSerializer.Serialize(sharedMicomDatabases, new JsonSerializerOptions
+                {
+                    WriteIndented = true // Makes JSON output more readable
+                });
+
+                File.WriteAllText("MicomDatabase.json", json);
+
+            }
+            catch 
+            {
+                throw;
+            }
+        }
+
+
         [RelayCommand]
         private async Task OpenModel()
         {
@@ -302,7 +324,6 @@ namespace Touch_Panel.View_Model
                     {
                         sharedModel.Devices.MicomData1 = micomDatabaseSelected.MicomData1;
                         sharedModel.Devices.MicomData2 = micomDatabaseSelected.MicomData2;
-
                     }
 
 

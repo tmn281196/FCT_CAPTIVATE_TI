@@ -97,6 +97,7 @@ namespace Touch_Panel.Model
                     if (mainDirection == Direction.Up)
                     {
                         mainUpFlag = true;
+
                     }
                 }
                 // Gọi ngoài lock để giảm nguy cơ deadlock
@@ -131,32 +132,33 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private ObservableCollection<CAPSensor> listCAPSensor = new ObservableCollection<CAPSensor>();
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         [ObservableProperty]
         private int crcNGTime = 0;
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         [ObservableProperty]
         private int crcTotalTime = 0;
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         [ObservableProperty]
         private bool matchFirmware = false;
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         [ObservableProperty]
         private bool calibResponseFlag = false;
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         [ObservableProperty]
         private string firmwareLog = string.Empty;
 
-        [JsonIgnore]
+        [property: JsonIgnore]
         [ObservableProperty]
         private string signalIntegrity = string.Empty;
 
-     
+
     }
+
 
 
 
@@ -170,6 +172,9 @@ namespace Touch_Panel.Model
 
         [ObservableProperty]
         private UInt16 fineGainRatio;
+
+        [ObservableProperty]
+        private UInt16 lta;
     }
 
     public partial class CAPElement : ObservableObject
@@ -190,6 +195,11 @@ namespace Touch_Panel.Model
         private UInt16 fineGainRatio;
 
         [ObservableProperty]
+        private UInt16 lta;
+
+
+
+        [ObservableProperty]
         private ObservableCollection<TunningParameter> listTunningParameter = new ObservableCollection<TunningParameter>();
 
 
@@ -205,6 +215,10 @@ namespace Touch_Panel.Model
         [property: JsonIgnore]
         [ObservableProperty]
         private UInt16 calculatedFineGainRatio;
+
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private UInt16 calculatedLta;
 
 
 
@@ -323,11 +337,9 @@ namespace Touch_Panel.Model
         private string selectedFirmwareMicom = string.Empty;
 
 
-        [property: JsonIgnore]
         [ObservableProperty]
         private MICOMData micomData1;
 
-        [property: JsonIgnore]
         [ObservableProperty]
         private MICOMData micomData2;
 
@@ -746,6 +758,7 @@ namespace Touch_Panel.Model
                 {
                     int startIndex = sysRxBuffer.IndexOf(STX);
                     if (startIndex < 0)
+
                     {
                         // Không có STX → xóa rác nếu buffer quá dài
                         if (sysRxBuffer.Count > 2048)  // ngưỡng tùy chỉnh
@@ -1013,6 +1026,27 @@ namespace Touch_Panel.Model
 
 
                 }
+                else if (frame[1] == (byte)'W')
+                {
+                    ushort sensorIndex = frame[2];
+                    ushort cycleIndex = frame[3];
+                    ushort elementID = frame[4];
+
+                    // Kiểm tra index hợp lệ để tránh exception
+                    if (sensorIndex >= listCAPSensor.Count ||
+                        cycleIndex >= listCAPSensor[(int)sensorIndex].ListCAPCycle.Count || elementID >= listCAPSensor[(int)sensorIndex].ListCAPCycle[cycleIndex].ListCAPElement.Count)
+                    {
+                        Debug.WriteLine("Invalid sensor or cycle index or element ID");
+                        return;
+                    }
+
+                    var currentCycle = listCAPSensor[(int)sensorIndex].ListCAPCycle[(int)cycleIndex];
+                    var elements = currentCycle.ListCAPElement;
+
+                    elements[elementID].Lta = (ushort)((frame[5] << 8) | frame[6]);
+
+
+                }
             }
             catch (Exception ex)
             {
@@ -1193,6 +1227,7 @@ namespace Touch_Panel.Model
                         await GetTunningValueFromMicom(tester.ID + 1, 'X', element.StringId);
                         await GetTunningValueFromMicom(tester.ID + 1, 'Y', element.StringId);
                         await GetTunningValueFromMicom(tester.ID + 1, 'Z', element.StringId);
+                        await GetTunningValueFromMicom(tester.ID + 1, 'W', element.StringId);
                     }
                 }
             }
@@ -1220,6 +1255,7 @@ namespace Touch_Panel.Model
                         await SetTunningValueToMicom(tester.ID + 1, 'X', element.StringId, element.OffsetTap);
                         await SetTunningValueToMicom(tester.ID + 1, 'Y', element.StringId, element.CoarseGainRatio);
                         await SetTunningValueToMicom(tester.ID + 1, 'Z', element.StringId, element.FineGainRatio);
+                        await SetTunningValueToMicom(tester.ID + 1, 'W', element.StringId, element.Lta);
                     }
                 }
             }
@@ -1253,6 +1289,37 @@ namespace Touch_Panel.Model
             device.TxSent = false;
         }
 
+
+
+
+        internal async Task TurnOffBuzzer()
+        {
+            if (!DeviceManager.Solenoid3Port.IsOpen) return;
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 3");
+            device.TxSent = true;
+
+            byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
+
+            DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
+            device.TxSent = false;
+
+        }
+
+
+        internal async Task TurnOnBuzzer()
+        {
+            if (!DeviceManager.Solenoid3Port.IsOpen) return;
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 3");
+            device.TxSent = true;
+
+            byte[] tx = {0x44 ,0x45 ,0x06 ,0x53 ,0x00 ,0x00 ,0x20 ,0x00 ,0x74 ,0x56  };
+
+            DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
+            device.TxSent = false;
+
+        }
+
+
         internal async Task ResetMainCylinder()
         {
             if (!DeviceManager.Solenoid3Port.IsOpen) return;
@@ -1264,8 +1331,6 @@ namespace Touch_Panel.Model
             DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
             device.TxSent = false;
 
-            var start = DateTime.Now;
-
             await Task.Delay(300);
 
             device.TxSent = true;
@@ -1273,7 +1338,6 @@ namespace Touch_Panel.Model
             DeviceManager.Solenoid3Port.Write(tx2, 0, tx2.Length);
             device.TxSent = false;
 
-            var start2 = DateTime.Now;
         }
 
         internal async void ConnectorAllDown()

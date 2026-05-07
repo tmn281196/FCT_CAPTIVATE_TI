@@ -47,10 +47,10 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private async Task ForceStart()
         {
-            await Task.Delay(1000);
 
 
             Model.Devices.ConnectorAllDown();
+            await Task.Delay(1000);
 
             State.Test = TestState.Testing;
             Model.Devices.SystemData.MainUpFlag = false;
@@ -141,7 +141,6 @@ namespace Touch_Panel.View_Model
 
         private async void TestStart()
         {
-            //Model.Devices.SystemData.MainUpFlag = true;
             State.Test = TestState.Ready;
             StringTestResult = "BEGIN";
 
@@ -205,22 +204,27 @@ namespace Touch_Panel.View_Model
 
                             State.Test = TestState.Testing;
                             Model.Devices.SystemData.MainUpFlag = false;
+                            await Task.Delay(1000);
+
                         }
                         break;
 
                     case TestState.Testing:
 
-                        await Task.Delay(1000);
+
 
                         await Task.WhenAll(
                           Model.Devices.ResumeMICOM(1),
                           Model.Devices.ResumeMICOM(2)
                         );
 
+
                         await Task.WhenAll(
-                          Model.Devices.SetAllTunningValuesToMicom(TestLogic.Tester1),
-                          Model.Devices.SetAllTunningValuesToMicom(TestLogic.Tester2)
+
+                             Model.Devices.SetAllTunningValuesToMicom(TestLogic.Tester1),
+                             Model.Devices.SetAllTunningValuesToMicom(TestLogic.Tester2)
                         );
+
 
 
                         Status = "Testing";
@@ -274,7 +278,15 @@ namespace Touch_Panel.View_Model
                         {
                             await Model.Devices.ResetMainCylinder();
 
+
+
                         }
+
+                        await Task.Delay(100);
+
+                        await Model.Devices.TurnOnBuzzer();
+
+
                         StringTestResult = "Fail";
                         await Task.Delay(500);
                         Fail += 1;

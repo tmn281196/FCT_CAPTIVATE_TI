@@ -64,13 +64,13 @@ namespace Touch_Panel.View_Model
                 case 1:
                     if (SelectedItem1 != null)
                     {
-                        testLogic.manualSingleTest(selectedItem1, testLogic.Tester1);
+                        TestLogic.manualSingleTest(SelectedItem1, TestLogic.Tester1);
                     }
                     break;
                 case 2:
                     if (SelectedItem2 != null)
                     {
-                        testLogic.manualSingleTest(selectedItem2, testLogic.Tester2);
+                        TestLogic.manualSingleTest(SelectedItem2, TestLogic.Tester2);
                     }
                     break;
                 default:
@@ -89,10 +89,10 @@ namespace Touch_Panel.View_Model
             switch (testerId)
             {
                 case 1:
-                    testLogic.manualFullTest(testLogic.Tester1);
+                    TestLogic.manualFullTest(TestLogic.Tester1);
                     break;
                 case 2:
-                    testLogic.manualFullTest(testLogic.Tester2);
+                    TestLogic.manualFullTest(TestLogic.Tester2);
                     break;
                 default:
 
@@ -145,14 +145,14 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private void ResetCylinder()
         {
-            Model.Devices.ResetMainCylinder();
+            _ = Model.Devices.ResetMainCylinder();
         }
 
         [RelayCommand]
-        private void ResetMICOM(object parameter)
+        private void ReCalibMICOM(object parameter)
         {
             int testerId = int.Parse((string)parameter);
-            Model.Devices.RecalibMICOM(testerId);
+            _ =  Model.Devices.RecalibMICOM(testerId);
         }
 
 
@@ -184,5 +184,17 @@ namespace Touch_Panel.View_Model
         }
 
 
+        [RelayCommand]
+        private async Task SetAllTunning(object parameter)
+        {
+
+            int testerId = int.Parse((string)parameter);
+            Tester tester = null;
+            if (testerId == 1) tester = TestLogic.Tester1; else tester = TestLogic.Tester2;
+
+
+            await Model.Devices.SetAllTunningValuesToMicom(tester);
+
+        }
     }
 }

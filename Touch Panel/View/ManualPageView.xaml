@@ -173,307 +173,300 @@
         <Grid  Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel   Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
 
-                <StackPanel  HorizontalAlignment="Right"   VerticalAlignment="Center" >
-                    <ItemsControl ItemsSource="{Binding Model.Devices.MicomData1.ListCAPSensor}" Margin="1">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
+            <StackPanel    VerticalAlignment="Center"  Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <ItemsControl ItemsSource="{Binding Model.Devices.MicomData1.ListCAPSensor}" Margin="1">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"  />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
 
-                                <Border Background="#F0F0F0"   BorderBrush="Orange"  Padding="1"  Margin="1" BorderThickness="1">
-                                    <StackPanel>
+                            <Border Background="#F0F0F0"   BorderBrush="Orange"  Padding="1"  Margin="1" BorderThickness="1">
+                                <StackPanel>
 
 
-                                        <ItemsControl ItemsSource="{Binding ListCAPCycle}">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Border Background="#F7F7F7" 
+                                    <ItemsControl ItemsSource="{Binding ListCAPCycle}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Background="#F7F7F7" 
 BorderBrush="Gray" 
 BorderThickness="1" 
 Padding="5,5" 
 Margin="2">
-                                                        <StackPanel>
+                                                    <StackPanel>
 
-                                                            <ItemsControl ItemsSource="{Binding ListCAPElement}">
-                                                                <ItemsControl.ItemsPanel>
-                                                                    <ItemsPanelTemplate>
-                                                                        <StackPanel Orientation="{Binding ListCAPElement.Count, 
+                                                        <ItemsControl ItemsSource="{Binding ListCAPElement}">
+                                                            <ItemsControl.ItemsPanel>
+                                                                <ItemsPanelTemplate>
+                                                                    <StackPanel Orientation="{Binding ListCAPElement.Count, 
                         Converter={StaticResource CountToOrientationConverter}}" HorizontalAlignment="Center"/>
-                                                                    </ItemsPanelTemplate>
-                                                                </ItemsControl.ItemsPanel>
-                                                                <ItemsControl.ItemTemplate>
-                                                                    <DataTemplate>
-                                                                        <Border BorderBrush="Gray" BorderThickness="1"  Margin="1"  Padding="2" Width="40" Height="40">
-                                                                            <Border.Style>
-                                                                                <Style TargetType="Border">
-                                                                                    <!-- Mặc định -->
-                                                                                    <Setter Property="Background" Value="White"/>
+                                                                </ItemsPanelTemplate>
+                                                            </ItemsControl.ItemsPanel>
+                                                            <ItemsControl.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <Border BorderBrush="Gray" BorderThickness="1"  Margin="1"  Padding="2" Width="40" Height="40">
+                                                                        <Border.Style>
+                                                                            <Style TargetType="Border">
+                                                                                <!-- Mặc định -->
+                                                                                <Setter Property="Background" Value="White"/>
 
-                                                                                    <Style.Triggers>
-                                                                                        <DataTrigger Binding="{Binding IsMax}" Value="True">
-                                                                                            <Setter Property="Background" Value="Lime"/>
-                                                                                        </DataTrigger>
-                                                                                    </Style.Triggers>
-                                                                                </Style>
-                                                                            </Border.Style>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding IsMax}" Value="True">
+                                                                                        <Setter Property="Background" Value="Lime"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Border.Style>
 
-                                                                            <StackPanel>
-                                                                                <TextBlock Text="{Binding StringId}"  FontSize="11"  HorizontalAlignment="Center"/>
+                                                                        <StackPanel>
+                                                                            <TextBlock Text="{Binding StringId}"  FontSize="11"  HorizontalAlignment="Center"/>
 
-                                                                                <TextBlock Text="{Binding Delta}"  HorizontalAlignment="Center"/>
-                                                                            </StackPanel>
-                                                                        </Border>
-                                                                    </DataTemplate>
-                                                                </ItemsControl.ItemTemplate>
-                                                            </ItemsControl>
+                                                                            <TextBlock Text="{Binding Delta}"  HorizontalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </Border>
+                                                                </DataTemplate>
+                                                            </ItemsControl.ItemTemplate>
+                                                        </ItemsControl>
 
-                                                        </StackPanel>
-                                                    </Border>
-                                                </DataTemplate>
+                                                    </StackPanel>
+                                                </Border>
+                                            </DataTemplate>
 
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
 
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-
-        
-                <StackPanel  HorizontalAlignment="Center" Margin="2 6"  VerticalAlignment="Bottom"  Orientation="Vertical" Grid.Row="2">
-
-                    <Button Cursor="Hand"  HorizontalAlignment="Left"   Margin="1"    Height="30"  Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent"    >
-                        <Button.Content>
-                            <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
-                        </Button.Content>
-                    </Button>
-                    <Button Cursor="Hand" HorizontalAlignment="Left"   Margin="1"    Height="30"   Command="{Binding StopTestCommand}"  CommandParameter="1"  Background="Transparent" >
-                        <Button.Content>
-                            <fa:IconImage Icon="CircleStop" Foreground="Red"/>
-                        </Button.Content>
-                    </Button>
-                    <Button Cursor="Hand"  HorizontalAlignment="Left"  Margin="1"   Height="24" Command="{Binding ResetCommand}" CommandParameter="1"  Background="Transparent" >
-                        <Button.Content>
-                            <fa:IconImage Icon="ArrowUpWideShort" Foreground="Blue"/>
-                        </Button.Content>
-                    </Button>
-
-
-
-                </StackPanel>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
             </StackPanel>
 
 
 
-            <StackPanel   Grid.Column="2"  Orientation="Horizontal" HorizontalAlignment="Left">
-                <StackPanel  HorizontalAlignment="Center" Margin="2 6"  VerticalAlignment="Bottom"  Orientation="Vertical" Grid.Row="2">
-
-                    <Button Cursor="Hand"  HorizontalAlignment="Left"   Margin="1"    Height="30"  Command="{Binding FullTestCommand}" CommandParameter="2" Background="Transparent"    >
-                        <Button.Content>
-                            <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
-                        </Button.Content>
-                    </Button>
-                    <Button Cursor="Hand" HorizontalAlignment="Left"   Margin="1"    Height="30"   Command="{Binding StopTestCommand}"  CommandParameter="2"  Background="Transparent" >
-                        <Button.Content>
-                            <fa:IconImage Icon="CircleStop" Foreground="Red"/>
-                        </Button.Content>
-                    </Button>
-                    <Button Cursor="Hand"  HorizontalAlignment="Left"  Margin="1"   Height="24" Command="{Binding ResetCommand}" CommandParameter="2"  Background="Transparent" >
-                        <Button.Content>
-                            <fa:IconImage Icon="ArrowUpWideShort" Foreground="Blue"/>
-                        </Button.Content>
-                    </Button>
 
 
 
-                </StackPanel>
+            <StackPanel  Grid.Column="2"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
 
-                <StackPanel Grid.Row="2" Grid.Column="1"
-HorizontalAlignment="Left"
-VerticalAlignment="Center" >
+                <ItemsControl ItemsSource="{Binding Model.Devices.MicomData2.ListCAPSensor}" Margin="1">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
 
-                    <ItemsControl ItemsSource="{Binding Model.Devices.MicomData2.ListCAPSensor}" Margin="1">
-                        <ItemsControl.ItemsPanel>
-                            <ItemsPanelTemplate>
-                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" />
-                            </ItemsPanelTemplate>
-                        </ItemsControl.ItemsPanel>
-                        <ItemsControl.ItemTemplate>
-                            <DataTemplate>
-
-                                <Border Background="#F0F0F0"   BorderBrush="Orange"  Padding="1"  Margin="1" BorderThickness="1">
-                                    <StackPanel>
+                            <Border Background="#F0F0F0"   BorderBrush="Orange"  Padding="1"  Margin="1" BorderThickness="1">
+                                <StackPanel>
 
 
-                                        <ItemsControl ItemsSource="{Binding ListCAPCycle}">
-                                            <ItemsControl.ItemsPanel>
-                                                <ItemsPanelTemplate>
-                                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
-                                                </ItemsPanelTemplate>
-                                            </ItemsControl.ItemsPanel>
-                                            <ItemsControl.ItemTemplate>
-                                                <DataTemplate>
-                                                    <Border Background="#F7F7F7"  BorderBrush="Gray"  BorderThickness="1"  Padding="5,5"  Margin="2">
-                                                        <StackPanel>
-                                                            <ItemsControl ItemsSource="{Binding ListCAPElement}">
-                                                                <ItemsControl.ItemsPanel>
-                                                                    <ItemsPanelTemplate>
-                                                                        <StackPanel Orientation="{Binding ListCAPElement.Count,  Converter={StaticResource CountToOrientationConverter}}" HorizontalAlignment="Center"/>
-                                                                    </ItemsPanelTemplate>
-                                                                </ItemsControl.ItemsPanel>
-                                                                <ItemsControl.ItemTemplate>
-                                                                    <DataTemplate>
-                                                                        <Border BorderBrush="Gray" BorderThickness="1"  Margin="1"  Padding="2" Width="40" Height="40">
-                                                                            <Border.Style>
-                                                                                <Style TargetType="Border">
-                                                                                    <!-- Mặc định -->
-                                                                                    <Setter Property="Background" Value="White"/>
+                                    <ItemsControl ItemsSource="{Binding ListCAPCycle}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Border Background="#F7F7F7"  BorderBrush="Gray"  BorderThickness="1"  Padding="5,5"  Margin="2">
+                                                    <StackPanel>
+                                                        <ItemsControl ItemsSource="{Binding ListCAPElement}">
+                                                            <ItemsControl.ItemsPanel>
+                                                                <ItemsPanelTemplate>
+                                                                    <StackPanel Orientation="{Binding ListCAPElement.Count,  Converter={StaticResource CountToOrientationConverter}}" HorizontalAlignment="Center"/>
+                                                                </ItemsPanelTemplate>
+                                                            </ItemsControl.ItemsPanel>
+                                                            <ItemsControl.ItemTemplate>
+                                                                <DataTemplate>
+                                                                    <Border BorderBrush="Gray" BorderThickness="1"  Margin="1"  Padding="2" Width="40" Height="40">
+                                                                        <Border.Style>
+                                                                            <Style TargetType="Border">
+                                                                                <!-- Mặc định -->
+                                                                                <Setter Property="Background" Value="White"/>
 
-                                                                                    <Style.Triggers>
-                                                                                        <DataTrigger Binding="{Binding IsMax}" Value="True">
-                                                                                            <Setter Property="Background" Value="Lime"/>
-                                                                                        </DataTrigger>
-                                                                                    </Style.Triggers>
-                                                                                </Style>
-                                                                            </Border.Style>
+                                                                                <Style.Triggers>
+                                                                                    <DataTrigger Binding="{Binding IsMax}" Value="True">
+                                                                                        <Setter Property="Background" Value="Lime"/>
+                                                                                    </DataTrigger>
+                                                                                </Style.Triggers>
+                                                                            </Style>
+                                                                        </Border.Style>
 
-                                                                            <StackPanel>
-                                                                                <TextBlock Text="{Binding StringId}" FontSize="11" HorizontalAlignment="Center"/>
+                                                                        <StackPanel>
+                                                                            <TextBlock Text="{Binding StringId}" FontSize="11" HorizontalAlignment="Center"/>
 
 
 
-                                                                                <TextBlock Text="{Binding Delta}"   HorizontalAlignment="Center"/>
-                                                                            </StackPanel>
-                                                                        </Border>
-                                                                    </DataTemplate>
-                                                                </ItemsControl.ItemTemplate>
-                                                            </ItemsControl>
+                                                                            <TextBlock Text="{Binding Delta}"   HorizontalAlignment="Center"/>
+                                                                        </StackPanel>
+                                                                    </Border>
+                                                                </DataTemplate>
+                                                            </ItemsControl.ItemTemplate>
+                                                        </ItemsControl>
 
-                                                        </StackPanel>
-                                                    </Border>
-                                                </DataTemplate>
+                                                    </StackPanel>
+                                                </Border>
+                                            </DataTemplate>
 
-                                            </ItemsControl.ItemTemplate>
-                                        </ItemsControl>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
 
-                                    </StackPanel>
-                                </Border>
-                            </DataTemplate>
-                        </ItemsControl.ItemTemplate>
-                    </ItemsControl>
-                </StackPanel>
-
-
-
-
-
-
-                </StackPanel>
-
-
-
-
-
-
-
-
-
-            <StackPanel Margin="5 5"  Grid.Column="1" Grid.Row="2">
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </StackPanel>
+            <StackPanel Margin="5 5"  Grid.Column="1" Grid.Row="2" VerticalAlignment="Center">
                 <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center"  Orientation="Horizontal" >
                     <StackPanel>
-                        <Label HorizontalAlignment="Center" Padding="0">MICOM1</Label>
+
+
                         <StackPanel Orientation="Horizontal">
-                            <StackPanel>
-                                <Button ToolTip="Halt MICOM 1"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="1">
-                                    HALT
-                                </Button>
-                                <Button ToolTip="Resume MICOM 1"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="1">
-                                    RESUME
-                                </Button>
-                                <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="1">
-                                    CALIB
-                                </Button>
-                            </StackPanel>
+
+                            <Button ToolTip="Resume MICOM 1"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="62"  Height="30" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="1">
+                                RESUME
+                            </Button>
+                            <Button ToolTip="Halt MICOM 1"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="40"  Height="30" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="1">
+                                HALT
+                            </Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+
+                            <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"  Width="62"   Height="30" Margin=" 1" Command="{Binding ReCalibMICOMCommand}" CommandParameter="1" Content="CALIBRATE" />
+                            <Button ToolTip="Load The Computed Values To MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="40"  Height="30" Margin=" 1"  Command="{Binding SetAllTunningCommand}"  CommandParameter="1" Content="LOAD" />
+
 
                         </StackPanel>
 
+                        <StackPanel  HorizontalAlignment="Left"  VerticalAlignment="Bottom"  Orientation="Horizontal" Grid.Row="2">
+
+
+                            <Button Cursor="Hand"  HorizontalAlignment="Left"   Margin="1" Width="30"    Height="30"   Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent"    >
+                                <Button.Content>
+                                    <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
+                                </Button.Content>
+                            </Button>
+
+                            <Button Cursor="Hand" HorizontalAlignment="Left"   Margin="1"  Width="30"  Height="30"   Command="{Binding StopTestCommand}"  CommandParameter="1"  Background="Transparent" >
+                                <Button.Content>
+                                    <fa:IconImage Icon="CircleStop" Foreground="Red"/>
+                                </Button.Content>
+                            </Button>
+
+                            <Button Cursor="Hand" HorizontalAlignment="Left" Margin="1" Width="40" Height="30" 
+        Command="{Binding ResetCommand}" CommandParameter="1" Background="Transparent">
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="ArrowUp" Foreground="Blue" Width="15" />
+                                        <fa:IconImage Icon="MapPin" Foreground="Blue" Width="10"/>
+                                    </StackPanel>
+                                   
+                                </Button.Content>
+                            </Button>
+                        </StackPanel>
+
                     </StackPanel>
-
-
-
                     <StackPanel VerticalAlignment="Center" >
                         <StackPanel Orientation="Vertical">
-                            <Label HorizontalAlignment="Center" Padding="0">ACTUATOR</Label>
 
-                            <Button ToolTip="Connector Up" Cursor="Hand" HorizontalAlignment="Center"  Width="60"   Height="25" Margin="1" Command="{Binding ConnectorAllUpCommand}">
+                            <Button ToolTip="Connector Up" Cursor="Hand" HorizontalAlignment="Center" Width="50" Height="30" Margin="1" Command="{Binding ConnectorAllUpCommand}">
                                 <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="PlugCircleXmark" Foreground="Black"/>
+                                    <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="15" />
+                                    <fa:IconImage Icon="ArrowUp" Foreground="Black"  Width="15" />
+                                    <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="15" />
 
                                 </StackPanel>
                             </Button>
-                            <Button ToolTip="Connector Down" Cursor="Hand" HorizontalAlignment="Center"   Width="60"  Height="25" Margin="1" Command="{Binding ConnectorAllDownCommand}">
+                            <Button ToolTip="Connector Down" Cursor="Hand" HorizontalAlignment="Center" Width="50"   Height="30" Margin="1" Command="{Binding ConnectorAllDownCommand}">
                                 <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="Plug" Foreground="Black" />
+                                    <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="15" />
+                                    <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="15" />
+                                    <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="15" />
 
                                 </StackPanel>
-
                             </Button>
                         </StackPanel>
 
-                        <Button ToolTip="Reset Fixture"  Cursor="Hand" HorizontalAlignment="Center"   Width="60"  Height="25" Margin="1" Command="{Binding ResetCylinderCommand}">
-                            <fa:IconImage Icon="UpDown" Foreground="Black" />
-
+                        <Button ToolTip="Reset Fixture"  Cursor="Hand" HorizontalAlignment="Center"  Width="50"  Height="30" Margin="1" Command="{Binding ResetCylinderCommand}">
+                            <StackPanel Orientation="Horizontal">
+                                <fa:IconImage Icon="ArrowUpWideShort" Foreground="Black" RenderTransformOrigin="0.5,0.5" Width="20">
+                                    <fa:IconImage.RenderTransform>
+                                        <ScaleTransform ScaleX="-1"/>
+                                    </fa:IconImage.RenderTransform>
+                                </fa:IconImage>
+                                <fa:IconImage Icon="ArrowUpWideShort" Foreground="Black" Width="20" />
+                               
+                            </StackPanel>
                         </Button>
-
-
-
-
-
-
                     </StackPanel>
-
 
                     <StackPanel>
-                        <Label HorizontalAlignment="Center" Padding="0">MICOM2</Label>
+
+                        <StackPanel Orientation="Horizontal">
+                            <Button ToolTip="Halt MICOM 2"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="40"  Height="30" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="2">
+                                HALT
+                            </Button>
+                            <Button ToolTip="Resume MICOM 2"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="62"  Height="30" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="2">
+                                RESUME
+                            </Button>
+
+                        </StackPanel>
                         <StackPanel Orientation="Horizontal">
 
-                            <StackPanel>
+                            <Button ToolTip="Load The Computed Values To MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="40"  Height="30" Margin=" 1"  Command="{Binding SetAllTunningCommand}"  CommandParameter="2" Content="LOAD" />
+                            <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"  Width="62"   Height="30" Margin=" 1" Command="{Binding ReCalibMICOMCommand}" CommandParameter="2" Content="CALIBRATE" />
 
 
-                                <Button ToolTip="Halt MICOM 2"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="2">
-                                    HALT
-                                </Button>
-                                <Button ToolTip="Resume MICOM 2"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="2">
-                                    RESUME
-                                </Button>
-                                <Button ToolTip="Calibrate MICOM 2"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="60"  Height="25" Margin=" 1" Command="{Binding ResetMICOMCommand}" CommandParameter="2">
-                                    CALIB
-                                </Button>
-                            </StackPanel>
+                        </StackPanel>
+
+                        <StackPanel  HorizontalAlignment="Left"  VerticalAlignment="Bottom"  Orientation="Horizontal" Grid.Row="2">
+                            <Button Cursor="Hand"  HorizontalAlignment="Left"  Margin="1"   Width="40"  Height="30" Command="{Binding ResetCommand}" CommandParameter="2"  Background="Transparent" >
+                                <Button.Content>
+                                    <StackPanel Orientation="Horizontal">
+                                        <fa:IconImage Icon="MapPin" Foreground="Blue" Width="10"/>
+                                        <fa:IconImage Icon="ArrowUp" Foreground="Blue" Width="15" />
+                                    </StackPanel>
+                                </Button.Content>
+                            </Button>
+                            <Button Cursor="Hand" HorizontalAlignment="Left"   Margin="1"  Width="30"  Height="30"   Command="{Binding StopTestCommand}"  CommandParameter="2"  Background="Transparent" >
+                                <Button.Content>
+                                    <fa:IconImage Icon="CircleStop" Foreground="Red"/>
+                                </Button.Content>
+                            </Button>
+
+
+                            <Button Cursor="Hand"  HorizontalAlignment="Left"   Margin="1" Width="30"    Height="30"   Command="{Binding FullTestCommand}" CommandParameter="2" Background="Transparent"    >
+                                <Button.Content>
+                                    <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
+                                </Button.Content>
+                            </Button>
+
 
 
                         </StackPanel>
 
                     </StackPanel>
 
+
+
+
                 </StackPanel>
-             
+
             </StackPanel>
 
         </Grid>

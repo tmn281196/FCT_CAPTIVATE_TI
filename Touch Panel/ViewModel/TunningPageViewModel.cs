@@ -3,11 +3,14 @@ using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Touch_Panel.Model;
+using Touch_Panel.View_Model;
 
 namespace Touch_Panel.ViewModel
 {
@@ -16,6 +19,9 @@ namespace Touch_Panel.ViewModel
         [ObservableProperty]
         private Model.Model model;
 
+        [ObservableProperty]
+
+        private MainViewModel mainViewModel;
 
         partial void OnModelChanged(Model.Model value)
         {
@@ -114,7 +120,7 @@ namespace Touch_Panel.ViewModel
 
             foreach (var e in elements)
             {
-                e.ListTunningParameter.Add(new TunningParameter() { OffsetTap = e.OffsetTap, CoarseGainRatio = e.CoarseGainRatio, FineGainRatio = e.FineGainRatio });
+                e.ListTunningParameter.Add(new TunningParameter() { OffsetTap = e.OffsetTap, CoarseGainRatio = e.CoarseGainRatio, FineGainRatio = e.FineGainRatio, Lta = e.Lta });
 
             }
 
@@ -170,6 +176,7 @@ namespace Touch_Panel.ViewModel
                 e.CalculatedCoarseGainRatio = (ushort)CalcMedian(e.ListTunningParameter.Select(v => (double)v.CoarseGainRatio).ToList());
                 e.CalculatedOffsetTap = (ushort)CalcMedian(e.ListTunningParameter.Select(v => (double)v.OffsetTap).ToList());
                 e.CalculatedFineGainRatio = (ushort)CalcMedian(e.ListTunningParameter.Select(v => (double)v.FineGainRatio).ToList());
+                e.CalculatedLta = (ushort)CalcMedian(e.ListTunningParameter.Select(v => (double)v.Lta).ToList());
             }
         }
 
@@ -192,6 +199,7 @@ namespace Touch_Panel.ViewModel
                 e.CoarseGainRatio = e.CalculatedCoarseGainRatio;
                 e.FineGainRatio = e.CalculatedFineGainRatio;
                 e.OffsetTap = e.CalculatedOffsetTap;
+                e.Lta = e.CalculatedLta;
 
             }
         }
@@ -207,7 +215,11 @@ namespace Touch_Panel.ViewModel
                 ? (sorted[mid - 1] + sorted[mid]) / 2.0
                 : sorted[mid];
         }
-
+        private static double CalcMean(List<double> values)
+        {
+            if (values.Count == 0) return 0;
+            return values.Sum() / values.Count;
+        }
 
         [RelayCommand]
         private async Task SetAllTunning(object parameter)
@@ -215,7 +227,7 @@ namespace Touch_Panel.ViewModel
 
             int testerId = int.Parse((string)parameter);
             Tester tester = null;
-            if (testerId == 1) tester = TestLogic.Tester1; tester = TestLogic.Tester2;
+            if (testerId == 1) tester = TestLogic.Tester1; else tester = TestLogic.Tester2;
 
 
             await Model.Devices.SetAllTunningValuesToMicom(tester);
@@ -227,7 +239,7 @@ namespace Touch_Panel.ViewModel
         {
             int testerId = int.Parse((string)parameter);
             Tester tester = null;
-            if (testerId == 1) tester = TestLogic.Tester1; tester = TestLogic.Tester2;
+            if (testerId == 1) tester = TestLogic.Tester1; else tester = TestLogic.Tester2;
 
 
             await Model.Devices.GetAllTunningValuesFromMicom(tester);
@@ -310,21 +322,8 @@ namespace Touch_Panel.ViewModel
         {
             try
             {
-                Microsoft.Win32.SaveFileDialog openFile = new Microsoft.Win32.SaveFileDialog();
-                openFile.DefaultExt = ".json";
-                openFile.Filter = "Model File (*.json)|*.json";
+                MainViewModel.SaveMicomDatabase();
 
-                if (openFile.ShowDialog() == true)
-                {
-                    try
-                    {
-                        Utility.SaveModel(Model, openFile.FileName, openFile.SafeFileName);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Fatal Error!" + ex.Message);
-                    }
-                }
             }
             catch (Exception ex)
             {
