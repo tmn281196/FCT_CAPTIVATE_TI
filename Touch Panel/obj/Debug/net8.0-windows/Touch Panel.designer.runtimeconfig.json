@@ -12,8 +12,9 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Com26\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Com26\\.nuget\\packages"
+      "C:\\Users\\tmnvi\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\tmnvi\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {
       "MVVMTOOLKIT_ENABLE_INOTIFYPROPERTYCHANGING_SUPPORT": true,

@@ -228,7 +228,7 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
 
-                <StackPanel Width="150"
+                <StackPanel Width="125"
                             Orientation="Vertical"
                             VerticalAlignment="Center">
                     <Label Content="TOTAL"
@@ -242,7 +242,7 @@
                            HorizontalContentAlignment="Center" />
                 </StackPanel>
 
-                <StackPanel Width="150"
+                <StackPanel Width="125"
                             Orientation="Vertical"
                             VerticalAlignment="Center">
                     <Label Content="PASS"
@@ -258,7 +258,7 @@
                            HorizontalContentAlignment="Center" />
                 </StackPanel>
 
-                <StackPanel Width="150"
+                <StackPanel Width="125"
                             Orientation="Vertical"
                             VerticalAlignment="Center">
                     <Label Content="NG"
@@ -274,7 +274,7 @@
                            HorizontalContentAlignment="Center" />
                 </StackPanel>
 
-                <StackPanel Width="150"
+                <StackPanel Width="125"
                             Orientation="Vertical"
                             VerticalAlignment="Center">
                     <Label Content="PASS %"
@@ -286,6 +286,23 @@
                            FontSize="20"
                            FontWeight="SemiBold"
                            Foreground="DarkGoldenrod"
+                           Background="White"
+                           HorizontalContentAlignment="Center" />
+                </StackPanel>
+
+                <StackPanel Width="125"
+                            Orientation="Vertical"
+                            VerticalAlignment="Center">
+                    <Label Content="NEXT SERIAL"
+                           FontSize="20"
+                           Foreground="DarkSlateBlue"
+                           Background="White"
+                           HorizontalContentAlignment="Center" />
+                    <Label Content="{Binding NextSerialNumber}"
+                           ContentStringFormat="D4"
+                           FontSize="20"
+                           FontWeight="SemiBold"
+                           Foreground="DarkSlateBlue"
                            Background="White"
                            HorizontalContentAlignment="Center" />
                 </StackPanel>

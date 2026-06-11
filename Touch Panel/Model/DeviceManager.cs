@@ -21,12 +21,16 @@ namespace Touch_Panel.Model
 
         public SerialPortStream Solenoid3Port = new SerialPortStream();
 
+        public SerialPortStream QrPrinterPort = new SerialPortStream();
+
         public readonly object PortLockMicom1 = new();
         public readonly object PortLockMicom2 = new();
         public readonly object PortLockSystem = new();
         public readonly object PortLockSol1 = new();
         public readonly object PortLockSol2 = new();
         public readonly object PortLockSol3 = new();
+        public readonly object PortLockQrPrinter = new();
+
 
 
         public void Dispose()
@@ -38,6 +42,7 @@ namespace Touch_Panel.Model
             Solenoid1Port.Dispose();
             Solenoid2Port.Dispose();
             Solenoid3Port.Dispose();
+            QrPrinterPort.Dispose();
         }
     }
 }

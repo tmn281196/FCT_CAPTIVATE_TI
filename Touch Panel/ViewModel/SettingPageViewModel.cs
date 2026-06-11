@@ -6,13 +6,16 @@ using Ookii.Dialogs.Wpf;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using Touch_Panel.Model;
+using Touch_Panel.ViewModel;
 
 
 namespace Touch_Panel.View_Model
@@ -27,9 +30,167 @@ namespace Touch_Panel.View_Model
 
    
 
+        private static readonly HashSet<string> UserSelectFields = new()
+        {
+            nameof(Settings.PartNumber),
+            nameof(Settings.PartnerCode),
+            nameof(Settings.CountryCode),
+            nameof(Settings.LineCode),
+            nameof(Settings.EquipmentSerial),
+        };
+
         public SettingPageViewModel(Model.Model sharedModel)
         {
             this.Model = sharedModel;
+
+            bool changed = false;
+            foreach (var field in UserSelectFields)
+            {
+                changed |= Model.UserSelectOptions.AddIfNew(field, GetSettingValue(field));
+            }
+            if (changed) Model.UserSelectOptions.Save();
+
+            Model.Settings.PropertyChanged += OnSettingsPropertyChanged;
+        }
+
+        private string GetSettingValue(string fieldName) => fieldName switch
+        {
+            nameof(Settings.PartNumber) => Model.Settings.PartNumber,
+            nameof(Settings.PartnerCode) => Model.Settings.PartnerCode,
+            nameof(Settings.CountryCode) => Model.Settings.CountryCode,
+            nameof(Settings.LineCode) => Model.Settings.LineCode,
+            nameof(Settings.EquipmentSerial) => Model.Settings.EquipmentSerial,
+            _ => null
+        };
+
+        private void OnSettingsPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == null || !UserSelectFields.Contains(e.PropertyName)) return;
+
+            if (Model.UserSelectOptions.AddIfNew(e.PropertyName, GetSettingValue(e.PropertyName)))
+            {
+                Model.UserSelectOptions.Save();
+            }
+        }
+
+        [RelayCommand]
+        private void DeleteOption(string parameter)
+        {
+            if (string.IsNullOrEmpty(parameter)) return;
+            var parts = parameter.Split('|', 2);
+            if (parts.Length != 2) return;
+            if (Model.UserSelectOptions.RemoveOption(parts[0], parts[1]))
+            {
+                Model.UserSelectOptions.Save();
+            }
+        }
+
+
+        [RelayCommand]
+        private async Task VerifyFirmware(object parameter)
+        {
+            int testerId = int.Parse((string)parameter);
+            var timeout = TimeSpan.FromSeconds(5);
+            MicomContext micomCtx1 = new MicomContext() { MICOMData = Model.Devices.MicomData1, LockObject = Model.Devices.DeviceManager.PortLockMicom1, SerialPort = Model.Devices.DeviceManager.MicomPort1 };
+            MicomContext micomCtx2 = new MicomContext() { MICOMData = Model.Devices.MicomData2, LockObject = Model.Devices.DeviceManager.PortLockMicom2, SerialPort = Model.Devices.DeviceManager.MicomPort2 };
+            MicomContext micomCtx = (testerId == 1) ? micomCtx1 : micomCtx2;
+
+
+            if (!micomCtx.SerialPort.IsOpen)
+            {
+                micomCtx.MICOMData.FirmwareLog = "✕";
+                return;
+            }
+
+            await Model.Devices.VerifyMICOM(micomCtx);
+
+            var sw = Stopwatch.StartNew();
+            while (!micomCtx.MICOMData.MatchFirmware)
+            {
+                if (sw.Elapsed > timeout)
+                    break;
+                Thread.Sleep(10);
+            }
+
+            micomCtx.MICOMData.FirmwareLog = micomCtx.MICOMData.MatchFirmware ? "✓" : "✕";
+        }
+
+
+        private void ProgressFirmwareChanged(object source, Bsl430NetEventArgs args)
+        {
+            var bslSource = (BSL430NET)source;
+            var com = bslSource.DefaultDevice.Name;
+
+            string log = $"Writing {args.Progress.ToString("0.00")}%";
+
+            if (Model.Devices.MicomCom1Port == com)
+            {
+                Model.Devices.MicomData1.FirmwareLog = log;
+            }
+            if (Model.Devices.MicomCom2Port == com)
+            {
+                Model.Devices.MicomData2.FirmwareLog = log;
+            }
+        }
+
+
+        private void ProgressFirmwareFailed(object? sender, string message)
+        {
+            string? portName = sender as string;
+
+            string log = $"Error: {message}";
+
+            if (portName == Model.Devices.MicomCom1Port)
+            {
+                Model.Devices.MicomData1.FirmwareLog = log;
+            }
+            if (portName == Model.Devices.MicomCom2Port)
+            {
+                Model.Devices.MicomData2.FirmwareLog = log;
+            }
+        }
+
+
+        [RelayCommand]
+        private async Task WriteFirmware(object parameter)
+        {
+            if (AutoState.Test == TestState.Testing)
+            {
+                MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            int testerId = int.Parse((string)parameter);
+            string deviceName = $"Micom{testerId}";
+            string portName = testerId == 1 ? Model.Devices.MicomCom1Port : Model.Devices.MicomCom2Port;
+            var mData = testerId == 1 ? Model.Devices.MicomData1 : Model.Devices.MicomData2;
+            string firmwarePath = $"firmware_bsl_{testerId}\\{Model.Devices.SelectedFirmwareMicom}.txt";
+
+            Model.Devices.CloseDeviceByName(deviceName);
+
+            try
+            {
+                mData.SignalIntegrity = string.Empty;
+
+                mData.FirmwareLog = string.Empty;
+
+                await Task.Run(() =>
+                {
+                    FirmwareMICOM.WriteFirmware(
+                        portName,
+                        firmwarePath,
+                        ProgressFirmwareChanged,
+                        ProgressFirmwareFailed);
+                });
+            }
+            catch (Exception ex)
+            {
+                mData.FirmwareLog = ex.Message;
+            }
+
+            Model.Devices.ConnectDeviceByName(deviceName);
+
+            mData.FirmwareLog = "✓";
         }
 
         [ObservableProperty]

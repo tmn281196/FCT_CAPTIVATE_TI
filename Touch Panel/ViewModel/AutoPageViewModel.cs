@@ -101,9 +101,15 @@ namespace Touch_Panel.View_Model
         [ObservableProperty]
         private TestLogic testLogic;
 
+        [ObservableProperty]
+        private int nextSerialNumber = 1;
+
         public event EventHandler EscapTimeChange;
 
         private Stopwatch stopwatch = new Stopwatch();
+
+        private DateTime testStartTime;
+        private DateTime testFinishTime;
 
         private Timer taktTimer = new Timer()
         {
@@ -113,10 +119,81 @@ namespace Touch_Panel.View_Model
 
         public AutoPageViewModel(Model.Model sharedModel)
         {
-            this.Model = sharedModel;
             taktTimer.Stop();
             stopwatch.Stop();
             taktTimer.Elapsed += TaktTimer_Elapsed;
+
+            this.Model = sharedModel; // OnModelChanged sẽ subscribe events và RefreshNextSerial
+        }
+
+        partial void OnModelChanged(Model.Model oldValue, Model.Model newValue)
+        {
+            if (oldValue != null)
+            {
+                oldValue.Settings.PropertyChanged -= OnSettingsPropertyChanged;
+                oldValue.PropertyChanged -= OnModelPropertyChanged;
+            }
+
+            if (newValue != null)
+            {
+                newValue.Settings.PropertyChanged += OnSettingsPropertyChanged;
+                newValue.PropertyChanged += OnModelPropertyChanged;
+            }
+
+            RefreshNextSerial();
+        }
+
+        private void OnSettingsPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(Settings.SerialNumber)) RefreshNextSerial();
+        }
+
+        private void OnModelPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == nameof(Model.LastPrintDate)) RefreshNextSerial();
+        }
+
+        private void RefreshNextSerial()
+        {
+            string today = $"{DateTime.Now:yyMMdd}";
+            if (Model.LastPrintDate != today)
+            {
+                NextSerialNumber = 1;
+                return;
+            }
+            int next = Model.Settings.SerialNumber + 1;
+            NextSerialNumber = next > 9999 ? 1 : next;
+        }
+
+        private async Task PrintNextLabelAsync()
+        {
+            string today = $"{DateTime.Now:yyMMdd}";
+            if (Model.LastPrintDate != today)
+            {
+                Model.Settings.SerialNumber = 0;
+            }
+
+            Model.Settings.SerialNumber += 1;
+            if (Model.Settings.SerialNumber > 9999)
+            {
+                Model.Settings.SerialNumber = 1;
+            }
+
+            string qrString = BuildQrString();
+            bool printed = await Model.Devices.PrintAsync(Model.Settings.SerialNumber, Model.Settings.PartNumber, qrString);
+            if (!printed)
+            {
+                Model.Settings.SerialNumber -= 1;
+                MessageBox.Show(
+                    "QR label was NOT printed. Check the printer connection and retry.",
+                    "Print Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
+            else
+            {
+                Model.LastPrintDate = today;
+            }
         }
 
         private void TaktTimer_Elapsed(object? sender, ElapsedEventArgs e)
@@ -165,33 +242,37 @@ namespace Touch_Panel.View_Model
                     case TestState.Wait:
                         Status = "Wait";
 
-
-                        bool micom1 = TestLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort1.IsOpen : true;
-                        bool micom2 = TestLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort2.IsOpen : true;
-                        bool soleinod1 = TestLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid1Port.IsOpen : true;
-                        bool soleinod2 = TestLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid2Port.IsOpen : true;
-                        bool soleinod3 = Model.Devices.DeviceManager.Solenoid3Port.IsOpen;
-                        bool system = Model.Devices.DeviceManager.SystemPort.IsOpen;
-
-
-                        bool allDevicesConnected = micom1 && soleinod1 && micom2 && soleinod2 && soleinod3 && system;
-
-
-                        if (allDevicesConnected && Model.Settings.LogDir != "")
+                        if(!(Model.Devices.DeviceManager.MicomPort1 == null && Model.Devices.DeviceManager.MicomPort2 == null))
                         {
-                            if (Model.Devices.SystemData.MainDirection == Direction.Up)
+                            bool micom1 = TestLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort1.IsOpen : true;
+                            bool micom2 = TestLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort2.IsOpen : true;
+                            bool soleinod1 = TestLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid1Port.IsOpen : true;
+                            bool soleinod2 = TestLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid2Port.IsOpen : true;
+                            bool soleinod3 = Model.Devices.DeviceManager.Solenoid3Port.IsOpen;
+                            bool system = Model.Devices.DeviceManager.SystemPort.IsOpen;
+
+
+                            bool allDevicesConnected = micom1 && soleinod1 && micom2 && soleinod2 && soleinod3 && system;
+
+
+                            if (allDevicesConnected && Model.Settings.LogDir != "")
                             {
+                                if (Model.Devices.SystemData.MainDirection == Direction.Up)
+                                {
 
-                                await Task.WhenAll(
-                                      Model.Devices.ResetSolenoid(TestLogic.Tester1),
-                                      Model.Devices.ResetSolenoid(TestLogic.Tester2)
-                                );
+                                    await Task.WhenAll(
+                                          Model.Devices.ResetSolenoid(TestLogic.Tester1),
+                                          Model.Devices.ResetSolenoid(TestLogic.Tester2)
+                                    );
 
-                                Model.Devices.ConnectorAllUp();
-                                State.Test = TestState.Ready;
+                                    Model.Devices.ConnectorAllUp();
+                                    State.Test = TestState.Ready;
+                                }
                             }
                         }
                         break;
+
+
 
                     case TestState.Ready:
                         Status = "Ready";
@@ -211,7 +292,7 @@ namespace Touch_Panel.View_Model
 
                     case TestState.Testing:
 
-
+                   
 
                         await Task.WhenAll(
                           Model.Devices.ResumeMICOM(1),
@@ -231,8 +312,11 @@ namespace Touch_Panel.View_Model
 
                         stopwatch.Start();
                         taktTimer.Start();
+                        testStartTime = DateTime.Now;
 
                         await TestLogic.RunAllTestSteps();
+
+                        testFinishTime = DateTime.Now;
 
                         stopwatch.Stop();
                         taktTimer.Stop();
@@ -289,6 +373,10 @@ namespace Touch_Panel.View_Model
 
                         StringTestResult = "Fail";
                         await Task.Delay(500);
+
+                        await PrintNextLabelAsync();
+
+
                         Fail += 1;
                         SaveLog(false);
                         stopwatch.Reset();
@@ -296,6 +384,8 @@ namespace Touch_Panel.View_Model
                         break;
 
                     case TestState.OK:
+
+                  
 
                         if (Model.Settings.ShouldMainResetWhenPassTest)
                         {
@@ -305,6 +395,9 @@ namespace Touch_Panel.View_Model
 
                         StringTestResult = "Pass";
                         await Task.Delay(500);
+
+                        await PrintNextLabelAsync();
+
                         Pass += 1;
                         SaveLog(true);
                         stopwatch.Reset();
@@ -371,6 +464,62 @@ namespace Touch_Panel.View_Model
                     sw.WriteLine(line);
                 }
             }
+        }
+
+        private static readonly Dictionary<int, char> YearCodes = new()
+        {
+            [2021] = 'R', [2022] = 'T', [2023] = 'W', [2024] = 'X', [2025] = 'Y',
+            [2026] = 'L', [2027] = 'P', [2028] = 'Q', [2029] = 'S', [2030] = 'Z',
+            [2031] = 'B', [2032] = 'C', [2033] = 'D', [2034] = 'E', [2035] = 'F',
+            [2036] = 'G', [2037] = 'H', [2038] = 'J', [2039] = 'K', [2040] = 'M',
+        };
+
+        private static char EncodeMonth(int m) => m <= 9 ? (char)('0' + m) : (char)('A' + m - 10);
+        private static char EncodeDay(int d) => d <= 9 ? (char)('0' + d) : (char)('A' + d - 10);
+
+        private static string EncodeProductionDate(DateTime d)
+        {
+            char year = YearCodes.TryGetValue(d.Year, out var y) ? y : '?';
+            return $"{year}{EncodeMonth(d.Month)}{EncodeDay(d.Day)}";
+        }
+
+        private string BuildQrString()
+        {
+            var s = Model.Settings;
+            var sb = new StringBuilder();
+
+            sb.Append(s.UnitCode);
+            sb.Append((s.PartNumber ?? string.Empty).Replace("-", ""));
+            sb.Append(s.PartnerCode);
+            sb.Append(EncodeProductionDate(DateTime.Now));
+            sb.Append($"{s.SerialNumber:D4}");
+            sb.Append("QR");
+            sb.Append(s.CountryCode);
+            sb.Append(s.LineCode);
+            sb.Append(s.EquipmentSerial);
+
+            var steps = new List<Step>();
+            if (TestLogic?.Tester1?.Steps != null) steps.AddRange(TestLogic.Tester1.Steps);
+            if (TestLogic?.Tester2?.Steps != null) steps.AddRange(TestLogic.Tester2.Steps);
+
+            var measSteps = steps.Where(x => x.Test == "MEAS").Take(3).ToList();
+
+            sb.Append($"{measSteps.Count:D2}");
+            sb.Append($"/{testStartTime:yyyyMMddHHmmss}");
+            sb.Append($"/{testFinishTime:yyyyMMddHHmmss}");
+
+            int idx = 1;
+            foreach (var step in measSteps)
+            {
+                string code = $"A{idx:D3}";
+                string measured = string.IsNullOrEmpty(step.Value) ? "0" : step.Value;
+                string spec = string.IsNullOrEmpty(step.Specvalue) ? "0" : step.Specvalue;
+                sb.Append($"/{code}-{measured}-{spec}-0");
+                idx++;
+            }
+            sb.Append('/');
+
+            return sb.ToString();
         }
     }
 }

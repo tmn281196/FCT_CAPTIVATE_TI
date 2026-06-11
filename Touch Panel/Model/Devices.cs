@@ -10,6 +10,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Diagnostics.Metrics;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -18,6 +19,7 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using System.Windows;
 using Touch_Panel.View_Model;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Touch_Panel.Model
 {
@@ -231,7 +233,7 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private bool isMax;
 
-      
+
 
     }
     public partial class CAPCycle : ObservableObject
@@ -306,14 +308,9 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private string solenoid3ComPort;
 
-        [property: JsonIgnore]
-        [ObservableProperty]
-        private DeviceStatus micom1;
 
-        [property: JsonIgnore]
         [ObservableProperty]
-        private DeviceStatus micom2;
-
+        private string qrPrinterComPort;
 
 
         [ObservableProperty]
@@ -329,8 +326,8 @@ namespace Touch_Panel.Model
             new DeviceStatus {Name = "Micom2"},
             new DeviceStatus {Name = "Solenoid 1"},
             new DeviceStatus {Name = "Solenoid 2"},
+            new DeviceStatus {Name = "QR Printer"},
         };
-
 
 
         [ObservableProperty]
@@ -361,6 +358,7 @@ namespace Touch_Panel.Model
             string solenoid1ComPortBuf = Solenoid1ComPort;
             string solenoid2ComPortBuf = Solenoid2ComPort;
             string solenoid3ComPortBuf = Solenoid3ComPort;
+            string qrPrinterComPortBuf = QrPrinterComPort;
 
 
             ComPortList.Clear();
@@ -398,6 +396,10 @@ namespace Touch_Panel.Model
                 Solenoid3ComPort = solenoid3ComPortBuf;
             }
 
+            if (ComPortList.Contains(qrPrinterComPortBuf))
+            {
+                QrPrinterComPort = qrPrinterComPortBuf;
+            }
         }
 
 
@@ -438,7 +440,7 @@ namespace Touch_Panel.Model
             {
                 var dev = DevicesStatus.FirstOrDefault(d => d.Name == deviceName);
 
-                if (port != null && !String.IsNullOrEmpty(comPort))
+                if (port != null && !System.String.IsNullOrEmpty(comPort))
                 {
 
 
@@ -506,6 +508,7 @@ namespace Touch_Panel.Model
             DeviceManager.Solenoid1Port.Dispose();
             DeviceManager.Solenoid2Port.Dispose();
             DeviceManager.Solenoid3Port.Dispose();
+            DeviceManager.QrPrinterPort.Dispose();
         }
         public async Task CloseAll()
         {
@@ -516,6 +519,7 @@ namespace Touch_Panel.Model
             await CloseDevice(DeviceManager.PortLockSol1, DeviceManager.Solenoid1Port, "Solenoid 1", Solenoid1Port_DataReceived);
             await CloseDevice(DeviceManager.PortLockSol2, DeviceManager.Solenoid2Port, "Solenoid 2", Solenoid2Port_DataReceived);
             await CloseDevice(DeviceManager.PortLockSol3, DeviceManager.Solenoid3Port, "Solenoid 3", Solenoid3Port_DataReceived);
+            await CloseDevice(DeviceManager.PortLockQrPrinter, DeviceManager.QrPrinterPort, "QR Printer", QrPrinterPort_DataReceived);
         }
 
         public async Task ConnectAll()
@@ -527,6 +531,7 @@ namespace Touch_Panel.Model
             await ConnectDevice(DeviceManager.PortLockSol1, DeviceManager.MicomPort1, MicomCom1Port, "Micom1", MicomPort1_DataReceived);
             await ConnectDevice(DeviceManager.PortLockSol2, DeviceManager.MicomPort2, MicomCom2Port, "Micom2", MicomPort2_DataReceived);
             await ConnectDevice(DeviceManager.PortLockSol3, DeviceManager.SystemPort, SystemComPort, "System", SystemPort_DataReceived);
+            await ConnectDevice(DeviceManager.PortLockQrPrinter, DeviceManager.QrPrinterPort, QrPrinterComPort, "QR Printer", QrPrinterPort_DataReceived);
         }
 
 
@@ -535,25 +540,28 @@ namespace Touch_Panel.Model
             switch (device)
             {
                 case "Solenoid 1":
-                    CloseDevice(DeviceManager.PortLockSol1, DeviceManager.Solenoid1Port, device, Solenoid1Port_DataReceived);
+                    _ = CloseDevice(DeviceManager.PortLockSol1, DeviceManager.Solenoid1Port, device, Solenoid1Port_DataReceived);
                     break;
 
                 case "Solenoid 2":
-                    CloseDevice(DeviceManager.PortLockSol2, DeviceManager.Solenoid2Port, device, Solenoid2Port_DataReceived);
+                    _ = CloseDevice(DeviceManager.PortLockSol2, DeviceManager.Solenoid2Port, device, Solenoid2Port_DataReceived);
                     break;
 
                 case "Solenoid 3":
-                    CloseDevice(DeviceManager.PortLockSol3, DeviceManager.Solenoid3Port, device, Solenoid3Port_DataReceived);
+                    _ = CloseDevice(DeviceManager.PortLockSol3, DeviceManager.Solenoid3Port, device, Solenoid3Port_DataReceived);
                     break;
                 case "Micom1":
-                    CloseDevice(DeviceManager.PortLockMicom1, DeviceManager.MicomPort1, device, MicomPort1_DataReceived);
+                    _ = CloseDevice(DeviceManager.PortLockMicom1, DeviceManager.MicomPort1, device, MicomPort1_DataReceived);
                     break;
                 case "Micom2":
-                    CloseDevice(DeviceManager.PortLockMicom2, DeviceManager.MicomPort2, device, MicomPort2_DataReceived);
+                    _ = CloseDevice(DeviceManager.PortLockMicom2, DeviceManager.MicomPort2, device, MicomPort2_DataReceived);
                     break;
 
                 case "System":
-                    CloseDevice(DeviceManager.PortLockSystem, DeviceManager.SystemPort, device, SystemPort_DataReceived);
+                    _ = CloseDevice(DeviceManager.PortLockSystem, DeviceManager.SystemPort, device, SystemPort_DataReceived);
+                    break;
+                case "QR Printer":
+                    _ = CloseDevice(DeviceManager.PortLockQrPrinter, DeviceManager.QrPrinterPort, device, QrPrinterPort_DataReceived);
                     break;
                 default:
                     break;
@@ -566,25 +574,28 @@ namespace Touch_Panel.Model
             switch (device)
             {
                 case "Solenoid 1":
-                    ConnectDevice(DeviceManager.PortLockSol1, DeviceManager.Solenoid1Port, Solenoid1ComPort, device, Solenoid1Port_DataReceived);
+                    _ = ConnectDevice(DeviceManager.PortLockSol1, DeviceManager.Solenoid1Port, Solenoid1ComPort, device, Solenoid1Port_DataReceived);
                     break;
 
                 case "Solenoid 2":
-                    ConnectDevice(DeviceManager.PortLockSol2, DeviceManager.Solenoid2Port, Solenoid2ComPort, device, Solenoid2Port_DataReceived);
+                    _ = ConnectDevice(DeviceManager.PortLockSol2, DeviceManager.Solenoid2Port, Solenoid2ComPort, device, Solenoid2Port_DataReceived);
                     break;
 
                 case "Solenoid 3":
-                    ConnectDevice(DeviceManager.PortLockSol3, DeviceManager.Solenoid3Port, Solenoid3ComPort, device, Solenoid3Port_DataReceived);
+                    _ = ConnectDevice(DeviceManager.PortLockSol3, DeviceManager.Solenoid3Port, Solenoid3ComPort, device, Solenoid3Port_DataReceived);
                     break;
                 case "Micom1":
-                    ConnectDevice(DeviceManager.PortLockMicom1, DeviceManager.MicomPort1, MicomCom1Port, device, MicomPort1_DataReceived);
+                    _ = ConnectDevice(DeviceManager.PortLockMicom1, DeviceManager.MicomPort1, MicomCom1Port, device, MicomPort1_DataReceived);
                     break;
                 case "Micom2":
-                    ConnectDevice(DeviceManager.PortLockMicom2, DeviceManager.MicomPort2, MicomCom2Port, device, MicomPort2_DataReceived);
+                    _ = ConnectDevice(DeviceManager.PortLockMicom2, DeviceManager.MicomPort2, MicomCom2Port, device, MicomPort2_DataReceived);
                     break;
 
                 case "System":
-                    ConnectDevice(DeviceManager.PortLockSystem, DeviceManager.SystemPort, SystemComPort, device, SystemPort_DataReceived);
+                    _ = ConnectDevice(DeviceManager.PortLockSystem, DeviceManager.SystemPort, SystemComPort, device, SystemPort_DataReceived);
+                    break;
+                case "QR Printer":
+                    _ = ConnectDevice(DeviceManager.PortLockQrPrinter, DeviceManager.QrPrinterPort, QrPrinterComPort, device, QrPrinterPort_DataReceived);
                     break;
                 default:
                     break;
@@ -686,6 +697,12 @@ namespace Touch_Panel.Model
         }
 
 
+        private async void QrPrinterPort_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            SerialPortStream serialPort = (SerialPortStream)sender;
+
+            if (!serialPort.IsOpen) return;
+        }
         private async void Solenoid3Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPortStream serialPort = (SerialPortStream)sender;
@@ -828,6 +845,80 @@ namespace Touch_Panel.Model
                     // Xóa frame đã xử lý
                     sysRxBuffer.RemoveRange(0, SYSTEM_FRAME_SIZE);
                 }
+            }
+        }
+
+        private static string SanitizeTsplField(string value)
+        {
+            if (string.IsNullOrEmpty(value)) return string.Empty;
+            return value.Replace("\"", "").Replace("\r", "").Replace("\n", "");
+        }
+
+        public string BuildTspl(string partNumber, string date, string serial, string qrString)
+        {
+            partNumber = SanitizeTsplField(partNumber);
+            qrString = SanitizeTsplField(qrString);
+
+            var sb = new StringBuilder();
+
+            // =========================
+            // PRINTER SETUP
+            // =========================
+            sb.AppendLine("SIZE 70 mm, 22.5 mm");
+            // GAP đã calibration sẵn trong EEPROM máy (nút FEED khi bật) → không cần khai báo
+            sb.AppendLine("DIRECTION 1");
+            sb.AppendLine("REFERENCE 0,0");
+            sb.AppendLine("DENSITY 5");
+            sb.AppendLine("SPEED 3");
+            sb.AppendLine("CLS");
+
+            // Label = 826 x 266 dots (70 x 22.5 mm, TSC TE310 = 300 DPI, 11.81 dots/mm)
+
+            // =========================
+            // QR CODE (cell 4, level M, ~148 dots — V5 alphanumeric)
+            // =========================
+            sb.AppendLine($"QRCODE 563,59,M,4,A,0,\"{qrString}\"");
+
+            // =========================
+            // TEXT FIELDS (TẠM TẮT để debug QR scan)
+            // =========================
+            sb.AppendLine("TEXT 533,187,\"2\",270,1,1,\"HUMAN THAI\"");
+            sb.AppendLine($"TEXT 559,20,\"2\",0,1,1,\"{partNumber}\"");
+            sb.AppendLine($"TEXT 735,54,\"2\",90,1,1,\"{date} {serial}\"");
+
+            // =========================
+            // PRINT
+            // =========================
+            sb.AppendLine("PRINT 1,1");
+
+            return sb.ToString();
+        }
+
+        public async Task<bool> PrintAsync(int serialNumber, string partNumber, string qrString)
+        {
+
+            try
+            {
+                string serialNumberString = $"{serialNumber:D4}";
+                string dateString = $"{DateTime.Now:yyMMdd}";
+                string tspl = BuildTspl(partNumber, dateString, serialNumberString, qrString);
+
+                return await Task.Run(() =>
+                {
+                    lock (DeviceManager.PortLockQrPrinter)
+                    {
+                        if (DeviceManager.QrPrinterPort == null || !DeviceManager.QrPrinterPort.IsOpen)
+                            return false;
+
+                        DeviceManager.QrPrinterPort.Write(tspl);
+                        return true;
+                    }
+                });
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"QR print error: {ex.GetType().Name} → {ex.Message}");
+                return false;
             }
         }
 
@@ -1312,7 +1403,7 @@ namespace Touch_Panel.Model
             var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 3");
             device.TxSent = true;
 
-            byte[] tx = {0x44 ,0x45 ,0x06 ,0x53 ,0x00 ,0x00 ,0x20 ,0x00 ,0x74 ,0x56  };
+            byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x20, 0x00, 0x74, 0x56 };
 
             DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
             device.TxSent = false;

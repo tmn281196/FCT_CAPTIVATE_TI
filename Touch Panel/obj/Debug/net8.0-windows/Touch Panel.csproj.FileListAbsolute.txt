@@ -884,7 +884,6 @@ D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\ne
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.g.cs
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.baml
-D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\MicomDatabase.json
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.g.cs
 D:\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\StepsPageView.baml
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\TunningPageView.g.cs

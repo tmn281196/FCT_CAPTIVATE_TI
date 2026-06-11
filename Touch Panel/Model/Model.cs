@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 using Touch_Panel.View_Model;
 
@@ -25,7 +26,12 @@ namespace Touch_Panel.Model
         private Devices devices = new Devices();
 
 
+        [ObservableProperty]
+        private string lastPrintDate = string.Empty;
 
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private UserSelectOptions userSelectOptions = UserSelectOptions.Load();
 
     }
 }

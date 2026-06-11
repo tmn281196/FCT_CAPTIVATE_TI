@@ -25,5 +25,26 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private bool shouldSaveLog = true;
 
+        [ObservableProperty]
+        private string unitCode = "SV";
+
+        [ObservableProperty]
+        private string partnerCode = "E17U";
+
+        [ObservableProperty]
+        private string countryCode = "TH";
+
+        [ObservableProperty]
+        private string lineCode = "L01";
+
+        [ObservableProperty]
+        private string equipmentSerial = "T001";
+
+        [ObservableProperty]
+        private string partNumber = string.Empty;
+
+        [ObservableProperty]
+        private int serialNumber = 0;
+
     }
 }

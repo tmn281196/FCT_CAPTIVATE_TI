@@ -68,6 +68,9 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private Tester tester2 = new Tester(1);
 
+
+
+
         public bool FlagNG = true;
 
         partial void OnModelChanged(Model? oldValue, Model newValue)

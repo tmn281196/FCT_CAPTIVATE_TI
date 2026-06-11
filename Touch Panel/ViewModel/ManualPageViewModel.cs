@@ -126,13 +126,13 @@ namespace Touch_Panel.View_Model
             switch (testerId)
             {
                 case 1:
-                    Model.Devices.ResetSolenoid(testLogic.Tester1);
-                    testLogic.Tester1.ClearSteps();
+                    _ =  Model.Devices.ResetSolenoid(TestLogic.Tester1);
+                    TestLogic.Tester1.ClearSteps();
 
                     break;
                 case 2:
-                    Model.Devices.ResetSolenoid(testLogic.Tester2);
-                    testLogic.Tester2.ClearSteps();
+                    _ =Model.Devices.ResetSolenoid(TestLogic.Tester2);
+                    TestLogic.Tester2.ClearSteps();
 
                     break;
                 default:
@@ -160,7 +160,7 @@ namespace Touch_Panel.View_Model
         private void EnableMICOM(object parameter)
         {
             int testerId = int.Parse((string)parameter);
-            Model.Devices.ResumeMICOM(testerId);
+            _ =  Model.Devices.ResumeMICOM(testerId);
         }
 
 
@@ -168,7 +168,7 @@ namespace Touch_Panel.View_Model
         private void DisableMICOM(object parameter)
         {
             int testerId = int.Parse((string)parameter);
-            Model.Devices.HaltMICOM(testerId);
+            _ = Model.Devices.HaltMICOM(testerId);
         }
 
         [RelayCommand]

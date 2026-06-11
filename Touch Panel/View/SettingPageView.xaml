@@ -5,7 +5,27 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
                       xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
 
-             xmlns:local="clr-namespace:Touch_Panel.View">
+             xmlns:local="clr-namespace:Touch_Panel.View"
+             xmlns:conv="clr-namespace:Touch_Panel.Converters">
+    <UserControl.Resources>
+        <conv:MultiValueJoinConverter x:Key="PipeJoinConverter" Separator="|"/>
+        <DataTemplate x:Key="DeletableOptionTemplate">
+            <DockPanel LastChildFill="True" Background="Transparent">
+                <Button DockPanel.Dock="Right" Content="✕" Width="18" Height="18" Padding="0" Margin="8 0 0 0"
+                        FontSize="10" Foreground="Red" Cursor="Hand"
+                        ToolTip="Delete this option"
+                        Command="{Binding DataContext.DeleteOptionCommand, RelativeSource={RelativeSource AncestorType=UserControl}}">
+                    <Button.CommandParameter>
+                        <MultiBinding Converter="{StaticResource PipeJoinConverter}">
+                            <Binding RelativeSource="{RelativeSource AncestorType=ComboBox}" Path="Tag"/>
+                            <Binding/>
+                        </MultiBinding>
+                    </Button.CommandParameter>
+                </Button>
+                <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
+            </DockPanel>
+        </DataTemplate>
+    </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -30,55 +50,73 @@
             <Separator/>
 
 
-            <StackPanel  Orientation="Vertical">
+            <Grid >
 
-                <StackPanel Margin="5">
-                    <Label Padding="0" Content="Communication" FontWeight="Bold"  />
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                 
+                </Grid.ColumnDefinitions>
 
-                    <StackPanel Margin="0 5" Orientation="Horizontal">
-                        <Label Content="Micom 1" Width="70"/>
-                        <ComboBox  HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.MicomCom1Port}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                        <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom1" Margin="10, 0" Cursor="Hand"/>
-                    </StackPanel>
-                    <StackPanel Margin="0 5" Orientation="Horizontal">
-                        <Label Content="Micom 2" Width="70"/>
-                        <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.MicomCom2Port}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                        <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom2" Margin="10, 0" Cursor="Hand"/>
-                    </StackPanel>
-                    <StackPanel Margin="0 5" Orientation="Horizontal">
-                        <Label Content="System" Width="70"/>
-                        <ComboBox  HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.SystemComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                        <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="System" Margin="10, 0" Cursor="Hand"/>
-                    </StackPanel>
 
-                    <StackPanel Margin="0 5" Orientation="Horizontal">
-                        <Label Content="Solenoid 1" Width="70"/>
-                        <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid1ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                        <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 1" Margin="10, 0" Cursor="Hand"/>
-                    </StackPanel>
+                <StackPanel>
+                    <StackPanel Margin="5">
+                        <Label Padding="0" Content="Communication" FontWeight="Bold"  />
 
-                    <StackPanel Margin="0 5" Orientation="Horizontal">
-                        <Label Content="Solenoid 2" Width="70"/>
-                        <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid2ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                        <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}" CommandParameter="Solenoid 2" Margin="10, 0" Cursor="Hand"/>
-                    </StackPanel>
+                        <StackPanel Margin="0 5" Orientation="Horizontal">
+                            <Label Content="Micom 1" Width="70"/>
+                            <ComboBox  HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.MicomCom1Port}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
+                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom1" Margin="10, 0" Cursor="Hand"/>
+                        </StackPanel>
+                        <StackPanel Margin="0 5" Orientation="Horizontal">
+                            <Label Content="Micom 2" Width="70"/>
+                            <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.MicomCom2Port}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
+                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom2" Margin="10, 0" Cursor="Hand"/>
+                        </StackPanel>
+                        <StackPanel Margin="0 5" Orientation="Horizontal">
+                            <Label Content="System" Width="70"/>
+                            <ComboBox  HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.SystemComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
+                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="System" Margin="10, 0" Cursor="Hand"/>
+                        </StackPanel>
 
-                    <StackPanel Margin="0 5" Orientation="Horizontal">
-                        <Label Content="Solenoid 3" Width="70"/>
-                        <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid3ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                        <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 2" Margin="10, 0" Cursor="Hand"/>
+                        <StackPanel Margin="0 5" Orientation="Horizontal">
+                            <Label Content="Solenoid 1" Width="70"/>
+                            <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid1ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
+                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 1" Margin="10, 0" Cursor="Hand"/>
+                        </StackPanel>
 
+                        <StackPanel Margin="0 5" Orientation="Horizontal">
+                            <Label Content="Solenoid 2" Width="70"/>
+                            <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid2ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
+                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}" CommandParameter="Solenoid 2" Margin="10, 0" Cursor="Hand"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="0 5" Orientation="Horizontal">
+                            <Label Content="Solenoid 3" Width="70"/>
+                            <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid3ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
+                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 2" Margin="10, 0" Cursor="Hand"/>
+
+                        </StackPanel>
+                        <StackPanel Margin="0 5" Orientation="Horizontal">
+                            <Label Content="QR Printer" Width="70"/>
+                            <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.QrPrinterComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
+                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="QR Printer" Margin="10, 0" Cursor="Hand"/>
+
+                        </StackPanel>
                     </StackPanel>
+                    <Button Command="{Binding RefreshComportCommand}" HorizontalAlignment="Left" Width="24" Height="24" Margin="10 0" Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Enumerate COM Ports">
+                        <fa:IconImage Icon="Refresh" Foreground="Black" />
+
+                    </Button>
+
                 </StackPanel>
-                <Button Command="{Binding RefreshComportCommand}" HorizontalAlignment="Left" Width="24" Height="24" Margin="10 0" Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Enumerate COM Ports">
-                    <fa:IconImage Icon="Refresh" Foreground="Black" />
 
-                </Button>
-            </StackPanel>
+             
+            </Grid>
             <Separator/>
 
-            <StackPanel  >
 
+            <StackPanel  Grid.Column="1">
                 <StackPanel Margin="5">
                     <Label Padding="0" Content="Test Flow" FontWeight="Bold" />
                     <StackPanel Margin="5 0">
@@ -91,11 +129,110 @@
                 </StackPanel>
             </StackPanel>
 
+            <Separator/>
+
+            <StackPanel Margin="5">
+                <Label Padding="0" Content="Product Info" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal" Margin="5 5">
+                    <StackPanel Margin="0 0 15 0">
+                        <Label Padding="0" Content="Part Number (10)" FontWeight="Bold" Margin="0 0 0 3"/>
+                        <ComboBox IsEditable="True" Padding="2 0" Height="25" Width="150" VerticalContentAlignment="Center"
+                                  Tag="PartNumber"
+                                  ItemTemplate="{StaticResource DeletableOptionTemplate}"
+                                  ItemsSource="{Binding Model.UserSelectOptions.PartNumberList}"
+                                  Text="{Binding Model.Settings.PartNumber, UpdateSourceTrigger=LostFocus}"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 15 0">
+                        <Label Padding="0" Content="Partner Code (4)" FontWeight="Bold" Margin="0 0 0 3"/>
+                        <ComboBox IsEditable="True" Padding="2 0" Height="25" Width="70" VerticalContentAlignment="Center"
+                                  Tag="PartnerCode"
+                                  ItemTemplate="{StaticResource DeletableOptionTemplate}"
+                                  ItemsSource="{Binding Model.UserSelectOptions.PartnerCodeList}"
+                                  Text="{Binding Model.Settings.PartnerCode, UpdateSourceTrigger=LostFocus}"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 15 0">
+                        <Label Padding="0" Content="Country (2)" FontWeight="Bold" Margin="0 0 0 3"/>
+                        <ComboBox IsEditable="True" Padding="2 0" Height="25" Width="50" VerticalContentAlignment="Center"
+                                  Tag="CountryCode"
+                                  ItemTemplate="{StaticResource DeletableOptionTemplate}"
+                                  ItemsSource="{Binding Model.UserSelectOptions.CountryCodeList}"
+                                  Text="{Binding Model.Settings.CountryCode, UpdateSourceTrigger=LostFocus}"/>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 15 0">
+                        <Label Padding="0" Content="Line (3)" FontWeight="Bold" Margin="0 0 0 3"/>
+                        <ComboBox IsEditable="True" Padding="2 0" Height="25" Width="60" VerticalContentAlignment="Center"
+                                  Tag="LineCode"
+                                  ItemTemplate="{StaticResource DeletableOptionTemplate}"
+                                  ItemsSource="{Binding Model.UserSelectOptions.LineCodeList}"
+                                  Text="{Binding Model.Settings.LineCode, UpdateSourceTrigger=LostFocus}"/>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Padding="0" Content="Equipment (4)" FontWeight="Bold" Margin="0 0 0 3"/>
+                        <ComboBox IsEditable="True" Padding="2 0" Height="25" Width="70" VerticalContentAlignment="Center"
+                                  Tag="EquipmentSerial"
+                                  ItemTemplate="{StaticResource DeletableOptionTemplate}"
+                                  ItemsSource="{Binding Model.UserSelectOptions.EquipmentSerialList}"
+                                  Text="{Binding Model.Settings.EquipmentSerial, UpdateSourceTrigger=LostFocus}"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <Separator/>
+
+            <StackPanel Margin="5">
+                <Label Padding="0" Content="Firmware" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal" Margin="5 5">
+                    <StackPanel Margin="0 0 15 0">
+                        <Label Padding="0" Content="Firmware File" FontWeight="Bold" Margin="0 0 0 3"/>
+                        <ComboBox Width="280" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                  ItemsSource="{Binding Model.Devices.FirmwareList}"
+                                  SelectedItem="{Binding Model.Devices.SelectedFirmwareMicom, Mode=TwoWay}">
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="ComboBoxItem">
+                                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+                        </ComboBox>
+                    </StackPanel>
+                    <StackPanel Margin="0 0 15 0">
+                        <Label Padding="0" FontWeight="Bold" Margin="0 0 0 3">
+                            <Label.Content>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <fa:IconImage Icon="Microchip" Foreground="Black" Width="15"/>
+                                    <TextBlock Padding="2 0" VerticalAlignment="Center">MICOM1</TextBlock>
+                                </StackPanel>
+                            </Label.Content>
+                        </Label>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Command="{Binding WriteFirmwareCommand}" Width="70" Height="25" CommandParameter="1" Cursor="Hand" Content="WRITE" Margin="0 0 4 0" Padding="5 0"/>
+                            <Button Command="{Binding VerifyFirmwareCommand}" Width="70" Height="25" CommandParameter="1" Cursor="Hand" Content="VERIFY" Padding="5 0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel>
+                        <Label Padding="0" FontWeight="Bold" Margin="0 0 0 3">
+                            <Label.Content>
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <fa:IconImage Icon="Microchip" Foreground="Black" Width="15"/>
+                                    <TextBlock Padding="2 0" VerticalAlignment="Center">MICOM2</TextBlock>
+                                </StackPanel>
+                            </Label.Content>
+                        </Label>
+                        <StackPanel Orientation="Horizontal">
+                            <Button Command="{Binding WriteFirmwareCommand}" Width="70" Height="25" CommandParameter="2" Cursor="Hand" Content="WRITE" Margin="0 0 4 0" Padding="5 0"/>
+                            <Button Command="{Binding VerifyFirmwareCommand}" Width="70" Height="25" CommandParameter="2" Cursor="Hand" Content="VERIFY" Padding="5 0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <Separator/>
 
 
-           
 
-            <Separator></Separator>
+
+
+
 
 
             <!--<StackPanel    HorizontalAlignment="Left"   Orientation="Vertical" Margin="5" >
@@ -267,7 +404,6 @@
 
             </StackPanel>-->
 
-            <!--<Separator></Separator>-->
 
             <Button Command="{Binding SaveCommand}" BorderThickness="0"  Width="100" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal" >
