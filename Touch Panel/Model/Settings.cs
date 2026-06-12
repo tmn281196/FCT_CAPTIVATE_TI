@@ -26,6 +26,9 @@ namespace Touch_Panel.Model
         private bool shouldSaveLog = true;
 
         [ObservableProperty]
+        private bool shouldPrintQr = true;
+
+        [ObservableProperty]
         private string unitCode = "SV";
 
         [ObservableProperty]

@@ -131,6 +131,7 @@
                         <CheckBox  Margin="0 5"  Content="Main Reset When Pass Test" IsChecked="{Binding Model.Settings.ShouldMainResetWhenPassTest}"/>
                         <CheckBox  Margin="0 5"  Content="Main Reset When Fail Test" IsChecked="{Binding Model.Settings.ShouldMainResetWhenFailTest}"/>
                         <CheckBox  Margin="0 5"  Content="Save Log File" IsChecked="{Binding Model.Settings.ShouldSaveLog}"/>
+                        <CheckBox  Margin="0 5"  Content="Send QR Print" IsChecked="{Binding Model.Settings.ShouldPrintQr}"/>
 
                     </StackPanel>
                 </StackPanel>

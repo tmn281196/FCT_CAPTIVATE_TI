@@ -167,6 +167,11 @@ namespace Touch_Panel.View_Model
 
         private async Task PrintNextLabelAsync()
         {
+            if (!Model.Settings.ShouldPrintQr)
+            {
+                return;
+            }
+
             string today = $"{DateTime.Now:yyMMdd}";
             if (Model.LastPrintDate != today)
             {
