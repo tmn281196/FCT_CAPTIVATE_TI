@@ -34,6 +34,7 @@ namespace Touch_Panel.View_Model
         {
             "NOP",
             "CALIB",
+            "LOAD",
             "KEY",
             "MEAS"
         };
@@ -200,7 +201,7 @@ namespace Touch_Panel.View_Model
             {
                 return TestSelItem != "" && TestSelItem != null && SpecValueInput != "" && SpecValueInput != null && ObjectIdInput != "" && ObjectIdInput != null;
             }
-            else if (TestSelItem == "NOP" || TestSelItem == "CALIB")
+            else if (TestSelItem == "NOP" || TestSelItem == "CALIB" || TestSelItem == "LOAD")
             {
                 return true;
             }

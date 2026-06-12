@@ -162,8 +162,6 @@ namespace Touch_Panel.Model
 
             await Model.Devices.ResumeMICOM(tester.ID+1);
 
-            await Model.Devices.SetAllTunningValuesToMicom(tester);
-
             await RunTester(tester);
 
             await Task.Delay(1000);
@@ -243,6 +241,9 @@ namespace Touch_Panel.Model
                 case "CALIB":
                     await CALIB(step, tester.ID);
                     break;
+                case "LOAD":
+                    await LOAD(step, tester);
+                    break;
                 default:
                     break;
             }
@@ -299,6 +300,13 @@ namespace Touch_Panel.Model
             {
                 step.Result = "Fail";
             }
+        }
+
+        private async Task LOAD(Step step, Tester tester)
+        {
+            await PendingStep(step);
+            await Model.Devices.SetAllTunningValuesToMicom(tester);
+            step.Result = "Pass";
         }
 
         private async void MakeAndSendTx(Step step, string solNum, byte data2, byte data3, byte data4)

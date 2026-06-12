@@ -300,14 +300,6 @@ namespace Touch_Panel.View_Model
                         );
 
 
-                        await Task.WhenAll(
-
-                             Model.Devices.SetAllTunningValuesToMicom(TestLogic.Tester1),
-                             Model.Devices.SetAllTunningValuesToMicom(TestLogic.Tester2)
-                        );
-
-
-
                         Status = "Testing";
 
                         stopwatch.Start();
