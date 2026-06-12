@@ -6,24 +6,15 @@
     "Steps": [
       {
         "No": "1",
-        "Test": "CALIB",
-        "Objectid": null,
-        "Specvalue": null,
-        "Timedelay": 0,
-        "Timetest": 10000,
-        "NoSkip": false
-      },
-      {
-        "No": "2",
         "Test": "NOP",
         "Objectid": null,
         "Specvalue": null,
         "Timedelay": 1000,
         "Timetest": 0,
-        "NoSkip": false
+        "NoSkip": true
       },
       {
-        "No": "3",
+        "No": "2",
         "Test": "KEY",
         "Objectid": "10",
         "Specvalue": "",
@@ -32,7 +23,7 @@
         "NoSkip": true
       },
       {
-        "No": "4",
+        "No": "3",
         "Test": "MEAS",
         "Objectid": "0.0.0",
         "Specvalue": "50",
@@ -41,7 +32,7 @@
         "NoSkip": true
       },
       {
-        "No": "5",
+        "No": "4",
         "Test": "KEY",
         "Objectid": "1,11",
         "Specvalue": "",
@@ -50,7 +41,7 @@
         "NoSkip": true
       },
       {
-        "No": "6",
+        "No": "5",
         "Test": "MEAS",
         "Objectid": "0.1.0",
         "Specvalue": "50",
@@ -59,7 +50,7 @@
         "NoSkip": true
       },
       {
-        "No": "7",
+        "No": "6",
         "Test": "KEY",
         "Objectid": "12",
         "Specvalue": null,
@@ -68,7 +59,7 @@
         "NoSkip": true
       },
       {
-        "No": "8",
+        "No": "7",
         "Test": "MEAS",
         "Objectid": "0.2.0",
         "Specvalue": "50",
@@ -77,7 +68,7 @@
         "NoSkip": true
       },
       {
-        "No": "9",
+        "No": "8",
         "Test": "KEY",
         "Objectid": "13",
         "Specvalue": null,
@@ -86,7 +77,7 @@
         "NoSkip": true
       },
       {
-        "No": "10",
+        "No": "9",
         "Test": "MEAS",
         "Objectid": "0.3.0",
         "Specvalue": "50",
@@ -95,7 +86,7 @@
         "NoSkip": true
       },
       {
-        "No": "11",
+        "No": "10",
         "Test": "KEY",
         "Objectid": "14",
         "Specvalue": null,
@@ -104,7 +95,7 @@
         "NoSkip": true
       },
       {
-        "No": "12",
+        "No": "11",
         "Test": "MEAS",
         "Objectid": "0.4.0",
         "Specvalue": "50",
@@ -113,7 +104,7 @@
         "NoSkip": true
       },
       {
-        "No": "13",
+        "No": "12",
         "Test": "KEY",
         "Objectid": "15",
         "Specvalue": null,
@@ -122,7 +113,7 @@
         "NoSkip": true
       },
       {
-        "No": "14",
+        "No": "13",
         "Test": "MEAS",
         "Objectid": "0.5.0",
         "Specvalue": "50",
@@ -131,7 +122,7 @@
         "NoSkip": true
       },
       {
-        "No": "15",
+        "No": "14",
         "Test": "KEY",
         "Objectid": "18",
         "Specvalue": null,
@@ -140,55 +131,91 @@
         "NoSkip": true
       },
       {
-        "No": "16",
+        "No": "15",
         "Test": "MEAS",
         "Objectid": "0.6.0",
-        "Specvalue": "40",
+        "Specvalue": "50",
         "Timedelay": 0,
         "Timetest": 2000,
         "NoSkip": true
       },
       {
-        "No": "17",
-        "Test": "KEY",
-        "Objectid": "16",
-        "Specvalue": null,
-        "Timedelay": 0,
-        "Timetest": 0,
-        "NoSkip": false
-      },
-      {
-        "No": "18",
-        "Test": "KEY",
-        "Objectid": "17",
-        "Specvalue": null,
-        "Timedelay": 0,
-        "Timetest": 0,
-        "NoSkip": false
-      },
-      {
-        "No": "19",
-        "Test": "KEY",
-        "Objectid": "19",
-        "Specvalue": null,
-        "Timedelay": 0,
-        "Timetest": 0,
-        "NoSkip": false
-      },
-      {
-        "No": "20",
+        "No": "16",
         "Test": "KEY",
         "Objectid": "20",
         "Specvalue": null,
         "Timedelay": 0,
         "Timetest": 0,
-        "NoSkip": false
+        "NoSkip": true
+      },
+      {
+        "No": "17",
+        "Test": "MEAS",
+        "Objectid": "1.0.0",
+        "Specvalue": "100",
+        "Timedelay": 0,
+        "Timetest": 2000,
+        "NoSkip": true
+      },
+      {
+        "No": "18",
+        "Test": "KEY",
+        "Objectid": "16",
+        "Specvalue": null,
+        "Timedelay": 0,
+        "Timetest": 0,
+        "NoSkip": true
+      },
+      {
+        "No": "19",
+        "Test": "MEAS",
+        "Objectid": "1.1.0",
+        "Specvalue": "100",
+        "Timedelay": 0,
+        "Timetest": 2000,
+        "NoSkip": true
+      },
+      {
+        "No": "20",
+        "Test": "KEY",
+        "Objectid": "17",
+        "Specvalue": null,
+        "Timedelay": 0,
+        "Timetest": 0,
+        "NoSkip": true
+      },
+      {
+        "No": "21",
+        "Test": "MEAS",
+        "Objectid": "1.2.0",
+        "Specvalue": "100",
+        "Timedelay": 0,
+        "Timetest": 3000,
+        "NoSkip": true
+      },
+      {
+        "No": "22",
+        "Test": "KEY",
+        "Objectid": "19",
+        "Specvalue": null,
+        "Timedelay": 0,
+        "Timetest": 0,
+        "NoSkip": true
+      },
+      {
+        "No": "23",
+        "Test": "MEAS",
+        "Objectid": "1.3.0",
+        "Specvalue": "100",
+        "Timedelay": 0,
+        "Timetest": 2000,
+        "NoSkip": true
       }
     ]
   },
   "Settings": {
     "LogDir": "D:\\Logs",
-    "ShouldStopAllWhenAnyFailedStep": true,
+    "ShouldStopAllWhenAnyFailedStep": false,
     "ShouldMainResetWhenPassTest": true,
     "ShouldMainResetWhenFailTest": false,
     "ShouldSaveLog": false,
@@ -238,11 +265,66 @@
                 {
                   "Id": 0,
                   "StringId": "0.0.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 62,
+                  "CoarseGainRatio": 4,
+                  "FineGainRatio": 12,
+                  "Lta": 593,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 12,
+                      "Lta": 593
+                    },
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 12,
+                      "Lta": 593
+                    },
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 12,
+                      "Lta": 593
+                    },
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 12,
+                      "Lta": 593
+                    },
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 12,
+                      "Lta": 593
+                    },
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 12,
+                      "Lta": 593
+                    },
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 12,
+                      "Lta": 596
+                    },
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 12,
+                      "Lta": 575
+                    },
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 12,
+                      "Lta": 581
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -251,7 +333,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -262,11 +399,66 @@
                 {
                   "Id": 0,
                   "StringId": "0.1.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 61,
+                  "CoarseGainRatio": 4,
+                  "FineGainRatio": 16,
+                  "Lta": 589,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 589
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 589
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 589
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 589
+                    },
+                    {
+                      "OffsetTap": 62,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 589
+                    },
+                    {
+                      "OffsetTap": 56,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 17,
+                      "Lta": 589
+                    },
+                    {
+                      "OffsetTap": 56,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 17,
+                      "Lta": 591
+                    },
+                    {
+                      "OffsetTap": 56,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 17,
+                      "Lta": 593
+                    },
+                    {
+                      "OffsetTap": 56,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 17,
+                      "Lta": 592
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -275,7 +467,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -286,11 +533,66 @@
                 {
                   "Id": 0,
                   "StringId": "0.2.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 58,
+                  "CoarseGainRatio": 5,
+                  "FineGainRatio": 12,
+                  "Lta": 596,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 5,
+                      "FineGainRatio": 12,
+                      "Lta": 596
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 5,
+                      "FineGainRatio": 12,
+                      "Lta": 596
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 5,
+                      "FineGainRatio": 12,
+                      "Lta": 596
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 5,
+                      "FineGainRatio": 12,
+                      "Lta": 596
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 5,
+                      "FineGainRatio": 12,
+                      "Lta": 596
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 5,
+                      "FineGainRatio": 12,
+                      "Lta": 596
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 5,
+                      "FineGainRatio": 12,
+                      "Lta": 589
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 5,
+                      "FineGainRatio": 12,
+                      "Lta": 599
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 5,
+                      "FineGainRatio": 12,
+                      "Lta": 590
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -299,7 +601,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -310,11 +667,66 @@
                 {
                   "Id": 0,
                   "StringId": "0.3.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 60,
+                  "CoarseGainRatio": 4,
+                  "FineGainRatio": 18,
+                  "Lta": 569,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 60,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 18,
+                      "Lta": 569
+                    },
+                    {
+                      "OffsetTap": 60,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 18,
+                      "Lta": 569
+                    },
+                    {
+                      "OffsetTap": 60,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 18,
+                      "Lta": 569
+                    },
+                    {
+                      "OffsetTap": 60,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 18,
+                      "Lta": 569
+                    },
+                    {
+                      "OffsetTap": 60,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 18,
+                      "Lta": 569
+                    },
+                    {
+                      "OffsetTap": 60,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 18,
+                      "Lta": 569
+                    },
+                    {
+                      "OffsetTap": 60,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 18,
+                      "Lta": 585
+                    },
+                    {
+                      "OffsetTap": 60,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 18,
+                      "Lta": 585
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 18,
+                      "Lta": 607
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -323,7 +735,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -334,11 +801,66 @@
                 {
                   "Id": 0,
                   "StringId": "0.4.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 59,
+                  "CoarseGainRatio": 4,
+                  "FineGainRatio": 16,
+                  "Lta": 613,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 613
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 613
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 613
+                    },
+                    {
+                      "OffsetTap": 58,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 613
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 613
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 613
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 602
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 601
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 16,
+                      "Lta": 597
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -347,7 +869,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -358,11 +935,66 @@
                 {
                   "Id": 0,
                   "StringId": "0.5.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 59,
+                  "CoarseGainRatio": 4,
+                  "FineGainRatio": 15,
+                  "Lta": 600,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 15,
+                      "Lta": 600
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 15,
+                      "Lta": 600
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 15,
+                      "Lta": 600
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 15,
+                      "Lta": 600
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 15,
+                      "Lta": 600
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 15,
+                      "Lta": 600
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 15,
+                      "Lta": 587
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 15,
+                      "Lta": 591
+                    },
+                    {
+                      "OffsetTap": 59,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 15,
+                      "Lta": 589
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -371,7 +1003,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -382,11 +1069,66 @@
                 {
                   "Id": 0,
                   "StringId": "0.6.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 61,
+                  "CoarseGainRatio": 4,
+                  "FineGainRatio": 13,
+                  "Lta": 588,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 55,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 14,
+                      "Lta": 588
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 13,
+                      "Lta": 588
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 13,
+                      "Lta": 588
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 13,
+                      "Lta": 588
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 13,
+                      "Lta": 588
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 13,
+                      "Lta": 588
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 13,
+                      "Lta": 613
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 13,
+                      "Lta": 592
+                    },
+                    {
+                      "OffsetTap": 61,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 13,
+                      "Lta": 590
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -395,7 +1137,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             }
@@ -411,11 +1208,66 @@
                 {
                   "Id": 0,
                   "StringId": "1.0.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 153,
+                  "CoarseGainRatio": 4,
+                  "FineGainRatio": 10,
+                  "Lta": 376,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 10,
+                      "Lta": 376
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 10,
+                      "Lta": 376
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 10,
+                      "Lta": 376
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 10,
+                      "Lta": 376
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 10,
+                      "Lta": 376
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 10,
+                      "Lta": 376
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 10,
+                      "Lta": 372
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 10,
+                      "Lta": 376
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 10,
+                      "Lta": 379
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -424,7 +1276,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -435,11 +1342,66 @@
                 {
                   "Id": 0,
                   "StringId": "1.1.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 153,
+                  "CoarseGainRatio": 2,
+                  "FineGainRatio": 17,
+                  "Lta": 433,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 154,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 17,
+                      "Lta": 433
+                    },
+                    {
+                      "OffsetTap": 152,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 17,
+                      "Lta": 433
+                    },
+                    {
+                      "OffsetTap": 152,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 17,
+                      "Lta": 433
+                    },
+                    {
+                      "OffsetTap": 152,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 17,
+                      "Lta": 433
+                    },
+                    {
+                      "OffsetTap": 151,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 17,
+                      "Lta": 433
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 17,
+                      "Lta": 433
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 17,
+                      "Lta": 385
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 17,
+                      "Lta": 376
+                    },
+                    {
+                      "OffsetTap": 153,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 17,
+                      "Lta": 374
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -448,7 +1410,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -459,11 +1476,66 @@
                 {
                   "Id": 0,
                   "StringId": "1.2.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 152,
+                  "CoarseGainRatio": 2,
+                  "FineGainRatio": 14,
+                  "Lta": 377,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 185,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 13,
+                      "Lta": 377
+                    },
+                    {
+                      "OffsetTap": 168,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 14,
+                      "Lta": 377
+                    },
+                    {
+                      "OffsetTap": 168,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 14,
+                      "Lta": 377
+                    },
+                    {
+                      "OffsetTap": 168,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 14,
+                      "Lta": 377
+                    },
+                    {
+                      "OffsetTap": 152,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 15,
+                      "Lta": 377
+                    },
+                    {
+                      "OffsetTap": 151,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 15,
+                      "Lta": 377
+                    },
+                    {
+                      "OffsetTap": 151,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 15,
+                      "Lta": 376
+                    },
+                    {
+                      "OffsetTap": 151,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 14,
+                      "Lta": 378
+                    },
+                    {
+                      "OffsetTap": 151,
+                      "CoarseGainRatio": 2,
+                      "FineGainRatio": 15,
+                      "Lta": 376
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -472,7 +1544,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             },
@@ -483,11 +1610,66 @@
                 {
                   "Id": 0,
                   "StringId": "1.3.0",
-                  "OffsetTap": 0,
-                  "CoarseGainRatio": 0,
-                  "FineGainRatio": 0,
-                  "Lta": 0,
-                  "ListTunningParameter": []
+                  "OffsetTap": 151,
+                  "CoarseGainRatio": 4,
+                  "FineGainRatio": 11,
+                  "Lta": 375,
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 150,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 11,
+                      "Lta": 375
+                    },
+                    {
+                      "OffsetTap": 151,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 11,
+                      "Lta": 375
+                    },
+                    {
+                      "OffsetTap": 151,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 11,
+                      "Lta": 375
+                    },
+                    {
+                      "OffsetTap": 151,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 11,
+                      "Lta": 375
+                    },
+                    {
+                      "OffsetTap": 151,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 11,
+                      "Lta": 375
+                    },
+                    {
+                      "OffsetTap": 152,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 11,
+                      "Lta": 375
+                    },
+                    {
+                      "OffsetTap": 152,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 11,
+                      "Lta": 380
+                    },
+                    {
+                      "OffsetTap": 152,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 11,
+                      "Lta": 380
+                    },
+                    {
+                      "OffsetTap": 152,
+                      "CoarseGainRatio": 4,
+                      "FineGainRatio": 11,
+                      "Lta": 381
+                    }
+                  ]
                 },
                 {
                   "Id": 1,
@@ -496,7 +1678,62 @@
                   "CoarseGainRatio": 0,
                   "FineGainRatio": 0,
                   "Lta": 0,
-                  "ListTunningParameter": []
+                  "ListTunningParameter": [
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    },
+                    {
+                      "OffsetTap": 0,
+                      "CoarseGainRatio": 0,
+                      "FineGainRatio": 0,
+                      "Lta": 0
+                    }
+                  ]
                 }
               ]
             }
