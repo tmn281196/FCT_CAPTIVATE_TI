@@ -240,8 +240,30 @@ namespace Touch_Panel.View_Model
 
        
 
+        // Save: ghi đè lên file model đang mở (tên cũ). Nếu chưa mở file nào thì
+        // chuyển sang Save As để người dùng chọn tên.
         [RelayCommand]
         private void SaveModel()
+        {
+            if (string.IsNullOrEmpty(Utility.CurrentModelFilePath) || !File.Exists(Utility.CurrentModelFilePath))
+            {
+                SaveModelAs();
+                return;
+            }
+
+            try
+            {
+                Utility.SaveModel(Model, Utility.CurrentModelFilePath, Path.GetFileName(Utility.CurrentModelFilePath));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fatal Error!" + ex.Message);
+            }
+        }
+
+        // Save As: luôn cho chọn tên file mới, và file đó trở thành file đang mở.
+        [RelayCommand]
+        private void SaveModelAs()
         {
             try
             {
@@ -254,6 +276,9 @@ namespace Touch_Panel.View_Model
                     try
                     {
                         Utility.SaveModel(Model, openFile.FileName, openFile.SafeFileName);
+                        Utility.CurrentModelFilePath = openFile.FileName.EndsWith(".json", StringComparison.OrdinalIgnoreCase)
+                            ? openFile.FileName
+                            : openFile.FileName + ".json";
                     }
                     catch (Exception ex)
                     {
@@ -264,6 +289,75 @@ namespace Touch_Panel.View_Model
             catch (Exception ex)
             {
                 MessageBox.Show("Fatal Error!" + ex.Message);
+            }
+        }
+
+        [RelayCommand]
+        private void DuplicateStep(object parameter)
+        {
+            if (AutoState?.Test == TestState.Testing)
+            {
+                MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            int testerId = int.Parse((string)parameter);
+            switch (testerId)
+            {
+                case 1:
+                    Model.Micom1TestStep.DuplicateStep(StepSelItem1);
+                    break;
+                case 2:
+                    Model.Micom2TestStep.DuplicateStep(StepSelItem2);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        [RelayCommand]
+        private void MoveStepUp(object parameter)
+        {
+            if (AutoState?.Test == TestState.Testing)
+            {
+                MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            int testerId = int.Parse((string)parameter);
+            switch (testerId)
+            {
+                case 1:
+                    Model.Micom1TestStep.MoveStepUp(StepSelItem1);
+                    break;
+                case 2:
+                    Model.Micom2TestStep.MoveStepUp(StepSelItem2);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        [RelayCommand]
+        private void MoveStepDown(object parameter)
+        {
+            if (AutoState?.Test == TestState.Testing)
+            {
+                MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            int testerId = int.Parse((string)parameter);
+            switch (testerId)
+            {
+                case 1:
+                    Model.Micom1TestStep.MoveStepDown(StepSelItem1);
+                    break;
+                case 2:
+                    Model.Micom2TestStep.MoveStepDown(StepSelItem2);
+                    break;
+                default:
+                    break;
             }
         }
 

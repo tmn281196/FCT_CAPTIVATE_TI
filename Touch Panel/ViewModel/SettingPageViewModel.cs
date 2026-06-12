@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -399,8 +400,30 @@ namespace Touch_Panel.View_Model
             Model.Devices.RefreshComPort();
         }
 
+        // Save: ghi đè lên file model đang mở (tên cũ). Nếu chưa mở file nào thì
+        // chuyển sang Save As để người dùng chọn tên.
         [RelayCommand]
         private void Save()
+        {
+            if (string.IsNullOrEmpty(Utility.CurrentModelFilePath) || !File.Exists(Utility.CurrentModelFilePath))
+            {
+                SaveAs();
+                return;
+            }
+
+            try
+            {
+                Utility.SaveModel(Model, Utility.CurrentModelFilePath, Path.GetFileName(Utility.CurrentModelFilePath));
+            }
+            catch (Exception ex)
+            {
+                System.Windows.MessageBox.Show("Fatal Error!" + ex.Message);
+            }
+        }
+
+        // Save As: luôn cho chọn tên file mới, và file đó trở thành file đang mở.
+        [RelayCommand]
+        private void SaveAs()
         {
             try
             {
@@ -413,6 +436,9 @@ namespace Touch_Panel.View_Model
                     try
                     {
                         Utility.SaveModel(Model, openFile.FileName, openFile.SafeFileName);
+                        Utility.CurrentModelFilePath = openFile.FileName.EndsWith(".json", StringComparison.OrdinalIgnoreCase)
+                            ? openFile.FileName
+                            : openFile.FileName + ".json";
                     }
                     catch (Exception ex)
                     {

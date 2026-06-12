@@ -291,7 +291,7 @@ namespace Touch_Panel.View_Model
                 File.WriteAllText("MicomDatabase.json", json);
 
             }
-            catch 
+            catch
             {
                 throw;
             }
@@ -312,6 +312,7 @@ namespace Touch_Panel.View_Model
             if (openFile.ShowDialog() == true)
             {
                 ModelName = Path.GetFileNameWithoutExtension(openFile.FileName);
+                Utility.CurrentModelFilePath = openFile.FileName;
                 string modelStr = File.ReadAllText(openFile.FileName);
 
                 try

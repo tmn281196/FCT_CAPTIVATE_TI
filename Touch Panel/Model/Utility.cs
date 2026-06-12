@@ -11,6 +11,12 @@ namespace Touch_Panel.Model
 {
     public static class Utility
     {
+        /// <summary>
+        /// Đường dẫn file model đang mở. Dùng cho lệnh Save (ghi đè file cũ).
+        /// Được set khi mở model hoặc sau khi Save As thành công.
+        /// </summary>
+        public static string CurrentModelFilePath { get; set; }
+
         public static void SaveModel<T>(this T source, string filePath, string fileName)
         {
             try

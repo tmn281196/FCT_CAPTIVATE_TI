@@ -347,10 +347,10 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
 
             </Grid.ColumnDefinitions>
 
-            <Button Command="{Binding SaveModelCommand}" BorderThickness="0"  Width="100" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left">
+            <Button Command="{Binding SaveModelCommand}" BorderThickness="0"  Width="200" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left">
                 <StackPanel Orientation="Horizontal" >
                     <fa:IconImage Icon="Save" Foreground="Orange" Width="25"/>
-                    <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20">Save</Label>
+                    <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20">Save to Database</Label>
 
                 </StackPanel>
             </Button>

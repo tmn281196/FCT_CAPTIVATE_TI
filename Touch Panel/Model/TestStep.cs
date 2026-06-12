@@ -65,6 +65,70 @@ namespace Touch_Panel.Model
                 Steps.Remove(step);
             }
         }
+
+        // Nhân đôi step đang chọn, chèn ngay phía dưới nó.
+        public void DuplicateStep(Step step)
+        {
+            if (step == null)
+            {
+                return;
+            }
+
+            int idx = Steps.IndexOf(step);
+            if (idx < 0)
+            {
+                return;
+            }
+
+            Step clone = (Step)step.Clone();
+            Steps.Insert(idx + 1, clone);
+            Renumber();
+        }
+
+        // Di chuyển step đang chọn lên trên một vị trí.
+        public void MoveStepUp(Step step)
+        {
+            if (step == null)
+            {
+                return;
+            }
+
+            int idx = Steps.IndexOf(step);
+            if (idx <= 0)
+            {
+                return;
+            }
+
+            Steps.Move(idx, idx - 1);
+            Renumber();
+        }
+
+        // Di chuyển step đang chọn xuống dưới một vị trí.
+        public void MoveStepDown(Step step)
+        {
+            if (step == null)
+            {
+                return;
+            }
+
+            int idx = Steps.IndexOf(step);
+            if (idx < 0 || idx >= Steps.Count - 1)
+            {
+                return;
+            }
+
+            Steps.Move(idx, idx + 1);
+            Renumber();
+        }
+
+        // Đánh lại số thứ tự (No) theo vị trí hiện tại trong danh sách.
+        private void Renumber()
+        {
+            for (int i = 0; i < Steps.Count; i++)
+            {
+                Steps[i].No = (i + 1).ToString();
+            }
+        }
     }
 
     public partial class Step : ObservableObject, ICloneable

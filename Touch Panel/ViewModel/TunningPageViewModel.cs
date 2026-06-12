@@ -317,6 +317,7 @@ namespace Touch_Panel.ViewModel
             Model.Devices.ConnectorAllUp();
         }
 
+        // Save: ghi tuning vào MicomDatabase.json (database dùng chung theo firmware).
         [RelayCommand]
         private void SaveModel()
         {

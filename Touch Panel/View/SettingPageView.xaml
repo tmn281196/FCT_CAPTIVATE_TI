@@ -405,13 +405,23 @@
             </StackPanel>-->
 
 
-            <Button Command="{Binding SaveCommand}" BorderThickness="0"  Width="100" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right">
-                <StackPanel Orientation="Horizontal" >
-                    <fa:IconImage Icon="Save" Foreground="Orange" Width="25"/>
-                    <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20">SAVE</Label>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Command="{Binding SaveCommand}" BorderThickness="0"  Width="100" Background="Transparent" Cursor="Hand">
+                    <StackPanel Orientation="Horizontal" >
+                        <fa:IconImage Icon="Save" Foreground="Orange" Width="25"/>
+                        <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20">SAVE</Label>
 
-                </StackPanel>
-            </Button>
+                    </StackPanel>
+                </Button>
+
+                <Button Command="{Binding SaveAsCommand}" BorderThickness="0"  Width="130" Background="Transparent" Cursor="Hand">
+                    <StackPanel Orientation="Horizontal" >
+                        <fa:IconImage Icon="Save" Foreground="DarkOrange" Width="25"/>
+                        <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20">SAVE AS</Label>
+
+                    </StackPanel>
+                </Button>
+            </StackPanel>
 
 
         </StackPanel>
