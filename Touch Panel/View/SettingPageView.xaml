@@ -66,41 +66,48 @@
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Micom 1" Width="70"/>
                             <ComboBox  HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.MicomCom1Port}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom1" Margin="10, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom1" Margin="10, 0, 4, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Micom1" Cursor="Hand"/>
                         </StackPanel>
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Micom 2" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.MicomCom2Port}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom2" Margin="10, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom2" Margin="10, 0, 4, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Micom2" Cursor="Hand"/>
                         </StackPanel>
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="System" Width="70"/>
                             <ComboBox  HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.SystemComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="System" Margin="10, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}"  CommandParameter="System" Margin="10, 0, 4, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="System" Cursor="Hand"/>
                         </StackPanel>
 
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Solenoid 1" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid1ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 1" Margin="10, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 1" Margin="10, 0, 4, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Solenoid 1" Cursor="Hand"/>
                         </StackPanel>
 
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Solenoid 2" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid2ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}" CommandParameter="Solenoid 2" Margin="10, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}" CommandParameter="Solenoid 2" Margin="10, 0, 4, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Solenoid 2" Cursor="Hand"/>
                         </StackPanel>
 
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Solenoid 3" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid3ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 2" Margin="10, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 3" Margin="10, 0, 4, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Solenoid 3" Cursor="Hand"/>
 
                         </StackPanel>
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="QR Printer" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.QrPrinterComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="80" Content="Connect" Command="{Binding DeviceConnectCommand}"  CommandParameter="QR Printer" Margin="10, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}"  CommandParameter="QR Printer" Margin="10, 0, 4, 0" Cursor="Hand"/>
+                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="QR Printer" Cursor="Hand"/>
 
                         </StackPanel>
                     </StackPanel>

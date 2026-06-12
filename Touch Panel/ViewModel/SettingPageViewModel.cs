@@ -395,6 +395,17 @@ namespace Touch_Panel.View_Model
 
 
         [RelayCommand]
+        private void DeviceClose(object parameter)
+        {
+            string deviceName = (string)parameter;
+
+
+            Model.Devices.CloseDeviceByName(deviceName);
+
+        }
+
+
+        [RelayCommand]
         private void RefreshComport()
         {
             Model.Devices.RefreshComPort();
