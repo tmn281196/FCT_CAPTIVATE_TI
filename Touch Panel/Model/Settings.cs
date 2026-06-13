@@ -23,6 +23,9 @@ namespace Touch_Panel.Model
         private bool shouldMainResetWhenFailTest = false;
 
         [ObservableProperty]
+        private bool shouldBuzzerWhenFailTest = true;
+
+        [ObservableProperty]
         private bool shouldSaveLog = true;
 
         [ObservableProperty]

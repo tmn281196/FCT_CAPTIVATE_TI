@@ -365,7 +365,10 @@ namespace Touch_Panel.View_Model
 
                         await Task.Delay(100);
 
-                        await Model.Devices.TurnOnBuzzer();
+                        if (Model.Settings.ShouldBuzzerWhenFailTest)
+                        {
+                            await Model.Devices.TurnOnBuzzer();
+                        }
 
 
                         StringTestResult = "Fail";

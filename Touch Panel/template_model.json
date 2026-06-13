@@ -191,6 +191,7 @@
     "ShouldStopAllWhenAnyFailedStep": true,
     "ShouldMainResetWhenPassTest": true,
     "ShouldMainResetWhenFailTest": false,
+    "ShouldBuzzerWhenFailTest": true,
     "ShouldSaveLog": false,
     "UnitCode": "SV",
     "PartnerCode": "E17U",
