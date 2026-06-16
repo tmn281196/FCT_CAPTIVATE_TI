@@ -11,7 +11,6 @@ namespace Touch_Panel.Model
 {
     public partial class Model : ObservableObject
     {
- 
 
         [ObservableProperty]
         private TestStep micom1TestStep = new TestStep();
@@ -24,7 +23,6 @@ namespace Touch_Panel.Model
 
         [ObservableProperty]
         private Devices devices = new Devices();
-
 
         [ObservableProperty]
         private string lastPrintDate = string.Empty;

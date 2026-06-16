@@ -354,10 +354,10 @@ namespace Touch_Panel.View_Model
                     MicomContext micomCtx2 = new MicomContext() { LockObject = deviceManager.PortLockMicom2, SerialPort = deviceManager.MicomPort2, MICOMData = sharedModel.Devices.MicomData2 };
 
                     ////Chạy song song cả 2 task
-                    //Task task1 = UpdateMicomAsync(micomCtx1);
-                    //Task task2 = UpdateMicomAsync(micomCtx2);
+                    Task task1 = UpdateMicomAsync(micomCtx1);
+                    Task task2 = UpdateMicomAsync(micomCtx2);
 
-                    //await Task.WhenAll(task1, task2);
+                    await Task.WhenAll(task1, task2);
 
 
                 }
