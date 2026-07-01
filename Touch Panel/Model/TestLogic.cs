@@ -27,6 +27,10 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private int currStep;
 
+        // Tổng takt time cả chu kỳ test của tester (đo trong RunTester).
+        [ObservableProperty]
+        private string totalTaktTime = "0.0s";
+
         public bool stopTest;
 
         public int ID;
@@ -100,6 +104,17 @@ namespace Touch_Panel.Model
             tester.ClearSteps();
             tester.CurrStep = 0;
 
+            tester.TotalTaktTime = "0.0s";
+            var taktSw = Stopwatch.StartNew();
+
+            // Cập nhật takt realtime khi test đang chạy.
+            var taktTimer = new System.Timers.Timer(100) { AutoReset = true };
+            taktTimer.Elapsed += (s, e) =>
+            {
+                tester.TotalTaktTime = $"{taktSw.Elapsed.TotalSeconds:0.0}s";
+            };
+            taktTimer.Start();
+
             foreach (var step in tester.Steps)
             {
                 if((Model.Settings.ShouldStopAllWhenAnyFailedStep && FlagNG))
@@ -146,8 +161,13 @@ namespace Touch_Panel.Model
                     tester.TestResult = TestResult.Unknown;
                 }
             }
-  
-            
+
+            taktTimer.Stop();
+            taktTimer.Dispose();
+            taktSw.Stop();
+            tester.TotalTaktTime = $"{taktSw.Elapsed.TotalSeconds:0.0}s";
+
+
         }
 
         public async void manualFullTest(Tester tester)

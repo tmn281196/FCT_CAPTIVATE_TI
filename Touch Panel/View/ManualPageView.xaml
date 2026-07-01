@@ -179,6 +179,11 @@
 
 
             <StackPanel    VerticalAlignment="Center"  Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
+                <StackPanel VerticalAlignment="Center" Margin="0 0 10 0">
+                    <fa:IconBlock Icon="Hourglass" FontSize="18" Foreground="Orange" HorizontalAlignment="Center"/>
+                    <TextBlock FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"
+                               Text="{Binding TestLogic.Tester1.TotalTaktTime}"/>
+                </StackPanel>
                 <ItemsControl ItemsSource="{Binding Model.Devices.MicomData1.ListCAPSensor}" Margin="1">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -330,6 +335,11 @@ Margin="2">
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
+                <StackPanel VerticalAlignment="Center" Margin="10 0 0 0">
+                    <fa:IconBlock Icon="Hourglass" FontSize="18" Foreground="Orange" HorizontalAlignment="Center"/>
+                    <TextBlock FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"
+                               Text="{Binding TestLogic.Tester2.TotalTaktTime}"/>
+                </StackPanel>
             </StackPanel>
             <StackPanel Margin="5 5"  Grid.Column="1" Grid.Row="2" VerticalAlignment="Center">
                 <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center"  Orientation="Horizontal" >
@@ -368,14 +378,14 @@ Margin="2">
                                 </Button.Content>
                             </Button>
 
-                            <Button Cursor="Hand" HorizontalAlignment="Left" Margin="1" Width="40" Height="30" 
+                            <Button Cursor="Hand" HorizontalAlignment="Left" Margin="1" Width="40" Height="30"
         Command="{Binding ResetCommand}" CommandParameter="1" Background="Transparent">
                                 <Button.Content>
                                     <StackPanel Orientation="Horizontal">
                                         <fa:IconImage Icon="ArrowUp" Foreground="Blue" Width="15" />
                                         <fa:IconImage Icon="MapPin" Foreground="Blue" Width="10"/>
                                     </StackPanel>
-                                   
+
                                 </Button.Content>
                             </Button>
                         </StackPanel>
