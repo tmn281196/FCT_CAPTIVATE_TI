@@ -33,6 +33,22 @@ namespace Touch_Panel.Model
 
 
 
+        /// <summary>
+        /// Kiểm tra port có đang mở một cách an toàn. Trả false nếu port null hoặc đã bị dispose,
+        /// tránh ObjectDisposedException khi vòng lặp nền đọc .IsOpen lúc đang đóng app.
+        /// </summary>
+        public static bool IsPortOpen(SerialPortStream port)
+        {
+            try
+            {
+                return port != null && !port.IsDisposed && port.IsOpen;
+            }
+            catch (ObjectDisposedException)
+            {
+                return false;
+            }
+        }
+
         public void Dispose()
         {
 

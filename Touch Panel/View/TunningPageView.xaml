@@ -100,10 +100,10 @@
                                             <DataGrid Grid.Row="1"  IsReadOnly="True"     ItemsSource="{Binding ListTunningParameter}" Background="White" Style="{StaticResource CustomDataGridStyle}"
 ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                                                 <DataGrid.Columns>
-                                                    <DataGridTextColumn Binding="{Binding OffsetTap}" Width="100" Header="OffsetTap" />
-                                                    <DataGridTextColumn Binding="{Binding FineGainRatio}" Width="100"  Header="FineGainRatio" />
-                                                    <DataGridTextColumn Binding="{Binding CoarseGainRatio}" Width="100"  Header="CoarseGainRatio" />
-                                                    <DataGridTextColumn Binding="{Binding Lta}" Width="80"  Header="LTA" />
+                                                    <DataGridTextColumn Binding="{Binding OffsetTap}" Width="50" Header="O" />
+                                                    <DataGridTextColumn Binding="{Binding FineGainRatio}" Width="50"  Header="F" />
+                                                    <DataGridTextColumn Binding="{Binding CoarseGainRatio}" Width="50"  Header="C" />
+                                                    <DataGridTextColumn Binding="{Binding Lta}" Width="50"  Header="LTA" />
 
                                                 </DataGrid.Columns>
 
@@ -112,17 +112,17 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
 
                                             <StackPanel Grid.Row="2">
                                                 <StackPanel Orientation="Horizontal" >
-                                                    <TextBox  Width="100" IsReadOnly="True"  Text="{Binding CalculatedOffsetTap }" TextAlignment="Center" Background="Orange"/>
-                                                    <TextBox  Width="100" IsReadOnly="True"  Text="{Binding CalculatedFineGainRatio }" TextAlignment="Center"  Background="Orange"/>
-                                                    <TextBox  Width="100" IsReadOnly="True"  Text="{Binding CalculatedCoarseGainRatio }" TextAlignment="Center"  Background="Orange"/>
-                                                    <TextBox  Width="100" IsReadOnly="True"  Text="{Binding CalculatedLta }" TextAlignment="Center"  Background="Orange"/>
+                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedOffsetTap }" TextAlignment="Center" Background="Orange"/>
+                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedFineGainRatio }" TextAlignment="Center"  Background="Orange"/>
+                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedCoarseGainRatio }" TextAlignment="Center"  Background="Orange"/>
+                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedLta }" TextAlignment="Center"  Background="Orange"/>
 
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal" >
-                                                    <TextBox  Width="100" Background="LightGreen" Text="{Binding OffsetTap }" TextAlignment="Center"/>
-                                                    <TextBox  Width="100" Background="LightGreen"  Text="{Binding FineGainRatio }" TextAlignment="Center"/>
-                                                    <TextBox  Width="100" Background="LightGreen"  Text="{Binding CoarseGainRatio }" TextAlignment="Center"/>
-                                                    <TextBox  Width="100" Background="LightGreen"  Text="{Binding Lta }" TextAlignment="Center"/>
+                                                    <TextBox  Width="50" Background="LightGreen" Text="{Binding OffsetTap }" TextAlignment="Center"/>
+                                                    <TextBox  Width="50" Background="LightGreen"  Text="{Binding FineGainRatio }" TextAlignment="Center"/>
+                                                    <TextBox  Width="50" Background="LightGreen"  Text="{Binding CoarseGainRatio }" TextAlignment="Center"/>
+                                                    <TextBox  Width="50" Background="LightGreen"  Text="{Binding Lta }" TextAlignment="Center"/>
 
                                                 </StackPanel>
                                              
@@ -233,10 +233,10 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                                             <DataGrid Grid.Row="1"  IsReadOnly="True"     ItemsSource="{Binding ListTunningParameter}" Background="White" Style="{StaticResource CustomDataGridStyle}"
 ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                                                 <DataGrid.Columns>
-                                                    <DataGridTextColumn Binding="{Binding OffsetTap}" Width="100" Header="OffsetTap" />
-                                                    <DataGridTextColumn Binding="{Binding FineGainRatio}" Width="100"  Header="FineGainRatio" />
-                                                    <DataGridTextColumn Binding="{Binding CoarseGainRatio}" Width="100"  Header="CoarseGainRatio" />
-                                                    <DataGridTextColumn Binding="{Binding Lta}" Width="80"  Header="LTA" />
+                                                    <DataGridTextColumn Binding="{Binding OffsetTap}" Width="50" Header="O" />
+                                                    <DataGridTextColumn Binding="{Binding FineGainRatio}" Width="50"  Header="F" />
+                                                    <DataGridTextColumn Binding="{Binding CoarseGainRatio}" Width="50"  Header="C" />
+                                                    <DataGridTextColumn Binding="{Binding Lta}" Width="50"  Header="LTA" />
 
                                                 </DataGrid.Columns>
 
@@ -245,17 +245,17 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
 
                                             <StackPanel Grid.Row="2">
                                                 <StackPanel Orientation="Horizontal" >
-                                                    <TextBox  Width="100" IsReadOnly="True" Text="{Binding  CalculatedOffsetTap }" TextAlignment="Center" Background="Orange"/>
-                                                    <TextBox  Width="100" IsReadOnly="True"  Text="{Binding CalculatedFineGainRatio }" TextAlignment="Center"  Background="Orange"/>
-                                                    <TextBox  Width="100" IsReadOnly="True"  Text="{Binding CalculatedCoarseGainRatio }" TextAlignment="Center"  Background="Orange"/>
-                                                    <TextBox  Width="100" IsReadOnly="True"  Text="{Binding CalculatedLta }" TextAlignment="Center"  Background="Orange"/>
+                                                    <TextBox  Width="50" IsReadOnly="True" Text="{Binding  CalculatedOffsetTap }" TextAlignment="Center" Background="Orange"/>
+                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedFineGainRatio }" TextAlignment="Center"  Background="Orange"/>
+                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedCoarseGainRatio }" TextAlignment="Center"  Background="Orange"/>
+                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedLta }" TextAlignment="Center"  Background="Orange"/>
 
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal" >
-                                                    <TextBox  Width="100"  Background="LightGreen"  Text="{Binding OffsetTap }" TextAlignment="Center"/>
-                                                    <TextBox  Width="100"  Background="LightGreen"  Text="{Binding FineGainRatio }" TextAlignment="Center"/>
-                                                    <TextBox  Width="100"  Background="LightGreen"  Text="{Binding CoarseGainRatio }" TextAlignment="Center"/>
-                                                    <TextBox  Width="100"  Background="LightGreen"  Text="{Binding Lta }" TextAlignment="Center"/>
+                                                    <TextBox  Width="50"  Background="LightGreen"  Text="{Binding OffsetTap }" TextAlignment="Center"/>
+                                                    <TextBox  Width="50"  Background="LightGreen"  Text="{Binding FineGainRatio }" TextAlignment="Center"/>
+                                                    <TextBox  Width="50"  Background="LightGreen"  Text="{Binding CoarseGainRatio }" TextAlignment="Center"/>
+                                                    <TextBox  Width="50"  Background="LightGreen"  Text="{Binding Lta }" TextAlignment="Center"/>
 
                                                 </StackPanel>
 

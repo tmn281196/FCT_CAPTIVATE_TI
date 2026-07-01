@@ -198,6 +198,12 @@ namespace Touch_Panel.View_Model
             else
             {
                 Model.LastPrintDate = today;
+
+                // Lưu thầm serial + ngày in theo TÊN MODEL để sống sót qua restart (không popup).
+                string modelName = string.IsNullOrEmpty(Utility.CurrentModelFilePath)
+                    ? null
+                    : Path.GetFileNameWithoutExtension(Utility.CurrentModelFilePath);
+                AppState.SetSerial(modelName, Model.Settings.SerialNumber, Model.LastPrintDate);
             }
         }
 
@@ -249,12 +255,12 @@ namespace Touch_Panel.View_Model
 
                         if(!(Model.Devices.DeviceManager.MicomPort1 == null && Model.Devices.DeviceManager.MicomPort2 == null))
                         {
-                            bool micom1 = TestLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort1.IsOpen : true;
-                            bool micom2 = TestLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.MicomPort2.IsOpen : true;
-                            bool soleinod1 = TestLogic.Tester1.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid1Port.IsOpen : true;
-                            bool soleinod2 = TestLogic.Tester2.Steps.Count > 0 ? Model.Devices.DeviceManager.Solenoid2Port.IsOpen : true;
-                            bool soleinod3 = Model.Devices.DeviceManager.Solenoid3Port.IsOpen;
-                            bool system = Model.Devices.DeviceManager.SystemPort.IsOpen;
+                            bool micom1 = TestLogic.Tester1.Steps.Count > 0 ? Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort1) : true;
+                            bool micom2 = TestLogic.Tester2.Steps.Count > 0 ? Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort2) : true;
+                            bool soleinod1 = TestLogic.Tester1.Steps.Count > 0 ? Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid1Port) : true;
+                            bool soleinod2 = TestLogic.Tester2.Steps.Count > 0 ? Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid2Port) : true;
+                            bool soleinod3 = Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid3Port);
+                            bool system = Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.SystemPort);
 
 
                             bool allDevicesConnected = micom1 && soleinod1 && micom2 && soleinod2 && soleinod3 && system;
@@ -325,13 +331,6 @@ namespace Touch_Panel.View_Model
                         );
 
 
-
-                        //await Task.WhenAll(
-                        //  Model.Devices.GetTunningValueIfPass(TestLogic.Tester1),
-                        //  Model.Devices.GetTunningValueIfPass(TestLogic.Tester2)
-                        //);
-
-
                         await Task.Delay(100);
                         await Task.WhenAll(
                             Model.Devices.HaltMICOM(1),
@@ -374,8 +373,7 @@ namespace Touch_Panel.View_Model
                         StringTestResult = "Fail";
                         await Task.Delay(500);
 
-                        await PrintNextLabelAsync();
-
+                        // Chỉ in QR cho hàng đạt (OK) -> case Fail không in.
 
                         Fail += 1;
                         SaveLog(false);
@@ -504,16 +502,33 @@ namespace Touch_Panel.View_Model
 
             var measSteps = steps.Where(x => x.Test == "MEAS").Take(3).ToList();
 
-            sb.Append($"{measSteps.Count:D2}");
+            // ===== TEST MODE: chèn data MEAS giả cho đủ 3 bước để test cỡ QR =====
+            // Đặt false để quay về như cũ (chỉ dùng MEAS thật).
+            const bool USE_DUMMY_MEAS = true;
+
+            // Danh sách (giá trị đo, spec) lấy từ bước thật
+            var measData = measSteps
+                .Select(x => (
+                    measured: string.IsNullOrEmpty(x.Value) ? "0" : x.Value,
+                    spec: string.IsNullOrEmpty(x.Specvalue) ? "0" : x.Specvalue))
+                .ToList();
+
+            // Bù data giả cho đủ 3 bước (chỉ khi bật TEST MODE)
+            if (USE_DUMMY_MEAS)
+            {
+                string[,] dummy = { { "123.45", "120.00" }, { "-67.89", "-70.00" }, { "999.99", "1000.0" } };
+                for (int i = measData.Count; i < 3; i++)
+                    measData.Add((dummy[i, 0], dummy[i, 1]));
+            }
+
+            sb.Append($"{measData.Count:D2}");
             sb.Append($"/{testStartTime:yyyyMMddHHmmss}");
             sb.Append($"/{testFinishTime:yyyyMMddHHmmss}");
 
             int idx = 1;
-            foreach (var step in measSteps)
+            foreach (var (measured, spec) in measData)
             {
                 string code = $"A{idx:D3}";
-                string measured = string.IsNullOrEmpty(step.Value) ? "0" : step.Value;
-                string spec = string.IsNullOrEmpty(step.Specvalue) ? "0" : step.Specvalue;
                 sb.Append($"/{code}-{measured}-{spec}-0");
                 idx++;
             }

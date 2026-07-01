@@ -30,6 +30,7 @@ namespace Touch_Panel.ViewModel
 
         private void ReloadData()
         {
+            if (Model.Devices.MicomData1 == null || Model.Devices.MicomData2 == null) return;
             AllCAPElementsMicom1 = new ObservableCollection<CAPElement>();
             AllCAPElementsMicom2 = new ObservableCollection<CAPElement>();
 

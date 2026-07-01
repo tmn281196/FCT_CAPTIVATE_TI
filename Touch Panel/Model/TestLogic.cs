@@ -223,18 +223,15 @@ namespace Touch_Panel.Model
                 case "MEAS":
                     await MEAS(step, tester.ID);
                     break;
-
                 case "NOP":
                     await NOP(step, tester.ID);
                     break;
                 case "HALT":
                     await HALT(step, tester.ID);
                     break;
-
                 case "RESUME":
                     await RESUME(step, tester.ID);
                     break;
-
                 case "KEY":
                     await KEY(step, tester.ID);
                     break;

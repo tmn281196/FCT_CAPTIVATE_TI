@@ -864,27 +864,33 @@ namespace Touch_Panel.Model
             // =========================
             // PRINTER SETUP
             // =========================
-            sb.AppendLine("SIZE 70 mm, 22.5 mm");
+            sb.AppendLine("SIZE 20 mm, 20 mm");
             // GAP đã calibration sẵn trong EEPROM máy (nút FEED khi bật) → không cần khai báo
             sb.AppendLine("DIRECTION 1");
             sb.AppendLine("REFERENCE 0,0");
-            sb.AppendLine("DENSITY 5");
+            sb.AppendLine("DENSITY 6");
             sb.AppendLine("SPEED 3");
             sb.AppendLine("CLS");
 
-            // Label = 826 x 266 dots (70 x 22.5 mm, TSC TE310 = 300 DPI, 11.81 dots/mm)
+            // Label = 236 x 236 dots (20 x 20 mm, TSC TE310 = 300 DPI, 11.81 dots/mm)
 
             // =========================
-            // QR CODE (cell 4, level M, ~148 dots — V5 alphanumeric)
+            // QR CODE (cell 3, level M — chừa lề trắng quiet zone)
+            // Khi đủ 3 bước MEAS (data dài, ~V8/49 module) -> cell 3 ≈ 147 dots / 236.
+            // LƯU Ý: cell = kích thước module (to/nhỏ QR); DENSITY chỉ là độ đậm, không đổi cỡ.
+            // Độ dài data đổi theo số bước MEAS -> version QR có thể đổi; chạm mép thì giảm cell (2).
             // =========================
-            sb.AppendLine($"QRCODE 563,59,M,4,A,0,\"{qrString}\"");
+            sb.AppendLine($"QRCODE 67,50,M,3,A,0,\"{qrString}\"");
 
             // =========================
-            // TEXT FIELDS (TẠM TẮT để debug QR scan)
+            // TEXT FIELDS
+            // "HUMAN THAI" xoay dọc 270° nằm bên TRÁI (đọc từ dưới lên), canh giữa chiều cao.
+            // Font "0" = CG Triumvirate (scalable, kiểu Arial/Helvetica); 2 số cuối = cỡ point.
+            // Part number ngang phía TRÊN QR; date+serial xoay dọc 270° bên PHẢI (đọc từ dưới lên).
             // =========================
-            sb.AppendLine("TEXT 533,187,\"2\",270,1,1,\"HUMAN THAI\"");
-            sb.AppendLine($"TEXT 559,20,\"2\",0,1,1,\"{partNumber}\"");
-            sb.AppendLine($"TEXT 735,54,\"2\",90,1,1,\"{date} {serial}\"");
+            sb.AppendLine("TEXT 18,193,\"0\",270,7,7,\"HUMAN THAI\"");
+            sb.AppendLine($"TEXT 54,8,\"0\",0,7,7,\"{partNumber}\"");
+            sb.AppendLine($"TEXT 235,40,\"0\",90,7,7,\"{date} {serial}\"");
 
             // =========================
             // PRINT

@@ -75,11 +75,37 @@ namespace Touch_Panel.View_Model
 
 
             deviceManager = new DeviceManager();
+
+            // Khi auto-load được model gần nhất thì tự kết nối COM luôn (model trắng thì không).
+            bool autoConnectComPorts = false;
             try
             {
-                string modelStr = File.ReadAllText("template_model.json");
+                // Ưu tiên load lại file model mở gần nhất.
+                string recentPath = Utility.GetRecentModelPath();
 
-                sharedModel = Utility.ConvertFromJson<Model.Model>(modelStr);
+                if (!string.IsNullOrEmpty(recentPath))
+                {
+                    string modelStr = File.ReadAllText(recentPath);
+                    sharedModel = Utility.ConvertFromJson<Model.Model>(modelStr);
+
+                    // Nhớ làm file đang mở để lệnh Save ghi đè đúng file và hiển thị tên model.
+                    Utility.CurrentModelFilePath = recentPath;
+                    ModelName = Path.GetFileNameWithoutExtension(recentPath);
+                    autoConnectComPorts = true;
+
+                    // Khôi phục serial đã in gần nhất cho model này (lưu thầm theo tên model).
+                    var cachedSerial = AppState.GetSerial(ModelName);
+                    if (cachedSerial != null)
+                    {
+                        sharedModel.Settings.SerialNumber = cachedSerial.SerialNumber;
+                        sharedModel.LastPrintDate = cachedSerial.LastPrintDate;
+                    }
+                }
+                else
+                {
+                    // Chưa có file gần nhất -> mở model trắng (new model).
+                    sharedModel = new Model.Model();
+                }
             }
             catch
             {
@@ -126,6 +152,12 @@ namespace Touch_Panel.View_Model
             deviceConnectionPage = deviceConnectionList;
 
             tunningPageViewModel.MainViewModel = this;
+
+            // Tự kết nối COM khi đã auto-load model gần nhất (chạy nền, không chặn khởi động UI).
+            if (autoConnectComPorts)
+            {
+                _ = sharedModel.Devices.ConnectAll();
+            }
 
             Navigate("Home");
         }
@@ -353,11 +385,11 @@ namespace Touch_Panel.View_Model
                     MicomContext micomCtx1 = new MicomContext() { LockObject = deviceManager.PortLockMicom1, SerialPort = deviceManager.MicomPort1, MICOMData = sharedModel.Devices.MicomData1 };
                     MicomContext micomCtx2 = new MicomContext() { LockObject = deviceManager.PortLockMicom2, SerialPort = deviceManager.MicomPort2, MICOMData = sharedModel.Devices.MicomData2 };
 
-                    //Chạy song song cả 2 task
-                    Task task1 = UpdateMicomAsync(micomCtx1);
-                    Task task2 = UpdateMicomAsync(micomCtx2);
+                    ////Chạy song song cả 2 task
+                    //Task task1 = UpdateMicomAsync(micomCtx1);
+                    //Task task2 = UpdateMicomAsync(micomCtx2);
 
-                    await Task.WhenAll(task1, task2);
+                    //await Task.WhenAll(task1, task2);
 
 
                 }
