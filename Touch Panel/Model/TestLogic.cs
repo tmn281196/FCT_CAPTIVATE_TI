@@ -458,6 +458,8 @@ namespace Touch_Panel.Model
 
                 var sw = Stopwatch.StartNew();
 
+                int margin = Model.Settings.Margin;
+
                 while (true)
                 {
                     var elementSensor = listCAPSensor[groupID].ListCAPCycle[cycleID].ListCAPElement[elementID];
@@ -465,19 +467,27 @@ namespace Touch_Panel.Model
                     var value = elementSensor.Delta;
                     step.Value = value.ToString();
 
-                    var condition1 = value >= minValue;
-                    var condition2 = elementSensor.IsMax;
+                    // Đỉnh cao nhất trong TẤT CẢ element khác (không tính chính element đang test).
+                    ushort highestOther = 0;
+                    foreach (var s in listCAPSensor)
+                        foreach (var c in s.ListCAPCycle)
+                            foreach (var e in c.ListCAPElement)
+                                if (!ReferenceEquals(e, elementSensor) && e.Delta > highestOther)
+                                    highestOther = e.Delta;
 
-                    if (condition2 && condition1)
+                    var condition1 = value >= minValue;                 // đủ ngưỡng spec
+                    var condition2 = (value - highestOther) >= margin;  // trội hơn đỉnh nhì >= margin -> max ổn định
+
+                    if (condition1 && condition2)
                     {
-                        step.Value = elementSensor.Delta.ToString();
+                        step.Value = value.ToString();
                         step.Result = "Pass";
                         break;
                     }
 
                     if (sw.ElapsedMilliseconds > timeCheck)
                     {
-                        step.Value = elementSensor.Delta.ToString();
+                        step.Value = value.ToString();
                         step.Result = "Fail";
                         break;
                     }

@@ -134,6 +134,13 @@
                         <CheckBox  Margin="0 5"  Content="Save Log File" IsChecked="{Binding Model.Settings.ShouldSaveLog}"/>
                         <CheckBox  Margin="0 5"  Content="Send QR Print" IsChecked="{Binding Model.Settings.ShouldPrintQr}"/>
 
+                        <StackPanel Orientation="Horizontal" Margin="0 8 0 5">
+                            <Label Padding="0" Content="Max Margin" VerticalAlignment="Center" Width="90"
+                                   ToolTip="Element phải dẫn trước đỉnh nhì ít nhất bằng giá trị này mới coi là max (chống nhảy khi 2 đỉnh gần bằng)."/>
+                            <TextBox Width="60" Height="22" VerticalContentAlignment="Center"
+                                     Text="{Binding Model.Settings.Margin, UpdateSourceTrigger=LostFocus}"/>
+                        </StackPanel>
+
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

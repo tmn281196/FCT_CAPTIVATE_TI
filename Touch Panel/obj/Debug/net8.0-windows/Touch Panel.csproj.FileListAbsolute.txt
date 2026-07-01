@@ -825,7 +825,6 @@ D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\ne
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.exe
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_1\HUMAN_THAI__ME21K7010DS__241223_0199.txt
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\firmware_bsl_2\HUMAN_THAI__ME21K7010DS__241223_0199.txt
-D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\template_model.json
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.deps.json
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.runtimeconfig.json
 D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\bin\Debug\net8.0-windows\Touch Panel.dll

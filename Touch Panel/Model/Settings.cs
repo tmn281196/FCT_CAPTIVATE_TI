@@ -52,5 +52,10 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private int serialNumber = 0;
 
+        // Biên trội (dominance margin) cho MEAS: element phải dẫn trước đỉnh nhì >= Margin
+        // mới được coi là max ổn định -> chống nhảy cờ khi 2 đỉnh gần bằng nhau.
+        [ObservableProperty]
+        private int margin = 20;
+
     }
 }
