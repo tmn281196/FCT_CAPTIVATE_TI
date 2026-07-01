@@ -28,7 +28,25 @@ namespace Touch_Panel.View_Model
     public partial class AutoState : ObservableObject
     {
         [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsTesting))]
+        [NotifyPropertyChangedFor(nameof(IsNotTesting))]
+        [NotifyPropertyChangedFor(nameof(IsBusy))]
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
         private TestState test;
+
+        // Manual Full Test đang chạy (auto không dùng cờ này).
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsBusy))]
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
+        private bool manualTesting;
+
+        // Auto đang test (state Testing). Dùng cho: Manual chỉ xem khi auto test.
+        public bool IsTesting => Test == TestState.Testing;
+        public bool IsNotTesting => Test != TestState.Testing;
+
+        // Bận = auto đang test HOẶC manual đang chạy. Dùng để KHÓA sửa model ở mọi trang.
+        public bool IsBusy => Test == TestState.Testing || ManualTesting;
+        public bool IsNotBusy => !IsBusy;
     }
     public partial class AutoPageViewModel : ObservableObject
     {

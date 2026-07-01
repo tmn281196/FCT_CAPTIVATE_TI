@@ -76,7 +76,7 @@
         </Grid.RowDefinitions>
 
 
-        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" >
+        <Grid  HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="1" IsEnabled="{Binding AutoState.IsNotBusy}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="3*"/>
@@ -233,7 +233,7 @@
 
         <StackPanel Grid.Column="0" >
 
-            <DataGrid Height="800" VerticalScrollBarVisibility="Visible"  ItemsSource="{Binding Model.Micom1TestStep.Steps, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding StepSelIdx1}" SelectedItem="{Binding StepSelItem1}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+            <DataGrid Height="800" VerticalScrollBarVisibility="Visible" IsReadOnly="{Binding AutoState.IsBusy}"  ItemsSource="{Binding Model.Micom1TestStep.Steps, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding StepSelIdx1}" SelectedItem="{Binding StepSelItem1}" Background="White" Style="{StaticResource CustomDataGridStyle}"
   ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding No}" Width="50" Header="No" />
@@ -253,7 +253,7 @@
         </StackPanel>
 
         <StackPanel Grid.Column="1" >
-            <DataGrid Height="800"  VerticalScrollBarVisibility="Visible"  ItemsSource="{Binding Model.Micom2TestStep.Steps, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding StepSelIdx2}" SelectedItem="{Binding StepSelItem2}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+            <DataGrid Height="800"  VerticalScrollBarVisibility="Visible" IsReadOnly="{Binding AutoState.IsBusy}"  ItemsSource="{Binding Model.Micom2TestStep.Steps, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding StepSelIdx2}" SelectedItem="{Binding StepSelItem2}" Background="White" Style="{StaticResource CustomDataGridStyle}"
 ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding No, UpdateSourceTrigger=PropertyChanged}" Width="50" Header="No" />

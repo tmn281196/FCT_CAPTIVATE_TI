@@ -341,7 +341,7 @@ Margin="2">
                                Text="{Binding TestLogic.Tester2.TotalTaktTime}"/>
                 </StackPanel>
             </StackPanel>
-            <StackPanel Margin="5 5"  Grid.Column="1" Grid.Row="2" VerticalAlignment="Center">
+            <StackPanel Margin="5 5"  Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" IsEnabled="{Binding AutoState.IsNotTesting}">
                 <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center"  Orientation="Horizontal" >
                     <StackPanel>
 

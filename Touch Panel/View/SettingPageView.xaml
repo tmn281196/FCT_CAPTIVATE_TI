@@ -59,7 +59,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <StackPanel>
+                <StackPanel IsEnabled="{Binding AutoState.IsNotBusy}">
                     <StackPanel Margin="5">
                         <Label Padding="0" Content="Communication" FontWeight="Bold"  />
 
@@ -123,7 +123,7 @@
             <Separator/>
 
 
-            <StackPanel  Grid.Column="1">
+            <StackPanel  Grid.Column="1" IsEnabled="{Binding AutoState.IsNotBusy}">
                 <StackPanel Margin="5">
                     <Label Padding="0" Content="Test Flow" FontWeight="Bold" />
                     <StackPanel Margin="5 0">
@@ -147,7 +147,7 @@
 
             <Separator/>
 
-            <StackPanel Margin="5">
+            <StackPanel Margin="5" IsEnabled="{Binding AutoState.IsNotBusy}">
                 <Label Padding="0" Content="Product Info" FontWeight="Bold"/>
                 <StackPanel Orientation="Horizontal" Margin="5 5">
                     <StackPanel Margin="0 0 15 0">

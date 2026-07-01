@@ -76,7 +76,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private void SkipAllSteps(object parameter)
         {
-            if (AutoState.Test == TestState.Testing)
+            if (AutoState?.IsBusy == true)
             {
                 MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -106,7 +106,7 @@ namespace Touch_Panel.View_Model
 
         private void UnSkipAllSteps(object parameter)
         {
-            if (AutoState.Test == TestState.Testing)
+            if (AutoState?.IsBusy == true)
             {
                 MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -143,7 +143,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand(CanExecute = nameof(CanAddStep))]
         private void AddStep(object parameter)
         {
-            if (AutoState.Test == TestState.Testing)
+            if (AutoState?.IsBusy == true)
             {
                 MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -216,7 +216,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private void DeleteStep(object parameter)
         {
-            if (AutoState.Test == TestState.Testing)
+            if (AutoState?.IsBusy == true)
             {
                 MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -296,7 +296,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private void DuplicateStep(object parameter)
         {
-            if (AutoState?.Test == TestState.Testing)
+            if (AutoState?.IsBusy == true)
             {
                 MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -319,7 +319,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private void MoveStepUp(object parameter)
         {
-            if (AutoState?.Test == TestState.Testing)
+            if (AutoState?.IsBusy == true)
             {
                 MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
@@ -342,7 +342,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private void MoveStepDown(object parameter)
         {
-            if (AutoState?.Test == TestState.Testing)
+            if (AutoState?.IsBusy == true)
             {
                 MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;

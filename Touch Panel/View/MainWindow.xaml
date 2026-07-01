@@ -38,7 +38,7 @@
                 <Label Content="TOUCH PANEL SYSTEM" Background="{StaticResource BaseBrush}" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="35"/>
                 <StackPanel Margin="5 10"  Orientation="Horizontal" HorizontalAlignment="Right" >
                     <Label Content="{Binding ModelName}" VerticalContentAlignment="Center" Foreground="White"  FontSize="15"/>
-                    <Button   FontSize="15"   Padding="5" Height="40" Command="{Binding OpenModelCommand}" Cursor="Hand" Background="Transparent" BorderThickness="0" ToolTip="Import Model">
+                    <Button   FontSize="15"   Padding="5" Height="40" Command="{Binding OpenModelCommand}" IsEnabled="{Binding AutoState.IsNotBusy}" Cursor="Hand" Background="Transparent" BorderThickness="0" ToolTip="Import Model">
                         <fa:IconImage Icon="FileUpload" Foreground="Orange" Width="24" Height="24"/>
 
                     </Button>

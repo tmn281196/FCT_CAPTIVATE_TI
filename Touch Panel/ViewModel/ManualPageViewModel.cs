@@ -27,6 +27,18 @@ namespace Touch_Panel.View_Model
         [ObservableProperty]
         private Model.Model model;
 
+        [ObservableProperty]
+        private AutoState autoState;
+
+        // Đếm số test manual đang chạy (2 tester có thể chạy cùng lúc) -> set cờ ManualTesting.
+        private int manualRunningCount = 0;
+        private void SetManualRunning(bool on)
+        {
+            manualRunningCount += on ? 1 : -1;
+            if (manualRunningCount < 0) manualRunningCount = 0;
+            if (AutoState != null) AutoState.ManualTesting = manualRunningCount > 0;
+        }
+
 
 
         [ObservableProperty]
@@ -56,47 +68,41 @@ namespace Touch_Panel.View_Model
         private TestLogic testLogic;
 
         [RelayCommand]
-        private void DoubleClick(object parameter)
+        private async Task DoubleClick(object parameter)
         {
             int testerId = int.Parse((string)parameter);
-            switch (testerId)
+            Step sel = testerId == 1 ? SelectedItem1 : (testerId == 2 ? SelectedItem2 : null);
+            Tester tester = testerId == 1 ? TestLogic.Tester1 : (testerId == 2 ? TestLogic.Tester2 : null);
+            if (sel == null || tester == null) return;
+
+            SetManualRunning(true);
+            try
             {
-                case 1:
-                    if (SelectedItem1 != null)
-                    {
-                        TestLogic.manualSingleTest(SelectedItem1, TestLogic.Tester1);
-                    }
-                    break;
-                case 2:
-                    if (SelectedItem2 != null)
-                    {
-                        TestLogic.manualSingleTest(SelectedItem2, TestLogic.Tester2);
-                    }
-                    break;
-                default:
-
-                    break;
+                await TestLogic.manualSingleTest(sel, tester);
             }
-
+            finally
+            {
+                SetManualRunning(false);
+            }
         }
 
 
 
         [RelayCommand]
-        private void FullTest(object parameter)
+        private async Task FullTest(object parameter)
         {
             int testerId = int.Parse((string)parameter);
-            switch (testerId)
-            {
-                case 1:
-                    TestLogic.manualFullTest(TestLogic.Tester1);
-                    break;
-                case 2:
-                    TestLogic.manualFullTest(TestLogic.Tester2);
-                    break;
-                default:
+            Tester tester = testerId == 1 ? TestLogic.Tester1 : (testerId == 2 ? TestLogic.Tester2 : null);
+            if (tester == null) return;
 
-                    break;
+            SetManualRunning(true);
+            try
+            {
+                await TestLogic.manualFullTest(tester);
+            }
+            finally
+            {
+                SetManualRunning(false);
             }
         }
 

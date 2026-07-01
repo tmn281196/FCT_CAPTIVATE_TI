@@ -53,6 +53,9 @@ namespace Touch_Panel.View_Model
         Model.Model sharedModel;
         AutoState sharedAutoState;
 
+        // Expose để bind IsEnabled trên MainWindow (khóa UI khi đang test).
+        public AutoState AutoState => sharedAutoState;
+
         DeviceManager deviceManager;
 
         MicomDatabases sharedMicomDatabases;
@@ -135,6 +138,7 @@ namespace Touch_Panel.View_Model
             autoPageViewModel.State = sharedAutoState;
             stepsPageViewModel.AutoState = sharedAutoState;
             settingPageViewModel.AutoState = sharedAutoState;
+            manualPageViewModel.AutoState = sharedAutoState;
 
             deviceConnectionListViewModel = new DeviceConnectionListViewModel(sharedModel.Devices);
 
@@ -413,21 +417,25 @@ namespace Touch_Panel.View_Model
                     autoPageViewModel.START();
                     break;
                 case "Manual":
+                    // Manual điều khiển tay -> phải DỪNG auto test để tránh xung đột vật lý.
                     CurrentPage = manualPageView;
                     autoPageViewModel.runWhileLoop = false;
                     break;
                 case "Setting":
+                    // Giữ auto test chạy tiếp khi xem/khóa config.
                     CurrentPage = settingPageView;
-                    autoPageViewModel.runWhileLoop = false;
-
+                    autoPageViewModel.runWhileLoop = true;
+                    autoPageViewModel.START();
                     break;
                 case "NewModel":
                     CurrentPage = newModelPageView;
-                    autoPageViewModel.runWhileLoop = false;
+                    autoPageViewModel.runWhileLoop = true;
+                    autoPageViewModel.START();
                     break;
                 case "Tunning":
                     CurrentPage = tunningPageView;
-                    autoPageViewModel.runWhileLoop = false;
+                    autoPageViewModel.runWhileLoop = true;
+                    autoPageViewModel.START();
                     break;
                 default:
                     break;

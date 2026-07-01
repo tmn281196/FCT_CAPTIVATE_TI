@@ -155,7 +155,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private async Task WriteFirmware(object parameter)
         {
-            if (AutoState.Test == TestState.Testing)
+            if (AutoState?.IsBusy == true)
             {
                 MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
