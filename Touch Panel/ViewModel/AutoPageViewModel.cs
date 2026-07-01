@@ -34,6 +34,11 @@ namespace Touch_Panel.View_Model
     {
         public bool runWhileLoop;
 
+        // Khởi tạo test (halt/reset/xóa kết quả) chỉ chạy 1 lần; tránh xóa kết quả khi chuyển trang.
+        private bool testInitialized = false;
+        // Chặn spawn nhiều vòng lặp TestStart cùng lúc khi qua lại trang Home.
+        private bool isTestLoopRunning = false;
+
         [ObservableProperty]
         private Model.Model model;
 
@@ -211,7 +216,7 @@ namespace Touch_Panel.View_Model
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                ElapsedTime = Math.Round(stopwatch.Elapsed.TotalSeconds, 0).ToString() + " s";
+                ElapsedTime = $"{stopwatch.Elapsed.TotalSeconds:0.0}s";
             });
         }
 
@@ -223,27 +228,39 @@ namespace Touch_Panel.View_Model
 
         public async void START()
         {
+            // Đang có vòng lặp chạy thì thôi, tránh spawn trùng khi qua lại trang.
+            if (isTestLoopRunning) return;
             await Task.Run(TestStart);
         }
 
 
         private async void TestStart()
         {
-            State.Test = TestState.Ready;
-            StringTestResult = "BEGIN";
+            isTestLoopRunning = true;
+            try
+            {
+            // Chỉ khởi tạo (halt/reset/XÓA kết quả) LẦN ĐẦU. Các lần chuyển trang sau chỉ
+            // chạy tiếp vòng lặp, KHÔNG xóa kết quả test đang hiển thị.
+            if (!testInitialized)
+            {
+                State.Test = TestState.Ready;
+                StringTestResult = "BEGIN";
 
-            await Task.WhenAll(
-                Model.Devices.HaltMICOM(1),
-                Model.Devices.HaltMICOM(2)
-            );
+                await Task.WhenAll(
+                    Model.Devices.HaltMICOM(1),
+                    Model.Devices.HaltMICOM(2)
+                );
 
-            await Task.WhenAll(
-                Model.Devices.ResetSolenoid(TestLogic.Tester1),
-                Model.Devices.ResetSolenoid(TestLogic.Tester2)
-            );
+                await Task.WhenAll(
+                    Model.Devices.ResetSolenoid(TestLogic.Tester1),
+                    Model.Devices.ResetSolenoid(TestLogic.Tester2)
+                );
 
-            TestLogic.Tester1.ClearSteps();
-            TestLogic.Tester2.ClearSteps();
+                TestLogic.Tester1.ClearSteps();
+                TestLogic.Tester2.ClearSteps();
+
+                testInitialized = true;
+            }
 
 
             while (runWhileLoop)
@@ -413,6 +430,11 @@ namespace Touch_Panel.View_Model
                         break;
                 }
                 await Task.Delay(1);
+            }
+            }
+            finally
+            {
+                isTestLoopRunning = false;
             }
         }
 
