@@ -326,6 +326,12 @@ namespace Touch_Panel.View_Model
 
                     case TestState.Ready:
                         Status = "Ready";
+                        // Rời trang Auto lúc đang Ready -> không kích hoạt, đưa về Wait.
+                        if (!autoPageActive)
+                        {
+                            State.Test = TestState.Wait;
+                            break;
+                        }
                         if (Model.Devices.SystemData.MainUpFlag == true && Model.Devices.SystemData.MainBottom)
                         {
 
