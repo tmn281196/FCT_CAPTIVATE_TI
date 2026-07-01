@@ -410,30 +410,34 @@ namespace Touch_Panel.View_Model
             switch (pageName)
             {
                 case "Home":
-
-    
+                    // Chỉ trang Auto mới được KÍCH HOẠT test (main down -> chạy).
                     CurrentPage = autoPageView;
+                    autoPageViewModel.autoPageActive = true;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();
                     break;
                 case "Manual":
                     // Manual điều khiển tay -> phải DỪNG auto test để tránh xung đột vật lý.
                     CurrentPage = manualPageView;
+                    autoPageViewModel.autoPageActive = false;
                     autoPageViewModel.runWhileLoop = false;
                     break;
                 case "Setting":
-                    // Giữ auto test chạy tiếp khi xem/khóa config.
+                    // Loop chạy nền (giữ state/kết quả) nhưng KHÔNG tự trigger test.
                     CurrentPage = settingPageView;
+                    autoPageViewModel.autoPageActive = false;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();
                     break;
                 case "NewModel":
                     CurrentPage = newModelPageView;
+                    autoPageViewModel.autoPageActive = false;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();
                     break;
                 case "Tunning":
                     CurrentPage = tunningPageView;
+                    autoPageViewModel.autoPageActive = false;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();
                     break;

@@ -52,6 +52,10 @@ namespace Touch_Panel.View_Model
     {
         public bool runWhileLoop;
 
+        // Chỉ cho phép KÍCH HOẠT test (Wait->Ready khi main down) khi đang ở trang Auto.
+        // Loop vẫn chạy nền ở trang khác (giữ state/kết quả) nhưng KHÔNG tự trigger test.
+        public bool autoPageActive;
+
         // Khởi tạo test (halt/reset/xóa kết quả) chỉ chạy 1 lần; tránh xóa kết quả khi chuyển trang.
         private bool testInitialized = false;
         // Chặn spawn nhiều vòng lặp TestStart cùng lúc khi qua lại trang Home.
@@ -301,7 +305,7 @@ namespace Touch_Panel.View_Model
                             bool allDevicesConnected = micom1 && soleinod1 && micom2 && soleinod2 && soleinod3 && system;
 
 
-                            if (allDevicesConnected && Model.Settings.LogDir != "")
+                            if (autoPageActive && allDevicesConnected && Model.Settings.LogDir != "")
                             {
                                 if (Model.Devices.SystemData.MainDirection == Direction.Up)
                                 {
