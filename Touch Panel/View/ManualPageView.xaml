@@ -179,20 +179,6 @@
 
 
             <StackPanel    VerticalAlignment="Center"  Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Right">
-                <StackPanel VerticalAlignment="Center" Margin="0 0 10 0">
-                    <fa:IconBlock Icon="Hourglass" FontSize="18" Foreground="Orange" HorizontalAlignment="Center"/>
-                    <TextBlock FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"
-                               Text="{Binding TestLogic.Tester1.TotalTaktTime}"/>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0"
-                                IsEnabled="{Binding AutoState.IsNotTesting}">
-                        <Button ToolTip="Full Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent">
-                            <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
-                        </Button>
-                        <Button ToolTip="Stop Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="1" Background="Transparent">
-                            <fa:IconImage Icon="CircleStop" Foreground="Red"/>
-                        </Button>
-                    </StackPanel>
-                </StackPanel>
                 <ItemsControl ItemsSource="{Binding Model.Devices.MicomData1.ListCAPSensor}" Margin="1">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -266,6 +252,20 @@ Margin="2">
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
+                <StackPanel VerticalAlignment="Center" Margin="10 0 0 0">
+                    <fa:IconBlock Icon="Hourglass" FontSize="18" Foreground="Orange" HorizontalAlignment="Center"/>
+                    <TextBlock FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"
+                               Text="{Binding TestLogic.Tester1.TotalTaktTime}"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0"
+                                IsEnabled="{Binding AutoState.IsNotTesting}">
+                        <Button ToolTip="Full Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent">
+                            <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
+                        </Button>
+                        <Button ToolTip="Stop Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="1" Background="Transparent">
+                            <fa:IconImage Icon="CircleStop" Foreground="Red"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
             </StackPanel>
 
 

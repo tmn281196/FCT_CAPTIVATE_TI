@@ -161,7 +161,7 @@ namespace Touch_Panel.View_Model
             _ =  Model.Devices.RecalibMICOM(testerId);
         }
 
-        [RelayCommand]
+        [RelayCommand(AllowConcurrentExecutions = true)]
         private async Task ResetBoard(object parameter)
         {
             int testerId = int.Parse((string)parameter);
