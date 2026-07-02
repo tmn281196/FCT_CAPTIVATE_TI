@@ -183,6 +183,15 @@
                     <fa:IconBlock Icon="Hourglass" FontSize="18" Foreground="Orange" HorizontalAlignment="Center"/>
                     <TextBlock FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"
                                Text="{Binding TestLogic.Tester1.TotalTaktTime}"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0"
+                                IsEnabled="{Binding AutoState.IsNotTesting}">
+                        <Button ToolTip="Full Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent">
+                            <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
+                        </Button>
+                        <Button ToolTip="Stop Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="1" Background="Transparent">
+                            <fa:IconImage Icon="CircleStop" Foreground="Red"/>
+                        </Button>
+                    </StackPanel>
                 </StackPanel>
                 <ItemsControl ItemsSource="{Binding Model.Devices.MicomData1.ListCAPSensor}" Margin="1">
                     <ItemsControl.ItemsPanel>
@@ -266,6 +275,20 @@ Margin="2">
 
             <StackPanel  Grid.Column="2"  Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
 
+                <StackPanel VerticalAlignment="Center" Margin="0 0 10 0">
+                    <fa:IconBlock Icon="Hourglass" FontSize="18" Foreground="Orange" HorizontalAlignment="Center"/>
+                    <TextBlock FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"
+                               Text="{Binding TestLogic.Tester2.TotalTaktTime}"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0"
+                                IsEnabled="{Binding AutoState.IsNotTesting}">
+                        <Button ToolTip="Full Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="2" Background="Transparent">
+                            <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
+                        </Button>
+                        <Button ToolTip="Stop Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="2" Background="Transparent">
+                            <fa:IconImage Icon="CircleStop" Foreground="Red"/>
+                        </Button>
+                    </StackPanel>
+                </StackPanel>
                 <ItemsControl ItemsSource="{Binding Model.Devices.MicomData2.ListCAPSensor}" Margin="1">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
@@ -335,11 +358,6 @@ Margin="2">
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
                 </ItemsControl>
-                <StackPanel VerticalAlignment="Center" Margin="10 0 0 0">
-                    <fa:IconBlock Icon="Hourglass" FontSize="18" Foreground="Orange" HorizontalAlignment="Center"/>
-                    <TextBlock FontWeight="Bold" FontSize="14" HorizontalAlignment="Center"
-                               Text="{Binding TestLogic.Tester2.TotalTaktTime}"/>
-                </StackPanel>
             </StackPanel>
             <StackPanel Margin="5 5"  Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" IsEnabled="{Binding AutoState.IsNotTesting}">
                 <StackPanel  VerticalAlignment="Center" HorizontalAlignment="Center"  Orientation="Horizontal" >
@@ -366,16 +384,11 @@ Margin="2">
                         <StackPanel  HorizontalAlignment="Left"  VerticalAlignment="Bottom"  Orientation="Horizontal" Grid.Row="2">
 
 
-                            <Button Cursor="Hand"  HorizontalAlignment="Left"   Margin="1" Width="30"    Height="30"   Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent"    >
-                                <Button.Content>
-                                    <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
-                                </Button.Content>
-                            </Button>
-
-                            <Button Cursor="Hand" HorizontalAlignment="Left"   Margin="1"  Width="30"  Height="30"   Command="{Binding StopTestCommand}"  CommandParameter="1"  Background="Transparent" >
-                                <Button.Content>
-                                    <fa:IconImage Icon="CircleStop" Foreground="Red"/>
-                                </Button.Content>
+                            <Button ToolTip="Reset board via RST pin (BSL) - use when chip hangs" Cursor="Hand" HorizontalAlignment="Left" Margin="1" Padding="0" FontSize="12" Width="62" Height="30" Command="{Binding ResetBoardCommand}" CommandParameter="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="Microchip" Width="12" Margin="0 0 3 0"/>
+                                    <TextBlock Text="RESET" VerticalAlignment="Center"/>
+                                </StackPanel>
                             </Button>
 
                             <Button Cursor="Hand" HorizontalAlignment="Left" Margin="1" Width="40" Height="30"
@@ -453,17 +466,11 @@ Margin="2">
                                     </StackPanel>
                                 </Button.Content>
                             </Button>
-                            <Button Cursor="Hand" HorizontalAlignment="Left"   Margin="1"  Width="30"  Height="30"   Command="{Binding StopTestCommand}"  CommandParameter="2"  Background="Transparent" >
-                                <Button.Content>
-                                    <fa:IconImage Icon="CircleStop" Foreground="Red"/>
-                                </Button.Content>
-                            </Button>
-
-
-                            <Button Cursor="Hand"  HorizontalAlignment="Left"   Margin="1" Width="30"    Height="30"   Command="{Binding FullTestCommand}" CommandParameter="2" Background="Transparent"    >
-                                <Button.Content>
-                                    <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
-                                </Button.Content>
+                            <Button ToolTip="Reset board via RST pin (BSL) - use when chip hangs" Cursor="Hand" HorizontalAlignment="Left" Margin="1" Padding="0" FontSize="12" Width="62" Height="30" Command="{Binding ResetBoardCommand}" CommandParameter="2">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconImage Icon="Microchip" Width="12" Margin="0 0 3 0"/>
+                                    <TextBlock Text="RESET" VerticalAlignment="Center"/>
+                                </StackPanel>
                             </Button>
 
 

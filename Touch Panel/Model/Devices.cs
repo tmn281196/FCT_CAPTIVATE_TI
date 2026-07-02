@@ -1386,6 +1386,33 @@ namespace Touch_Panel.Model
             device.TxSent = false;
         }
 
+        /// <summary>
+        /// Reset CỨNG board qua chân BSL (RST). Toggle RST bằng đường modem của UART,
+        /// giữ TEST không kích để MCU reset thường (chạy lại firmware, KHÔNG vào BSL).
+        /// Hoạt động kể cả khi firmware treo (vì RST là chân phần cứng).
+        /// GIẢ ĐỊNH mapping mặc định: RST=DTR (active-low), TEST=RTS. Sai thì đảo lại.
+        /// </summary>
+        public async Task ResetBoard(int id)
+        {
+            SerialPortStream port = id == 1 ? DeviceManager.MicomPort1
+                                  : id == 2 ? DeviceManager.MicomPort2
+                                  : null;
+            if (port == null || !port.IsOpen) return;
+
+            try
+            {
+                port.RtsEnable = false;   // TEST không kích -> reset thường, KHÔNG vào BSL
+                port.DtrEnable = true;    // kéo RST xuống (giữ reset)
+                await Task.Delay(50);
+                port.DtrEnable = false;   // thả RST -> MCU boot lại firmware
+                await Task.Delay(200);    // chờ MCU khởi động
+            }
+            catch
+            {
+                // Toggle line lỗi thì bỏ qua.
+            }
+        }
+
 
 
 
