@@ -91,7 +91,20 @@ namespace Touch_Panel.Model
 
         public async Task manualSingleTest(Step selectedItem, Tester tester)
         {
+            await Model.Devices.ResetSolenoid(tester);
+
+            // Hạ connector + chờ ổn định trước khi đo (giống Full Test/auto), tránh đọc ra 0.
+            Model.Devices.ConnectorAllDown();
+            await Task.Delay(TestTiming.ConnectorSettleDelayMs);
+
+            await Model.Devices.ResumeMICOM(tester.ID + 1);
+
             await RunTestStep(selectedItem, tester);
+
+            await Task.Delay(TestTiming.ConnectorSettleDelayMs);
+
+            await Model.Devices.HaltMICOM(tester.ID + 1);
+            await Model.Devices.ResetSolenoid(tester);
         }
 
 
@@ -179,7 +192,7 @@ namespace Touch_Panel.Model
 
             // Hạ connector xuống trước khi chạy test (giống auto: ConnectorAllDown -> chờ ổn định).
             Model.Devices.ConnectorAllDown();
-            await Task.Delay(1000);
+            await Task.Delay(TestTiming.ConnectorSettleDelayMs);
 
             await Model.Devices.ResumeMICOM(tester.ID+1);
 

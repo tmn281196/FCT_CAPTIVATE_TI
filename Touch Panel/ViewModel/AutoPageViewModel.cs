@@ -77,7 +77,7 @@ namespace Touch_Panel.View_Model
 
 
             Model.Devices.ConnectorAllDown();
-            await Task.Delay(1000);
+            await Task.Delay(Touch_Panel.Model.TestTiming.ConnectorSettleDelayMs);
 
             State.Test = TestState.Testing;
             Model.Devices.SystemData.MainUpFlag = false;
@@ -341,7 +341,7 @@ namespace Touch_Panel.View_Model
 
                             State.Test = TestState.Testing;
                             Model.Devices.SystemData.MainUpFlag = false;
-                            await Task.Delay(1000);
+                            await Task.Delay(Touch_Panel.Model.TestTiming.ConnectorSettleDelayMs);
 
                         }
                         break;
