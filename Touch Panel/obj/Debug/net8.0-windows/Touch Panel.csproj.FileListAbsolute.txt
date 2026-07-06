@@ -956,3 +956,5 @@ D:\FCT_CAPTIVATE_TI_GIT\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\re
 D:\FCT_CAPTIVATE_TI_GIT\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.pdb
 D:\FCT_CAPTIVATE_TI_GIT\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\Touch Panel.genruntimeconfig.cache
 D:\FCT_CAPTIVATE_TI_GIT\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\ref\Touch Panel.dll
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\LogPageView.g.cs
+D:\1ABC\TNG\#LATEST\HUMAN_TOUCH_SYSTEM\FCT_CAPTIVATE_TI\Touch Panel\obj\Debug\net8.0-windows\View\LogPageView.baml

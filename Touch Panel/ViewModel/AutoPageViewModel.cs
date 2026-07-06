@@ -216,6 +216,7 @@ namespace Touch_Panel.View_Model
             if (!printed)
             {
                 Model.Settings.SerialNumber -= 1;
+                Logger.Instance.AddLog("QR print FAILED - check printer");
                 MessageBox.Show(
                     "QR label was NOT printed. Check the printer connection and retry.",
                     "Print Error",
@@ -225,6 +226,7 @@ namespace Touch_Panel.View_Model
             else
             {
                 Model.LastPrintDate = today;
+                Logger.Instance.AddLog($"QR printed - SN {Model.Settings.SerialNumber:D4}");
 
                 // Lưu thầm serial + ngày in theo TÊN MODEL để sống sót qua restart (không popup).
                 string modelName = string.IsNullOrEmpty(Utility.CurrentModelFilePath)
@@ -294,12 +296,12 @@ namespace Touch_Panel.View_Model
 
                         if(!(Model.Devices.DeviceManager.MicomPort1 == null && Model.Devices.DeviceManager.MicomPort2 == null))
                         {
-                            bool micom1 = TestLogic.Tester1.Steps.Count > 0 ? Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort1) : true;
-                            bool micom2 = TestLogic.Tester2.Steps.Count > 0 ? Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort2) : true;
-                            bool soleinod1 = TestLogic.Tester1.Steps.Count > 0 ? Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid1Port) : true;
-                            bool soleinod2 = TestLogic.Tester2.Steps.Count > 0 ? Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid2Port) : true;
-                            bool soleinod3 = Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid3Port);
-                            bool system = Touch_Panel.Model.DeviceManager.IsPortOpen(Model.Devices.DeviceManager.SystemPort);
+                            bool micom1 = TestLogic.Tester1.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort1) : true;
+                            bool micom2 = TestLogic.Tester2.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort2) : true;
+                            bool soleinod1 = TestLogic.Tester1.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid1Port) : true;
+                            bool soleinod2 = TestLogic.Tester2.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid2Port) : true;
+                            bool soleinod3 = DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid3Port);
+                            bool system = DeviceManager.IsPortOpen(Model.Devices.DeviceManager.SystemPort);
 
 
                             bool allDevicesConnected = micom1 && soleinod1 && micom2 && soleinod2 && soleinod3 && system;

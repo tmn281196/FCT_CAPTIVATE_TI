@@ -38,6 +38,7 @@ namespace Touch_Panel.View_Model
         TunningPageView tunningPageView;
         SettingPageView settingPageView;
         StepsPageView newModelPageView;
+        LogPageView logPageView;
 
         AutoPageViewModel autoPageViewModel;
         ManualPageViewModel manualPageViewModel;
@@ -147,6 +148,7 @@ namespace Touch_Panel.View_Model
             tunningPageView = new TunningPageView(tunningPageViewModel);
             settingPageView = new SettingPageView(settingPageViewModel);
             newModelPageView = new StepsPageView(stepsPageViewModel);
+            logPageView = new LogPageView();
             deviceConnectionList = new DeviceConnectionList(deviceConnectionListViewModel);
             testLogic.Model = sharedModel;
 
@@ -212,6 +214,12 @@ namespace Touch_Panel.View_Model
         private void ManualPage()
         {
             Navigate("Manual");
+        }
+
+        [RelayCommand]
+        private void LogPage()
+        {
+            Navigate("Log");
         }
         private void ProgressFirmwareChanged(object source, Bsl430NetEventArgs args)
         {
@@ -437,6 +445,13 @@ namespace Touch_Panel.View_Model
                     break;
                 case "Tunning":
                     CurrentPage = tunningPageView;
+                    autoPageViewModel.autoPageActive = false;
+                    autoPageViewModel.runWhileLoop = true;
+                    autoPageViewModel.START();
+                    break;
+                case "Log":
+                    // Chỉ xem log; loop chạy nền, không tự trigger test.
+                    CurrentPage = logPageView;
                     autoPageViewModel.autoPageActive = false;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();

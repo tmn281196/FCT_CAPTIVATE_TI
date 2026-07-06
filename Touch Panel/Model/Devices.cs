@@ -643,6 +643,7 @@ namespace Touch_Panel.Model
                 }
 
                 device.RxCount++;
+                Logger.Instance.AddLog(2, $"RX: {BitConverter.ToString(sol2RxBuffer.GetRange(startIndex, 6).ToArray()).Replace("-", " ")}");
 
                 sol2RxBuffer.RemoveRange(startIndex, 5);
 
@@ -687,6 +688,7 @@ namespace Touch_Panel.Model
                 }
 
                 device.RxCount++;
+                Logger.Instance.AddLog(1, $"RX: {BitConverter.ToString(sol1RxBuffer.GetRange(startIndex, 6).ToArray()).Replace("-", " ")}");
 
                 sol1RxBuffer.RemoveRange(startIndex, 5);
 
@@ -1399,6 +1401,7 @@ namespace Touch_Panel.Model
                                   : null;
             if (port == null || !port.IsOpen) return;
 
+            Logger.Instance.AddLog(id, "Reset board (RST)");
             try
             {
                 port.RtsEnable = false;   // TEST không kích -> reset thường, KHÔNG vào BSL

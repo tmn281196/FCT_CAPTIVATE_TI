@@ -1,0 +1,182 @@
+<UserControl x:Class="Touch_Panel.View.LogPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Touch_Panel.View"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             >
+    <UserControl.Resources>
+        <!-- Kiểu chung cho ListBox log amber -->
+        <Style x:Key="LogListStyle" TargetType="ListBox">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#FFB000"/>
+            <Setter Property="FontFamily" Value="Consolas, Cascadia Mono, Courier New"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Padding" Value="6,4"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Hidden"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ItemContainerStyle">
+                <Setter.Value>
+                    <Style TargetType="ListBoxItem">
+                        <Setter Property="Foreground" Value="#FFB000"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Margin" Value="0"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="ListBoxItem">
+                                    <ContentPresenter/>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="ItemTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding}" Foreground="#FFB000"
+                                   FontFamily="Consolas, Cascadia Mono, Courier New" FontSize="13"
+                                   TextWrapping="NoWrap" LineHeight="17"/>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Template nút bấm icon amber -->
+        <ControlTemplate x:Key="AmberIconBtn" TargetType="Button">
+            <Border Background="Transparent">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="#FFD45A"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="#FF8A00"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <Grid Background="#0C0A06">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- ================= T1 ================= -->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" Background="#15110A" LastChildFill="False">
+                <TextBlock DockPanel.Dock="Left" Text="LOG  T1" Foreground="#FFB000" FontWeight="Bold"
+                           FontFamily="Consolas, Cascadia Mono, Courier New" FontSize="13"
+                           VerticalAlignment="Center" Margin="8,4"/>
+                <Button DockPanel.Dock="Right" Click="ClearLog1_Click" Cursor="Hand" Margin="6,3" Padding="6,3"
+                        Foreground="#FFB000" ToolTip="Clear log" Template="{StaticResource AmberIconBtn}">
+                    <fa:IconBlock Icon="TrashCan" FontSize="14"
+                                  Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                </Button>
+                <ToggleButton DockPanel.Dock="Right" x:Name="autoScroll1" IsChecked="True"
+                              Cursor="Hand" Margin="6,3" Padding="6,3" ToolTip="Auto-scroll to newest">
+                    <ToggleButton.Template>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Border Background="Transparent">
+                                <fa:IconBlock x:Name="ic" Icon="AnglesDown" FontSize="14" Foreground="#6B5418"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="ic" Property="Foreground" Value="#FFB000"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ic" Property="Foreground" Value="#FFD45A"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </ToggleButton.Template>
+                </ToggleButton>
+            </DockPanel>
+
+            <Grid Grid.Row="1">
+                <ListBox x:Name="list1" ItemsSource="{Binding Log1}" Style="{StaticResource LogListStyle}"/>
+                <Rectangle IsHitTestVisible="False" Opacity="0.18">
+                    <Rectangle.Fill>
+                        <DrawingBrush TileMode="Tile" Viewport="0,0,3,3" ViewportUnits="Absolute">
+                            <DrawingBrush.Drawing>
+                                <GeometryDrawing Brush="Black">
+                                    <GeometryDrawing.Geometry>
+                                        <RectangleGeometry Rect="0,2,3,1"/>
+                                    </GeometryDrawing.Geometry>
+                                </GeometryDrawing>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+        </Grid>
+
+        <!-- vạch ngăn giữa -->
+        <Rectangle Grid.Column="1" Fill="#3A2E12"/>
+
+        <!-- ================= T2 ================= -->
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <DockPanel Grid.Row="0" Background="#15110A" LastChildFill="False">
+                <TextBlock DockPanel.Dock="Left" Text="LOG  T2" Foreground="#FFB000" FontWeight="Bold"
+                           FontFamily="Consolas, Cascadia Mono, Courier New" FontSize="13"
+                           VerticalAlignment="Center" Margin="8,4"/>
+                <Button DockPanel.Dock="Right" Click="ClearLog2_Click" Cursor="Hand" Margin="6,3" Padding="6,3"
+                        Foreground="#FFB000" ToolTip="Clear log" Template="{StaticResource AmberIconBtn}">
+                    <fa:IconBlock Icon="TrashCan" FontSize="14"
+                                  Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                </Button>
+                <ToggleButton DockPanel.Dock="Right" x:Name="autoScroll2" IsChecked="True"
+                              Cursor="Hand" Margin="6,3" Padding="6,3" ToolTip="Auto-scroll to newest">
+                    <ToggleButton.Template>
+                        <ControlTemplate TargetType="ToggleButton">
+                            <Border Background="Transparent">
+                                <fa:IconBlock x:Name="ic" Icon="AnglesDown" FontSize="14" Foreground="#6B5418"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsChecked" Value="True">
+                                    <Setter TargetName="ic" Property="Foreground" Value="#FFB000"/>
+                                </Trigger>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="ic" Property="Foreground" Value="#FFD45A"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </ToggleButton.Template>
+                </ToggleButton>
+            </DockPanel>
+
+            <Grid Grid.Row="1">
+                <ListBox x:Name="list2" ItemsSource="{Binding Log2}" Style="{StaticResource LogListStyle}"/>
+                <Rectangle IsHitTestVisible="False" Opacity="0.18">
+                    <Rectangle.Fill>
+                        <DrawingBrush TileMode="Tile" Viewport="0,0,3,3" ViewportUnits="Absolute">
+                            <DrawingBrush.Drawing>
+                                <GeometryDrawing Brush="Black">
+                                    <GeometryDrawing.Geometry>
+                                        <RectangleGeometry Rect="0,2,3,1"/>
+                                    </GeometryDrawing.Geometry>
+                                </GeometryDrawing>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

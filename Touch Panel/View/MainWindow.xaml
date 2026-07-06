@@ -30,6 +30,7 @@
                 <Button Cursor="Hand" FontSize="20" Margin="0 10"  Content="TUNNING" Width="100" Height="30" Command="{Binding TunningPageCommand}"/>
                 <Button Cursor="Hand" FontSize="20" Content="MODEL" Width="100"  Height="30" Command="{Binding NewModelPageCommand}"/>
                 <Button Cursor="Hand" FontSize="20"  Margin="0 10"  Content="SETTING" Width="100" Height="30" Command="{Binding SettingPageCommand}"/>
+                <Button Cursor="Hand" FontSize="20"  Content="LOG" Width="100" Height="30" Command="{Binding LogPageCommand}"/>
 
                 <Label Content="v2.0" Foreground="White" HorizontalContentAlignment="Center" Margin="0, 690, 0, 0"/>
             </StackPanel>

@@ -117,6 +117,8 @@ namespace Touch_Panel.Model
             tester.ClearSteps();
             tester.CurrStep = 0;
 
+            Logger.Instance.AddLog(tester.ID + 1, "===== TEST BEGIN =====");
+
             tester.TotalTaktTime = "0.0s";
             var taktSw = Stopwatch.StartNew();
 
@@ -180,7 +182,7 @@ namespace Touch_Panel.Model
             taktSw.Stop();
             tester.TotalTaktTime = $"{taktSw.Elapsed.TotalSeconds:0.0}s";
 
-
+            Logger.Instance.AddLog(tester.ID + 1, $"===== TEST END: {tester.TestResult} | takt {tester.TotalTaktTime} =====");
         }
 
         public async Task manualFullTest(Tester tester)
@@ -280,7 +282,8 @@ namespace Touch_Panel.Model
             }
 
             sw.Stop();
-            step.TaktTime = sw.ElapsedMilliseconds.ToString(); 
+            step.TaktTime = sw.ElapsedMilliseconds.ToString();
+            Logger.Instance.AddLog(tester.ID + 1, $"#{step.No} {step.Test} [{step.Objectid}] -> {step.Result} ({step.Value}) {step.TaktTime}ms");
         }
 
         private async Task KEY(Step step, int testerID)
@@ -369,6 +372,8 @@ namespace Touch_Panel.Model
             txFinal.Add(0x56);
 
             byte[] txFFinal = txFinal.ToArray();
+
+            Logger.Instance.AddLog(int.Parse(solNum), $"TX: {BitConverter.ToString(txFFinal).Replace("-", " ")}");
 
             //foreach (var item in txFinal)
             //{
