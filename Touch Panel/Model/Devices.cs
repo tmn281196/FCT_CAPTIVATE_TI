@@ -291,6 +291,58 @@ namespace Touch_Panel.Model
         private List<byte> sol2RxBuffer = new();
         private List<byte> sol3RxBuffer = new();
 
+        // Chờ ACK từ solenoid theo tên thiết bị. Handler DataReceived hoàn tất TCS với byte status khi nhận đúng khung ACK.
+        // Status: 0x01=OK, 0x02=CRC err, 0x03=format err (theo firmware Atmel).
+        private readonly Dictionary<string, TaskCompletionSource<byte>> _pendingSolAck = new();
+        private readonly object _solAckLock = new object();
+
+        private void CompleteSolAck(string deviceName, byte status)
+        {
+            TaskCompletionSource<byte> tcs;
+            lock (_solAckLock) { _pendingSolAck.TryGetValue(deviceName, out tcs); }
+            tcs?.TrySetResult(status);
+        }
+
+        /// <summary>Gửi lệnh cho solenoid rồi CHỜ ACK (status 0x01) trong timeout. true nếu OK.</summary>
+        private async Task<bool> SendSolCmdAsync(SerialPortStream port, string deviceName, byte[] tx, int timeoutMs = 1000)
+        {
+            if (port == null || !port.IsOpen) return false;
+
+            var tcs = new TaskCompletionSource<byte>(TaskCreationOptions.RunContinuationsAsynchronously);
+            lock (_solAckLock) { _pendingSolAck[deviceName] = tcs; }
+
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == deviceName);
+            try
+            {
+                if (device != null) device.TxSent = true;
+                port.Write(tx, 0, tx.Length);
+                if (device != null) device.TxSent = false;
+
+                var done = await Task.WhenAny(tcs.Task, Task.Delay(timeoutMs));
+                if (done != tcs.Task)
+                {
+                    Debug.WriteLine($"[{deviceName}] NO ACK (timeout {timeoutMs}ms)");
+                    return false;
+                }
+                byte status = tcs.Task.Result;
+                if (status != 0x01)
+                {
+                    Debug.WriteLine($"[{deviceName}] ACK error 0x{status:X2}");
+                    return false;
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"[{deviceName}] send error: {ex.Message}");
+                return false;
+            }
+            finally
+            {
+                lock (_solAckLock) { _pendingSolAck.Remove(deviceName); }
+            }
+        }
+
         [property: JsonIgnore]
         [ObservableProperty]
         private List<string> firmwareList;
@@ -650,6 +702,7 @@ namespace Touch_Panel.Model
                 device.RxCount++;
                 Logger.Instance.AddLog(2, $"RX: {BitConverter.ToString(sol2RxBuffer.GetRange(startIndex, 6).ToArray()).Replace("-", " ")}");
 
+                CompleteSolAck("Solenoid 2", sol2RxBuffer[startIndex + 3]);  // status byte của ACK
                 sol2RxBuffer.RemoveRange(startIndex, 5);
 
                 await Task.Delay(70);
@@ -695,6 +748,7 @@ namespace Touch_Panel.Model
                 device.RxCount++;
                 Logger.Instance.AddLog(1, $"RX: {BitConverter.ToString(sol1RxBuffer.GetRange(startIndex, 6).ToArray()).Replace("-", " ")}");
 
+                CompleteSolAck("Solenoid 1", sol1RxBuffer[startIndex + 3]);  // status byte của ACK
                 sol1RxBuffer.RemoveRange(startIndex, 5);
 
                 await Task.Delay(70);
@@ -746,6 +800,7 @@ namespace Touch_Panel.Model
 
                 device.RxCount++;
 
+                CompleteSolAck("Solenoid 3", sol3RxBuffer[startIndex + 3]);  // status byte của ACK
                 sol3RxBuffer.RemoveRange(startIndex, 5);
 
                 await Task.Delay(70);
@@ -1021,32 +1076,23 @@ namespace Touch_Panel.Model
                     var currentCycle = listCAPSensor[(int)sensorIndex].ListCAPCycle[(int)cycleIndex];
                     var elements = currentCycle.ListCAPElement;
 
-                    // Trích Delta trên thread nền (an toàn với frame cục bộ).
-                    int n = elements.Count;
-                    var newDeltas = new ushort[n];
-                    for (int elementID = 0; elementID < n; elementID++)
+                    // Update Delta — set trực tiếp trên thread nền; WPF tự marshal cập nhật binding
+                    // (giống SignalIntegrity). KHÔNG dùng BeginInvoke để tránh dội UI thread khi frame về nhanh.
+                    for (int elementID = 0; elementID < elements.Count; elementID++)
                     {
                         int offset = elementID * 2 + 3;
-                        if (offset + 1 >= frame.Length) { n = elementID; break; }
-                        newDeltas[elementID] = (ushort)((frame[offset] << 8) | frame[offset + 1]);
+                        if (offset + 1 >= frame.Length) break;
+                        elements[elementID].Delta = (ushort)((frame[offset] << 8) | frame[offset + 1]);
                     }
 
-                    // GÁN vào ObservableProperty trên UI thread -> UI mới cập nhật (DataReceived chạy thread nền).
-                    int applyCount = n;
-                    Application.Current.Dispatcher.BeginInvoke(new Action(() =>
-                    {
-                        for (int i = 0; i < applyCount && i < elements.Count; i++)
-                            elements[i].Delta = newDeltas[i];
-
-                        // Tính & cập nhật IsMax
-                        var allDeltas = listCAPSensor
-                            .SelectMany(s => s.ListCAPCycle)
-                            .SelectMany(c => c.ListCAPElement)
-                            .Select(e => e.Delta);
-                        ushort maxDelta = allDeltas.Any() ? allDeltas.Max() : (ushort)0;
-                        foreach (var elem in elements)
-                            elem.IsMax = (elem.Delta == maxDelta);
-                    }));
+                    // Tính Max Delta 1 lần
+                    var allDeltas = listCAPSensor
+                        .SelectMany(s => s.ListCAPCycle)
+                        .SelectMany(c => c.ListCAPElement)
+                        .Select(e => e.Delta);
+                    ushort maxDelta = allDeltas.Any() ? allDeltas.Max() : (ushort)0;
+                    foreach (var elem in elements)
+                        elem.IsMax = (elem.Delta == maxDelta);
                 }
                 else if (frame[1] == (byte)'F')
                 {
@@ -1459,75 +1505,35 @@ namespace Touch_Panel.Model
 
         internal async Task ResetMainCylinder()
         {
-            if (!DeviceManager.Solenoid3Port.IsOpen) return;
-            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 3");
-            device.TxSent = true;
-
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x10, 0x00, 0x44, 0x56 };
-
-            DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
-            device.TxSent = false;
+            await SendSolCmdAsync(DeviceManager.Solenoid3Port, "Solenoid 3", tx);
 
             await Task.Delay(300);
 
-            device.TxSent = true;
             byte[] tx2 = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
-            DeviceManager.Solenoid3Port.Write(tx2, 0, tx2.Length);
-            device.TxSent = false;
-
+            await SendSolCmdAsync(DeviceManager.Solenoid3Port, "Solenoid 3", tx2);
         }
 
         internal async void ConnectorAllDown()
         {
-            if (!DeviceManager.Solenoid3Port.IsOpen) return;
-
-            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 3");
-            device.TxSent = true;
-
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x0F, 0x00, 0x5B, 0x56 };
-
-            DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
-            device.TxSent = false;
-
+            await SendSolCmdAsync(DeviceManager.Solenoid3Port, "Solenoid 3", tx);
         }
 
         internal async void ConnectorAllUp()
         {
-            if (!DeviceManager.Solenoid3Port.IsOpen) return;
-
-            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 3");
-            device.TxSent = true;
-
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
-
-            DeviceManager.Solenoid3Port.Write(tx, 0, tx.Length);
-            device.TxSent = false;
+            await SendSolCmdAsync(DeviceManager.Solenoid3Port, "Solenoid 3", tx);
         }
 
 
         internal async Task ResetSolenoid(Tester tester)
         {
-            SerialPortStream serialPort = null;
-            if (tester.ID == 1)
-            {
-                serialPort = DeviceManager.Solenoid2Port;
-            }
-            if (tester.ID == 0)
-            {
-                serialPort = DeviceManager.Solenoid1Port;
-            }
-
-            if (!serialPort.IsOpen) return;
-
-            var device = DevicesStatus.FirstOrDefault(d => d.Name == $"Solenoid {tester.ID + 1}");
-            device.TxSent = true;
+            SerialPortStream serialPort = tester.ID == 1 ? DeviceManager.Solenoid2Port : DeviceManager.Solenoid1Port;
+            string deviceName = $"Solenoid {tester.ID + 1}";
 
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
-
-            serialPort.Write(tx, 0, tx.Length);
-            device.TxSent = false;
-
-
+            await SendSolCmdAsync(serialPort, deviceName, tx);
         }
 
 
