@@ -1004,7 +1004,8 @@ namespace Touch_Panel.Model
                     mData.SignalIntegrity = $"Data Loss: {mData.CrcNGTime:D3}/{mData.CrcTotalTime:D3}";
                 }
 
-                //Debug.WriteLine("CRC OK");  // Optional: log khi pass
+                // [DEBUG TẠM] in loại frame mỗi khi CRC OK -> so sánh lúc connector Up vs Down.
+                Debug.WriteLine($"[MICOM{mData.Id}] CRC OK  type=0x{frame[1]:X2}  b2=0x{frame[2]:X2}  len={frame.Length}");
 
                 // Frame hợp lệ → xử lý tiếp
                 if (frame[1] == 0x00 || frame[1] == 0x01 || frame[1] == 0x02 || frame[1] == 0x03)
@@ -1032,6 +1033,9 @@ namespace Touch_Panel.Model
                         if (offset + 1 >= frame.Length) { n = elementID; break; }
                         newDeltas[elementID] = (ushort)((frame[offset] << 8) | frame[offset + 1]);
                     }
+
+                    // [DEBUG TẠM] in Delta thực nhận -> xem lúc Up có đổi không.
+                    Debug.WriteLine($"[MICOM{mData.Id}] sensor {sensorIndex}.{cycleIndex} deltas=[{string.Join(",", newDeltas.Take(n))}]");
 
                     // GÁN vào ObservableProperty trên UI thread -> UI mới cập nhật (DataReceived chạy thread nền).
                     int applyCount = n;
