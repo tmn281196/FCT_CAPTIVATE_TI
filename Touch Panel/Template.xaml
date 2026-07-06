@@ -1,6 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Touch_Panel.View">
 
+    <local:UpperCaseConverter x:Key="Upper"/>
 
     <Style TargetType="DataGrid" x:Key="CustomDataGridStyle">
         <Setter Property="GridLinesVisibility" Value="None"/>
@@ -76,6 +78,14 @@
         <Setter Property="Foreground" Value="White" />
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <!-- IN HOA tiêu đề cột -->
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Converter={StaticResource Upper}}" Foreground="White" FontWeight="SemiBold"/>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
     </Style>
     
 

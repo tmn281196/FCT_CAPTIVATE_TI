@@ -17,6 +17,65 @@
 
             <!-- Sau đó mới đặt các resource -->
             <local:CountToOrientationConverter x:Key="CountToOrientationConverter"/>
+            <local:IndexToTesterConverter x:Key="IdxToTester"/>
+
+            <!-- Style chung cho các nút nhỏ trong trang: bo góc, xanh nhạt, hover xanh -->
+            <Style TargetType="Button">
+                <Setter Property="Background" Value="#EAF1F8"/>
+                <Setter Property="Foreground" Value="#1B2A38"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontSize" Value="12"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Margin" Value="0 2"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="4" BorderBrush="#C3D3EE" BorderThickness="1" Padding="4,3">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextElement.Foreground="{TemplateBinding Foreground}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#1B75BB"/>
+                                    <Setter TargetName="bd" Property="BorderBrush" Value="#1B75BB"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#155E96"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="bd" Property="Opacity" Value="0.5"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Tab MICOM1/MICOM2: bo góc, tab đang chọn = xanh #1B75BB -->
+            <Style TargetType="TabItem">
+                <Setter Property="Foreground" Value="#44505C"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TabItem">
+                            <Border x:Name="bd" Background="#EAF1F8" BorderBrush="#C3D3EE" BorderThickness="1" CornerRadius="6,6,0,0" Margin="2,0,0,0" Padding="22,8">
+                                <ContentPresenter ContentSource="Header" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#D6E4F5"/>
+                                </Trigger>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#1B75BB"/>
+                                    <Setter TargetName="bd" Property="BorderBrush" Value="#1B75BB"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
 
             <Style x:Key="StatusLabelStyle" TargetType="Label">
                 <Style.Triggers>
@@ -66,13 +125,12 @@
        
 
 
-        <TabControl   >
+        <TabControl x:Name="MicomTabs">
             <TabItem Header="MICOM1">
                 <Grid   >
                     <Grid.ColumnDefinitions>
 
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="60"/>
                     </Grid.ColumnDefinitions>
                    
 
@@ -95,15 +153,15 @@
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
 
-                                            <TextBlock Text="{Binding StringId }" FontWeight="Bold" TextAlignment="Center"/>
+                                            <TextBlock Text="{Binding StringId }" FontWeight="Bold" FontSize="14" Foreground="White" Background="#1B75BB" TextAlignment="Center" Padding="0,3"/>
 
-                                            <DataGrid Grid.Row="1"  IsReadOnly="True"     ItemsSource="{Binding ListTunningParameter}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+                                            <DataGrid Grid.Row="1" FontSize="13" IsReadOnly="True"     ItemsSource="{Binding ListTunningParameter}" Background="White" Style="{StaticResource CustomDataGridStyle}"
 ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                                                 <DataGrid.Columns>
-                                                    <DataGridTextColumn Binding="{Binding OffsetTap}" Width="50" Header="O" />
-                                                    <DataGridTextColumn Binding="{Binding FineGainRatio}" Width="50"  Header="F" />
-                                                    <DataGridTextColumn Binding="{Binding CoarseGainRatio}" Width="50"  Header="C" />
-                                                    <DataGridTextColumn Binding="{Binding Lta}" Width="50"  Header="LTA" />
+                                                    <DataGridTextColumn Binding="{Binding OffsetTap}" Width="60" Header="O" />
+                                                    <DataGridTextColumn Binding="{Binding FineGainRatio}" Width="60"  Header="F" />
+                                                    <DataGridTextColumn Binding="{Binding CoarseGainRatio}" Width="60"  Header="C" />
+                                                    <DataGridTextColumn Binding="{Binding Lta}" Width="60"  Header="LTA" />
 
                                                 </DataGrid.Columns>
 
@@ -112,17 +170,17 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
 
                                             <StackPanel Grid.Row="2">
                                                 <StackPanel Orientation="Horizontal" >
-                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedOffsetTap }" TextAlignment="Center" Background="Orange"/>
-                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedFineGainRatio }" TextAlignment="Center"  Background="Orange"/>
-                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedCoarseGainRatio }" TextAlignment="Center"  Background="Orange"/>
-                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedLta }" TextAlignment="Center"  Background="Orange"/>
+                                                    <TextBox  Width="60" IsReadOnly="True"  Text="{Binding CalculatedOffsetTap }" TextAlignment="Center" FontSize="13" Background="Orange"/>
+                                                    <TextBox  Width="60" IsReadOnly="True"  Text="{Binding CalculatedFineGainRatio }" TextAlignment="Center"  FontSize="13" Background="Orange"/>
+                                                    <TextBox  Width="60" IsReadOnly="True"  Text="{Binding CalculatedCoarseGainRatio }" TextAlignment="Center"  FontSize="13" Background="Orange"/>
+                                                    <TextBox  Width="60" IsReadOnly="True"  Text="{Binding CalculatedLta }" TextAlignment="Center"  FontSize="13" Background="Orange"/>
 
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal" >
-                                                    <TextBox  Width="50" Background="LightGreen" Text="{Binding OffsetTap }" TextAlignment="Center"/>
-                                                    <TextBox  Width="50" Background="LightGreen"  Text="{Binding FineGainRatio }" TextAlignment="Center"/>
-                                                    <TextBox  Width="50" Background="LightGreen"  Text="{Binding CoarseGainRatio }" TextAlignment="Center"/>
-                                                    <TextBox  Width="50" Background="LightGreen"  Text="{Binding Lta }" TextAlignment="Center"/>
+                                                    <TextBox  Width="60" Background="#1B75BB" Foreground="White" FontWeight="SemiBold" FontSize="13" Text="{Binding OffsetTap }" TextAlignment="Center"/>
+                                                    <TextBox  Width="60" Background="#1B75BB" Foreground="White" FontWeight="SemiBold" FontSize="13"  Text="{Binding FineGainRatio }" TextAlignment="Center"/>
+                                                    <TextBox  Width="60" Background="#1B75BB" Foreground="White" FontWeight="SemiBold" FontSize="13"  Text="{Binding CoarseGainRatio }" TextAlignment="Center"/>
+                                                    <TextBox  Width="60" Background="#1B75BB" Foreground="White" FontWeight="SemiBold" FontSize="13"  Text="{Binding Lta }" TextAlignment="Center"/>
 
                                                 </StackPanel>
                                              
@@ -137,65 +195,6 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                         </ItemsControl>
 
                     </ScrollViewer>
-                    <StackPanel VerticalAlignment="Bottom" Margin="1 0" Grid.Column="1" >
-                        <StackPanel Margin="0 5">
-                            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="20" Margin="0 0" FontWeight="Bold"  Content="Micom"/>
-
-                            <StackPanel Orientation="Vertical"   HorizontalAlignment="Center">
-                                <Button ToolTip="Halt MICOM 1"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="50"  Height="25" Margin="0 1" Command="{Binding DisableMICOMCommand}" CommandParameter="1">
-                                    HALT
-                                </Button>
-                                <Button ToolTip="Resume MICOM 1"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="50"  Height="25" Margin="0 1" Command="{Binding EnableMICOMCommand}" CommandParameter="1">
-                                    RESUME
-                                </Button>
-                                <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="50"  Height="25" Margin="0  1" Command="{Binding ResetMICOMCommand}" CommandParameter="1">
-                                    CALIB
-                                </Button>
-                              
-
-                            </StackPanel>
-
-                        </StackPanel>
-
-                        <StackPanel Margin="0 5">
-                            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="20" Margin="0 0" FontWeight="Bold"  Content="RAM"/>
-
-                            <Button Command="{Binding GetAllTunningCommand}"  CommandParameter="1" Cursor="Hand" Width="50" Content="LOAD" />
-                            <Button Command="{Binding SetAllTunningCommand}"  CommandParameter="1" Cursor="Hand"  Width="50"  Content="STORE" Margin="0 2"/>
-                        </StackPanel>
-
-                        <StackPanel  Margin="0 5" >
-
-                            <Button Command="{Binding ResetTunningListCommand}"  CommandParameter="1" Cursor="Hand" Margin="0 2" Width="50">
-                                <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="Remove" Foreground="Black" Height="15"/>
-                                </StackPanel>
-                            </Button>
-                            <Button Command="{Binding AddToTunningListCommand}"  CommandParameter="1" Cursor="Hand" Width="50"  Height="25">
-                                <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="PlusCircle" Foreground="Black" Height="20"/>
-                                </StackPanel>
-                            </Button>
-                            <Button Command="{Binding RemoveTheLastFromTunningListCommand}"  CommandParameter="1" Cursor="Hand" Width="50"  Height="25"  Margin="0 2">
-                                <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="MinusCircle" Foreground="Black" Height="20"/>
-                                </StackPanel>
-                            </Button>
-
-                            <Button Command="{Binding CalculateTunningCommand}"  CommandParameter="1" Cursor="Hand" Height="25"  Width="50" Content="MEDIAN"/>
-
-                            <Button Command="{Binding SetBackCalculatedTunningToCacheCommand}"  CommandParameter="1" Cursor="Hand" Height="25"  Width="50" Content="STAGE"  Margin="0 2"/>
-
-
-                        </StackPanel>
-
-
-                        <Button Cursor="Hand"  Margin="0 5"     Width="50"  Height="25" Command="{Binding ResetCommand}" CommandParameter="1"   >
-                            <Button.Content>
-                                <fa:IconImage Icon="ArrowUpWideShort"  />
-                            </Button.Content>
-                        </Button>
-                    </StackPanel>
 
                 </Grid>
 
@@ -206,7 +205,6 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                 <Grid   >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="60"/>
                     </Grid.ColumnDefinitions>
 
                     <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Column="0" >
@@ -228,15 +226,15 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                                                 <RowDefinition Height="Auto"/>
                                             </Grid.RowDefinitions>
 
-                                            <TextBlock Text="{Binding StringId}" FontWeight="Bold" TextAlignment="Center"/>
+                                            <TextBlock Text="{Binding StringId}" FontWeight="Bold" FontSize="14" Foreground="White" Background="#1B75BB" TextAlignment="Center" Padding="0,3"/>
 
-                                            <DataGrid Grid.Row="1"  IsReadOnly="True"     ItemsSource="{Binding ListTunningParameter}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+                                            <DataGrid Grid.Row="1" FontSize="13" IsReadOnly="True"     ItemsSource="{Binding ListTunningParameter}" Background="White" Style="{StaticResource CustomDataGridStyle}"
 ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                                                 <DataGrid.Columns>
-                                                    <DataGridTextColumn Binding="{Binding OffsetTap}" Width="50" Header="O" />
-                                                    <DataGridTextColumn Binding="{Binding FineGainRatio}" Width="50"  Header="F" />
-                                                    <DataGridTextColumn Binding="{Binding CoarseGainRatio}" Width="50"  Header="C" />
-                                                    <DataGridTextColumn Binding="{Binding Lta}" Width="50"  Header="LTA" />
+                                                    <DataGridTextColumn Binding="{Binding OffsetTap}" Width="60" Header="O" />
+                                                    <DataGridTextColumn Binding="{Binding FineGainRatio}" Width="60"  Header="F" />
+                                                    <DataGridTextColumn Binding="{Binding CoarseGainRatio}" Width="60"  Header="C" />
+                                                    <DataGridTextColumn Binding="{Binding Lta}" Width="60"  Header="LTA" />
 
                                                 </DataGrid.Columns>
 
@@ -245,17 +243,17 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
 
                                             <StackPanel Grid.Row="2">
                                                 <StackPanel Orientation="Horizontal" >
-                                                    <TextBox  Width="50" IsReadOnly="True" Text="{Binding  CalculatedOffsetTap }" TextAlignment="Center" Background="Orange"/>
-                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedFineGainRatio }" TextAlignment="Center"  Background="Orange"/>
-                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedCoarseGainRatio }" TextAlignment="Center"  Background="Orange"/>
-                                                    <TextBox  Width="50" IsReadOnly="True"  Text="{Binding CalculatedLta }" TextAlignment="Center"  Background="Orange"/>
+                                                    <TextBox  Width="60" IsReadOnly="True" Text="{Binding  CalculatedOffsetTap }" TextAlignment="Center" FontSize="13" Background="Orange"/>
+                                                    <TextBox  Width="60" IsReadOnly="True"  Text="{Binding CalculatedFineGainRatio }" TextAlignment="Center"  FontSize="13" Background="Orange"/>
+                                                    <TextBox  Width="60" IsReadOnly="True"  Text="{Binding CalculatedCoarseGainRatio }" TextAlignment="Center"  FontSize="13" Background="Orange"/>
+                                                    <TextBox  Width="60" IsReadOnly="True"  Text="{Binding CalculatedLta }" TextAlignment="Center"  FontSize="13" Background="Orange"/>
 
                                                 </StackPanel>
                                                 <StackPanel Orientation="Horizontal" >
-                                                    <TextBox  Width="50"  Background="LightGreen"  Text="{Binding OffsetTap }" TextAlignment="Center"/>
-                                                    <TextBox  Width="50"  Background="LightGreen"  Text="{Binding FineGainRatio }" TextAlignment="Center"/>
-                                                    <TextBox  Width="50"  Background="LightGreen"  Text="{Binding CoarseGainRatio }" TextAlignment="Center"/>
-                                                    <TextBox  Width="50"  Background="LightGreen"  Text="{Binding Lta }" TextAlignment="Center"/>
+                                                    <TextBox  Width="60"  Background="#1B75BB" Foreground="White" FontWeight="SemiBold" FontSize="13"  Text="{Binding OffsetTap }" TextAlignment="Center"/>
+                                                    <TextBox  Width="60"  Background="#1B75BB" Foreground="White" FontWeight="SemiBold" FontSize="13"  Text="{Binding FineGainRatio }" TextAlignment="Center"/>
+                                                    <TextBox  Width="60"  Background="#1B75BB" Foreground="White" FontWeight="SemiBold" FontSize="13"  Text="{Binding CoarseGainRatio }" TextAlignment="Center"/>
+                                                    <TextBox  Width="60"  Background="#1B75BB" Foreground="White" FontWeight="SemiBold" FontSize="13"  Text="{Binding Lta }" TextAlignment="Center"/>
 
                                                 </StackPanel>
 
@@ -270,66 +268,6 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                         </ItemsControl>
 
                     </ScrollViewer>
-                    <StackPanel VerticalAlignment="Bottom" Margin="1 0" Grid.Column="1" >
-
-                        <StackPanel Margin="0 5">
-                            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="20" Margin="0 0" FontWeight="Bold"  Content="Micom"/>
-
-                            <StackPanel Orientation="Vertical"   HorizontalAlignment="Center">
-                                
-                                <Button ToolTip="Halt MICOM 2"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="50"  Height="25" Margin="0 1" Command="{Binding DisableMICOMCommand}" CommandParameter="2">
-                                    HALT
-                                </Button>
-                                <Button ToolTip="Resume MICOM 2"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="50"  Height="25" Margin="0 1" Command="{Binding EnableMICOMCommand}" CommandParameter="2">
-                                    RESUME
-                                </Button>
-                                <Button ToolTip="Calibrate MICOM 2"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="50"  Height="25" Margin="0  1" Command="{Binding ResetMICOMCommand}" CommandParameter="2">
-                                    CALIB
-                                </Button>
-                              
-                            </StackPanel>
-
-                        </StackPanel>
-
-
-                        <StackPanel Margin="0 5">
-                            <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="20" Margin="0 0" FontWeight="Bold"  Content="RAM"/>
-
-                            <Button Command="{Binding GetAllTunningCommand}"  CommandParameter="21" Cursor="Hand" Width="50" Content="LOAD" />
-                            <Button Command="{Binding SetAllTunningCommand}"  CommandParameter="2" Cursor="Hand"  Width="50"  Content="STORE" Margin="0 2"/>
-                        </StackPanel>
-
-                        <StackPanel Margin="0 5">
-                            <Button Command="{Binding ResetTunningListCommand}"  CommandParameter="2" Cursor="Hand" Margin="0 2" Width="50">
-                                <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="Remove" Foreground="Black" Height="15"/>
-                                </StackPanel>
-                            </Button>
-                            <Button Command="{Binding AddToTunningListCommand}"  CommandParameter="2" Cursor="Hand" Width="50"  Height="25">
-                                <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="PlusCircle" Foreground="Black" Height="20"/>
-                                </StackPanel>
-                            </Button>
-                            <Button Command="{Binding RemoveTheLastFromTunningListCommand}"  CommandParameter="2" Cursor="Hand" Width="50"  Height="25"  Margin="0 2">
-                                <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="MinusCircle" Foreground="Black" Height="20"/>
-                                </StackPanel>
-                            </Button>
-
-
-                            <Button Command="{Binding CalculateTunningCommand}"  CommandParameter="2" Cursor="Hand" Height="25"  Width="50" Content="MEDIAN"/>
-
-                            <Button Command="{Binding SetBackCalculatedTunningToCacheCommand}"  CommandParameter="2" Cursor="Hand" Height="25"  Width="50" Content="STAGE"  Margin="0 2"/>
-
-                        </StackPanel>
-                        
-
-                        <Button Cursor="Hand" Margin="0 5"      Width="50"  Height="25" Command="{Binding ResetCommand}" CommandParameter="2"   >
-                            <Button.Content>
-                                <fa:IconImage Icon="ArrowUpWideShort"  />
-                            </Button.Content>
-                        </Button>
-                    </StackPanel>
 
                 </Grid>
 
@@ -340,57 +278,119 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
 
         <Grid Margin="5 5"  Grid.Row="1" HorizontalAlignment="Stretch"  >
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-
-                <ColumnDefinition Width="*"/>
-
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <Button Command="{Binding SaveModelCommand}" BorderThickness="0"  Width="200" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left">
-                <StackPanel Orientation="Horizontal" >
-                    <fa:IconImage Icon="Save" Foreground="Orange" Width="25"/>
-                    <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20">Save to Database</Label>
-
-                </StackPanel>
+            <Button Command="{Binding SaveModelCommand}" Cursor="Hand" HorizontalAlignment="Left" Height="36" ToolTip="Save tuning to database">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd" Background="#1B75BB" CornerRadius="5" Padding="16,0">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <fa:IconBlock Icon="Database" FontSize="18" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBlock Text="SAVE" Foreground="White" FontWeight="SemiBold" FontSize="15" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Opacity" Value="0.88"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#155E96"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
 
-            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1">
-                <StackPanel Margin="0 15" Orientation="Horizontal">
-                    <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="20" Margin="5 0" FontWeight="Bold"  Content="Notation:"/>
-                    
-                    <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="20" Margin="5 0" Background="Orange" Content="Median Value"/>
-                    <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="20" Margin="5 0" Background="LightGreen" Content="Staged Value"/>
-
+            <StackPanel HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" Margin="10 0 0 0">
+                <StackPanel Orientation="Horizontal">
+                    <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="18" Margin="5 0" FontSize="11" FontWeight="Bold"  Content="Notation:"/>
+                    <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="18" Margin="5 0" FontSize="11" Background="Orange" FontWeight="SemiBold" Content="Median Value"/>
+                    <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="18" Margin="5 0" Background="#1B75BB" Foreground="White" FontWeight="SemiBold" FontSize="11" Content="Staged Value"/>
                 </StackPanel>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="2">
+            <!-- Bộ điều khiển CHUNG: trỏ tới tester của tab đang chọn (MICOM1/MICOM2) -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="2">
 
-                <Label VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  Padding="5 0" Height="20" Margin="5 0" FontWeight="Bold"  Content="Actuator Control:"/>
+                <!-- MICOM -->
+                <Label Content="Micom" FontWeight="Bold" VerticalAlignment="Center" Padding="4 0"/>
+                <Button ToolTip="Halt MICOM" Cursor="Hand" FontSize="12" Width="52" Height="26" Margin="1 0" Content="HALT"
+                        Command="{Binding DisableMICOMCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
+                <Button ToolTip="Resume MICOM" Cursor="Hand" FontSize="12" Width="60" Height="26" Margin="1 0" Content="RESUME"
+                        Command="{Binding EnableMICOMCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
+                <Button ToolTip="Calibrate MICOM" Cursor="Hand" FontSize="12" Width="52" Height="26" Margin="1 0" Content="CALIB"
+                        Command="{Binding ResetMICOMCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
 
-                <Button ToolTip="Connector Up" Cursor="Hand" HorizontalAlignment="Center"  Width="50"   Height="25" Command="{Binding ConnectorAllUpCommand}">
+                <Border Width="1" Background="#C3D3EE" Margin="8 3"/>
+
+                <!-- RAM -->
+                <Label Content="RAM" FontWeight="Bold" VerticalAlignment="Center" Padding="4 0"/>
+                <Button ToolTip="Load values from MICOM RAM" Cursor="Hand" FontSize="12" Width="52" Height="26" Margin="1 0" Content="LOAD"
+                        Command="{Binding GetAllTunningCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
+                <Button ToolTip="Store values to MICOM RAM" Cursor="Hand" FontSize="12" Width="52" Height="26" Margin="1 0" Content="STORE"
+                        Command="{Binding SetAllTunningCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
+
+                <Border Width="1" Background="#C3D3EE" Margin="8 3"/>
+
+                <!-- List / tuning ops -->
+                <Button ToolTip="Clear tuning list" Cursor="Hand" Width="34" Height="26" Margin="1 0"
+                        Command="{Binding ResetTunningListCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}">
+                    <fa:IconImage Icon="Remove" Foreground="Black" Height="14"/>
+                </Button>
+                <Button ToolTip="Add a sample" Cursor="Hand" Width="34" Height="26" Margin="1 0"
+                        Command="{Binding AddToTunningListCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}">
+                    <fa:IconImage Icon="PlusCircle" Foreground="Black" Height="16"/>
+                </Button>
+                <Button ToolTip="Remove last sample" Cursor="Hand" Width="34" Height="26" Margin="1 0"
+                        Command="{Binding RemoveTheLastFromTunningListCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}">
+                    <fa:IconImage Icon="MinusCircle" Foreground="Black" Height="16"/>
+                </Button>
+                <Button ToolTip="Compute median" Cursor="Hand" FontSize="12" Width="60" Height="26" Margin="1 0" Content="MEDIAN"
+                        Command="{Binding CalculateTunningCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
+                <Button ToolTip="Stage computed values" Cursor="Hand" FontSize="12" Width="52" Height="26" Margin="1 0" Content="STAGE"
+                        Command="{Binding SetBackCalculatedTunningToCacheCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
+
+                <Border Width="1" Background="#C3D3EE" Margin="8 3"/>
+
+                <!-- Actuator (icon đồng bộ với trang Manual) -->
+                <Label Content="Actuator" FontWeight="Bold" VerticalAlignment="Center" Padding="4 0"/>
+                <Button ToolTip="Reset" Cursor="Hand" Width="46" Height="26" Margin="1 0"
+                        Command="{Binding ResetCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="PlugCircleXmark" Foreground="Black"/>
-
+                        <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="14"/>
+                        <fa:IconImage Icon="MapPin" Foreground="Black" Width="9"/>
                     </StackPanel>
                 </Button>
-                <Button ToolTip="Connector Down" Cursor="Hand" HorizontalAlignment="Center"   Width="50"  Height="25" Margin="1" Command="{Binding ConnectorAllDownCommand}">
+                <Button ToolTip="Connector Up" Cursor="Hand" Width="48" Height="26" Margin="1 0" Command="{Binding ConnectorAllUpCommand}">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="Plug" Foreground="Black" />
-
+                        <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="10"/>
+                        <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="10"/>
+                        <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="10"/>
                     </StackPanel>
-
                 </Button>
-
-                <Button ToolTip="Reset Fixture"  Cursor="Hand" HorizontalAlignment="Center"   Width="50"  Height="25"   Command="{Binding ResetCylinderCommand}">
-                    <fa:IconImage Icon="UpDown" Foreground="Black" />
-
+                <Button ToolTip="Connector Down" Cursor="Hand" Width="48" Height="26" Margin="1 0" Command="{Binding ConnectorAllDownCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="10"/>
+                        <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="10"/>
+                        <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="10"/>
+                    </StackPanel>
+                </Button>
+                <Button ToolTip="Reset Fixture" Cursor="Hand" Width="48" Height="26" Margin="1 0" Command="{Binding ResetCylinderCommand}">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:IconImage Icon="ArrowUpWideShort" Foreground="Black" Width="16" RenderTransformOrigin="0.5,0.5">
+                            <fa:IconImage.RenderTransform>
+                                <ScaleTransform ScaleX="-1"/>
+                            </fa:IconImage.RenderTransform>
+                        </fa:IconImage>
+                        <fa:IconImage Icon="ArrowUpWideShort" Foreground="Black" Width="16"/>
+                    </StackPanel>
                 </Button>
 
             </StackPanel>
 
-           
         </Grid>
 
 

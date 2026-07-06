@@ -43,5 +43,21 @@ namespace Touch_Panel.View
 
         private void ClearLog1_Click(object sender, RoutedEventArgs e) => Logger.Instance.Log1.Clear();
         private void ClearLog2_Click(object sender, RoutedEventArgs e) => Logger.Instance.Log2.Clear();
+
+        /// <summary>Mở thư mục log trong Windows Explorer (tạo nếu chưa có).</summary>
+        private void OpenLogDir_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var dir = Logger.LogDirectory;
+                System.IO.Directory.CreateDirectory(dir);
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = dir,
+                    UseShellExecute = true
+                });
+            }
+            catch { }
+        }
     }
 }

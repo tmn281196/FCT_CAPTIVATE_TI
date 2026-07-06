@@ -5,6 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Touch_Panel.View"
              >
+    <UserControl.Resources>
+        <local:UpperCaseConverter x:Key="Upper"/>
+    </UserControl.Resources>
     <Grid Margin="10, 0, 0, 0" Height="15" VerticalAlignment="Center">
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -12,7 +15,6 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="9"/>
-            <ColumnDefinition Width="13"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         <Border BorderBrush="Black" BorderThickness="1">
@@ -51,30 +53,23 @@
                 </Rectangle.Style>
             </Rectangle>
         </Border>
-        <Border BorderBrush="Black" BorderThickness="0,1,1,1" Grid.RowSpan="2" Grid.Column="1"  >
-            <Rectangle x:Name="Open" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <Rectangle.Style>
-                    <Style TargetType="Rectangle">
-                        <Setter Property="Fill" Value="Red"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Connected}" Value="True">
-                                <Setter Property="Fill" Value="GreenYellow"/>
-                            </DataTrigger>
-
-                            <DataTrigger Binding="{Binding Connected}" Value="False">
-                                <Setter Property="Fill" Value="Red"/>
-                            </DataTrigger>  
-                  </Style.Triggers>
-                    </Style>
-                </Rectangle.Style>
-            </Rectangle>
-        </Border>
-        <Label x:Name="lbPortName" Content="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
-            Grid.RowSpan="2" Grid.Column="2"
-            FontSize="10"
-            Foreground="White"
-            FontWeight="DemiBold"
+        <!-- Chữ tên: LimeGreen khi kết nối mở, trắng khi đóng -->
+        <Label x:Name="lbPortName" Content="{Binding Name, Converter={StaticResource Upper}, UpdateSourceTrigger=PropertyChanged}"
+            Grid.RowSpan="2" Grid.Column="1"
+            FontSize="11"
+            FontWeight="SemiBold"
             VerticalAlignment="Center"
-            Padding="5,0"/>
+            Padding="5,0">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Setter Property="Foreground" Value="White"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Connected}" Value="True">
+                            <Setter Property="Foreground" Value="LimeGreen"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Label.Style>
+        </Label>
     </Grid>
 </UserControl>

@@ -6,26 +6,35 @@
                             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
 
              xmlns:local="clr-namespace:Touch_Panel.View">
-    <Grid   Background="{StaticResource BaseBrush}">
+    <Grid   Background="{StaticResource DarkBarBrush}" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ItemsControl VerticalAlignment="Center" ItemsSource="{Binding Devices.DevicesStatus}">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <StackPanel Orientation="Horizontal" />
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    <local:DeviceConnectionView />
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-        </ItemsControl>
+        <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ItemsControl VerticalAlignment="Center" ItemsSource="{Binding Devices.DevicesStatus}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <local:DeviceConnectionView />
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <!-- NEXT SERIAL kế QR Printer -->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="24,0,0,0">
+                <TextBlock Text="NEXT SERIAL" Foreground="White" FontSize="11" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding DataContext.AutoPageVM.NextSerialNumber, RelativeSource={RelativeSource AncestorType=Window}, StringFormat=D4}"
+                           Foreground="Orange" FontSize="11" FontWeight="Bold" VerticalAlignment="Center" Margin="8,0,0,0"/>
+            </StackPanel>
+        </StackPanel>
       
-        <StackPanel Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0">
             <Label>
                 <Label.Content>
                     <StackPanel Orientation="Horizontal">
@@ -73,8 +82,8 @@
                     <StackPanel Orientation="Horizontal">
                       
 
-                        <TextBlock  Foreground="White"  Text="Hex file:" VerticalAlignment="Center"   />
-                        <TextBlock Text="{Binding Devices.SelectedFirmwareMicom}" VerticalAlignment="Center" Foreground="Orange" Margin="5 0"/>
+                        <TextBlock  Foreground="White"  Text="HEX FILE" FontSize="11" FontWeight="SemiBold" VerticalAlignment="Center"   />
+                        <TextBlock Text="{Binding Devices.SelectedFirmwareMicom}" FontSize="11" VerticalAlignment="Center" Foreground="Orange" FontWeight="SemiBold" Margin="5 0"/>
 
 
                     </StackPanel>
@@ -87,10 +96,10 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Microchip" Foreground="White" Width="15" VerticalAlignment="Center" Margin="2 0" />
 
-                            <TextBlock Foreground="White" FontSize="10"  Text="MICOM1 " VerticalAlignment="Center" />
+                            <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold"  Text="MICOM1 " VerticalAlignment="Center" />
 
-                            <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData1.FirmwareLog}" VerticalAlignment="Center"   />
-                            <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData1.SignalIntegrity}" VerticalAlignment="Center" Padding="2 0" />
+                            <TextBlock  Foreground="White" FontSize="11" FontWeight="SemiBold"   Text="{Binding Devices.MicomData1.FirmwareLog}" VerticalAlignment="Center"   />
+                            <TextBlock  Foreground="White" FontSize="11" FontWeight="SemiBold"   Text="{Binding Devices.MicomData1.SignalIntegrity}" VerticalAlignment="Center" Padding="2 0" />
 
 
                         </StackPanel>
@@ -101,10 +110,10 @@
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="Microchip" Foreground="White" Width="15" VerticalAlignment="Center" Margin="2 0" />
 
-                            <TextBlock Foreground="White" FontSize="10"  Text="MICOM2 " VerticalAlignment="Center" />
+                            <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold"  Text="MICOM2 " VerticalAlignment="Center" />
 
-                            <TextBlock   Foreground="White" FontSize="10"   Text="{Binding  Devices.MicomData2.FirmwareLog}" VerticalAlignment="Center"   />
-                            <TextBlock  Foreground="White" FontSize="10"   Text="{Binding Devices.MicomData2.SignalIntegrity}" VerticalAlignment="Center" Padding="2 0" />
+                            <TextBlock   Foreground="White" FontSize="11" FontWeight="SemiBold"   Text="{Binding  Devices.MicomData2.FirmwareLog}" VerticalAlignment="Center"   />
+                            <TextBlock  Foreground="White" FontSize="11" FontWeight="SemiBold"   Text="{Binding Devices.MicomData2.SignalIntegrity}" VerticalAlignment="Center" Padding="2 0" />
 
                         </StackPanel>
                     </Label.Content>

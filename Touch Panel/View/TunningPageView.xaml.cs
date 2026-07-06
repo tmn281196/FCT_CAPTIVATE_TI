@@ -16,6 +16,18 @@ using Touch_Panel.ViewModel;
 
 namespace Touch_Panel.View
 {
+    /// <summary>Tab đang chọn -> id tester ("1"/"2"). SelectedIndex 0 -> "1", 1 -> "2".</summary>
+    public class IndexToTesterConverter : System.Windows.Data.IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            int idx = value is int i ? i : 0;
+            return (idx + 1).ToString();
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+            => System.Windows.Data.Binding.DoNothing;
+    }
 
     /// <summary>
     /// Interaction logic for TunningPageView.xaml

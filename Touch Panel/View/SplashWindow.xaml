@@ -1,0 +1,31 @@
+<Window x:Class="Touch_Panel.View.SplashWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen"
+        Height="384" Width="683">
+    <Border Background="#323F4E" CornerRadius="10" BorderBrush="#4A5A6E" BorderThickness="1">
+        <Grid>
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- Logo khách (PNG trong suốt, chữ trắng) trên nền tối -->
+                <Image Source="/CompanyLogo/customer_logo.png" Height="64" Stretch="Uniform"
+                       Margin="0,0,0,24" HorizontalAlignment="Center"
+                       RenderOptions.BitmapScalingMode="HighQuality"/>
+
+                <TextBlock Text="TOUCH SENSING TESTER" HorizontalAlignment="Center"
+                           FontSize="34" FontWeight="Bold" Foreground="#CFE0F0"/>
+                <TextBlock Text="T.N.G Tech" HorizontalAlignment="Center"
+                           FontSize="15" FontWeight="Bold" Foreground="#8FA6BC" Margin="0,6,0,0"/>
+            </StackPanel>
+
+            <TextBlock Text="Loading…" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                       Margin="0,0,0,18" FontSize="12" Foreground="#6B7E92"/>
+        </Grid>
+    </Border>
+</Window>

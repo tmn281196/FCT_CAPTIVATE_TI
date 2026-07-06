@@ -18,6 +18,36 @@
             <!-- Sau đó mới đặt các resource -->
             <local:CountToOrientationConverter x:Key="CountToOrientationConverter"/>
 
+            <!-- Style chung cho các nút điều khiển: bo góc, xanh nhạt, hover xanh (đồng bộ Tunning/Setting) -->
+            <Style TargetType="Button">
+                <Setter Property="Background" Value="#EAF1F8"/>
+                <Setter Property="Foreground" Value="#1B2A38"/>
+                <Setter Property="FontWeight" Value="SemiBold"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="4" BorderBrush="#C3D3EE" BorderThickness="1" Padding="4,2">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextElement.Foreground="{TemplateBinding Foreground}"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#1B75BB"/>
+                                    <Setter TargetName="bd" Property="BorderBrush" Value="#1B75BB"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Trigger>
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter TargetName="bd" Property="Background" Value="#155E96"/>
+                                </Trigger>
+                                <Trigger Property="IsEnabled" Value="False">
+                                    <Setter TargetName="bd" Property="Opacity" Value="0.5"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
             <Style x:Key="StatusLabelStyle" TargetType="Label">
                 <Style.Triggers>
                     <DataTrigger Binding="{Binding Status}" Value="Wait">
@@ -258,10 +288,30 @@ Margin="2">
                                Text="{Binding TestLogic.Tester1.TotalTaktTime}"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0"
                                 IsEnabled="{Binding AutoState.IsNotTesting}">
-                        <Button ToolTip="Full Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent">
+                        <Button ToolTip="Full Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent" BorderThickness="0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TestLogic.Tester1.IsRunning}" Value="True">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
                             <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
                         </Button>
-                        <Button ToolTip="Stop Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="1" Background="Transparent">
+                        <Button ToolTip="Stop Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="1" Background="Transparent" BorderThickness="0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TestLogic.Tester1.IsRunning}" Value="True">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
                             <fa:IconImage Icon="CircleStop" Foreground="Red"/>
                         </Button>
                     </StackPanel>
@@ -281,10 +331,30 @@ Margin="2">
                                Text="{Binding TestLogic.Tester2.TotalTaktTime}"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0"
                                 IsEnabled="{Binding AutoState.IsNotTesting}">
-                        <Button ToolTip="Full Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="2" Background="Transparent">
+                        <Button ToolTip="Full Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="2" Background="Transparent" BorderThickness="0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TestLogic.Tester2.IsRunning}" Value="True">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
                             <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
                         </Button>
-                        <Button ToolTip="Stop Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="2" Background="Transparent">
+                        <Button ToolTip="Stop Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="2" Background="Transparent" BorderThickness="0">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding TestLogic.Tester2.IsRunning}" Value="True">
+                                            <Setter Property="Visibility" Value="Visible"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
                             <fa:IconImage Icon="CircleStop" Foreground="Red"/>
                         </Button>
                     </StackPanel>

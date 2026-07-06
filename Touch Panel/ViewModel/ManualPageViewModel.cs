@@ -67,7 +67,7 @@ namespace Touch_Panel.View_Model
         [ObservableProperty]
         private TestLogic testLogic;
 
-        [RelayCommand]
+        [RelayCommand(AllowConcurrentExecutions = true)]
         private async Task DoubleClick(object parameter)
         {
             int testerId = int.Parse((string)parameter);
@@ -88,7 +88,7 @@ namespace Touch_Panel.View_Model
 
 
 
-        [RelayCommand]
+        [RelayCommand(AllowConcurrentExecutions = true)]
         private async Task FullTest(object parameter)
         {
             int testerId = int.Parse((string)parameter);

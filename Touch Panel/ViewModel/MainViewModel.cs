@@ -57,6 +57,9 @@ namespace Touch_Panel.View_Model
         // Expose để bind IsEnabled trên MainWindow (khóa UI khi đang test).
         public AutoState AutoState => sharedAutoState;
 
+        // Expose để thanh thiết bị (bottom bar) hiển thị NEXT SERIAL.
+        public AutoPageViewModel AutoPageVM => autoPageViewModel;
+
         DeviceManager deviceManager;
 
         MicomDatabases sharedMicomDatabases;
@@ -220,6 +223,51 @@ namespace Touch_Panel.View_Model
         private void LogPage()
         {
             Navigate("Log");
+        }
+
+        // Save: ghi đè file model đang mở; chưa có file thì chuyển sang Save As.
+        [RelayCommand]
+        private void SaveModel()
+        {
+            if (string.IsNullOrEmpty(Utility.CurrentModelFilePath) || !File.Exists(Utility.CurrentModelFilePath))
+            {
+                SaveModelAs();
+                return;
+            }
+            try
+            {
+                Utility.SaveModel(sharedModel, Utility.CurrentModelFilePath, Path.GetFileName(Utility.CurrentModelFilePath));
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fatal Error!" + ex.Message);
+            }
+        }
+
+        // Save As: chọn tên file mới, file đó thành file đang mở.
+        [RelayCommand]
+        private void SaveModelAs()
+        {
+            try
+            {
+                var saveFile = new Microsoft.Win32.SaveFileDialog
+                {
+                    DefaultExt = ".json",
+                    Filter = "Model File (*.json)|*.json"
+                };
+                if (saveFile.ShowDialog() == true)
+                {
+                    Utility.SaveModel(sharedModel, saveFile.FileName, saveFile.SafeFileName);
+                    Utility.CurrentModelFilePath = saveFile.FileName.EndsWith(".json", StringComparison.OrdinalIgnoreCase)
+                        ? saveFile.FileName
+                        : saveFile.FileName + ".json";
+                    ModelName = Path.GetFileNameWithoutExtension(Utility.CurrentModelFilePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Fatal Error!" + ex.Message);
+            }
         }
         private void ProgressFirmwareChanged(object source, Bsl430NetEventArgs args)
         {

@@ -79,6 +79,11 @@
                 <TextBlock DockPanel.Dock="Left" Text="LOG  T1" Foreground="#FFB000" FontWeight="Bold"
                            FontFamily="Consolas, Cascadia Mono, Courier New" FontSize="13"
                            VerticalAlignment="Center" Margin="8,4"/>
+                <Button DockPanel.Dock="Right" Click="OpenLogDir_Click" Cursor="Hand" Margin="6,3" Padding="6,3"
+                        Foreground="#E0A100" ToolTip="Open log directory" Template="{StaticResource AmberIconBtn}">
+                    <fa:IconBlock Icon="FolderOpen" FontSize="16"
+                                  Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                </Button>
                 <Button DockPanel.Dock="Right" Click="ClearLog1_Click" Cursor="Hand" Margin="6,3" Padding="6,3"
                         Foreground="#FFB000" ToolTip="Clear log" Template="{StaticResource AmberIconBtn}">
                     <fa:IconBlock Icon="TrashCan" FontSize="14"
@@ -136,6 +141,11 @@
                 <TextBlock DockPanel.Dock="Left" Text="LOG  T2" Foreground="#FFB000" FontWeight="Bold"
                            FontFamily="Consolas, Cascadia Mono, Courier New" FontSize="13"
                            VerticalAlignment="Center" Margin="8,4"/>
+                <Button DockPanel.Dock="Right" Click="OpenLogDir_Click" Cursor="Hand" Margin="6,3" Padding="6,3"
+                        Foreground="#E0A100" ToolTip="Open log directory" Template="{StaticResource AmberIconBtn}">
+                    <fa:IconBlock Icon="FolderOpen" FontSize="16"
+                                  Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType=Button}}"/>
+                </Button>
                 <Button DockPanel.Dock="Right" Click="ClearLog2_Click" Cursor="Hand" Margin="6,3" Padding="6,3"
                         Foreground="#FFB000" ToolTip="Clear log" Template="{StaticResource AmberIconBtn}">
                     <fa:IconBlock Icon="TrashCan" FontSize="14"

@@ -90,40 +90,40 @@
 
 
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                <Button Command="{Binding AddStepCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                <Button Command="{Binding AddStepCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Add" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="Add" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
 
-                <Button Command="{Binding DeleteStepCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                <Button Command="{Binding DeleteStepCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Trash" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="Trash" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding DuplicateStepCommand}"  CommandParameter="1" ToolTip="Duplicate Step" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                <Button Command="{Binding DuplicateStepCommand}"  CommandParameter="1" ToolTip="Duplicate Step" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Copy" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="Copy" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding MoveStepUpCommand}"  CommandParameter="1" ToolTip="Move Up" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                <Button Command="{Binding MoveStepUpCommand}"  CommandParameter="1" ToolTip="Move Up" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="ArrowUp" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="ArrowUp" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding MoveStepDownCommand}"  CommandParameter="1" ToolTip="Move Down" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                <Button Command="{Binding MoveStepDownCommand}"  CommandParameter="1" ToolTip="Move Down" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="ArrowDown" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="ArrowDown" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding SkipAllStepsCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                <Button Command="{Binding SkipAllStepsCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Square" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="Square" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding UnSkipAllStepsCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="5">
+                <Button Command="{Binding UnSkipAllStepsCommand}"  CommandParameter="1" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Left" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="CheckSquare" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="CheckSquare" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
            
@@ -133,25 +133,25 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                     <StackPanel Margin="1 0" >
-                        <Label Content="CMD Name" HorizontalContentAlignment="Center"/>
-                        <ComboBox Padding="0" Height="25" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ItemsSource="{Binding TestList}" SelectedItem="{Binding TestSelItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="123"/>
+                        <Label Content="CMD Name" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
+                        <ComboBox Padding="0" Height="22" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ItemsSource="{Binding TestList}" SelectedItem="{Binding TestSelItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="123"/>
                     </StackPanel>
                     <StackPanel Margin="1 0" >
-                        <Label Content="Time Delay (ms)" HorizontalContentAlignment="Center"/>
-                        <TextBox Width="102" Text="{Binding TimeDelayInput, Mode=TwoWay}" Height="25" VerticalContentAlignment="Center"/>
+                        <Label Content="Time Delay (ms)" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
+                        <TextBox Width="102" Text="{Binding TimeDelayInput, Mode=TwoWay}" Height="22" VerticalContentAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Margin="1 0" >
-                        <Label Content="Time Test (ms)" HorizontalContentAlignment="Center"/>
-                        <TextBox Width="102" Text="{Binding TimeTestInput, Mode=TwoWay}" Height="25" VerticalContentAlignment="Center"/>
+                        <Label Content="Time Test (ms)" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
+                        <TextBox Width="102" Text="{Binding TimeTestInput, Mode=TwoWay}" Height="22" VerticalContentAlignment="Center"/>
                     </StackPanel>
                     <StackPanel Margin="1 0" >
-                        <Label Content="Object ID" HorizontalContentAlignment="Center"/>
-                        <TextBox Width="102" Text="{Binding ObjectIdInput, Mode=TwoWay}" Height="25" VerticalContentAlignment="Center"/>
+                        <Label Content="Object ID" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
+                        <TextBox Width="102" Text="{Binding ObjectIdInput, Mode=TwoWay}" Height="22" VerticalContentAlignment="Center"/>
                     </StackPanel>
 
                     <StackPanel Margin="1 0" >
-                        <Label Content="Spec Value" HorizontalContentAlignment="Center"/>
-                        <TextBox Width="102" Text="{Binding SpecValueInput, Mode=TwoWay}" Height="25" VerticalContentAlignment="Center"/>
+                        <Label Content="Spec Value" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
+                        <TextBox Width="102" Text="{Binding SpecValueInput, Mode=TwoWay}" Height="22" VerticalContentAlignment="Center"/>
                     </StackPanel>
 
                 </StackPanel>
@@ -167,62 +167,47 @@
 
             <!-- Mirror của nhóm bảng 1: thứ tự đảo lại để hai thanh nút đối xứng qua tâm -->
             <StackPanel   Orientation="Horizontal" Grid.Column="2"  HorizontalAlignment="Right">
-                <Button Command="{Binding UnSkipAllStepsCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="5">
+                <Button Command="{Binding UnSkipAllStepsCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="CheckSquare" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="CheckSquare" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding SkipAllStepsCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="5">
+                <Button Command="{Binding SkipAllStepsCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Square" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="Square" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding MoveStepDownCommand}"  CommandParameter="2" ToolTip="Move Down" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="5">
+                <Button Command="{Binding MoveStepDownCommand}"  CommandParameter="2" ToolTip="Move Down" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="ArrowDown" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="ArrowDown" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding MoveStepUpCommand}"  CommandParameter="2" ToolTip="Move Up" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="5">
+                <Button Command="{Binding MoveStepUpCommand}"  CommandParameter="2" ToolTip="Move Up" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="ArrowUp" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="ArrowUp" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding DuplicateStepCommand}"  CommandParameter="2" ToolTip="Duplicate Step" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="5">
+                <Button Command="{Binding DuplicateStepCommand}"  CommandParameter="2" ToolTip="Duplicate Step" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Copy" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="Copy" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding DeleteStepCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="5">
+                <Button Command="{Binding DeleteStepCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Trash" Foreground="Gray" Width="25"/>
+                        <fa:IconImage Icon="Trash" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
-                <Button Command="{Binding AddStepCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="5">
+                <Button Command="{Binding AddStepCommand}"  CommandParameter="2" BorderThickness="0" Background="Transparent" Cursor="Hand" HorizontalAlignment="Right" Margin="3,1">
                     <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Add" Foreground="Gray" Width="25"/>
-                    </StackPanel>
-                </Button>
-            </StackPanel>
-
-
-
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2">
-                <Button Command="{Binding SaveModelCommand}" BorderThickness="0" Margin="5 5"  Padding="5 0" Background="Transparent" Cursor="Hand">
-                    <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Save" Foreground="Orange" Width="20"/>
-                        <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15">SAVE</Label>
-
-                    </StackPanel>
-                </Button>
-
-                <Button Command="{Binding SaveModelAsCommand}" BorderThickness="0" Margin="5 5"  Padding="5 0" Background="Transparent" Cursor="Hand">
-                    <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Save" Foreground="DarkOrange" Width="20"/>
-                        <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="15">SAVE AS</Label>
-
+                        <fa:IconImage Icon="Add" Foreground="Gray" Width="18"/>
                     </StackPanel>
                 </Button>
             </StackPanel>
+
+
+
+            <!-- Nút Save / Save As đã gom lên thanh top -->
+
 
 
 

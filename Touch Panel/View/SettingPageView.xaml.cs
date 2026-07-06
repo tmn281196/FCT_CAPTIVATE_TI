@@ -27,6 +27,23 @@ namespace Touch_Panel.View
             this.DataContext = vm;
         }
 
-    
+        /// <summary>Toggle: checked = nối tất cả, unchecked = ngắt tất cả (kiểu ZeroC).</summary>
+        private void ConnectAllToggle_Click(object sender, RoutedEventArgs e)
+        {
+            var tb = sender as System.Windows.Controls.Primitives.ToggleButton;
+            var vm = DataContext as SettingPageViewModel;
+            if (tb == null || vm == null) return;
+
+            if (tb.IsChecked == true)
+            {
+                if (vm.ConnectAllDevicesCommand.CanExecute(null))
+                    vm.ConnectAllDevicesCommand.Execute(null);
+            }
+            else
+            {
+                if (vm.DisconnectAllDevicesCommand.CanExecute(null))
+                    vm.DisconnectAllDevicesCommand.Execute(null);
+            }
+        }
     }
 }

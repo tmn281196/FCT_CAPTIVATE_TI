@@ -411,6 +411,18 @@ namespace Touch_Panel.View_Model
             Model.Devices.RefreshComPort();
         }
 
+        [RelayCommand]
+        private async Task ConnectAllDevices()
+        {
+            await Model.Devices.ConnectAll();
+        }
+
+        [RelayCommand]
+        private async Task DisconnectAllDevices()
+        {
+            await Model.Devices.CloseAll();
+        }
+
         // Save: ghi đè lên file model đang mở (tên cũ). Nếu chưa mở file nào thì
         // chuyển sang Save As để người dùng chọn tên.
         [RelayCommand]

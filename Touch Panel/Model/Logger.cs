@@ -21,6 +21,9 @@ namespace Touch_Panel.Model
 
         // Thư mục log = <thư mục exe>/Logs
         private static readonly string LogDir = Path.Combine(AppContext.BaseDirectory, "Logs");
+
+        /// <summary>Đường dẫn thư mục log (để UI mở trong Explorer).</summary>
+        public static string LogDirectory => LogDir;
         private static readonly object _fileLock = new object();
 
         // Ngày dùng để đặt tên file log. GHIM theo lúc TEST BẮT ĐẦU (gọi MarkTestStart()):

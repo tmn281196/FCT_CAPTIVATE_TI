@@ -9,10 +9,11 @@
              xmlns:conv="clr-namespace:Touch_Panel.Converters">
     <UserControl.Resources>
         <conv:MultiValueJoinConverter x:Key="PipeJoinConverter" Separator="|"/>
+        <local:BoolToVisConverter x:Key="BoolToVis"/>
         <DataTemplate x:Key="DeletableOptionTemplate">
             <DockPanel LastChildFill="True" Background="Transparent">
                 <Button DockPanel.Dock="Right" Content="✕" Width="18" Height="18" Padding="0" Margin="8 0 0 0"
-                        FontSize="10" Foreground="Red" Cursor="Hand"
+                        FontSize="10" Foreground="Red" Cursor="Hand" Style="{x:Null}"
                         ToolTip="Delete this option"
                         Command="{Binding DataContext.DeleteOptionCommand, RelativeSource={RelativeSource AncestorType=UserControl}}">
                     <Button.CommandParameter>
@@ -25,6 +26,66 @@
                 <TextBlock Text="{Binding}" VerticalAlignment="Center"/>
             </DockPanel>
         </DataTemplate>
+
+        <!-- Style chung cho các nút trong trang Setting: bo góc, xanh nhạt, hover xanh -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#EAF1F8"/>
+            <Setter Property="Foreground" Value="#1B2A38"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Padding" Value="8,3"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd" Background="{TemplateBinding Background}" CornerRadius="4" BorderBrush="#C3D3EE" BorderThickness="1" Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" TextElement.Foreground="{TemplateBinding Foreground}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#1B75BB"/>
+                                <Setter TargetName="bd" Property="BorderBrush" Value="#1B75BB"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#155E96"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="bd" Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Nút icon xám bo tròn kiểu ZeroC (connect-all / disconnect-all / refresh) -->
+        <Style x:Key="IconBtn" TargetType="Button">
+            <Setter Property="Background" Value="#E2E6EA"/>
+            <Setter Property="Foreground" Value="#44505C"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Width" Value="32"/>
+            <Setter Property="Height" Value="28"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="#C2CAD2" BorderThickness="1" CornerRadius="5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#D2D8DE"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="bd" Property="Background" Value="#C2CAD2"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="bd" Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </UserControl.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -66,55 +127,123 @@
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Micom 1" Width="70"/>
                             <ComboBox  HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.MicomCom1Port}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom1" Margin="10, 0, 4, 0" Cursor="Hand"/>
-                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Micom1" Cursor="Hand"/>
+                            <Grid Width="66" Margin="10,0,0,0">
+                                <Button Content="OPEN" Background="#2E7D32" Foreground="White" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom1"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[2].Connected, Converter={StaticResource BoolToVis}, ConverterParameter=inv}"/>
+                                <Button Content="CLOSE" Background="#C0392B" Foreground="White" Command="{Binding DeviceCloseCommand}" CommandParameter="Micom1"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[2].Connected, Converter={StaticResource BoolToVis}}"/>
+                            </Grid>
                         </StackPanel>
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Micom 2" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.MicomCom2Port}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom2" Margin="10, 0, 4, 0" Cursor="Hand"/>
-                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Micom2" Cursor="Hand"/>
+                            <Grid Width="66" Margin="10,0,0,0">
+                                <Button Content="OPEN" Background="#2E7D32" Foreground="White" Command="{Binding DeviceConnectCommand}" CommandParameter="Micom2"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[3].Connected, Converter={StaticResource BoolToVis}, ConverterParameter=inv}"/>
+                                <Button Content="CLOSE" Background="#C0392B" Foreground="White" Command="{Binding DeviceCloseCommand}" CommandParameter="Micom2"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[3].Connected, Converter={StaticResource BoolToVis}}"/>
+                            </Grid>
                         </StackPanel>
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="System" Width="70"/>
                             <ComboBox  HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.SystemComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}"  CommandParameter="System" Margin="10, 0, 4, 0" Cursor="Hand"/>
-                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="System" Cursor="Hand"/>
+                            <Grid Width="66" Margin="10,0,0,0">
+                                <Button Content="OPEN" Background="#2E7D32" Foreground="White" Command="{Binding DeviceConnectCommand}" CommandParameter="System"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[0].Connected, Converter={StaticResource BoolToVis}, ConverterParameter=inv}"/>
+                                <Button Content="CLOSE" Background="#C0392B" Foreground="White" Command="{Binding DeviceCloseCommand}" CommandParameter="System"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[0].Connected, Converter={StaticResource BoolToVis}}"/>
+                            </Grid>
                         </StackPanel>
 
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Solenoid 1" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid1ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 1" Margin="10, 0, 4, 0" Cursor="Hand"/>
-                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Solenoid 1" Cursor="Hand"/>
+                            <Grid Width="66" Margin="10,0,0,0">
+                                <Button Content="OPEN" Background="#2E7D32" Foreground="White" Command="{Binding DeviceConnectCommand}" CommandParameter="Solenoid 1"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[4].Connected, Converter={StaticResource BoolToVis}, ConverterParameter=inv}"/>
+                                <Button Content="CLOSE" Background="#C0392B" Foreground="White" Command="{Binding DeviceCloseCommand}" CommandParameter="Solenoid 1"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[4].Connected, Converter={StaticResource BoolToVis}}"/>
+                            </Grid>
                         </StackPanel>
 
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Solenoid 2" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid2ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}" CommandParameter="Solenoid 2" Margin="10, 0, 4, 0" Cursor="Hand"/>
-                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Solenoid 2" Cursor="Hand"/>
+                            <Grid Width="66" Margin="10,0,0,0">
+                                <Button Content="OPEN" Background="#2E7D32" Foreground="White" Command="{Binding DeviceConnectCommand}" CommandParameter="Solenoid 2"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[5].Connected, Converter={StaticResource BoolToVis}, ConverterParameter=inv}"/>
+                                <Button Content="CLOSE" Background="#C0392B" Foreground="White" Command="{Binding DeviceCloseCommand}" CommandParameter="Solenoid 2"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[5].Connected, Converter={StaticResource BoolToVis}}"/>
+                            </Grid>
                         </StackPanel>
 
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="Solenoid 3" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.Solenoid3ComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}"  CommandParameter="Solenoid 3" Margin="10, 0, 4, 0" Cursor="Hand"/>
-                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="Solenoid 3" Cursor="Hand"/>
+                            <Grid Width="66" Margin="10,0,0,0">
+                                <Button Content="OPEN" Background="#2E7D32" Foreground="White" Command="{Binding DeviceConnectCommand}" CommandParameter="Solenoid 3"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[1].Connected, Converter={StaticResource BoolToVis}, ConverterParameter=inv}"/>
+                                <Button Content="CLOSE" Background="#C0392B" Foreground="White" Command="{Binding DeviceCloseCommand}" CommandParameter="Solenoid 3"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[1].Connected, Converter={StaticResource BoolToVis}}"/>
+                            </Grid>
 
                         </StackPanel>
                         <StackPanel Margin="0 5" Orientation="Horizontal">
                             <Label Content="QR Printer" Width="70"/>
                             <ComboBox HorizontalContentAlignment="Left" SelectedItem="{Binding Model.Devices.QrPrinterComPort}" ItemsSource="{Binding Model.Devices.ComPortList}" Width="100"/>
-                            <Button Width="60" Content="Open" Command="{Binding DeviceConnectCommand}"  CommandParameter="QR Printer" Margin="10, 0, 4, 0" Cursor="Hand"/>
-                            <Button Width="60" Content="Close" Command="{Binding DeviceCloseCommand}" CommandParameter="QR Printer" Cursor="Hand"/>
+                            <Grid Width="66" Margin="10,0,0,0">
+                                <Button Content="OPEN" Background="#2E7D32" Foreground="White" Command="{Binding DeviceConnectCommand}" CommandParameter="QR Printer"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[6].Connected, Converter={StaticResource BoolToVis}, ConverterParameter=inv}"/>
+                                <Button Content="CLOSE" Background="#C0392B" Foreground="White" Command="{Binding DeviceCloseCommand}" CommandParameter="QR Printer"
+                                        Visibility="{Binding Model.Devices.DevicesStatus[6].Connected, Converter={StaticResource BoolToVis}}"/>
+                            </Grid>
 
                         </StackPanel>
                     </StackPanel>
-                    <Button Command="{Binding RefreshComportCommand}" HorizontalAlignment="Left" Width="24" Height="24" Margin="10 0" Background="Transparent" BorderThickness="0" Cursor="Hand" ToolTip="Enumerate COM Ports">
-                        <fa:IconImage Icon="Refresh" Foreground="Black" />
-
-                    </Button>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,8,0,0">
+                        <!-- Toggle Connect/Disconnect All kiểu ZeroC: chưa nối = Plug (nối tất), đang nối = PlugCircleXmark (ngắt tất) -->
+                        <ToggleButton x:Name="connectAllToggle" Click="ConnectAllToggle_Click" Width="34" Height="28" Margin="0,0,6,0" Cursor="Hand">
+                            <ToggleButton.Style>
+                                <Style TargetType="ToggleButton">
+                                    <Setter Property="ToolTip" Value="Connect All"/>
+                                    <Setter Property="Background" Value="#E2E6EA"/>
+                                    <Setter Property="Foreground" Value="#44505C"/>
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="ToggleButton">
+                                                <Border x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="#C2CAD2" BorderThickness="1" CornerRadius="5">
+                                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsMouseOver" Value="True">
+                                                        <Setter TargetName="bd" Property="Background" Value="#D2D8DE"/>
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Content">
+                                        <Setter.Value>
+                                            <fa:IconBlock Icon="Plug" FontSize="16" Foreground="#44505C"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsChecked" Value="True">
+                                            <Setter Property="ToolTip" Value="Disconnect All"/>
+                                            <Setter Property="Content">
+                                                <Setter.Value>
+                                                    <fa:IconBlock Icon="PlugCircleXmark" FontSize="16" Foreground="#44505C"/>
+                                                </Setter.Value>
+                                            </Setter>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </ToggleButton.Style>
+                        </ToggleButton>
+                        <Button Command="{Binding RefreshComportCommand}" Style="{StaticResource IconBtn}" ToolTip="Refresh All COM Ports">
+                            <fa:IconBlock Icon="Refresh" FontSize="15" Foreground="#44505C"/>
+                        </Button>
+                    </StackPanel>
 
                 </StackPanel>
 
@@ -421,23 +550,8 @@
             </StackPanel>-->
 
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button Command="{Binding SaveCommand}" BorderThickness="0"  Width="100" Background="Transparent" Cursor="Hand">
-                    <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Save" Foreground="Orange" Width="25"/>
-                        <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20">SAVE</Label>
+            <!-- Nút Save / Save As đã gom lên thanh top -->
 
-                    </StackPanel>
-                </Button>
-
-                <Button Command="{Binding SaveAsCommand}" BorderThickness="0"  Width="130" Background="Transparent" Cursor="Hand">
-                    <StackPanel Orientation="Horizontal" >
-                        <fa:IconImage Icon="Save" Foreground="DarkOrange" Width="25"/>
-                        <Label Foreground="Black" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontWeight="Bold" FontSize="20">SAVE AS</Label>
-
-                    </StackPanel>
-                </Button>
-            </StackPanel>
 
 
         </StackPanel>
