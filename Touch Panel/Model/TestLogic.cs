@@ -111,7 +111,9 @@ namespace Touch_Panel.Model
             tester.CurrStep = 0;
 
             tester.IsRunning = true;
-            Logger.Instance.MarkTestStart();
+            Logger.Instance.BeginRun();   // mở ghi log (chỉ full test Auto/Manual All Start mới ghi)
+            try
+            {
             Logger.Instance.AddLog(tester.ID + 1, "===== TEST BEGIN =====");
 
             tester.TotalTaktTime = "0.0s";
@@ -179,6 +181,11 @@ namespace Touch_Panel.Model
             tester.IsRunning = false;
 
             Logger.Instance.AddLog(tester.ID + 1, $"===== TEST END: {tester.TestResult} | takt {tester.TotalTaktTime} =====");
+            }
+            finally
+            {
+                Logger.Instance.EndRun();   // đóng ghi log (luôn chạy kể cả khi lỗi)
+            }
         }
 
         public async Task manualFullTest(Tester tester)

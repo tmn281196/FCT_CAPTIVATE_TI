@@ -47,8 +47,8 @@
                        Width="108" TextAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0">
                 <TextBlock.Text>
                     <MultiBinding Converter="{StaticResource FirstNonEmpty}">
-                        <Binding Path="Devices.MicomData1.SignalIntegrity"/>
                         <Binding Path="Devices.MicomData1.VerifyLog"/>
+                        <Binding Path="Devices.MicomData1.SignalIntegrity"/>
                         <Binding Path="Devices.MicomData1.FirmwareLog"/>
                     </MultiBinding>
                 </TextBlock.Text>
@@ -78,8 +78,8 @@
                        Width="108" TextAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0">
                 <TextBlock.Text>
                     <MultiBinding Converter="{StaticResource FirstNonEmpty}">
-                        <Binding Path="Devices.MicomData2.SignalIntegrity"/>
                         <Binding Path="Devices.MicomData2.VerifyLog"/>
+                        <Binding Path="Devices.MicomData2.SignalIntegrity"/>
                         <Binding Path="Devices.MicomData2.FirmwareLog"/>
                     </MultiBinding>
                 </TextBlock.Text>

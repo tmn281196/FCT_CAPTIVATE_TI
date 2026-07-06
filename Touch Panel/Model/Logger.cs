@@ -2,6 +2,7 @@ using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
+using System.Threading;
 using System.Windows;
 
 namespace Touch_Panel.Model
@@ -30,8 +31,26 @@ namespace Touch_Panel.Model
         // test bắt đầu hôm nay mà kết thúc hôm sau vẫn ghi vào file của HÔM BẮT ĐẦU.
         private static string _logDay = DateTime.Now.ToString("yyMMdd");
 
+        // Đếm số lần chạy FULL TEST đang mở (Auto hoặc Manual All Start).
+        // Chỉ ghi log khi > 0 -> KHÔNG ghi khi double-click chạy 1 step, thao tác lẻ, idle...
+        private static int _activeRuns = 0;
+
         private static readonly Logger _instance = new Logger();
         public static Logger Instance => _instance;
+
+        /// <summary>Bắt đầu một lần chạy full test (Auto/Manual All Start) -> mở ghi log + ghim ngày file.</summary>
+        public void BeginRun()
+        {
+            Interlocked.Increment(ref _activeRuns);
+            _logDay = DateTime.Now.ToString("yyMMdd");
+        }
+
+        /// <summary>Kết thúc một lần chạy full test.</summary>
+        public void EndRun()
+        {
+            if (Interlocked.Decrement(ref _activeRuns) < 0)
+                Interlocked.Exchange(ref _activeRuns, 0);
+        }
 
         public ObservableCollection<string> Log1 => log1;
         public ObservableCollection<string> Log2 => log2;
@@ -39,6 +58,9 @@ namespace Touch_Panel.Model
         /// <summary>Ghi log cho 1 bên (tester = 1 hoặc 2).</summary>
         public void AddLog(int tester, string message)
         {
+            // Chỉ ghi khi đang trong một lần chạy full test (Auto / Manual All Start).
+            if (_activeRuns <= 0) return;
+
             var target = tester == 2 ? log2 : log1;
             var now = DateTime.Now;
             string uiLine = $"[{now:HH:mm:ss}] {message}";
