@@ -95,20 +95,9 @@ namespace Touch_Panel.Model
 
         public async Task manualSingleTest(Step selectedItem, Tester tester)
         {
-            await Model.Devices.ResetSolenoid(tester);
-
-            // Hạ connector + chờ ổn định trước khi đo (giống Full Test/auto), tránh đọc ra 0.
-            Model.Devices.ConnectorAllDown();
-            await Task.Delay(TestTiming.ConnectorSettleDelayMs);
-
-            await Model.Devices.ResumeMICOM(tester.ID + 1);
-
+            // Double-click: CHỈ chạy đúng step đó.
+            // KHÔNG hạ connector / resume / halt MICOM / reset solenoid — các thao tác đó chỉ chạy khi nhấn Start (manualFullTest).
             await RunTestStep(selectedItem, tester);
-
-            await Task.Delay(TestTiming.ConnectorSettleDelayMs);
-
-            await Model.Devices.HaltMICOM(tester.ID + 1);
-            await Model.Devices.ResetSolenoid(tester);
         }
 
 

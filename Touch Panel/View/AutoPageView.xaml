@@ -302,11 +302,54 @@
                 <Label HorizontalContentAlignment="Center" Content="TEST CONTROL" FontWeight="SemiBold" Foreground="White" Background="{StaticResource BaseBrush}" />
 
                 <StackPanel Grid.Row="1" Orientation="Horizontal" VerticalAlignment="Center" Height="120" HorizontalAlignment="Center">
-                    <Button Background="Transparent" BorderThickness="0" Padding="5 0" Margin="2"  FontSize="16" Height="60" Width="60"  Cursor="Hand" Command="{Binding ForceStartCommand}"   HorizontalContentAlignment="Center">
-                        <fa:IconImage Icon="CirclePlay" Foreground="Lime"/>
+                    <!-- Nút START/STOP bo góc kiểu ZeroC -->
+                    <Button Cursor="Hand" Height="46" Margin="8,0" Focusable="False" Command="{Binding ForceStartCommand}" ToolTip="Start">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="bd" Background="#2E7D32" CornerRadius="6" Padding="26,0">
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <fa:IconBlock Icon="Play" FontSize="17" Foreground="White" VerticalAlignment="Center" Margin="0,0,9,0"/>
+                                        <TextBlock Text="START" Foreground="White" FontWeight="SemiBold" FontSize="16" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="bd" Property="Opacity" Value="0.88"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="bd" Property="Background" Value="#25642A"/>
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter TargetName="bd" Property="Background" Value="#5A6470"/>
+                                        <Setter TargetName="bd" Property="Opacity" Value="0.85"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
-                    <Button Background="Transparent" BorderThickness="0" Padding="5 0" Margin="2"  FontSize="16" Height="60" Width="60"  Cursor="Hand" Command="{Binding ForceStopCommand}"   HorizontalContentAlignment="Center">
-                        <fa:IconImage Icon="CircleStop" Foreground="Red"/>
+                    <Button Cursor="Hand" Height="46" Margin="8,0" Focusable="False" Command="{Binding ForceStopCommand}" ToolTip="Stop">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="bd" Background="#D32F2F" CornerRadius="6" Padding="26,0">
+                                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                        <fa:IconBlock Icon="Stop" FontSize="17" Foreground="White" VerticalAlignment="Center" Margin="0,0,9,0"/>
+                                        <TextBlock Text="STOP" Foreground="White" FontWeight="SemiBold" FontSize="16" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="bd" Property="Opacity" Value="0.88"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="bd" Property="Background" Value="#B12727"/>
+                                    </Trigger>
+                                    <Trigger Property="IsEnabled" Value="False">
+                                        <Setter TargetName="bd" Property="Background" Value="#5A6470"/>
+                                        <Setter TargetName="bd" Property="Opacity" Value="0.85"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
 
                 </StackPanel>

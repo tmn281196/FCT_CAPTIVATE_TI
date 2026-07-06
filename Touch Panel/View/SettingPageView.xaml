@@ -99,8 +99,22 @@
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBox   Text="{Binding Model.Settings.LogDir, Mode=OneWay}" IsReadOnly="True" x:Name="mesDirTxtBox" Width="500" Padding="0 2" VerticalAlignment="Center" />
-                    <Button x:Name="changeMesDirBtn" Command="{Binding ChangeToNewLogDirCommand}" BorderThickness="0"  Width="30" Height="30" Background="Transparent" Cursor="Hand" ToolTip="Change log directory">
-                        <fa:IconBlock Icon="FolderOpen" FontSize="18" Foreground="#E0A100"/>
+                    <Button x:Name="changeMesDirBtn" Command="{Binding ChangeToNewLogDirCommand}" Width="30" Height="28" Margin="6,0,0,0" Cursor="Hand" Focusable="False" ToolTip="Change log directory">
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border x:Name="bd" Background="Transparent" CornerRadius="4">
+                                    <fa:IconBlock x:Name="ic" Icon="FolderOpen" FontSize="17" Foreground="#E0A100"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="bd" Property="Background" Value="#FFF3D6"/>
+                                    </Trigger>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter TargetName="ic" Property="Foreground" Value="#C98A00"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Button.Template>
                     </Button>
                 </StackPanel>
 

@@ -14,45 +14,33 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="9"/>
+            <ColumnDefinition Width="12"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <Border BorderBrush="Black" BorderThickness="1">
-            <Rectangle x:Name="Tx"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-                <Rectangle.Style>
-                    <Style TargetType="Rectangle">
-                        <Setter Property="Fill" Value="Gray"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding TxSent}" Value="True">
-                                <Setter Property="Fill" Value="Yellow"/>
-                            </DataTrigger>
-
-                            <DataTrigger Binding="{Binding TxSent}" Value="False">
-                                <Setter Property="Fill" Value="Gray"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Rectangle.Style>
-            </Rectangle>
-        </Border>
-        <Border BorderBrush="Black" BorderThickness="1" Grid.Row="1" >
-            <Rectangle x:Name="Rx" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" >
-                <Rectangle.Style>
-                    <Style TargetType="Rectangle">
-                        <Setter Property="Fill" Value="Gray"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding RxReceived}" Value="True">
-                                <Setter Property="Fill" Value="Yellow"/>
-                            </DataTrigger>
-
-                            <DataTrigger Binding="{Binding RxReceived}" Value="False">
-                                <Setter Property="Fill" Value="Gray"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </Rectangle.Style>
-            </Rectangle>
-        </Border>
+        <Rectangle x:Name="Tx" Width="10" Height="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0">
+            <Rectangle.Style>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Fill" Value="White"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding TxSent}" Value="True">
+                            <Setter Property="Fill" Value="Yellow"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Rectangle.Style>
+        </Rectangle>
+        <Rectangle x:Name="Rx" Grid.Row="1" Width="10" Height="5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
+            <Rectangle.Style>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Fill" Value="White"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding RxReceived}" Value="True">
+                            <Setter Property="Fill" Value="Yellow"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Rectangle.Style>
+        </Rectangle>
         <!-- Chữ tên: LimeGreen khi kết nối mở, trắng khi đóng -->
         <Label x:Name="lbPortName" Content="{Binding Name, Converter={StaticResource Upper}, UpdateSourceTrigger=PropertyChanged}"
             Grid.RowSpan="2" Grid.Column="1"
