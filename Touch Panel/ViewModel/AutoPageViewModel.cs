@@ -296,8 +296,9 @@ namespace Touch_Panel.View_Model
                     case TestState.Wait:
                         Status = "Wait";
 
-                        if(!(Model.Devices.DeviceManager.MicomPort1 == null && Model.Devices.DeviceManager.MicomPort2 == null))
-                        {
+                            if (!(Model.Devices.DeviceManager.MicomPort1 == null && Model.Devices.DeviceManager.MicomPort2 == null))
+                            {
+                                if (TestLogic.Tester1.Steps == null || TestLogic.Tester2.Steps == null) return;
                             bool micom1 = TestLogic.Tester1.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort1) : true;
                             bool micom2 = TestLogic.Tester2.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort2) : true;
                             bool soleinod1 = TestLogic.Tester1.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid1Port) : true;
