@@ -117,6 +117,7 @@ namespace Touch_Panel.Model
             tester.ClearSteps();
             tester.CurrStep = 0;
 
+            Logger.Instance.MarkTestStart();
             Logger.Instance.AddLog(tester.ID + 1, "===== TEST BEGIN =====");
 
             tester.TotalTaktTime = "0.0s";
