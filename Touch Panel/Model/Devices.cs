@@ -158,6 +158,11 @@ namespace Touch_Panel.Model
         [ObservableProperty]
         private string signalIntegrity = string.Empty;
 
+        // Kết quả verify firmware (✓/✕), tách riêng khỏi FirmwareLog (progress).
+        [property: JsonIgnore]
+        [ObservableProperty]
+        private string verifyLog = string.Empty;
+
 
     }
 

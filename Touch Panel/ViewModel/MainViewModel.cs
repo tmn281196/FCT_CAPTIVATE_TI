@@ -324,6 +324,7 @@ namespace Touch_Panel.View_Model
 
             mData.SignalIntegrity = string.Empty;
             mData.FirmwareLog = string.Empty;
+            mData.VerifyLog = string.Empty;
 
             try
             {
@@ -352,25 +353,32 @@ namespace Touch_Panel.View_Model
 
                     sharedModel.Devices.ConnectDeviceByName(micomName);
 
-                    if (mData.FirmwareLog.Contains("100"))
-                    {
-                        mData.FirmwareLog = "✓";
-                    }
-                    else
-                    {
-                        mData.FirmwareLog = "✕";
-
-                    }
-
+                    // Kết quả verify -> VerifyLog (tách khỏi FirmwareLog/progress).
+                    mData.VerifyLog = mData.FirmwareLog.Contains("100") ? "✓" : "✕";
                 }
                 else
                 {
-                    mData.FirmwareLog = "✓";
+                    mData.VerifyLog = "✓";
                 }
             }
             catch (Exception)
             {
-                mData.FirmwareLog = "✕";
+                mData.VerifyLog = "✕";
+            }
+
+            // Sau khi verify: dấu ✓/✕ tự GỠ sau 3s (không đọng lại),
+            // chỉ gỡ khi vẫn đúng dấu đó (tránh xoá nhầm verify mới của lần sau).
+            var finalVerify = mData.VerifyLog;
+            if (finalVerify == "✓" || finalVerify == "✕")
+            {
+                _ = Task.Delay(TimeSpan.FromSeconds(3)).ContinueWith(_ =>
+                {
+                    System.Windows.Application.Current?.Dispatcher.Invoke(() =>
+                    {
+                        if (mData.VerifyLog == finalVerify)
+                            mData.VerifyLog = string.Empty;
+                    });
+                });
             }
         }
 

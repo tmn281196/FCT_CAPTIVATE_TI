@@ -49,4 +49,19 @@ namespace Touch_Panel.View
         public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
             => System.Windows.Data.Binding.DoNothing;
     }
+
+    /// <summary>Trả về chuỗi KHÔNG rỗng đầu tiên theo thứ tự ưu tiên (chỉ 1 trong nhiều nội dung hiện ra).</summary>
+    public class FirstNonEmptyConverter : IMultiValueConverter
+    {
+        public object Convert(object[] values, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+        {
+            if (values != null)
+                foreach (var v in values)
+                    if (v is string s && !string.IsNullOrEmpty(s)) return s;
+            return string.Empty;
+        }
+
+        public object[] ConvertBack(object value, Type[] targetTypes, object parameter, System.Globalization.CultureInfo culture)
+            => throw new NotImplementedException();
+    }
 }
