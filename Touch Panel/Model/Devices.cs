@@ -1023,30 +1023,32 @@ namespace Touch_Panel.Model
                     var currentCycle = listCAPSensor[(int)sensorIndex].ListCAPCycle[(int)cycleIndex];
                     var elements = currentCycle.ListCAPElement;
 
-                    // Update Delta
-                    for (int elementID = 0; elementID < elements.Count; elementID++)
+                    // Trích Delta trên thread nền (an toàn với frame cục bộ).
+                    int n = elements.Count;
+                    var newDeltas = new ushort[n];
+                    for (int elementID = 0; elementID < n; elementID++)
                     {
                         int offset = elementID * 2 + 3;
-                        if (offset + 1 >= frame.Length) break;  // An toàn
-
-                        ushort delta = (ushort)((frame[offset] << 8) | frame[offset + 1]);
-                        elements[elementID].Delta = delta;
-                        //Debug.WriteLine($"{sensorIndex}.{cycleIndex}.{elementID} : {delta}");
+                        if (offset + 1 >= frame.Length) { n = elementID; break; }
+                        newDeltas[elementID] = (ushort)((frame[offset] << 8) | frame[offset + 1]);
                     }
 
-                    // Tính Max Delta chỉ 1 lần (optimize)
-                    var allDeltas = listCAPSensor
-                        .SelectMany(s => s.ListCAPCycle)
-                        .SelectMany(c => c.ListCAPElement)
-                        .Select(e => e.Delta);
-
-                    ushort maxDelta = allDeltas.Any() ? allDeltas.Max() : (ushort)0;
-
-                    // Update IsMax
-                    foreach (var elem in elements)
+                    // GÁN vào ObservableProperty trên UI thread -> UI mới cập nhật (DataReceived chạy thread nền).
+                    int applyCount = n;
+                    Application.Current.Dispatcher.BeginInvoke(new Action(() =>
                     {
-                        elem.IsMax = (elem.Delta == maxDelta);
-                    }
+                        for (int i = 0; i < applyCount && i < elements.Count; i++)
+                            elements[i].Delta = newDeltas[i];
+
+                        // Tính & cập nhật IsMax
+                        var allDeltas = listCAPSensor
+                            .SelectMany(s => s.ListCAPCycle)
+                            .SelectMany(c => c.ListCAPElement)
+                            .Select(e => e.Delta);
+                        ushort maxDelta = allDeltas.Any() ? allDeltas.Max() : (ushort)0;
+                        foreach (var elem in elements)
+                            elem.IsMax = (elem.Delta == maxDelta);
+                    }));
                 }
                 else if (frame[1] == (byte)'F')
                 {

@@ -224,6 +224,14 @@
                         <TextBox Style="{StaticResource FieldBox}" Width="102" Text="{Binding SpecValueInput, Mode=TwoWay}"/>
                     </StackPanel>
 
+                    <!-- Max Margin: thiết lập của MODEL (chống nhảy khi 2 đỉnh gần bằng) -->
+                    <Border Width="1" Background="#C3D3EE" Margin="10,2"/>
+                    <StackPanel Margin="4 0" >
+                        <Label Content="Max Margin" FontSize="11" Padding="1" HorizontalContentAlignment="Center" Foreground="#44505C"
+                               ToolTip="Element phải dẫn trước đỉnh nhì ít nhất bằng giá trị này mới coi là max."/>
+                        <TextBox Style="{StaticResource FieldBox}" Width="70" Text="{Binding Model.Settings.Margin, UpdateSourceTrigger=LostFocus}"/>
+                    </StackPanel>
+
                 </StackPanel>
 
                

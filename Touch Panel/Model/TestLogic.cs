@@ -29,7 +29,7 @@ namespace Touch_Panel.Model
 
         // Tổng takt time cả chu kỳ test của tester (đo trong RunTester).
         [ObservableProperty]
-        private string totalTaktTime = "0.0s";
+        private string totalTaktTime = "0.0";
 
         // Đang chạy test hay không (để nút Play/Stop ẩn-hiện thay phiên).
         [ObservableProperty]
@@ -116,14 +116,14 @@ namespace Touch_Panel.Model
             {
             Logger.Instance.AddLog(tester.ID + 1, "===== TEST BEGIN =====");
 
-            tester.TotalTaktTime = "0.0s";
+            tester.TotalTaktTime = "0.0";
             var taktSw = Stopwatch.StartNew();
 
             // Cập nhật takt realtime khi test đang chạy.
             var taktTimer = new System.Timers.Timer(100) { AutoReset = true };
             taktTimer.Elapsed += (s, e) =>
             {
-                tester.TotalTaktTime = $"{taktSw.Elapsed.TotalSeconds:0.0}s";
+                tester.TotalTaktTime = $"{taktSw.Elapsed.TotalSeconds:0.0}";
             };
             taktTimer.Start();
 
@@ -177,7 +177,7 @@ namespace Touch_Panel.Model
             taktTimer.Stop();
             taktTimer.Dispose();
             taktSw.Stop();
-            tester.TotalTaktTime = $"{taktSw.Elapsed.TotalSeconds:0.0}s";
+            tester.TotalTaktTime = $"{taktSw.Elapsed.TotalSeconds:0.0}";
             tester.IsRunning = false;
 
             Logger.Instance.AddLog(tester.ID + 1, $"===== TEST END: {tester.TestResult} | takt {tester.TotalTaktTime} =====");

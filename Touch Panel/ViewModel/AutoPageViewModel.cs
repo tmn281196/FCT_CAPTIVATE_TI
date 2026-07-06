@@ -67,7 +67,7 @@ namespace Touch_Panel.View_Model
         private Model.Model model;
 
         [ObservableProperty]
-        private string elapsedTime = "0.0s";
+        private string elapsedTime = "0.0";
 
 
         [ObservableProperty]
@@ -242,7 +242,7 @@ namespace Touch_Panel.View_Model
         {
             Application.Current.Dispatcher.Invoke(() =>
             {
-                ElapsedTime = $"{stopwatch.Elapsed.TotalSeconds:0.0}s";
+                ElapsedTime = $"{stopwatch.Elapsed.TotalSeconds:0.0}";
             });
         }
 
