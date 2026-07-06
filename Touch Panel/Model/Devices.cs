@@ -343,6 +343,20 @@ namespace Touch_Panel.Model
             }
         }
 
+        /// <summary>Gửi lệnh solenoid KHÔNG chờ ACK (fire-and-forget) — dùng cho Solenoid 3.</summary>
+        private void SendSolFireForget(SerialPortStream port, string deviceName, byte[] tx)
+        {
+            if (port == null || !port.IsOpen) return;
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == deviceName);
+            try
+            {
+                if (device != null) device.TxSent = true;
+                port.Write(tx, 0, tx.Length);
+                if (device != null) device.TxSent = false;
+            }
+            catch (Exception ex) { Debug.WriteLine($"[{deviceName}] send error: {ex.Message}"); }
+        }
+
         [property: JsonIgnore]
         [ObservableProperty]
         private List<string> firmwareList;
@@ -1503,30 +1517,32 @@ namespace Touch_Panel.Model
         }
 
 
+        // ===== Solenoid 3 (connector/cylinder): FIRE-AND-FORGET (không chờ ACK) =====
         internal async Task ResetMainCylinder()
         {
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x10, 0x00, 0x44, 0x56 };
-            await SendSolCmdAsync(DeviceManager.Solenoid3Port, "Solenoid 3", tx);
+            SendSolFireForget(DeviceManager.Solenoid3Port, "Solenoid 3", tx);
 
             await Task.Delay(300);
 
             byte[] tx2 = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
-            await SendSolCmdAsync(DeviceManager.Solenoid3Port, "Solenoid 3", tx2);
+            SendSolFireForget(DeviceManager.Solenoid3Port, "Solenoid 3", tx2);
         }
 
-        internal async void ConnectorAllDown()
+        internal void ConnectorAllDown()
         {
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x0F, 0x00, 0x5B, 0x56 };
-            await SendSolCmdAsync(DeviceManager.Solenoid3Port, "Solenoid 3", tx);
+            SendSolFireForget(DeviceManager.Solenoid3Port, "Solenoid 3", tx);
         }
 
-        internal async void ConnectorAllUp()
+        internal void ConnectorAllUp()
         {
             byte[] tx = { 0x44, 0x45, 0x06, 0x53, 0x00, 0x00, 0x00, 0x00, 0x54, 0x56 };
-            await SendSolCmdAsync(DeviceManager.Solenoid3Port, "Solenoid 3", tx);
+            SendSolFireForget(DeviceManager.Solenoid3Port, "Solenoid 3", tx);
         }
 
 
+        // ===== Solenoid 1 & 2 (reset solenoid từng tester): CHỜ ACK (fire and no forget) =====
         internal async Task ResetSolenoid(Tester tester)
         {
             SerialPortStream serialPort = tester.ID == 1 ? DeviceManager.Solenoid2Port : DeviceManager.Solenoid1Port;
