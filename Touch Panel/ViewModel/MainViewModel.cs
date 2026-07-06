@@ -60,6 +60,9 @@ namespace Touch_Panel.View_Model
         // Expose để thanh thiết bị (bottom bar) hiển thị NEXT SERIAL.
         public AutoPageViewModel AutoPageVM => autoPageViewModel;
 
+        // Expose Model để top bar bind HEX FILE (SelectedFirmwareMicom).
+        public Model.Model Model => sharedModel;
+
         DeviceManager deviceManager;
 
         MicomDatabases sharedMicomDatabases;

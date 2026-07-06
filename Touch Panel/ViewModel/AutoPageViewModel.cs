@@ -67,7 +67,7 @@ namespace Touch_Panel.View_Model
         private Model.Model model;
 
         [ObservableProperty]
-        private string elapsedTime = "0.00";
+        private string elapsedTime = "0.0s";
 
 
         [ObservableProperty]

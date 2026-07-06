@@ -321,7 +321,7 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                         Command="{Binding DisableMICOMCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
                 <Button ToolTip="Resume MICOM" Cursor="Hand" FontSize="12" Width="60" Height="26" Margin="1 0" Content="RESUME"
                         Command="{Binding EnableMICOMCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
-                <Button ToolTip="Calibrate MICOM" Cursor="Hand" FontSize="12" Width="52" Height="26" Margin="1 0" Content="CALIB"
+                <Button ToolTip="Calibrate MICOM" Cursor="Hand" FontSize="12" Width="92" Height="26" Margin="1 0" Content="CALIBRATION"
                         Command="{Binding ResetMICOMCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
 
                 <Border Width="1" Background="#C3D3EE" Margin="8 3"/>

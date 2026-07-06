@@ -232,31 +232,31 @@
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
 
                 <!-- Card thống kê kiểu ZeroC: bo góc, nền pastel -->
-                <Border Width="112" Height="70" Margin="5" CornerRadius="8" Background="#EEF1F4" BorderBrush="#D0D7DE" BorderThickness="1">
+                <Border Width="152" Height="104" Margin="5" CornerRadius="8" Background="#EEF1F4" BorderBrush="#D0D7DE" BorderThickness="1">
                     <StackPanel VerticalAlignment="Center" Margin="0,4">
-                        <TextBlock Text="TOTAL" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#44505C"/>
-                        <TextBlock Text="{Binding Total}" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="#1B2A38"/>
+                        <TextBlock Text="TOTAL" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#44505C"/>
+                        <TextBlock Text="{Binding Total}" HorizontalAlignment="Center" FontSize="46" FontWeight="Bold" Foreground="#1B2A38"/>
                     </StackPanel>
                 </Border>
 
-                <Border Width="112" Height="70" Margin="5" CornerRadius="8" Background="#E7F6E9" BorderBrush="#BFE3C4" BorderThickness="1">
+                <Border Width="152" Height="104" Margin="5" CornerRadius="8" Background="#E7F6E9" BorderBrush="#BFE3C4" BorderThickness="1">
                     <StackPanel VerticalAlignment="Center" Margin="0,4">
-                        <TextBlock Text="PASS" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#2E7D32"/>
-                        <TextBlock Text="{Binding Pass}" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="#2E7D32"/>
+                        <TextBlock Text="PASS" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#2E7D32"/>
+                        <TextBlock Text="{Binding Pass}" HorizontalAlignment="Center" FontSize="46" FontWeight="Bold" Foreground="#2E7D32"/>
                     </StackPanel>
                 </Border>
 
-                <Border Width="112" Height="70" Margin="5" CornerRadius="8" Background="#FCEAEA" BorderBrush="#F1C4C4" BorderThickness="1">
+                <Border Width="152" Height="104" Margin="5" CornerRadius="8" Background="#FCEAEA" BorderBrush="#F1C4C4" BorderThickness="1">
                     <StackPanel VerticalAlignment="Center" Margin="0,4">
-                        <TextBlock Text="NG" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#C0392B"/>
-                        <TextBlock Text="{Binding Fail}" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="#C0392B"/>
+                        <TextBlock Text="NG" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#C0392B"/>
+                        <TextBlock Text="{Binding Fail}" HorizontalAlignment="Center" FontSize="46" FontWeight="Bold" Foreground="#C0392B"/>
                     </StackPanel>
                 </Border>
 
-                <Border Width="112" Height="70" Margin="5" CornerRadius="8" Background="#FFF6E5" BorderBrush="#F0DBA8" BorderThickness="1">
+                <Border Width="152" Height="104" Margin="5" CornerRadius="8" Background="#FFF6E5" BorderBrush="#F0DBA8" BorderThickness="1">
                     <StackPanel VerticalAlignment="Center" Margin="0,4">
-                        <TextBlock Text="PASS %" HorizontalAlignment="Center" FontSize="14" FontWeight="Bold" Foreground="#B8860B"/>
-                        <TextBlock Text="{Binding PassPercent}" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="#B8860B"/>
+                        <TextBlock Text="PASS %" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#B8860B"/>
+                        <TextBlock Text="{Binding PassPercent}" HorizontalAlignment="Center" FontSize="46" FontWeight="Bold" Foreground="#B8860B"/>
                     </StackPanel>
                 </Border>
 
@@ -290,7 +290,7 @@
                 </Grid.RowDefinitions>
 
                 <Label HorizontalContentAlignment="Center" Content="ELAPSED TIME" FontWeight="SemiBold" Foreground="White" Background="{StaticResource BaseBrush}" />
-                <Label Grid.Row="1" Content="{Binding ElapsedTime}" FontWeight="Bold" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  x:Name="elapsedTimeLbl"  Background="White"  />
+                <Label Grid.Row="1" Content="{Binding ElapsedTime}" FontWeight="Bold" FontSize="48" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  x:Name="elapsedTimeLbl"  Background="White"  />
 
             </Grid>
 
@@ -301,7 +301,9 @@
                 </Grid.RowDefinitions>
 
                 <Label HorizontalContentAlignment="Center" Content="NEXT SERIAL" FontWeight="SemiBold" Foreground="White" Background="{StaticResource BaseBrush}" />
-                <Label Grid.Row="1" Content="{Binding NextSerialNumber}" ContentStringFormat="{}{0:D4}" FontWeight="Bold" FontSize="20" Foreground="#E67E22" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White"/>
+                <Label Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="White">
+                    <TextBlock Text="{Binding NextSerialNumber, StringFormat=D4}" FontWeight="Bold" FontSize="48" Foreground="#E67E22"/>
+                </Label>
 
             </Grid>
 

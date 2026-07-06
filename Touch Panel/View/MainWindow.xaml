@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
         xmlns:local="clr-namespace:Touch_Panel"
+        xmlns:view="clr-namespace:Touch_Panel.View"
         mc:Ignorable="d"
         Title="TOUCH SENSING TESTER" Height="1080" Width="1920"
         WindowState="Maximized" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
 
     <Window.Resources>
+        <view:BoolToVisConverter x:Key="BoolToVis"/>
         <!-- Nút About: vuông, viền trắng, hover Peru (giống ZeroC) -->
         <Style x:Key="NavIconButton" TargetType="Button">
             <Setter Property="Margin" Value="0 3"/>
@@ -132,6 +134,32 @@
 
             <Grid Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" >
                 <Label Content="TOUCH SENSING TESTER" Background="{StaticResource DarkBarBrush}" Foreground="White" FontWeight="SemiBold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="35"/>
+
+                <!-- TRÁI: HEX FILE + START/STOP -->
+                <StackPanel Margin="72,0,0,0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                    <fa:IconBlock Icon="FileLines" FontSize="14" Foreground="#CFE0F0" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding Model.Devices.SelectedFirmwareMicom}" Foreground="Orange" FontSize="13" FontWeight="SemiBold" VerticalAlignment="Center" Margin="8,0,18,0"/>
+
+                    <Button Style="{StaticResource TitleBtn}" Background="#2E7D32" Margin="0" Focusable="False" ToolTip="Start test (chỉ trang AUTO)"
+                            Command="{Binding AutoPageVM.ForceStartCommand}"
+                            IsEnabled="{Binding AutoPageVM.AutoPageActive}"
+                            Visibility="{Binding AutoPageVM.State.IsNotTesting, Converter={StaticResource BoolToVis}}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="Play" FontSize="13" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="START" Foreground="White" FontWeight="SemiBold" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Style="{StaticResource TitleBtn}" Background="#D32F2F" Margin="0" Focusable="False" ToolTip="Stop test (chỉ trang AUTO)"
+                            Command="{Binding AutoPageVM.ForceStopCommand}"
+                            IsEnabled="{Binding AutoPageVM.AutoPageActive}"
+                            Visibility="{Binding AutoPageVM.State.IsTesting, Converter={StaticResource BoolToVis}}">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="Stop" FontSize="13" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBlock Text="STOP" Foreground="White" FontWeight="SemiBold" Margin="6,0,0,0" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
                 <StackPanel Margin="10"  Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
                     <fa:IconBlock Icon="FileLines" FontSize="15" Foreground="#CFE0F0" VerticalAlignment="Center"/>
                     <Label Content="{Binding ModelName}" VerticalContentAlignment="Center" Foreground="#CFE0F0" FontStyle="Italic" FontSize="14" Margin="4,0,10,0"/>
