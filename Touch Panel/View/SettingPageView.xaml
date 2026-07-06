@@ -99,8 +99,8 @@
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
                     <TextBox   Text="{Binding Model.Settings.LogDir, Mode=OneWay}" IsReadOnly="True" x:Name="mesDirTxtBox" Width="500" Padding="0 2" VerticalAlignment="Center" />
-                    <Button x:Name="changeMesDirBtn" Command="{Binding ChangeToNewLogDirCommand}" BorderThickness="0"  Width="24" Height="24" Background="Transparent" Cursor="Hand">
-                        <fa:IconImage Icon="File" Foreground="Orange"/>
+                    <Button x:Name="changeMesDirBtn" Command="{Binding ChangeToNewLogDirCommand}" BorderThickness="0"  Width="30" Height="30" Background="Transparent" Cursor="Hand" ToolTip="Change log directory">
+                        <fa:IconBlock Icon="FolderOpen" FontSize="18" Foreground="#E0A100"/>
                     </Button>
                 </StackPanel>
 
@@ -200,7 +200,7 @@
 
                         </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,8,0,0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="10,10,0,14">
                         <!-- Toggle Connect/Disconnect All kiểu ZeroC: chưa nối = Plug (nối tất), đang nối = PlugCircleXmark (ngắt tất) -->
                         <ToggleButton x:Name="connectAllToggle" Click="ConnectAllToggle_Click" Width="34" Height="28" Margin="0,0,6,0" Cursor="Hand">
                             <ToggleButton.Style>

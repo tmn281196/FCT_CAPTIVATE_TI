@@ -24,6 +24,8 @@
                 <Setter Property="Foreground" Value="#1B2A38"/>
                 <Setter Property="FontWeight" Value="SemiBold"/>
                 <Setter Property="Cursor" Value="Hand"/>
+                <!-- Không nhận focus bàn phím: tránh Space/Enter vô tình kích hoạt HALT/RESUME... -->
+                <Setter Property="Focusable" Value="False"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
@@ -288,7 +290,7 @@ Margin="2">
                                Text="{Binding TestLogic.Tester1.TotalTaktTime}"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0"
                                 IsEnabled="{Binding AutoState.IsNotTesting}">
-                        <Button ToolTip="Full Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="1" Background="Transparent" BorderThickness="0">
+                        <Button ToolTip="Full Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="1" Focusable="False" Background="Transparent" BorderThickness="0">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Visibility" Value="Visible"/>
@@ -301,7 +303,7 @@ Margin="2">
                             </Button.Style>
                             <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
                         </Button>
-                        <Button ToolTip="Stop Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="1" Background="Transparent" BorderThickness="0">
+                        <Button ToolTip="Stop Test 1" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="1" Focusable="False" Background="Transparent" BorderThickness="0">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -331,7 +333,7 @@ Margin="2">
                                Text="{Binding TestLogic.Tester2.TotalTaktTime}"/>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 4 0 0"
                                 IsEnabled="{Binding AutoState.IsNotTesting}">
-                        <Button ToolTip="Full Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="2" Background="Transparent" BorderThickness="0">
+                        <Button ToolTip="Full Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding FullTestCommand}" CommandParameter="2" Focusable="False" Background="Transparent" BorderThickness="0">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Visibility" Value="Visible"/>
@@ -344,7 +346,7 @@ Margin="2">
                             </Button.Style>
                             <fa:IconImage Icon="CirclePlay" Foreground="LimeGreen"/>
                         </Button>
-                        <Button ToolTip="Stop Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="2" Background="Transparent" BorderThickness="0">
+                        <Button ToolTip="Stop Test 2" Cursor="Hand" Margin="1" Width="30" Height="30" Command="{Binding StopTestCommand}" CommandParameter="2" Focusable="False" Background="Transparent" BorderThickness="0">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Visibility" Value="Collapsed"/>
@@ -436,17 +438,17 @@ Margin="2">
 
                         <StackPanel Orientation="Horizontal">
 
-                            <Button ToolTip="Resume MICOM 1"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="62"  Height="30" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="1">
+                            <Button ToolTip="Resume MICOM 1"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="76"  Height="30" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="1">
                                 RESUME
                             </Button>
-                            <Button ToolTip="Halt MICOM 1"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="40"  Height="30" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="1">
+                            <Button ToolTip="Halt MICOM 1"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="44"  Height="30" Margin="1" Command="{Binding DisableMICOMCommand}" CommandParameter="1">
                                 HALT
                             </Button>
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
 
-                            <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"  Width="62"   Height="30" Margin=" 1" Command="{Binding ReCalibMICOMCommand}" CommandParameter="1" Content="CALIBRATE" />
-                            <Button ToolTip="Load The Computed Values To MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="40"  Height="30" Margin=" 1"  Command="{Binding SetAllTunningCommand}"  CommandParameter="1" Content="LOAD" />
+                            <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"  Width="76"   Height="30" Margin="1" Command="{Binding ReCalibMICOMCommand}" CommandParameter="1" Content="CALIBRATE" />
+                            <Button ToolTip="Load The Computed Values To MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="44"  Height="30" Margin="1"  Command="{Binding SetAllTunningCommand}"  CommandParameter="1" Content="LOAD" />
 
 
                         </StackPanel>
@@ -454,22 +456,19 @@ Margin="2">
                         <StackPanel  HorizontalAlignment="Left"  VerticalAlignment="Bottom"  Orientation="Horizontal" Grid.Row="2">
 
 
-                            <Button ToolTip="Reset board via RST pin (BSL) - use when chip hangs" Cursor="Hand" HorizontalAlignment="Left" Margin="1" Padding="0" FontSize="12" Width="62" Height="30" Command="{Binding ResetBoardCommand}" CommandParameter="1">
+                            <Button ToolTip="Reset board via RST pin (BSL) - use when chip hangs" Cursor="Hand" HorizontalAlignment="Left" Margin="1" Padding="4,2" FontSize="12" Width="76" Height="30" Command="{Binding ResetBoardCommand}" CommandParameter="1">
                                 <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="Microchip" Width="12" Margin="0 0 3 0"/>
+                                    <fa:IconBlock Icon="Microchip" FontSize="12" Margin="0 0 3 0" VerticalAlignment="Center"/>
                                     <TextBlock Text="RESET" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
 
-                            <Button Cursor="Hand" HorizontalAlignment="Left" Margin="1" Width="40" Height="30"
-        Command="{Binding ResetCommand}" CommandParameter="1" Background="Transparent">
-                                <Button.Content>
-                                    <StackPanel Orientation="Horizontal">
-                                        <fa:IconImage Icon="ArrowUp" Foreground="Blue" Width="15" />
-                                        <fa:IconImage Icon="MapPin" Foreground="Blue" Width="10"/>
-                                    </StackPanel>
-
-                                </Button.Content>
+                            <Button ToolTip="Reset" Cursor="Hand" HorizontalAlignment="Left" Margin="1" Width="44" Height="30"
+        Command="{Binding ResetCommand}" CommandParameter="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconBlock Icon="ArrowUp" FontSize="15" VerticalAlignment="Center"/>
+                                    <fa:IconBlock Icon="MapPin" FontSize="12" VerticalAlignment="Center"/>
+                                </StackPanel>
                             </Button>
                         </StackPanel>
 
@@ -477,33 +476,30 @@ Margin="2">
                     <StackPanel VerticalAlignment="Center" >
                         <StackPanel Orientation="Vertical">
 
-                            <Button ToolTip="Connector Up" Cursor="Hand" HorizontalAlignment="Center" Width="50" Height="30" Margin="1" Command="{Binding ConnectorAllUpCommand}">
+                            <Button ToolTip="Connector Up" Cursor="Hand" HorizontalAlignment="Center" Width="54" Height="30" Margin="1" Command="{Binding ConnectorAllUpCommand}">
                                 <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="15" />
-                                    <fa:IconImage Icon="ArrowUp" Foreground="Black"  Width="15" />
-                                    <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="15" />
-
+                                    <fa:IconBlock Icon="ArrowUp" FontSize="15" VerticalAlignment="Center"/>
+                                    <fa:IconBlock Icon="ArrowUp" FontSize="15" VerticalAlignment="Center"/>
+                                    <fa:IconBlock Icon="ArrowUp" FontSize="15" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
-                            <Button ToolTip="Connector Down" Cursor="Hand" HorizontalAlignment="Center" Width="50"   Height="30" Margin="1" Command="{Binding ConnectorAllDownCommand}">
+                            <Button ToolTip="Connector Down" Cursor="Hand" HorizontalAlignment="Center" Width="54"   Height="30" Margin="1" Command="{Binding ConnectorAllDownCommand}">
                                 <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="15" />
-                                    <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="15" />
-                                    <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="15" />
-
+                                    <fa:IconBlock Icon="ArrowDown" FontSize="15" VerticalAlignment="Center"/>
+                                    <fa:IconBlock Icon="ArrowDown" FontSize="15" VerticalAlignment="Center"/>
+                                    <fa:IconBlock Icon="ArrowDown" FontSize="15" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>
                         </StackPanel>
 
-                        <Button ToolTip="Reset Fixture"  Cursor="Hand" HorizontalAlignment="Center"  Width="50"  Height="30" Margin="1" Command="{Binding ResetCylinderCommand}">
+                        <Button ToolTip="Reset Fixture"  Cursor="Hand" HorizontalAlignment="Center"  Width="54"  Height="30" Margin="1" Command="{Binding ResetCylinderCommand}">
                             <StackPanel Orientation="Horizontal">
-                                <fa:IconImage Icon="ArrowUpWideShort" Foreground="Black" RenderTransformOrigin="0.5,0.5" Width="20">
-                                    <fa:IconImage.RenderTransform>
+                                <fa:IconBlock Icon="ArrowUpWideShort" FontSize="18" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                                    <fa:IconBlock.RenderTransform>
                                         <ScaleTransform ScaleX="-1"/>
-                                    </fa:IconImage.RenderTransform>
-                                </fa:IconImage>
-                                <fa:IconImage Icon="ArrowUpWideShort" Foreground="Black" Width="20" />
-                               
+                                    </fa:IconBlock.RenderTransform>
+                                </fa:IconBlock>
+                                <fa:IconBlock Icon="ArrowUpWideShort" FontSize="18" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Button>
                     </StackPanel>
@@ -511,34 +507,32 @@ Margin="2">
                     <StackPanel>
 
                         <StackPanel Orientation="Horizontal">
-                            <Button ToolTip="Halt MICOM 2"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="40"  Height="30" Margin=" 1" Command="{Binding DisableMICOMCommand}" CommandParameter="2">
+                            <Button ToolTip="Halt MICOM 2"  Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="44"  Height="30" Margin="1" Command="{Binding DisableMICOMCommand}" CommandParameter="2">
                                 HALT
                             </Button>
-                            <Button ToolTip="Resume MICOM 2"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="62"  Height="30" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="2">
+                            <Button ToolTip="Resume MICOM 2"    Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="76"  Height="30" Margin="1" Command="{Binding EnableMICOMCommand}" CommandParameter="2">
                                 RESUME
                             </Button>
 
                         </StackPanel>
                         <StackPanel Orientation="Horizontal">
 
-                            <Button ToolTip="Load The Computed Values To MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="40"  Height="30" Margin=" 1"  Command="{Binding SetAllTunningCommand}"  CommandParameter="2" Content="LOAD" />
-                            <Button ToolTip="Calibrate MICOM 1"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"  Width="62"   Height="30" Margin=" 1" Command="{Binding ReCalibMICOMCommand}" CommandParameter="2" Content="CALIBRATE" />
+                            <Button ToolTip="Load The Computed Values To MICOM 2"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"   Width="44"  Height="30" Margin="1"  Command="{Binding SetAllTunningCommand}"  CommandParameter="2" Content="LOAD" />
+                            <Button ToolTip="Calibrate MICOM 2"     Cursor="Hand" HorizontalAlignment="Center" FontSize="12"  Width="76"   Height="30" Margin="1" Command="{Binding ReCalibMICOMCommand}" CommandParameter="2" Content="CALIBRATE" />
 
 
                         </StackPanel>
 
                         <StackPanel  HorizontalAlignment="Left"  VerticalAlignment="Bottom"  Orientation="Horizontal" Grid.Row="2">
-                            <Button Cursor="Hand"  HorizontalAlignment="Left"  Margin="1"   Width="40"  Height="30" Command="{Binding ResetCommand}" CommandParameter="2"  Background="Transparent" >
-                                <Button.Content>
-                                    <StackPanel Orientation="Horizontal">
-                                        <fa:IconImage Icon="MapPin" Foreground="Blue" Width="10"/>
-                                        <fa:IconImage Icon="ArrowUp" Foreground="Blue" Width="15" />
-                                    </StackPanel>
-                                </Button.Content>
-                            </Button>
-                            <Button ToolTip="Reset board via RST pin (BSL) - use when chip hangs" Cursor="Hand" HorizontalAlignment="Left" Margin="1" Padding="0" FontSize="12" Width="62" Height="30" Command="{Binding ResetBoardCommand}" CommandParameter="2">
+                            <Button ToolTip="Reset" Cursor="Hand"  HorizontalAlignment="Left"  Margin="1"   Width="44"  Height="30" Command="{Binding ResetCommand}" CommandParameter="2" >
                                 <StackPanel Orientation="Horizontal">
-                                    <fa:IconImage Icon="Microchip" Width="12" Margin="0 0 3 0"/>
+                                    <fa:IconBlock Icon="MapPin" FontSize="12" VerticalAlignment="Center"/>
+                                    <fa:IconBlock Icon="ArrowUp" FontSize="15" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Button>
+                            <Button ToolTip="Reset board via RST pin (BSL) - use when chip hangs" Cursor="Hand" HorizontalAlignment="Left" Margin="1" Padding="4,2" FontSize="12" Width="76" Height="30" Command="{Binding ResetBoardCommand}" CommandParameter="2">
+                                <StackPanel Orientation="Horizontal">
+                                    <fa:IconBlock Icon="Microchip" FontSize="12" Margin="0 0 3 0" VerticalAlignment="Center"/>
                                     <TextBlock Text="RESET" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </Button>

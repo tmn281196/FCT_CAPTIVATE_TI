@@ -13,6 +13,13 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Grid.ColumnSpan="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <!-- NEXT SERIAL nằm bên TRÁI danh sách thiết bị -->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,24,0">
+                <TextBlock Text="NEXT SERIAL" Foreground="White" FontSize="11" FontWeight="Bold" VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding DataContext.AutoPageVM.NextSerialNumber, RelativeSource={RelativeSource AncestorType=Window}, StringFormat=D4}"
+                           Foreground="Orange" FontSize="11" FontWeight="Bold" VerticalAlignment="Center" Margin="8,0,0,0"/>
+            </StackPanel>
+
             <ItemsControl VerticalAlignment="Center" ItemsSource="{Binding Devices.DevicesStatus}">
                 <ItemsControl.ItemsPanel>
                     <ItemsPanelTemplate>
@@ -25,13 +32,6 @@
                     </DataTemplate>
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
-
-            <!-- NEXT SERIAL kế QR Printer -->
-            <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="24,0,0,0">
-                <TextBlock Text="NEXT SERIAL" Foreground="White" FontSize="11" FontWeight="Bold" VerticalAlignment="Center"/>
-                <TextBlock Text="{Binding DataContext.AutoPageVM.NextSerialNumber, RelativeSource={RelativeSource AncestorType=Window}, StringFormat=D4}"
-                           Foreground="Orange" FontSize="11" FontWeight="Bold" VerticalAlignment="Center" Margin="8,0,0,0"/>
-            </StackPanel>
         </StackPanel>
       
         <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0">

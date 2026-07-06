@@ -58,6 +58,76 @@
                 </Style.Triggers>
             </Style>
 
+            <!-- Ô nhập bo góc, sáng viền xanh khi focus -->
+            <Style x:Key="FieldBox" TargetType="TextBox">
+                <Setter Property="Height" Value="24"/>
+                <Setter Property="Padding" Value="6,0"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="BorderBrush" Value="#C3D3EE"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="TextBox">
+                            <Border x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="4">
+                                <ScrollViewer x:Name="PART_ContentHost" Margin="{TemplateBinding Padding}" VerticalAlignment="Center"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter TargetName="bd" Property="BorderBrush" Value="#1B75BB"/>
+                                </Trigger>
+                                <Trigger Property="IsKeyboardFocused" Value="True">
+                                    <Setter TargetName="bd" Property="BorderBrush" Value="#1B75BB"/>
+                                    <Setter TargetName="bd" Property="BorderThickness" Value="1.6"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- ComboBox bo góc đồng bộ -->
+            <Style x:Key="FieldCombo" TargetType="ComboBox">
+                <Setter Property="Height" Value="24"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Foreground" Value="#1B2A38"/>
+                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="ComboBox">
+                            <Grid>
+                                <ToggleButton Focusable="False" ClickMode="Press"
+                                              IsChecked="{Binding Path=IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="ToggleButton">
+                                            <Border x:Name="bd" Background="{TemplateBinding Background}" BorderBrush="#C3D3EE" BorderThickness="1" CornerRadius="4"/>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="bd" Property="BorderBrush" Value="#1B75BB"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+                                <Path HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,9,0"
+                                      Data="M 0 0 L 4 4 L 8 0 Z" Fill="#44505C"/>
+                                <ContentPresenter IsHitTestVisible="False" Content="{TemplateBinding SelectionBoxItem}"
+                                                  ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
+                                                  Margin="8,0,24,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                                <Popup Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}"
+                                       AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                                    <Grid SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="240">
+                                        <Border Background="White" BorderBrush="#C3D3EE" BorderThickness="1" CornerRadius="4"/>
+                                        <ScrollViewer Margin="2">
+                                            <StackPanel IsItemsHost="True" KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                        </ScrollViewer>
+                                    </Grid>
+                                </Popup>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="../Template.xaml" />
             </ResourceDictionary.MergedDictionaries>
@@ -71,7 +141,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
@@ -132,26 +202,26 @@
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Column="1" Grid.RowSpan="2" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
-                    <StackPanel Margin="1 0" >
-                        <Label Content="CMD Name" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
-                        <ComboBox Padding="0" Height="22" VerticalAlignment="Center" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" ItemsSource="{Binding TestList}" SelectedItem="{Binding TestSelItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="123"/>
+                    <StackPanel Margin="4 0" >
+                        <Label Content="CMD Name" FontSize="11" Padding="1" HorizontalContentAlignment="Center" Foreground="#44505C"/>
+                        <ComboBox Style="{StaticResource FieldCombo}" ItemsSource="{Binding TestList}" SelectedItem="{Binding TestSelItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="123"/>
                     </StackPanel>
-                    <StackPanel Margin="1 0" >
-                        <Label Content="Time Delay (ms)" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
-                        <TextBox Width="102" Text="{Binding TimeDelayInput, Mode=TwoWay}" Height="22" VerticalContentAlignment="Center"/>
+                    <StackPanel Margin="4 0" >
+                        <Label Content="Time Delay (ms)" FontSize="11" Padding="1" HorizontalContentAlignment="Center" Foreground="#44505C"/>
+                        <TextBox Style="{StaticResource FieldBox}" Width="102" Text="{Binding TimeDelayInput, Mode=TwoWay}"/>
                     </StackPanel>
-                    <StackPanel Margin="1 0" >
-                        <Label Content="Time Test (ms)" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
-                        <TextBox Width="102" Text="{Binding TimeTestInput, Mode=TwoWay}" Height="22" VerticalContentAlignment="Center"/>
+                    <StackPanel Margin="4 0" >
+                        <Label Content="Time Test (ms)" FontSize="11" Padding="1" HorizontalContentAlignment="Center" Foreground="#44505C"/>
+                        <TextBox Style="{StaticResource FieldBox}" Width="102" Text="{Binding TimeTestInput, Mode=TwoWay}"/>
                     </StackPanel>
-                    <StackPanel Margin="1 0" >
-                        <Label Content="Object ID" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
-                        <TextBox Width="102" Text="{Binding ObjectIdInput, Mode=TwoWay}" Height="22" VerticalContentAlignment="Center"/>
+                    <StackPanel Margin="4 0" >
+                        <Label Content="Object ID" FontSize="11" Padding="1" HorizontalContentAlignment="Center" Foreground="#44505C"/>
+                        <TextBox Style="{StaticResource FieldBox}" Width="102" Text="{Binding ObjectIdInput, Mode=TwoWay}"/>
                     </StackPanel>
 
-                    <StackPanel Margin="1 0" >
-                        <Label Content="Spec Value" FontSize="11" Padding="0" HorizontalContentAlignment="Center"/>
-                        <TextBox Width="102" Text="{Binding SpecValueInput, Mode=TwoWay}" Height="22" VerticalContentAlignment="Center"/>
+                    <StackPanel Margin="4 0" >
+                        <Label Content="Spec Value" FontSize="11" Padding="1" HorizontalContentAlignment="Center" Foreground="#44505C"/>
+                        <TextBox Style="{StaticResource FieldBox}" Width="102" Text="{Binding SpecValueInput, Mode=TwoWay}"/>
                     </StackPanel>
 
                 </StackPanel>
@@ -216,9 +286,7 @@
 
 
 
-        <StackPanel Grid.Column="0" >
-
-            <DataGrid Height="800" VerticalScrollBarVisibility="Visible" IsReadOnly="{Binding AutoState.IsBusy}"  ItemsSource="{Binding Model.Micom1TestStep.Steps, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding StepSelIdx1}" SelectedItem="{Binding StepSelItem1}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+        <DataGrid Grid.Row="0" Grid.Column="0" Margin="0,0,0,4" VerticalScrollBarVisibility="Visible" IsReadOnly="{Binding AutoState.IsBusy}"  ItemsSource="{Binding Model.Micom1TestStep.Steps, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding StepSelIdx1}" SelectedItem="{Binding StepSelItem1}" Background="White" Style="{StaticResource CustomDataGridStyle}"
   ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding No}" Width="50" Header="No" />
@@ -235,10 +303,7 @@
 
             </DataGrid>
 
-        </StackPanel>
-
-        <StackPanel Grid.Column="1" >
-            <DataGrid Height="800"  VerticalScrollBarVisibility="Visible" IsReadOnly="{Binding AutoState.IsBusy}"  ItemsSource="{Binding Model.Micom2TestStep.Steps, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding StepSelIdx2}" SelectedItem="{Binding StepSelItem2}" Background="White" Style="{StaticResource CustomDataGridStyle}"
+        <DataGrid Grid.Row="0" Grid.Column="1" Margin="0,0,0,4" VerticalScrollBarVisibility="Visible" IsReadOnly="{Binding AutoState.IsBusy}"  ItemsSource="{Binding Model.Micom2TestStep.Steps, UpdateSourceTrigger=PropertyChanged}" SelectedIndex="{Binding StepSelIdx2}" SelectedItem="{Binding StepSelItem2}" Background="White" Style="{StaticResource CustomDataGridStyle}"
 ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding No, UpdateSourceTrigger=PropertyChanged}" Width="50" Header="No" />
@@ -254,8 +319,5 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}">
 
 
             </DataGrid>
-
-
-        </StackPanel>
     </Grid>
 </UserControl>

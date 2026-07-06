@@ -338,15 +338,15 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                 <!-- List / tuning ops -->
                 <Button ToolTip="Clear tuning list" Cursor="Hand" Width="34" Height="26" Margin="1 0"
                         Command="{Binding ResetTunningListCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}">
-                    <fa:IconImage Icon="Remove" Foreground="Black" Height="14"/>
+                    <fa:IconBlock Icon="Remove" FontSize="14" VerticalAlignment="Center"/>
                 </Button>
                 <Button ToolTip="Add a sample" Cursor="Hand" Width="34" Height="26" Margin="1 0"
                         Command="{Binding AddToTunningListCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}">
-                    <fa:IconImage Icon="PlusCircle" Foreground="Black" Height="16"/>
+                    <fa:IconBlock Icon="PlusCircle" FontSize="15" VerticalAlignment="Center"/>
                 </Button>
                 <Button ToolTip="Remove last sample" Cursor="Hand" Width="34" Height="26" Margin="1 0"
                         Command="{Binding RemoveTheLastFromTunningListCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}">
-                    <fa:IconImage Icon="MinusCircle" Foreground="Black" Height="16"/>
+                    <fa:IconBlock Icon="MinusCircle" FontSize="15" VerticalAlignment="Center"/>
                 </Button>
                 <Button ToolTip="Compute median" Cursor="Hand" FontSize="12" Width="60" Height="26" Margin="1 0" Content="MEDIAN"
                         Command="{Binding CalculateTunningCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}"/>
@@ -360,32 +360,32 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
                 <Button ToolTip="Reset" Cursor="Hand" Width="46" Height="26" Margin="1 0"
                         Command="{Binding ResetCommand}" CommandParameter="{Binding SelectedIndex, ElementName=MicomTabs, Converter={StaticResource IdxToTester}}">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="14"/>
-                        <fa:IconImage Icon="MapPin" Foreground="Black" Width="9"/>
+                        <fa:IconBlock Icon="ArrowUp" FontSize="14" VerticalAlignment="Center"/>
+                        <fa:IconBlock Icon="MapPin" FontSize="11" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button ToolTip="Connector Up" Cursor="Hand" Width="48" Height="26" Margin="1 0" Command="{Binding ConnectorAllUpCommand}">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="10"/>
-                        <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="10"/>
-                        <fa:IconImage Icon="ArrowUp" Foreground="Black" Width="10"/>
+                        <fa:IconBlock Icon="ArrowUp" FontSize="11" VerticalAlignment="Center"/>
+                        <fa:IconBlock Icon="ArrowUp" FontSize="11" VerticalAlignment="Center"/>
+                        <fa:IconBlock Icon="ArrowUp" FontSize="11" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button ToolTip="Connector Down" Cursor="Hand" Width="48" Height="26" Margin="1 0" Command="{Binding ConnectorAllDownCommand}">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="10"/>
-                        <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="10"/>
-                        <fa:IconImage Icon="ArrowDown" Foreground="Black" Width="10"/>
+                        <fa:IconBlock Icon="ArrowDown" FontSize="11" VerticalAlignment="Center"/>
+                        <fa:IconBlock Icon="ArrowDown" FontSize="11" VerticalAlignment="Center"/>
+                        <fa:IconBlock Icon="ArrowDown" FontSize="11" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
                 <Button ToolTip="Reset Fixture" Cursor="Hand" Width="48" Height="26" Margin="1 0" Command="{Binding ResetCylinderCommand}">
                     <StackPanel Orientation="Horizontal">
-                        <fa:IconImage Icon="ArrowUpWideShort" Foreground="Black" Width="16" RenderTransformOrigin="0.5,0.5">
-                            <fa:IconImage.RenderTransform>
+                        <fa:IconBlock Icon="ArrowUpWideShort" FontSize="16" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5">
+                            <fa:IconBlock.RenderTransform>
                                 <ScaleTransform ScaleX="-1"/>
-                            </fa:IconImage.RenderTransform>
-                        </fa:IconImage>
-                        <fa:IconImage Icon="ArrowUpWideShort" Foreground="Black" Width="16"/>
+                            </fa:IconBlock.RenderTransform>
+                        </fa:IconBlock>
+                        <fa:IconBlock Icon="ArrowUpWideShort" FontSize="16" VerticalAlignment="Center"/>
                     </StackPanel>
                 </Button>
 
