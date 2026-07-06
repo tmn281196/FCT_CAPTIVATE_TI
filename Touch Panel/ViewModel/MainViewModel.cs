@@ -365,21 +365,7 @@ namespace Touch_Panel.View_Model
             {
                 mData.VerifyLog = "✕";
             }
-
-            // Sau khi verify: dấu ✓/✕ tự GỠ sau 3s (không đọng lại),
-            // chỉ gỡ khi vẫn đúng dấu đó (tránh xoá nhầm verify mới của lần sau).
-            var finalVerify = mData.VerifyLog;
-            if (finalVerify == "✓" || finalVerify == "✕")
-            {
-                _ = Task.Delay(TimeSpan.FromSeconds(3)).ContinueWith(_ =>
-                {
-                    System.Windows.Application.Current?.Dispatcher.Invoke(() =>
-                    {
-                        if (mData.VerifyLog == finalVerify)
-                            mData.VerifyLog = string.Empty;
-                    });
-                });
-            }
+            // Kết quả verify (✓/✕) GIỮ NGUYÊN, chỉ mất khi RESUME MICOM (xem Devices.ResumeMICOM).
         }
 
         public void SaveMicomDatabase()

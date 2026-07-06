@@ -87,7 +87,7 @@ namespace Touch_Panel.View_Model
         }
 
 
-        [RelayCommand]
+        [RelayCommand(AllowConcurrentExecutions = true)]
         private async Task VerifyFirmware(object parameter)
         {
             int testerId = int.Parse((string)parameter);
@@ -99,7 +99,7 @@ namespace Touch_Panel.View_Model
 
             if (!micomCtx.SerialPort.IsOpen)
             {
-                micomCtx.MICOMData.FirmwareLog = "✕";
+                micomCtx.MICOMData.VerifyLog = "✕";
                 return;
             }
 
@@ -113,7 +113,7 @@ namespace Touch_Panel.View_Model
                 Thread.Sleep(10);
             }
 
-            micomCtx.MICOMData.FirmwareLog = micomCtx.MICOMData.MatchFirmware ? "✓" : "✕";
+            micomCtx.MICOMData.VerifyLog = micomCtx.MICOMData.MatchFirmware ? "✓" : "✕";
         }
 
 
@@ -152,7 +152,7 @@ namespace Touch_Panel.View_Model
         }
 
 
-        [RelayCommand]
+        [RelayCommand(AllowConcurrentExecutions = true)]
         private async Task WriteFirmware(object parameter)
         {
             if (AutoState?.IsBusy == true)
@@ -172,7 +172,7 @@ namespace Touch_Panel.View_Model
             try
             {
                 mData.SignalIntegrity = string.Empty;
-
+                mData.VerifyLog = string.Empty;
                 mData.FirmwareLog = string.Empty;
 
                 await Task.Run(() =>
@@ -191,7 +191,7 @@ namespace Touch_Panel.View_Model
 
             Model.Devices.ConnectDeviceByName(deviceName);
 
-            mData.FirmwareLog = "✓";
+            mData.VerifyLog = "✓";
         }
 
         [ObservableProperty]

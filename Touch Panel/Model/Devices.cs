@@ -1299,6 +1299,11 @@ namespace Touch_Panel.Model
                 micomPort = DeviceManager.MicomPort2;
 
             }
+
+            // RESUME xoá kết quả verify (✓/✕) — chỉ mất khi resume.
+            var mData = id == 1 ? MicomData1 : MicomData2;
+            mData.VerifyLog = string.Empty;
+
             if (!micomPort.IsOpen) return;
             var device = DevicesStatus.FirstOrDefault(d => d.Name == $"Micom{id}");
             device.TxSent = true;
