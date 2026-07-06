@@ -400,6 +400,11 @@ namespace Touch_Panel.Model
             new DeviceStatus {Name = "QR Printer"},
         };
 
+        // Danh sách hiển thị ở thanh dưới: BỎ Micom1/Micom2 (status đã dời lên chữ MICOM1/MICOM2 hai bên).
+        [property: JsonIgnore]
+        public IEnumerable<DeviceStatus> DevicesStatusVisible
+            => DevicesStatus.Where(d => d.Name != "Micom1" && d.Name != "Micom2");
+
 
         [ObservableProperty]
         private string selectedFirmwareMicom = string.Empty;
