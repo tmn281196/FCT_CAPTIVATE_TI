@@ -54,7 +54,9 @@ namespace Touch_Panel.View_Model
 
         // Chỉ cho phép KÍCH HOẠT test (Wait->Ready khi main down) khi đang ở trang Auto.
         // Loop vẫn chạy nền ở trang khác (giữ state/kết quả) nhưng KHÔNG tự trigger test.
-        public bool autoPageActive;
+        // [ObservableProperty] để UI (nút START/STOP global) bám theo: chỉ bật khi ở trang AUTO.
+        [ObservableProperty]
+        private bool autoPageActive;
 
         // Khởi tạo test (halt/reset/xóa kết quả) chỉ chạy 1 lần; tránh xóa kết quả khi chuyển trang.
         private bool testInitialized = false;

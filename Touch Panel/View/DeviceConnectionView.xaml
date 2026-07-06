@@ -20,10 +20,11 @@
         <Rectangle x:Name="Tx" Width="10" Height="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0">
             <Rectangle.Style>
                 <Style TargetType="Rectangle">
-                    <Setter Property="Fill" Value="White"/>
+                    <!-- Đèn báo GỬI: tối lúc rảnh, sáng trắng khi đang gửi -->
+                    <Setter Property="Fill" Value="#55636F"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding TxSent}" Value="True">
-                            <Setter Property="Fill" Value="Yellow"/>
+                            <Setter Property="Fill" Value="White"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
@@ -32,10 +33,11 @@
         <Rectangle x:Name="Rx" Grid.Row="1" Width="10" Height="5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
             <Rectangle.Style>
                 <Style TargetType="Rectangle">
-                    <Setter Property="Fill" Value="White"/>
+                    <!-- Đèn báo NHẬN: tối lúc rảnh, sáng trắng khi đang nhận -->
+                    <Setter Property="Fill" Value="#55636F"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding RxReceived}" Value="True">
-                            <Setter Property="Fill" Value="Yellow"/>
+                            <Setter Property="Fill" Value="White"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>

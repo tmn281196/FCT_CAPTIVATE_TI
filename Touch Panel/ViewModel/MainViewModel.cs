@@ -468,39 +468,39 @@ namespace Touch_Panel.View_Model
                 case "Home":
                     // Chỉ trang Auto mới được KÍCH HOẠT test (main down -> chạy).
                     CurrentPage = autoPageView;
-                    autoPageViewModel.autoPageActive = true;
+                    autoPageViewModel.AutoPageActive = true;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();
                     break;
                 case "Manual":
                     // Manual điều khiển tay -> phải DỪNG auto test để tránh xung đột vật lý.
                     CurrentPage = manualPageView;
-                    autoPageViewModel.autoPageActive = false;
+                    autoPageViewModel.AutoPageActive = false;
                     autoPageViewModel.runWhileLoop = false;
                     break;
                 case "Setting":
                     // Loop chạy nền (giữ state/kết quả) nhưng KHÔNG tự trigger test.
                     CurrentPage = settingPageView;
-                    autoPageViewModel.autoPageActive = false;
+                    autoPageViewModel.AutoPageActive = false;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();
                     break;
                 case "NewModel":
                     CurrentPage = newModelPageView;
-                    autoPageViewModel.autoPageActive = false;
+                    autoPageViewModel.AutoPageActive = false;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();
                     break;
                 case "Tunning":
                     CurrentPage = tunningPageView;
-                    autoPageViewModel.autoPageActive = false;
+                    autoPageViewModel.AutoPageActive = false;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();
                     break;
                 case "Log":
                     // Chỉ xem log; loop chạy nền, không tự trigger test.
                     CurrentPage = logPageView;
-                    autoPageViewModel.autoPageActive = false;
+                    autoPageViewModel.AutoPageActive = false;
                     autoPageViewModel.runWhileLoop = true;
                     autoPageViewModel.START();
                     break;

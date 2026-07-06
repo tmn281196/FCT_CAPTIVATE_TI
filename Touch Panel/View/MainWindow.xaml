@@ -111,7 +111,7 @@
                     <fa:IconBlock Icon="Play" FontSize="26" Foreground="White"/>
                 </RadioButton>
                 <RadioButton Style="{StaticResource NavIconRadio}" Command="{Binding ManualPageCommand}" ToolTip="MANUAL">
-                    <fa:IconBlock Icon="Hand" FontSize="26" Foreground="White"/>
+                    <fa:IconBlock Icon="ComputerMouse" FontSize="24" Foreground="White"/>
                 </RadioButton>
                 <RadioButton Style="{StaticResource NavIconRadio}" Command="{Binding TunningPageCommand}" ToolTip="TUNNING">
                     <fa:IconBlock Icon="Wrench" FontSize="24" Foreground="White"/>
