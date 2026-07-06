@@ -316,7 +316,7 @@ namespace Touch_Panel.Model
             {
                 if (device != null) device.TxSent = true;
                 port.Write(tx, 0, tx.Length);
-                if (device != null) device.TxSent = false;
+                if (device != null) _ = Task.Delay(70).ContinueWith(_ => device.TxSent = false);  // giữ nháy TX ~70ms
 
                 var done = await Task.WhenAny(tcs.Task, Task.Delay(timeoutMs));
                 if (done != tcs.Task)
@@ -352,7 +352,7 @@ namespace Touch_Panel.Model
             {
                 if (device != null) device.TxSent = true;
                 port.Write(tx, 0, tx.Length);
-                if (device != null) device.TxSent = false;
+                if (device != null) _ = Task.Delay(70).ContinueWith(_ => device.TxSent = false);  // giữ nháy TX ~70ms
             }
             catch (Exception ex) { Debug.WriteLine($"[{deviceName}] send error: {ex.Message}"); }
         }
@@ -914,7 +914,9 @@ namespace Touch_Panel.Model
                         }
                         finally
                         {
-                            device.RxReceived = false;  // luôn reset dù có lỗi
+                            // Giữ nháy RX ~70ms (không chặn) để nhìn thấy — thay vì reset tức thì.
+                            var d = device;
+                            _ = Task.Delay(70).ContinueWith(_ => d.RxReceived = false);
                         }
                     }
 

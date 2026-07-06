@@ -41,7 +41,19 @@
 
             <!-- MICOM1 -->
             <fa:IconImage Icon="Microchip" Foreground="White" Width="15" VerticalAlignment="Center" Margin="2,0"/>
-            <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold" Text="MICOM1 " VerticalAlignment="Center"/>
+            <!-- Chữ MICOM1 xanh lá khi cổng Micom1 (DevicesStatus[2]) đang kết nối -->
+            <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM1 " VerticalAlignment="Center">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="#7F8C9A"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Devices.DevicesStatus[2].Connected}" Value="True">
+                                <Setter Property="Foreground" Value="LimeGreen"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
             <!-- Chỉ 1 trong 3 hiện (ưu tiên Data Loss > Verify ✓/✕ > progress), width cố định -->
             <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold" Typography.NumeralAlignment="Tabular"
                        Width="108" TextAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0">
@@ -72,7 +84,19 @@
         <!-- ============ CỘT 3: MICOM2 ============ -->
         <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
             <fa:IconImage Icon="Microchip" Foreground="White" Width="15" VerticalAlignment="Center" Margin="2,0"/>
-            <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold" Text="MICOM2 " VerticalAlignment="Center"/>
+            <!-- Chữ MICOM2 xanh lá khi cổng Micom2 (DevicesStatus[3]) đang kết nối -->
+            <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM2 " VerticalAlignment="Center">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="#7F8C9A"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Devices.DevicesStatus[3].Connected}" Value="True">
+                                <Setter Property="Foreground" Value="LimeGreen"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
             <!-- Chỉ 1 trong 3 hiện (ưu tiên Data Loss > Verify ✓/✕ > progress), width cố định -->
             <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold" Typography.NumeralAlignment="Tabular"
                        Width="108" TextAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0">
