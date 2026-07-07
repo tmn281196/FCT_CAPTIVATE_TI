@@ -287,6 +287,7 @@ namespace Touch_Panel.Model
         private List<byte> micom1RXBuffer = new();
         private List<byte> micom2RXBuffer = new();
         private List<byte> sysRxBuffer = new();
+        private long _sysRxToken = 0;   // keep-alive đèn RX System (giữ sáng khi còn frame về)
         private List<byte> sol1RxBuffer = new();
         private List<byte> sol2RxBuffer = new();
         private List<byte> sol3RxBuffer = new();
@@ -884,45 +885,46 @@ namespace Touch_Panel.Model
                         continue;
                     }
 
-                    // Frame OK → extract an toàn
+                    // Frame OK (STX/ETX) → extract
                     byte[] sensorData = new byte[11];
                     sysRxBuffer.CopyTo(1, sensorData, 0, 11);
 
-                    var device = DevicesStatus?.FirstOrDefault(d => d?.Name == "System");
-                    if (device == null)
+                    // LỌC NHIỄU: firmware System không có CRC, nhưng data ràng buộc chặt:
+                    // direction ∈ {00,01,02,FF}; 10 byte reed còn lại ∈ {00,FF}. Sai -> coi là nhiễu.
+                    bool dirValid = sensorData[0] == 0x00 || sensorData[0] == 0x01 || sensorData[0] == 0x02 || sensorData[0] == 0xFF;
+                    bool reedsValid = true;
+                    for (int i = 1; i < 11; i++)
+                        if (sensorData[i] != 0x00 && sensorData[i] != 0xFF) { reedsValid = false; break; }
+
+                    if (!dirValid || !reedsValid)
                     {
-                        Debug.WriteLine("Device 'System' not found in list");
+                        // STX/ETX trùng ngẫu nhiên do nhiễu -> bỏ 1 byte STX, tìm frame khác (không nhận, không nháy).
+                        sysRxBuffer.RemoveAt(0);
+                        continue;
                     }
-                    else
+
+                    var device = DevicesStatus?.FirstOrDefault(d => d?.Name == "System");
+                    if (device != null)
                     {
-                        try
+                        SystemData.MainDirection = sensorData[0] switch
                         {
-                            device.RxReceived = true;
+                            0x00 => Direction.Stop,
+                            0x01 => Direction.Up,
+                            0x02 => Direction.Down,
+                            0xFF => Direction.Error,
+                            _ => Direction.Error
+                        };
+                        SystemData.MainTop = sensorData[1] == 0xFF;
+                        SystemData.MainBottom = sensorData[2] == 0xFF;
 
-                            SystemData.MainDirection = sensorData[0] switch
-                            {
-                                0x00 => Direction.Stop,
-                                0x01 => Direction.Up,
-                                0x02 => Direction.Down,
-                                0xFF => Direction.Error,
-                                _ => Direction.Error
-                            };
-
-                            SystemData.MainTop = sensorData[1] == 0xFF;
-                            SystemData.MainBottom = sensorData[2] == 0xFF;
-
-                            //Debug.Write($"MainTop:{(SystemData.MainTop ? 1 : 0)}");
-                            //Debug.Write($"   ");
-                            //Debug.Write($"MainBottom:{(SystemData.MainBottom ? 1 :0)}");
-                            //Debug.Write($"   ");
-                            //Debug.WriteLine($"MainDirection:{SystemData.MainDirection}");
-                        }
-                        finally
+                        // Keep-alive đèn RX: giữ SÁNG khi còn frame về (mỗi 50ms), tắt ~250ms sau frame CUỐI.
+                        device.RxReceived = true;
+                        long myToken = System.Threading.Interlocked.Increment(ref _sysRxToken);
+                        var d = device;
+                        _ = Task.Delay(250).ContinueWith(_ =>
                         {
-                            // Giữ nháy RX ~70ms (không chặn) để nhìn thấy — thay vì reset tức thì.
-                            var d = device;
-                            _ = Task.Delay(70).ContinueWith(_ => d.RxReceived = false);
-                        }
+                            if (System.Threading.Interlocked.Read(ref _sysRxToken) == myToken) d.RxReceived = false;
+                        });
                     }
 
                     // Xóa frame đã xử lý
