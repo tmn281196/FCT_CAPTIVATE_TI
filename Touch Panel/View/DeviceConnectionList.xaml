@@ -10,7 +10,7 @@
         <local:FirstNonEmptyConverter x:Key="FirstNonEmpty"/>
         <local:BoolToVisConverter x:Key="BoolToVis"/>
     </UserControl.Resources>
-    <!-- Cột khớp AutoPage (sau thanh nav 60px): ELAPSED(1.5*) NEXTSERIAL(1.5*) STATUS(1.5*) STATISTICS(3*) -->
+    <!-- Cột khớp AutoPage (sau nav 60px): ELAPSED(1.5*) NEXTSERIAL(1.5*) STATUS(1.5*) STATISTICS(3*) -->
     <Grid Background="{StaticResource DarkBarBrush}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60"/>
@@ -20,29 +20,43 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Hướng cylinder: góc trái -->
-        <TextBlock x:Name="DirectionDisplay" Grid.ColumnSpan="5" Foreground="White" FontSize="26" FontWeight="Bold"
-                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="14,0,0,0">
-            <TextBlock.Style>
-                <Style TargetType="TextBlock">
-                    <Setter Property="Text" Value="{Binding Devices.SystemData.MainDirection}" />
+        <!-- Hướng cylinder: double arrow FontAwesome (Up=AnglesUp, Down=AnglesDown, khác -> ẩn) -->
+        <fa:IconBlock x:Name="DirectionDisplay" Grid.ColumnSpan="5" Foreground="White" FontSize="22"
+                      HorizontalAlignment="Left" VerticalAlignment="Center" Margin="16,0,0,0">
+            <fa:IconBlock.Style>
+                <Style TargetType="fa:IconBlock">
+                    <Setter Property="Visibility" Value="Collapsed"/>
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding Devices.SystemData.MainDirection}" Value="Down">
-                            <Setter Property="Text" Value="↓" />
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding Devices.SystemData.MainDirection}" Value="Stop">
-                            <Setter Property="Text" Value="" />
-                        </DataTrigger>
                         <DataTrigger Binding="{Binding Devices.SystemData.MainDirection}" Value="Up">
-                            <Setter Property="Text" Value="↑" />
+                            <Setter Property="Icon" Value="AnglesUp"/>
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Devices.SystemData.MainDirection}" Value="Down">
+                            <Setter Property="Icon" Value="AnglesDown"/>
+                            <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
-            </TextBlock.Style>
-        </TextBlock>
+            </fa:IconBlock.Style>
+        </fa:IconBlock>
 
-        <!-- START/STOP: canh GIỮA cột ELAPSED (Grid.Column=1). Ngoài AUTO -> xám. -->
-        <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
+        <!-- 1) DANH SÁCH THIẾT BỊ: dưới ELAPSED+NEXT SERIAL (cột 1-2), canh giữa -->
+        <ItemsControl Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"
+                      ItemsSource="{Binding Devices.DevicesStatusVisible}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <local:DeviceConnectionView />
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <!-- 2) START/STOP: canh GIỮA dưới STATUS (cột 3). Ngoài AUTO -> xám. -->
+        <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
                     IsEnabled="{Binding DataContext.AutoPageVM.AutoPageActive, RelativeSource={RelativeSource AncestorType=Window}}">
             <Button Cursor="Hand" Height="30" Focusable="False" VerticalAlignment="Center" ToolTip="Start test (chỉ trang AUTO)"
                     Command="{Binding DataContext.AutoPageVM.ForceStartCommand, RelativeSource={RelativeSource AncestorType=Window}}"
@@ -84,101 +98,101 @@
             </Button>
         </StackPanel>
 
-        <!-- Nhóm giữa: MICOM1 — MICOM2 — danh sách thiết bị, canh giữa toàn thanh -->
-        <StackPanel Grid.ColumnSpan="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <!-- 3) MICOM1 + MICOM2 + FIRMWARE: lưới 3 ô ĐỀU NHAU, lấp đầy đúng cột STATISTICS -->
+        <Grid Grid.Column="4" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
 
-            <!-- ===== MICOM1 ===== -->
-            <fa:IconImage Icon="Microchip" Width="12" VerticalAlignment="Center" Margin="2,0">
-                <fa:IconImage.Style>
-                    <Style TargetType="fa:IconImage">
-                        <Setter Property="Foreground" Value="#7F8C9A"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Devices.DevicesStatus[2].Connected}" Value="True">
-                                <Setter Property="Foreground" Value="LimeGreen"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </fa:IconImage.Style>
-            </fa:IconImage>
-            <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM1 " VerticalAlignment="Center">
-                <TextBlock.Style>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="Foreground" Value="#7F8C9A"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Devices.DevicesStatus[2].Connected}" Value="True">
-                                <Setter Property="Foreground" Value="LimeGreen"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
-            <!-- Chỉ 1 trong 3 hiện (ưu tiên Data Loss > Verify ✓/✕ > progress), width cố định -->
-            <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold" Typography.NumeralAlignment="Tabular"
-                       Width="108" TextAlignment="Left" VerticalAlignment="Center" Margin="5,0,26,0">
-                <TextBlock.Text>
-                    <MultiBinding Converter="{StaticResource FirstNonEmpty}">
-                        <Binding Path="Devices.MicomData1.VerifyLog"/>
-                        <Binding Path="Devices.MicomData1.SignalIntegrity"/>
-                        <Binding Path="Devices.MicomData1.FirmwareLog"/>
-                    </MultiBinding>
-                </TextBlock.Text>
-            </TextBlock>
+            <!-- MICOM1: nền NHẠT -->
+            <Border Grid.Column="0" Background="#2E3D4B">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+                    <fa:IconImage Icon="Microchip" Width="12" VerticalAlignment="Center" Margin="2,0">
+                        <fa:IconImage.Style>
+                            <Style TargetType="fa:IconImage">
+                                <Setter Property="Foreground" Value="#7F8C9A"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Devices.DevicesStatus[2].Connected}" Value="True">
+                                        <Setter Property="Foreground" Value="LimeGreen"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </fa:IconImage.Style>
+                    </fa:IconImage>
+                    <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM1 " VerticalAlignment="Center">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Foreground" Value="#7F8C9A"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Devices.DevicesStatus[2].Connected}" Value="True">
+                                        <Setter Property="Foreground" Value="LimeGreen"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold" Typography.NumeralAlignment="Tabular"
+                               Width="108" TextAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0">
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource FirstNonEmpty}">
+                                <Binding Path="Devices.MicomData1.VerifyLog"/>
+                                <Binding Path="Devices.MicomData1.SignalIntegrity"/>
+                                <Binding Path="Devices.MicomData1.FirmwareLog"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
 
-            <!-- ===== MICOM2 (kế bên MICOM1) ===== -->
-            <fa:IconImage Icon="Microchip" Width="12" VerticalAlignment="Center" Margin="2,0">
-                <fa:IconImage.Style>
-                    <Style TargetType="fa:IconImage">
-                        <Setter Property="Foreground" Value="#7F8C9A"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Devices.DevicesStatus[3].Connected}" Value="True">
-                                <Setter Property="Foreground" Value="LimeGreen"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </fa:IconImage.Style>
-            </fa:IconImage>
-            <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM2 " VerticalAlignment="Center">
-                <TextBlock.Style>
-                    <Style TargetType="TextBlock">
-                        <Setter Property="Foreground" Value="#7F8C9A"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding Devices.DevicesStatus[3].Connected}" Value="True">
-                                <Setter Property="Foreground" Value="LimeGreen"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </TextBlock.Style>
-            </TextBlock>
-            <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold" Typography.NumeralAlignment="Tabular"
-                       Width="108" TextAlignment="Left" VerticalAlignment="Center" Margin="5,0,26,0">
-                <TextBlock.Text>
-                    <MultiBinding Converter="{StaticResource FirstNonEmpty}">
-                        <Binding Path="Devices.MicomData2.VerifyLog"/>
-                        <Binding Path="Devices.MicomData2.SignalIntegrity"/>
-                        <Binding Path="Devices.MicomData2.FirmwareLog"/>
-                    </MultiBinding>
-                </TextBlock.Text>
-            </TextBlock>
+            <!-- MICOM2: nền ĐẬM -->
+            <Border Grid.Column="1" Background="#1C2732">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+                    <fa:IconImage Icon="Microchip" Width="12" VerticalAlignment="Center" Margin="2,0">
+                        <fa:IconImage.Style>
+                            <Style TargetType="fa:IconImage">
+                                <Setter Property="Foreground" Value="#7F8C9A"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Devices.DevicesStatus[3].Connected}" Value="True">
+                                        <Setter Property="Foreground" Value="LimeGreen"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </fa:IconImage.Style>
+                    </fa:IconImage>
+                    <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM2 " VerticalAlignment="Center">
+                        <TextBlock.Style>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Foreground" Value="#7F8C9A"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Devices.DevicesStatus[3].Connected}" Value="True">
+                                        <Setter Property="Foreground" Value="LimeGreen"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <TextBlock Foreground="White" FontSize="11" FontWeight="SemiBold" Typography.NumeralAlignment="Tabular"
+                               Width="108" TextAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0">
+                        <TextBlock.Text>
+                            <MultiBinding Converter="{StaticResource FirstNonEmpty}">
+                                <Binding Path="Devices.MicomData2.VerifyLog"/>
+                                <Binding Path="Devices.MicomData2.SignalIntegrity"/>
+                                <Binding Path="Devices.MicomData2.FirmwareLog"/>
+                            </MultiBinding>
+                        </TextBlock.Text>
+                    </TextBlock>
+                </StackPanel>
+            </Border>
 
-            <!-- ===== Danh sách thiết bị ===== -->
-            <ItemsControl VerticalAlignment="Center" ItemsSource="{Binding Devices.DevicesStatusVisible}">
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <StackPanel Orientation="Horizontal" />
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <local:DeviceConnectionView />
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-            </ItemsControl>
-        </StackPanel>
-
-        <!-- PHẢI: firmware name -->
-        <StackPanel Grid.ColumnSpan="5" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,14,0">
-            <fa:IconBlock Icon="FileLines" FontSize="13" Foreground="#CFE0F0" VerticalAlignment="Center"/>
-            <TextBlock Text="{Binding Devices.SelectedFirmwareMicom}" Foreground="Orange" FontSize="11" FontWeight="SemiBold" VerticalAlignment="Center" Margin="6,0,0,0"/>
-        </StackPanel>
+            <!-- FIRMWARE: ô thứ 3 -->
+            <Border Grid.Column="2">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
+                    <fa:IconBlock Icon="FileLines" FontSize="13" Foreground="#CFE0F0" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding Devices.SelectedFirmwareMicom}" Foreground="Orange" FontSize="11" FontWeight="SemiBold" VerticalAlignment="Center" Margin="6,0,0,0"/>
+                </StackPanel>
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>
