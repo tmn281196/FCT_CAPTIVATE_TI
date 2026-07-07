@@ -452,21 +452,30 @@ namespace Touch_Panel.View_Model
 
 
 
-                    await sharedModel.Devices.ConnectAll();
+                    // Chặn test từ đầu quá trình mở model cho tới khi verify/write firmware xong (cả 2 MICOM).
+                    sharedAutoState?.BeginFirmwareWrite();
+                    try
+                    {
+                        await sharedModel.Devices.ConnectAll();
 
-                    await Task.Delay(1000);
+                        await Task.Delay(1000);
 
-                    MicomContext micomCtx1 = new MicomContext() { LockObject = deviceManager.PortLockMicom1, SerialPort = deviceManager.MicomPort1, MICOMData = sharedModel.Devices.MicomData1 };
-                    MicomContext micomCtx2 = new MicomContext() { LockObject = deviceManager.PortLockMicom2, SerialPort = deviceManager.MicomPort2, MICOMData = sharedModel.Devices.MicomData2 };
+                        MicomContext micomCtx1 = new MicomContext() { LockObject = deviceManager.PortLockMicom1, SerialPort = deviceManager.MicomPort1, MICOMData = sharedModel.Devices.MicomData1 };
+                        MicomContext micomCtx2 = new MicomContext() { LockObject = deviceManager.PortLockMicom2, SerialPort = deviceManager.MicomPort2, MICOMData = sharedModel.Devices.MicomData2 };
 
-                    // Chỉ verify/write firmware cho MICOM có cổng COM đang MỞ.
-                    var micomTasks = new List<Task>();
-                    if (DeviceManager.IsPortOpen(deviceManager.MicomPort1))
-                        micomTasks.Add(UpdateMicomAsync(micomCtx1));
-                    if (DeviceManager.IsPortOpen(deviceManager.MicomPort2))
-                        micomTasks.Add(UpdateMicomAsync(micomCtx2));
+                        // Chỉ verify/write firmware cho MICOM có cổng COM đang MỞ.
+                        var micomTasks = new List<Task>();
+                        if (DeviceManager.IsPortOpen(deviceManager.MicomPort1))
+                            micomTasks.Add(UpdateMicomAsync(micomCtx1));
+                        if (DeviceManager.IsPortOpen(deviceManager.MicomPort2))
+                            micomTasks.Add(UpdateMicomAsync(micomCtx2));
 
-                    await Task.WhenAll(micomTasks);
+                        await Task.WhenAll(micomTasks);
+                    }
+                    finally
+                    {
+                        sharedAutoState?.EndFirmwareWrite();
+                    }
 
 
                 }
