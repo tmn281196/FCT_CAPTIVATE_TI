@@ -477,7 +477,9 @@ namespace Touch_Panel.View_Model
                         sharedAutoState?.EndFirmwareWrite();
                     }
 
-
+                    // Đảm bảo vòng lặp test đang chạy sau khi mở model -> nhấn START test được ngay.
+                    autoPageViewModel.runWhileLoop = true;
+                    autoPageViewModel.START();
                 }
                 catch (Exception)
                 {

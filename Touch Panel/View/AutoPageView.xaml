@@ -21,7 +21,7 @@
                         <Setter Property="Foreground" Value="White" />
                         <Setter Property="FontSize" Value="20" />
 
-                        <Setter Property="Background" Value="Orange" />
+                        <Setter Property="Background" Value="#5A6470" />
                         <Setter Property="Content" Value="WAIT" />
 
                     </DataTrigger>
@@ -36,10 +36,10 @@
                     </DataTrigger>
 
                     <DataTrigger Binding="{Binding Status}" Value="Testing">
-                        <Setter Property="Foreground" Value="White" />
+                        <Setter Property="Foreground" Value="#B8860B" />
                         <Setter Property="FontSize" Value="20" />
 
-                        <Setter Property="Background" Value="#f8da5b" />
+                        <Setter Property="Background" Value="#F5E9A9" />
                         <Setter Property="Content" Value="TESTING" />
 
                     </DataTrigger>
@@ -62,7 +62,7 @@
 
                     <DataTrigger Binding="{Binding StringTestResult}" Value="BEGIN">
                         <Setter Property="Foreground" Value="Beige" />
-                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontSize" Value="44" />
 
                         <Setter Property="Background" Value="LightBlue" />
 
@@ -73,7 +73,7 @@
 
                     <DataTrigger Binding="{Binding StringTestResult}" Value="Pass">
                         <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontSize" Value="44" />
 
                         <Setter Property="Background" Value="LimeGreen" />
                         <Setter Property="Content" Value="PASS" />
@@ -82,7 +82,7 @@
 
                     <DataTrigger Binding="{Binding StringTestResult}" Value="Fail">
                         <Setter Property="Foreground" Value="White" />
-                        <Setter Property="FontSize" Value="30" />
+                        <Setter Property="FontSize" Value="44" />
                         <Setter Property="Background" Value="Red" />
                         <Setter Property="Content" Value="FAIL" />
                     </DataTrigger>
@@ -248,7 +248,7 @@
 
                 <Border Margin="0" CornerRadius="0" Background="#FCEAEA">
                     <StackPanel VerticalAlignment="Center" Margin="0,4">
-                        <TextBlock Text="NG" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#C0392B"/>
+                        <TextBlock Text="FAIL" HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="#C0392B"/>
                         <TextBlock Text="{Binding Fail}" HorizontalAlignment="Center" FontSize="46" FontWeight="Bold" Foreground="#C0392B"/>
                     </StackPanel>
                 </Border>
@@ -274,6 +274,21 @@
             <Label HorizontalContentAlignment="Center" Content="STATUS" FontWeight="SemiBold" Foreground="White" Background="{StaticResource BaseBrush}" />
             <Label Grid.Row="1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Style="{StaticResource StatusLabelStyle}" />
             <Label Grid.Row="2"  HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Style="{StaticResource TestResultLabelStyle}" />
+
+            <!-- Khi TESTING: 1 ô phủ cả 2 hàng, nền vàng chữ đen. Trạng thái khác thì ẩn -> 2 ô tách riêng. -->
+            <Label Grid.Row="1" Grid.RowSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                   FontWeight="Bold" FontSize="40" Foreground="#B8860B" Background="#F5E9A9" Content="TESTING">
+                <Label.Style>
+                    <Style TargetType="Label">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Status}" Value="Testing">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Label.Style>
+            </Label>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="0"  Margin="0">

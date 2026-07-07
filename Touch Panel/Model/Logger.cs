@@ -41,8 +41,15 @@ namespace Touch_Panel.Model
         /// <summary>Bắt đầu một lần chạy full test (Auto/Manual All Start) -> mở ghi log + ghim ngày file.</summary>
         public void BeginRun()
         {
-            Interlocked.Increment(ref _activeRuns);
+            int runs = Interlocked.Increment(ref _activeRuns);
             _logDay = DateTime.Now.ToString("yyMMdd");
+
+            // Ghi đường dẫn file model 1 lần khi run đầu tiên mở.
+            if (runs == 1)
+            {
+                string path = string.IsNullOrEmpty(Utility.CurrentModelFilePath) ? "(chưa lưu)" : Utility.CurrentModelFilePath;
+                AddLog($"MODEL: {path}");
+            }
         }
 
         /// <summary>Kết thúc một lần chạy full test.</summary>

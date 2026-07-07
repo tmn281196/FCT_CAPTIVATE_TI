@@ -208,7 +208,7 @@ namespace Touch_Panel.View_Model
             LoadStatsFromCache();
         }
 
-        // Nạp Pass/NG đã cache theo đường dẫn file model (Total và % suy ra).
+        // Nạp lại COUNTER từ cache theo đường dẫn file model: Pass/FAIL (Total, % suy ra) + serial.
         private void LoadStatsFromCache()
         {
             var cache = AppState.GetSerial(Utility.CurrentModelFilePath);
@@ -217,6 +217,14 @@ namespace Touch_Panel.View_Model
             Fail = cache?.Fail ?? 0;
             Total = Pass + Fail; // OnTotalChanged tự tính PassPercent
             _resettingStats = false;
+
+            // Khôi phục serial đã in gần nhất từ cache (nếu có) -> NextSerial đúng.
+            if (cache != null && Model != null)
+            {
+                Model.Settings.SerialNumber = cache.SerialNumber;
+                Model.LastPrintDate = cache.LastPrintDate;
+            }
+            RefreshNextSerial();
         }
 
         private void OnSettingsPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -356,7 +364,7 @@ namespace Touch_Panel.View_Model
 
                             if (!(Model.Devices.DeviceManager.MicomPort1 == null && Model.Devices.DeviceManager.MicomPort2 == null))
                             {
-                                if (TestLogic.Tester1.Steps == null || TestLogic.Tester2.Steps == null) return;
+                                if (TestLogic.Tester1.Steps == null || TestLogic.Tester2.Steps == null) break; // bỏ qua vòng này, KHÔNG thoát loop (giữ loop sống qua lúc mở model)
                             bool micom1 = TestLogic.Tester1.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort1) : true;
                             bool micom2 = TestLogic.Tester2.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.MicomPort2) : true;
                             bool soleinod1 = TestLogic.Tester1.Steps.Count > 0 ? DeviceManager.IsPortOpen(Model.Devices.DeviceManager.Solenoid1Port) : true;
