@@ -20,25 +20,23 @@
             <ColumnDefinition Width="3*"/>
         </Grid.ColumnDefinitions>
 
-        <!-- Hướng cylinder: double arrow FontAwesome (Up=AnglesUp, Down=AnglesDown, khác -> ẩn) -->
-        <fa:IconBlock x:Name="DirectionDisplay" Grid.ColumnSpan="5" Foreground="White" FontSize="22"
-                      HorizontalAlignment="Left" VerticalAlignment="Center" Margin="16,0,0,0">
-            <fa:IconBlock.Style>
-                <Style TargetType="fa:IconBlock">
-                    <Setter Property="Visibility" Value="Collapsed"/>
+        <!-- Hướng cylinder: double arrow FontAwesome. Mặc định/Stop = đường ngang (Minus). -->
+        <fa:IconImage x:Name="DirectionDisplay" Grid.Column="0" Foreground="White" Width="20"
+                      HorizontalAlignment="Center" VerticalAlignment="Center">
+            <fa:IconImage.Style>
+                <Style TargetType="fa:IconImage">
+                    <Setter Property="Icon" Value="Minus"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Devices.SystemData.MainDirection}" Value="Up">
                             <Setter Property="Icon" Value="AnglesUp"/>
-                            <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding Devices.SystemData.MainDirection}" Value="Down">
                             <Setter Property="Icon" Value="AnglesDown"/>
-                            <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>
-            </fa:IconBlock.Style>
-        </fa:IconBlock>
+            </fa:IconImage.Style>
+        </fa:IconImage>
 
         <!-- 1) DANH SÁCH THIẾT BỊ: dưới ELAPSED+NEXT SERIAL (cột 1-2), canh giữa -->
         <ItemsControl Grid.Column="1" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"
