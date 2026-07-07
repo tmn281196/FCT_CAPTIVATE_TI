@@ -17,13 +17,16 @@
             <ColumnDefinition Width="12"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <!-- Đèn GỬI (thiết bị thường): tối lúc rảnh; nháy LimeGreen khi cổng mở, trắng khi chưa. Ẩn với QR Printer. -->
+        <!-- Đèn GỬI (thiết bị thường): tối lúc rảnh; nháy LimeGreen khi cổng mở, trắng khi chưa. Ẩn với QR Printer / System. -->
         <Rectangle x:Name="Tx" Width="10" Height="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0">
             <Rectangle.Style>
                 <Style TargetType="Rectangle">
                     <Setter Property="Fill" Value="#55636F"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Name}" Value="QR Printer">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Name}" Value="System">
                             <Setter Property="Visibility" Value="Collapsed"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding TxSent}" Value="True">
@@ -40,13 +43,16 @@
                 </Style>
             </Rectangle.Style>
         </Rectangle>
-        <!-- Đèn NHẬN (thiết bị thường). Ẩn với QR Printer. -->
+        <!-- Đèn NHẬN (thiết bị thường). Ẩn với QR Printer / System. -->
         <Rectangle x:Name="Rx" Grid.Row="1" Width="10" Height="5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
             <Rectangle.Style>
                 <Style TargetType="Rectangle">
                     <Setter Property="Fill" Value="#55636F"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Name}" Value="QR Printer">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Name}" Value="System">
                             <Setter Property="Visibility" Value="Collapsed"/>
                         </DataTrigger>
                         <DataTrigger Binding="{Binding RxReceived}" Value="True">
@@ -63,7 +69,7 @@
                 </Style>
             </Rectangle.Style>
         </Rectangle>
-        <!-- QR Printer: CHỈ 1 ô vuông; sáng khi gửi in (giữ 2s rồi tắt). Ẩn với thiết bị khác. -->
+        <!-- QR Printer & System: CHỈ 1 ô vuông 10x10; sáng khi có gửi (QR) HOẶC nhận (System). Ẩn với thiết bị khác. -->
         <Rectangle x:Name="QrDot" Grid.RowSpan="2" Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
             <Rectangle.Style>
                 <Style TargetType="Rectangle">
@@ -73,12 +79,25 @@
                         <DataTrigger Binding="{Binding Name}" Value="QR Printer">
                             <Setter Property="Visibility" Value="Visible"/>
                         </DataTrigger>
+                        <DataTrigger Binding="{Binding Name}" Value="System">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
                         <DataTrigger Binding="{Binding TxSent}" Value="True">
+                            <Setter Property="Fill" Value="White"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding RxReceived}" Value="True">
                             <Setter Property="Fill" Value="White"/>
                         </DataTrigger>
                         <MultiDataTrigger>
                             <MultiDataTrigger.Conditions>
                                 <Condition Binding="{Binding TxSent}" Value="True"/>
+                                <Condition Binding="{Binding Connected}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Fill" Value="LimeGreen"/>
+                        </MultiDataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RxReceived}" Value="True"/>
                                 <Condition Binding="{Binding Connected}" Value="True"/>
                             </MultiDataTrigger.Conditions>
                             <Setter Property="Fill" Value="LimeGreen"/>

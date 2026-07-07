@@ -381,11 +381,10 @@
                                 </StackPanel>
                             </Label.Content>
                         </Label>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" IsEnabled="{Binding Model.Devices.DevicesStatus[2].Connected}">
                             <Button Command="{Binding WriteFirmwareCommand}" Width="70" Height="25" CommandParameter="1" Cursor="Hand" Content="WRITE" Margin="0 0 4 0" Padding="5 0"/>
                             <Button Command="{Binding VerifyFirmwareCommand}" Width="70" Height="25" CommandParameter="1" Cursor="Hand" Content="VERIFY" Padding="5 0"/>
                         </StackPanel>
-                        <TextBlock Text="{Binding Model.Devices.MicomData1.FirmwareLog}" Foreground="#1B75BB" FontSize="11" FontWeight="SemiBold" Margin="0,5,0,0" MinHeight="14" MinWidth="144"/>
                     </StackPanel>
                     <StackPanel>
                         <Label Padding="0" FontWeight="Bold" Margin="0 0 0 3">
@@ -396,11 +395,10 @@
                                 </StackPanel>
                             </Label.Content>
                         </Label>
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal" IsEnabled="{Binding Model.Devices.DevicesStatus[3].Connected}">
                             <Button Command="{Binding WriteFirmwareCommand}" Width="70" Height="25" CommandParameter="2" Cursor="Hand" Content="WRITE" Margin="0 0 4 0" Padding="5 0"/>
                             <Button Command="{Binding VerifyFirmwareCommand}" Width="70" Height="25" CommandParameter="2" Cursor="Hand" Content="VERIFY" Padding="5 0"/>
                         </StackPanel>
-                        <TextBlock Text="{Binding Model.Devices.MicomData2.FirmwareLog}" Foreground="#1B75BB" FontSize="11" FontWeight="SemiBold" Margin="0,5,0,0" MinHeight="14" MinWidth="144"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

@@ -184,39 +184,11 @@
                 </StackPanel>
             </Border>
 
-            <!-- FIRMWARE: ô thứ 3. Xám khi chưa có MICOM nào mở, LimeGreen khi có MICOM kết nối. -->
+            <!-- FIRMWARE: ô thứ 3. Màu cam amber (như firmware file đang chọn). -->
             <Border Grid.Column="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
-                    <fa:IconBlock Icon="Memory" FontSize="13" VerticalAlignment="Center">
-                        <fa:IconBlock.Style>
-                            <Style TargetType="fa:IconBlock">
-                                <Setter Property="Foreground" Value="#7F8C9A"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Devices.DevicesStatus[2].Connected}" Value="True">
-                                        <Setter Property="Foreground" Value="LimeGreen"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Devices.DevicesStatus[3].Connected}" Value="True">
-                                        <Setter Property="Foreground" Value="LimeGreen"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </fa:IconBlock.Style>
-                    </fa:IconBlock>
-                    <TextBlock Text="{Binding Devices.SelectedFirmwareMicom}" FontSize="11" FontWeight="SemiBold" VerticalAlignment="Center" Margin="6,0,0,0">
-                        <TextBlock.Style>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="Foreground" Value="#7F8C9A"/>
-                                <Style.Triggers>
-                                    <DataTrigger Binding="{Binding Devices.DevicesStatus[2].Connected}" Value="True">
-                                        <Setter Property="Foreground" Value="LimeGreen"/>
-                                    </DataTrigger>
-                                    <DataTrigger Binding="{Binding Devices.DevicesStatus[3].Connected}" Value="True">
-                                        <Setter Property="Foreground" Value="LimeGreen"/>
-                                    </DataTrigger>
-                                </Style.Triggers>
-                            </Style>
-                        </TextBlock.Style>
-                    </TextBlock>
+                    <fa:IconBlock Icon="Memory" FontSize="13" Foreground="Orange" VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding Devices.SelectedFirmwareMicom}" Foreground="Orange" FontSize="11" FontWeight="SemiBold" VerticalAlignment="Center" Margin="6,0,0,0"/>
                 </StackPanel>
             </Border>
         </Grid>
