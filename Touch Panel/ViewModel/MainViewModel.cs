@@ -172,6 +172,10 @@ namespace Touch_Panel.View_Model
             if (autoConnectComPorts)
             {
                 _ = sharedModel.Devices.ConnectAll();
+
+                // Auto-load model lúc mở app: cũng đổi BEGIN + ghi log "File opened" như khi OpenModel.
+                autoPageViewModel.StringTestResult = "BEGIN";
+                Logger.Instance.LogEvent($"File opened: {Utility.CurrentModelFilePath}");
             }
 
             Navigate("Home");
@@ -450,6 +454,10 @@ namespace Touch_Panel.View_Model
                     testLogic.Model = sharedModel;
                     deviceConnectionListViewModel.Devices = sharedModel.Devices;
 
+                    // Mỗi lần mở model (dù đã từng mở hay chưa): đổi kết quả test về BEGIN + ghi log sự kiện.
+                    autoPageViewModel.StringTestResult = "BEGIN";
+                    Logger.Instance.LogEvent($"File opened: {Utility.CurrentModelFilePath}");
+
 
 
                     // Chặn test từ đầu quá trình mở model cho tới khi verify/write firmware xong (cả 2 MICOM).
@@ -476,10 +484,6 @@ namespace Touch_Panel.View_Model
                     {
                         sharedAutoState?.EndFirmwareWrite();
                     }
-
-                    // Đảm bảo vòng lặp test đang chạy sau khi mở model -> nhấn START test được ngay.
-                    autoPageViewModel.runWhileLoop = true;
-                    autoPageViewModel.START();
                 }
                 catch (Exception)
                 {

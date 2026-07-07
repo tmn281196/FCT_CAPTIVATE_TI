@@ -41,15 +41,8 @@ namespace Touch_Panel.Model
         /// <summary>Bắt đầu một lần chạy full test (Auto/Manual All Start) -> mở ghi log + ghim ngày file.</summary>
         public void BeginRun()
         {
-            int runs = Interlocked.Increment(ref _activeRuns);
+            Interlocked.Increment(ref _activeRuns);
             _logDay = DateTime.Now.ToString("yyMMdd");
-
-            // Ghi đường dẫn file model 1 lần khi run đầu tiên mở.
-            if (runs == 1)
-            {
-                string path = string.IsNullOrEmpty(Utility.CurrentModelFilePath) ? "(chưa lưu)" : Utility.CurrentModelFilePath;
-                AddLog($"MODEL: {path}");
-            }
         }
 
         /// <summary>Kết thúc một lần chạy full test.</summary>
@@ -89,6 +82,25 @@ namespace Touch_Panel.Model
         {
             AddLog(1, message);
             AddLog(2, message);
+        }
+
+        /// <summary>Ghi log SỰ KIỆN (vd: mở file model) - LUÔN ghi, không phụ thuộc đang chạy test hay không. Hiện ở cả 2 bên.</summary>
+        public void LogEvent(string message)
+        {
+            var now = DateTime.Now;
+            string uiLine = $"[{now:HH:mm:ss}] {message}";
+            string fileLine = $"[{now:yyyy-MM-dd HH:mm:ss}] {message}";
+
+            WriteFile(1, fileLine);
+            WriteFile(2, fileLine);
+
+            Application.Current?.Dispatcher.BeginInvoke(new Action(() =>
+            {
+                if (log1.Count >= 500) log1.Clear();
+                log1.Add(uiLine);
+                if (log2.Count >= 500) log2.Clear();
+                log2.Add(uiLine);
+            }));
         }
 
         /// <summary>
