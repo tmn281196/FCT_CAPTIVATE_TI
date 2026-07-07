@@ -17,33 +17,77 @@
             <ColumnDefinition Width="12"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
+        <!-- Đèn GỬI (thiết bị thường): tối lúc rảnh; nháy LimeGreen khi cổng mở, trắng khi chưa. Ẩn với QR Printer. -->
         <Rectangle x:Name="Tx" Width="10" Height="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0">
             <Rectangle.Style>
                 <Style TargetType="Rectangle">
-                    <!-- Đèn báo GỬI: tối lúc rảnh, sáng trắng khi đang gửi -->
                     <Setter Property="Fill" Value="#55636F"/>
                     <Style.Triggers>
+                        <DataTrigger Binding="{Binding Name}" Value="QR Printer">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
                         <DataTrigger Binding="{Binding TxSent}" Value="True">
                             <Setter Property="Fill" Value="White"/>
                         </DataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding TxSent}" Value="True"/>
+                                <Condition Binding="{Binding Connected}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Fill" Value="LimeGreen"/>
+                        </MultiDataTrigger>
                     </Style.Triggers>
                 </Style>
             </Rectangle.Style>
         </Rectangle>
+        <!-- Đèn NHẬN (thiết bị thường). Ẩn với QR Printer. -->
         <Rectangle x:Name="Rx" Grid.Row="1" Width="10" Height="5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0">
             <Rectangle.Style>
                 <Style TargetType="Rectangle">
-                    <!-- Đèn báo NHẬN: tối lúc rảnh, sáng trắng khi đang nhận -->
                     <Setter Property="Fill" Value="#55636F"/>
                     <Style.Triggers>
+                        <DataTrigger Binding="{Binding Name}" Value="QR Printer">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
                         <DataTrigger Binding="{Binding RxReceived}" Value="True">
                             <Setter Property="Fill" Value="White"/>
                         </DataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding RxReceived}" Value="True"/>
+                                <Condition Binding="{Binding Connected}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Fill" Value="LimeGreen"/>
+                        </MultiDataTrigger>
                     </Style.Triggers>
                 </Style>
             </Rectangle.Style>
         </Rectangle>
-        <!-- Chữ tên: LimeGreen khi kết nối mở, trắng khi đóng -->
+        <!-- QR Printer: CHỈ 1 ô vuông; sáng khi gửi in (giữ 2s rồi tắt). Ẩn với thiết bị khác. -->
+        <Rectangle x:Name="QrDot" Grid.RowSpan="2" Width="10" Height="10" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0">
+            <Rectangle.Style>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                    <Setter Property="Fill" Value="#55636F"/>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Name}" Value="QR Printer">
+                            <Setter Property="Visibility" Value="Visible"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding TxSent}" Value="True">
+                            <Setter Property="Fill" Value="White"/>
+                        </DataTrigger>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding TxSent}" Value="True"/>
+                                <Condition Binding="{Binding Connected}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Fill" Value="LimeGreen"/>
+                        </MultiDataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Rectangle.Style>
+        </Rectangle>
+        <!-- Chữ tên: LimeGreen khi cổng mở, xám (#7F8C9A) khi chưa mở (giống MICOM 1/2) -->
         <Label x:Name="lbPortName" Content="{Binding Name, Converter={StaticResource Upper}, UpdateSourceTrigger=PropertyChanged}"
             Grid.RowSpan="2" Grid.Column="1"
             FontSize="11"
@@ -52,7 +96,7 @@
             Padding="5,0">
             <Label.Style>
                 <Style TargetType="Label">
-                    <Setter Property="Foreground" Value="White"/>
+                    <Setter Property="Foreground" Value="#7F8C9A"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding Connected}" Value="True">
                             <Setter Property="Foreground" Value="LimeGreen"/>

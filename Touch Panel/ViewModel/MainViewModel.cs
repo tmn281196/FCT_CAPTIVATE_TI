@@ -348,6 +348,12 @@ namespace Touch_Panel.View_Model
 
                 if (!micomCtx.MICOMData.MatchFirmware)
                 {
+                    // Xóa để ô MICOM (thanh bottom) hiện progress "Writing X%" (FirmwareLog ưu tiên thấp nhất,
+                    // vòng lặp verify phía trên đã set SignalIntegrity nên phải clear kẻo bị che).
+                    mData.SignalIntegrity = string.Empty;
+                    mData.VerifyLog = string.Empty;
+                    mData.FirmwareLog = string.Empty;
+
                     sharedAutoState?.BeginFirmwareWrite(); // đang ghi firmware -> cấm test
 
                     try

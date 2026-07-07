@@ -317,7 +317,7 @@ namespace Touch_Panel.Model
             {
                 if (device != null) device.TxSent = true;
                 port.Write(tx, 0, tx.Length);
-                if (device != null) _ = Task.Delay(70).ContinueWith(_ => device.TxSent = false);  // giữ nháy TX ~70ms
+                if (device != null) _ = Task.Delay(250).ContinueWith(_ => device.TxSent = false);  // giữ nháy TX ~250ms
 
                 var done = await Task.WhenAny(tcs.Task, Task.Delay(timeoutMs));
                 if (done != tcs.Task)
@@ -353,7 +353,7 @@ namespace Touch_Panel.Model
             {
                 if (device != null) device.TxSent = true;
                 port.Write(tx, 0, tx.Length);
-                if (device != null) _ = Task.Delay(70).ContinueWith(_ => device.TxSent = false);  // giữ nháy TX ~70ms
+                if (device != null) _ = Task.Delay(250).ContinueWith(_ => device.TxSent = false);  // giữ nháy TX ~250ms
             }
             catch (Exception ex) { Debug.WriteLine($"[{deviceName}] send error: {ex.Message}"); }
         }
@@ -725,7 +725,7 @@ namespace Touch_Panel.Model
                 CompleteSolAck("Solenoid 2", sol2RxBuffer[startIndex + 3]);  // status byte của ACK
                 sol2RxBuffer.RemoveRange(startIndex, 5);
 
-                await Task.Delay(70);
+                await Task.Delay(250);
 
                 device.RxReceived = false;
             }
@@ -771,7 +771,7 @@ namespace Touch_Panel.Model
                 CompleteSolAck("Solenoid 1", sol1RxBuffer[startIndex + 3]);  // status byte của ACK
                 sol1RxBuffer.RemoveRange(startIndex, 5);
 
-                await Task.Delay(70);
+                await Task.Delay(250);
 
                 device.RxReceived = false;
             }
@@ -823,7 +823,7 @@ namespace Touch_Panel.Model
                 CompleteSolAck("Solenoid 3", sol3RxBuffer[startIndex + 3]);  // status byte của ACK
                 sol3RxBuffer.RemoveRange(startIndex, 5);
 
-                await Task.Delay(70);
+                await Task.Delay(250);
 
                 device.RxReceived = false;
             }
@@ -1002,6 +1002,14 @@ namespace Touch_Panel.Model
                             return false;
 
                         DeviceManager.QrPrinterPort.Write(tspl);
+
+                        // Đèn báo QR: sáng khi gửi, giữ 2s rồi tắt.
+                        var qrDev = DevicesStatus.FirstOrDefault(d => d.Name == "QR Printer");
+                        if (qrDev != null)
+                        {
+                            qrDev.TxSent = true;
+                            _ = Task.Delay(2000).ContinueWith(_ => qrDev.TxSent = false);
+                        }
                         return true;
                     }
                 });
