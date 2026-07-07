@@ -20,6 +20,9 @@ namespace Touch_Panel.Model
         {
             public int SerialNumber { get; set; }
             public string LastPrintDate { get; set; } = string.Empty;
+            // Thống kê chạy theo model (lưu Pass/NG; Total và % suy ra được).
+            public int Pass { get; set; }
+            public int Fail { get; set; }
         }
 
         public static string CacheDir =>
@@ -75,22 +78,37 @@ namespace Touch_Panel.Model
             s.Save();
         }
 
-        // ===== Serial theo tên model =====
+        // ===== Cache theo ĐƯỜNG DẪN FILE MODEL (serial + thống kê) =====
 
-        /// <summary>Lấy serial đã cache cho model; trả null nếu chưa có.</summary>
-        public static SerialInfo GetSerial(string modelName)
+        /// <summary>Lấy cache (serial + thống kê) cho model; trả null nếu chưa có.</summary>
+        public static SerialInfo GetSerial(string modelKey)
         {
-            if (string.IsNullOrEmpty(modelName)) return null;
+            if (string.IsNullOrEmpty(modelKey)) return null;
             var s = Load();
-            return s.Serials.TryGetValue(modelName, out var e) ? e : null;
+            return s.Serials.TryGetValue(modelKey, out var e) ? e : null;
         }
 
-        /// <summary>Lưu thầm serial + ngày in cuối cho model.</summary>
-        public static void SetSerial(string modelName, int serialNumber, string lastPrintDate)
+        /// <summary>Lưu thầm serial + ngày in cuối; GIỮ NGUYÊN Pass/NG đang có.</summary>
+        public static void SetSerial(string modelKey, int serialNumber, string lastPrintDate)
         {
-            if (string.IsNullOrEmpty(modelName)) return;
+            if (string.IsNullOrEmpty(modelKey)) return;
             var s = Load();
-            s.Serials[modelName] = new SerialInfo { SerialNumber = serialNumber, LastPrintDate = lastPrintDate };
+            if (!s.Serials.TryGetValue(modelKey, out var e) || e == null) e = new SerialInfo();
+            e.SerialNumber = serialNumber;
+            e.LastPrintDate = lastPrintDate;
+            s.Serials[modelKey] = e;
+            s.Save();
+        }
+
+        /// <summary>Lưu thầm thống kê Pass/NG; GIỮ NGUYÊN serial đang có.</summary>
+        public static void SetStats(string modelKey, int pass, int fail)
+        {
+            if (string.IsNullOrEmpty(modelKey)) return;
+            var s = Load();
+            if (!s.Serials.TryGetValue(modelKey, out var e) || e == null) e = new SerialInfo();
+            e.Pass = pass;
+            e.Fail = fail;
+            s.Serials[modelKey] = e;
             s.Save();
         }
     }

@@ -29,7 +29,11 @@ namespace Touch_Panel.View_Model
         [ObservableProperty]
         private AutoState autoState;
 
-   
+        // Tham chiếu tới AutoPageVM để 2 nút RESET (thống kê / serial) bind trực tiếp.
+        [ObservableProperty]
+        private AutoPageViewModel autoPageVM;
+
+
 
         private static readonly HashSet<string> UserSelectFields = new()
         {
@@ -167,6 +171,7 @@ namespace Touch_Panel.View_Model
             var mData = testerId == 1 ? Model.Devices.MicomData1 : Model.Devices.MicomData2;
             string firmwarePath = $"firmware_bsl_{testerId}\\{Model.Devices.SelectedFirmwareMicom}.txt";
 
+            AutoState?.BeginFirmwareWrite(); // đang ghi firmware -> cấm test
             Model.Devices.CloseDeviceByName(deviceName);
 
             try
@@ -188,10 +193,12 @@ namespace Touch_Panel.View_Model
             {
                 mData.FirmwareLog = ex.Message;
             }
-
-            Model.Devices.ConnectDeviceByName(deviceName);
-
-            mData.VerifyLog = "✓";
+            finally
+            {
+                Model.Devices.ConnectDeviceByName(deviceName);
+                mData.VerifyLog = "✓";
+                AutoState?.EndFirmwareWrite();
+            }
         }
 
         [ObservableProperty]

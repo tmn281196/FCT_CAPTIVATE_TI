@@ -119,7 +119,7 @@
                             </Style>
                         </fa:IconImage.Style>
                     </fa:IconImage>
-                    <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM1 " VerticalAlignment="Center">
+                    <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM 1 " VerticalAlignment="Center">
                         <TextBlock.Style>
                             <Style TargetType="TextBlock">
                                 <Setter Property="Foreground" Value="#7F8C9A"/>
@@ -159,7 +159,7 @@
                             </Style>
                         </fa:IconImage.Style>
                     </fa:IconImage>
-                    <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM2 " VerticalAlignment="Center">
+                    <TextBlock FontSize="11" FontWeight="SemiBold" Text="MICOM 2 " VerticalAlignment="Center">
                         <TextBlock.Style>
                             <Style TargetType="TextBlock">
                                 <Setter Property="Foreground" Value="#7F8C9A"/>
@@ -187,7 +187,7 @@
             <!-- FIRMWARE: ô thứ 3 -->
             <Border Grid.Column="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
-                    <fa:IconBlock Icon="FileLines" FontSize="13" Foreground="#CFE0F0" VerticalAlignment="Center"/>
+                    <fa:IconBlock Icon="Memory" FontSize="13" Foreground="#CFE0F0" VerticalAlignment="Center"/>
                     <TextBlock Text="{Binding Devices.SelectedFirmwareMicom}" Foreground="Orange" FontSize="11" FontWeight="SemiBold" VerticalAlignment="Center" Margin="6,0,0,0"/>
                 </StackPanel>
             </Border>

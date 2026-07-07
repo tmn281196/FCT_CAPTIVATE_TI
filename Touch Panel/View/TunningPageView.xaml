@@ -126,7 +126,7 @@
 
 
         <TabControl x:Name="MicomTabs">
-            <TabItem Header="MICOM1">
+            <TabItem Header="MICOM 1">
                 <Grid   >
                     <Grid.ColumnDefinitions>
 
@@ -201,7 +201,7 @@ ColumnHeaderStyle="{StaticResource CustomDataGridHeaderStyle}" >
 
 
             </TabItem>
-            <TabItem Header="MICOM2">
+            <TabItem Header="MICOM 2">
                 <Grid   >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>

@@ -103,8 +103,8 @@ namespace Touch_Panel.View_Model
                     ModelName = Path.GetFileNameWithoutExtension(recentPath);
                     autoConnectComPorts = true;
 
-                    // Khôi phục serial đã in gần nhất cho model này (lưu thầm theo tên model).
-                    var cachedSerial = AppState.GetSerial(ModelName);
+                    // Khôi phục serial đã in gần nhất cho model này (lưu thầm theo ĐƯỜNG DẪN file model).
+                    var cachedSerial = AppState.GetSerial(recentPath);
                     if (cachedSerial != null)
                     {
                         sharedModel.Settings.SerialNumber = cachedSerial.SerialNumber;
@@ -146,6 +146,9 @@ namespace Touch_Panel.View_Model
             stepsPageViewModel.AutoState = sharedAutoState;
             settingPageViewModel.AutoState = sharedAutoState;
             manualPageViewModel.AutoState = sharedAutoState;
+
+            // 2 nút RESET trong Setting bind trực tiếp tới AutoPageVM.
+            settingPageViewModel.AutoPageVM = autoPageViewModel;
 
             deviceConnectionListViewModel = new DeviceConnectionListViewModel(sharedModel.Devices);
 
@@ -345,13 +348,20 @@ namespace Touch_Panel.View_Model
 
                 if (!micomCtx.MICOMData.MatchFirmware)
                 {
+                    sharedAutoState?.BeginFirmwareWrite(); // đang ghi firmware -> cấm test
                     sharedModel.Devices.CloseDeviceByName(micomName);
 
-                    await Task.Run(() =>
-                        FirmwareMICOM.WriteFirmware(portName, $"firmware_bsl_{index}\\{sharedModel.Devices.SelectedFirmwareMicom}.txt", ProgressFirmwareChanged, ProgressFirmwareFailed)
-                    );
-
-                    sharedModel.Devices.ConnectDeviceByName(micomName);
+                    try
+                    {
+                        await Task.Run(() =>
+                            FirmwareMICOM.WriteFirmware(portName, $"firmware_bsl_{index}\\{sharedModel.Devices.SelectedFirmwareMicom}.txt", ProgressFirmwareChanged, ProgressFirmwareFailed)
+                        );
+                    }
+                    finally
+                    {
+                        sharedModel.Devices.ConnectDeviceByName(micomName);
+                        sharedAutoState?.EndFirmwareWrite();
+                    }
 
                     // Kết quả verify -> VerifyLog (tách khỏi FirmwareLog/progress).
                     mData.VerifyLog = mData.FirmwareLog.Contains("100") ? "✓" : "✕";

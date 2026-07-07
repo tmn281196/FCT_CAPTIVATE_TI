@@ -70,6 +70,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand(AllowConcurrentExecutions = true)]
         private async Task DoubleClick(object parameter)
         {
+            if (AutoState?.FirmwareWriting == true) return; // đang ghi firmware -> cấm test
             int testerId = int.Parse((string)parameter);
             Step sel = testerId == 1 ? SelectedItem1 : (testerId == 2 ? SelectedItem2 : null);
             Tester tester = testerId == 1 ? TestLogic.Tester1 : (testerId == 2 ? TestLogic.Tester2 : null);
@@ -91,6 +92,7 @@ namespace Touch_Panel.View_Model
         [RelayCommand(AllowConcurrentExecutions = true)]
         private async Task FullTest(object parameter)
         {
+            if (AutoState?.FirmwareWriting == true) return; // đang ghi firmware -> cấm test
             int testerId = int.Parse((string)parameter);
             Tester tester = testerId == 1 ? TestLogic.Tester1 : (testerId == 2 ? TestLogic.Tester2 : null);
             if (tester == null) return;

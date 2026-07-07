@@ -115,14 +115,14 @@
                 <RadioButton Style="{StaticResource NavIconRadio}" Command="{Binding ManualPageCommand}" ToolTip="MANUAL">
                     <fa:IconBlock Icon="ComputerMouse" FontSize="24" Foreground="White"/>
                 </RadioButton>
-                <RadioButton Style="{StaticResource NavIconRadio}" Command="{Binding TunningPageCommand}" ToolTip="TUNNING">
-                    <fa:IconBlock Icon="Wrench" FontSize="24" Foreground="White"/>
-                </RadioButton>
                 <RadioButton Style="{StaticResource NavIconRadio}" Command="{Binding NewModelPageCommand}" ToolTip="MODEL">
                     <fa:IconBlock Icon="List12" FontSize="26" Foreground="White"/>
                 </RadioButton>
                 <RadioButton Style="{StaticResource NavIconRadio}" Command="{Binding SettingPageCommand}" ToolTip="SETTING">
                     <fa:IconBlock Icon="Cog" FontSize="26" Foreground="White"/>
+                </RadioButton>
+                <RadioButton Style="{StaticResource NavIconRadio}" Command="{Binding TunningPageCommand}" ToolTip="TUNING &amp; CALIBRATION">
+                    <fa:IconBlock Icon="Sliders" FontSize="24" Foreground="White"/>
                 </RadioButton>
                 <RadioButton Style="{StaticResource NavIconRadio}" Command="{Binding LogPageCommand}" ToolTip="LOG">
                     <fa:IconBlock Icon="Terminal" FontSize="24" Foreground="White"/>

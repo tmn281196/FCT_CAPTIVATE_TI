@@ -40,13 +40,35 @@ namespace Touch_Panel.View_Model
         [NotifyPropertyChangedFor(nameof(IsNotBusy))]
         private bool manualTesting;
 
+        // Đang GHI firmware -> cấm test (auto & manual) và khóa sửa model.
+        [ObservableProperty]
+        [NotifyPropertyChangedFor(nameof(IsBusy))]
+        [NotifyPropertyChangedFor(nameof(IsNotBusy))]
+        private bool firmwareWriting;
+
         // Auto đang test (state Testing). Dùng cho: Manual chỉ xem khi auto test.
         public bool IsTesting => Test == TestState.Testing;
         public bool IsNotTesting => Test != TestState.Testing;
 
-        // Bận = auto đang test HOẶC manual đang chạy. Dùng để KHÓA sửa model ở mọi trang.
-        public bool IsBusy => Test == TestState.Testing || ManualTesting;
+        // Bận = auto đang test HOẶC manual đang chạy HOẶC đang ghi firmware. KHÓA sửa model ở mọi trang.
+        public bool IsBusy => Test == TestState.Testing || ManualTesting || FirmwareWriting;
         public bool IsNotBusy => !IsBusy;
+
+        // MICOM1/2 có thể ghi firmware SONG SONG -> đếm để chỉ mở khóa khi TẤT CẢ xong.
+        private int _fwWriteCount;
+        public void BeginFirmwareWrite()
+        {
+            System.Threading.Interlocked.Increment(ref _fwWriteCount);
+            FirmwareWriting = true;
+        }
+        public void EndFirmwareWrite()
+        {
+            if (System.Threading.Interlocked.Decrement(ref _fwWriteCount) <= 0)
+            {
+                _fwWriteCount = 0;
+                FirmwareWriting = false;
+            }
+        }
     }
     public partial class AutoPageViewModel : ObservableObject
     {
@@ -76,7 +98,8 @@ namespace Touch_Panel.View_Model
         [RelayCommand]
         private async Task ForceStart()
         {
-
+            // Đang ghi firmware -> cấm khởi động test.
+            if (State.FirmwareWriting) return;
 
             Model.Devices.ConnectorAllDown();
             await Task.Delay(Touch_Panel.Model.TestTiming.ConnectorSettleDelayMs);
@@ -94,12 +117,17 @@ namespace Touch_Panel.View_Model
             testLogic.Tester2.stopTest = true;
         }
 
+        // Đang RESET tay -> không cộng dồn Total khi Pass/Fail bị đưa về 0.
+        private bool _resettingStats;
+
         [ObservableProperty]
         private int pass;
 
         partial void OnPassChanged(int oldValue, int newValue)
         {
+            if (_resettingStats) return;
             Total += 1;
+            AppState.SetStats(Utility.CurrentModelFilePath, Pass, Fail);
         }
 
         [ObservableProperty]
@@ -107,7 +135,9 @@ namespace Touch_Panel.View_Model
 
         partial void OnFailChanged(int oldValue, int newValue)
         {
+            if (_resettingStats) return;
             Total += 1;
+            AppState.SetStats(Utility.CurrentModelFilePath, Pass, Fail);
         }
 
         [ObservableProperty]
@@ -115,6 +145,11 @@ namespace Touch_Panel.View_Model
 
         partial void OnTotalChanged(int oldValue, int newValue)
         {
+            if (newValue <= 0)
+            {
+                PassPercent = 0;
+                return;
+            }
             PassPercent = Math.Round(((double)Pass / Total) * 100);
         }
 
@@ -170,6 +205,18 @@ namespace Touch_Panel.View_Model
             }
 
             RefreshNextSerial();
+            LoadStatsFromCache();
+        }
+
+        // Nạp Pass/NG đã cache theo đường dẫn file model (Total và % suy ra).
+        private void LoadStatsFromCache()
+        {
+            var cache = AppState.GetSerial(Utility.CurrentModelFilePath);
+            _resettingStats = true;
+            Pass = cache?.Pass ?? 0;
+            Fail = cache?.Fail ?? 0;
+            Total = Pass + Fail; // OnTotalChanged tự tính PassPercent
+            _resettingStats = false;
         }
 
         private void OnSettingsPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
@@ -184,14 +231,32 @@ namespace Touch_Panel.View_Model
 
         private void RefreshNextSerial()
         {
-            string today = $"{DateTime.Now:yyMMdd}";
-            if (Model.LastPrintDate != today)
-            {
-                NextSerialNumber = 1;
-                return;
-            }
+            // Không còn tự reset theo ngày: serial chạy tiếp cho tới khi bấm RESET tay.
             int next = Model.Settings.SerialNumber + 1;
             NextSerialNumber = next > 9999 ? 1 : next;
+        }
+
+        // RESET TAY 1: xóa thống kê (Pass/NG/Total/%). Lưu thầm để sống sót qua restart.
+        [RelayCommand]
+        private void ResetStatistics()
+        {
+            _resettingStats = true;
+            Pass = 0;
+            Fail = 0;
+            Total = 0;
+            PassPercent = 0;
+            _resettingStats = false;
+
+            AppState.SetStats(Utility.CurrentModelFilePath, 0, 0);
+        }
+
+        // RESET TAY 2: đưa serial kế tiếp về 0001 (SerialNumber = số VỪA in; +1 = kế tiếp).
+        [RelayCommand]
+        private void ResetSerial()
+        {
+            Model.Settings.SerialNumber = 0;
+            RefreshNextSerial();
+            AppState.SetSerial(Utility.CurrentModelFilePath, 0, Model.LastPrintDate);
         }
 
         private async Task PrintNextLabelAsync()
@@ -202,10 +267,6 @@ namespace Touch_Panel.View_Model
             }
 
             string today = $"{DateTime.Now:yyMMdd}";
-            if (Model.LastPrintDate != today)
-            {
-                Model.Settings.SerialNumber = 0;
-            }
 
             Model.Settings.SerialNumber += 1;
             if (Model.Settings.SerialNumber > 9999)
@@ -230,11 +291,8 @@ namespace Touch_Panel.View_Model
                 Model.LastPrintDate = today;
                 Logger.Instance.AddLog($"QR printed - SN {Model.Settings.SerialNumber:D4}");
 
-                // Lưu thầm serial + ngày in theo TÊN MODEL để sống sót qua restart (không popup).
-                string modelName = string.IsNullOrEmpty(Utility.CurrentModelFilePath)
-                    ? null
-                    : Path.GetFileNameWithoutExtension(Utility.CurrentModelFilePath);
-                AppState.SetSerial(modelName, Model.Settings.SerialNumber, Model.LastPrintDate);
+                // Lưu thầm serial + ngày in theo ĐƯỜNG DẪN FILE MODEL để sống sót qua restart.
+                AppState.SetSerial(Utility.CurrentModelFilePath, Model.Settings.SerialNumber, Model.LastPrintDate);
             }
         }
 
@@ -310,7 +368,7 @@ namespace Touch_Panel.View_Model
                             bool allDevicesConnected = micom1 && soleinod1 && micom2 && soleinod2 && soleinod3 && system;
 
 
-                            if (autoPageActive && allDevicesConnected && Model.Settings.LogDir != "")
+                            if (autoPageActive && allDevicesConnected && Model.Settings.LogDir != "" && !State.FirmwareWriting)
                             {
                                 if (Model.Devices.SystemData.MainDirection == Direction.Up)
                                 {
@@ -337,7 +395,7 @@ namespace Touch_Panel.View_Model
                             State.Test = TestState.Wait;
                             break;
                         }
-                        if (Model.Devices.SystemData.MainUpFlag == true && Model.Devices.SystemData.MainBottom)
+                        if (Model.Devices.SystemData.MainUpFlag == true && Model.Devices.SystemData.MainBottom && !State.FirmwareWriting)
                         {
 
                             Model.Devices.ConnectorAllDown();

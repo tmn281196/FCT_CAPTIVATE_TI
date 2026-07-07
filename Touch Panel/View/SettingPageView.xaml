@@ -277,14 +277,31 @@
                         <CheckBox  Margin="0 5"  Content="Save Log File" IsChecked="{Binding Model.Settings.ShouldSaveLog}"/>
                         <CheckBox  Margin="0 5"  Content="Send QR Print" IsChecked="{Binding Model.Settings.ShouldPrintQr}"/>
 
-                        <StackPanel Orientation="Horizontal" Margin="0 8 0 5">
-                            <Label Padding="0" Content="Max Margin" VerticalAlignment="Center" Width="90"
-                                   ToolTip="Element phải dẫn trước đỉnh nhì ít nhất bằng giá trị này mới coi là max (chống nhảy khi 2 đỉnh gần bằng)."/>
-                            <TextBox Width="60" Height="22" VerticalContentAlignment="Center"
-                                     Text="{Binding Model.Settings.Margin, UpdateSourceTrigger=LostFocus}"/>
-                        </StackPanel>
-
                     </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <Separator/>
+
+            <StackPanel Margin="5">
+                <Label Padding="0" Content="Counters" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal" Margin="5 5">
+                    <Button Width="170" Height="28" Margin="0,0,10,0"
+                            Command="{Binding AutoPageVM.ResetStatisticsCommand}"
+                            ToolTip="Đưa Pass / NG / Total / % về 0 (lưu theo đường dẫn file model).">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="RotateLeft" FontSize="12" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                            <TextBlock Text="RESET STATISTICS" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Button Width="150" Height="28"
+                            Command="{Binding AutoPageVM.ResetSerialCommand}"
+                            ToolTip="Đưa serial kế tiếp về 0001 (lưu theo đường dẫn file model).">
+                        <StackPanel Orientation="Horizontal">
+                            <fa:IconBlock Icon="RotateLeft" FontSize="12" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                            <TextBlock Text="RESET SERIAL" VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
                 </StackPanel>
             </StackPanel>
 
@@ -359,7 +376,7 @@
                             <Label.Content>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <fa:IconImage Icon="Microchip" Foreground="Black" Width="15"/>
-                                    <TextBlock Padding="2 0" VerticalAlignment="Center">MICOM1</TextBlock>
+                                    <TextBlock Padding="2 0" VerticalAlignment="Center">MICOM 1</TextBlock>
                                 </StackPanel>
                             </Label.Content>
                         </Label>
@@ -373,7 +390,7 @@
                             <Label.Content>
                                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
                                     <fa:IconImage Icon="Microchip" Foreground="Black" Width="15"/>
-                                    <TextBlock Padding="2 0" VerticalAlignment="Center">MICOM2</TextBlock>
+                                    <TextBlock Padding="2 0" VerticalAlignment="Center">MICOM 2</TextBlock>
                                 </StackPanel>
                             </Label.Content>
                         </Label>
