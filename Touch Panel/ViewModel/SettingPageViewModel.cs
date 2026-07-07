@@ -159,9 +159,11 @@ namespace Touch_Panel.View_Model
         [RelayCommand(AllowConcurrentExecutions = true)]
         private async Task WriteFirmware(object parameter)
         {
-            if (AutoState?.IsBusy == true)
+            // Chặn khi đang TEST: auto Testing (START / main-down) HOẶC manual full test.
+            // KHÔNG chặn khi MICOM kia chỉ đang ghi firmware.
+            if (AutoState != null && (AutoState.IsTesting || AutoState.ManualTesting))
             {
-                MessageBox.Show("Cannot modify steps while testing is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Cannot write firmware while a test is in progress.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
@@ -172,10 +174,11 @@ namespace Touch_Panel.View_Model
             string firmwarePath = $"firmware_bsl_{testerId}\\{Model.Devices.SelectedFirmwareMicom}.txt";
 
             AutoState?.BeginFirmwareWrite(); // đang ghi firmware -> cấm test
-            Model.Devices.CloseDeviceByName(deviceName);
 
             try
             {
+                Model.Devices.CloseDeviceByName(deviceName);
+
                 mData.SignalIntegrity = string.Empty;
                 mData.VerifyLog = string.Empty;
                 mData.FirmwareLog = string.Empty;

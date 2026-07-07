@@ -349,10 +349,11 @@ namespace Touch_Panel.View_Model
                 if (!micomCtx.MICOMData.MatchFirmware)
                 {
                     sharedAutoState?.BeginFirmwareWrite(); // đang ghi firmware -> cấm test
-                    sharedModel.Devices.CloseDeviceByName(micomName);
 
                     try
                     {
+                        sharedModel.Devices.CloseDeviceByName(micomName);
+
                         await Task.Run(() =>
                             FirmwareMICOM.WriteFirmware(portName, $"firmware_bsl_{index}\\{sharedModel.Devices.SelectedFirmwareMicom}.txt", ProgressFirmwareChanged, ProgressFirmwareFailed)
                         );
@@ -452,11 +453,14 @@ namespace Touch_Panel.View_Model
                     MicomContext micomCtx1 = new MicomContext() { LockObject = deviceManager.PortLockMicom1, SerialPort = deviceManager.MicomPort1, MICOMData = sharedModel.Devices.MicomData1 };
                     MicomContext micomCtx2 = new MicomContext() { LockObject = deviceManager.PortLockMicom2, SerialPort = deviceManager.MicomPort2, MICOMData = sharedModel.Devices.MicomData2 };
 
-                    //Chạy song song cả 2 task
-                    Task task1 = UpdateMicomAsync(micomCtx1);
-                    Task task2 = UpdateMicomAsync(micomCtx2);
+                    // Chỉ verify/write firmware cho MICOM có cổng COM đang MỞ.
+                    var micomTasks = new List<Task>();
+                    if (DeviceManager.IsPortOpen(deviceManager.MicomPort1))
+                        micomTasks.Add(UpdateMicomAsync(micomCtx1));
+                    if (DeviceManager.IsPortOpen(deviceManager.MicomPort2))
+                        micomTasks.Add(UpdateMicomAsync(micomCtx2));
 
-                    await Task.WhenAll(task1, task2);
+                    await Task.WhenAll(micomTasks);
 
 
                 }

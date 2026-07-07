@@ -94,7 +94,7 @@
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Vertical"  Grid.ColumnSpan="2" >
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5" IsEnabled="{Binding AutoState.IsNotBusy}">
                 <Label Padding="0" HorizontalAlignment="Center" VerticalContentAlignment="Center" VerticalAlignment="Center" Content="Log Directory" Width="100" FontWeight="Bold"/>
 
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
@@ -283,7 +283,7 @@
 
             <Separator/>
 
-            <StackPanel Margin="5">
+            <StackPanel Margin="5" IsEnabled="{Binding AutoState.IsNotBusy}">
                 <Label Padding="0" Content="Counters" FontWeight="Bold"/>
                 <StackPanel Orientation="Horizontal" Margin="5 5">
                     <Button Width="170" Height="28" Margin="0,0,10,0"
@@ -361,6 +361,7 @@
                     <StackPanel Margin="0 0 15 0">
                         <Label Padding="0" Content="Firmware File" FontWeight="Bold" Margin="0 0 0 3"/>
                         <ComboBox Width="280" Height="25" VerticalContentAlignment="Center" HorizontalContentAlignment="Left"
+                                  IsEnabled="{Binding AutoState.IsNotBusy}"
                                   ItemsSource="{Binding Model.Devices.FirmwareList}"
                                   SelectedItem="{Binding Model.Devices.SelectedFirmwareMicom, Mode=TwoWay}">
                             <ComboBox.ItemContainerStyle>
@@ -384,6 +385,7 @@
                             <Button Command="{Binding WriteFirmwareCommand}" Width="70" Height="25" CommandParameter="1" Cursor="Hand" Content="WRITE" Margin="0 0 4 0" Padding="5 0"/>
                             <Button Command="{Binding VerifyFirmwareCommand}" Width="70" Height="25" CommandParameter="1" Cursor="Hand" Content="VERIFY" Padding="5 0"/>
                         </StackPanel>
+                        <TextBlock Text="{Binding Model.Devices.MicomData1.FirmwareLog}" Foreground="#1B75BB" FontSize="11" FontWeight="SemiBold" Margin="0,5,0,0" MinHeight="14" MinWidth="144"/>
                     </StackPanel>
                     <StackPanel>
                         <Label Padding="0" FontWeight="Bold" Margin="0 0 0 3">
@@ -398,6 +400,7 @@
                             <Button Command="{Binding WriteFirmwareCommand}" Width="70" Height="25" CommandParameter="2" Cursor="Hand" Content="WRITE" Margin="0 0 4 0" Padding="5 0"/>
                             <Button Command="{Binding VerifyFirmwareCommand}" Width="70" Height="25" CommandParameter="2" Cursor="Hand" Content="VERIFY" Padding="5 0"/>
                         </StackPanel>
+                        <TextBlock Text="{Binding Model.Devices.MicomData2.FirmwareLog}" Foreground="#1B75BB" FontSize="11" FontWeight="SemiBold" Margin="0,5,0,0" MinHeight="14" MinWidth="144"/>
                     </StackPanel>
                 </StackPanel>
             </StackPanel>

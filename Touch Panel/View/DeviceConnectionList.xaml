@@ -104,8 +104,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <!-- MICOM1: nền NHẠT -->
-            <Border Grid.Column="0" Background="#2E3D4B">
+            <!-- MICOM1: nền hơi đậm (nhạt hơn MICOM2 một chút) -->
+            <Border Grid.Column="0" Background="#283644">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
                     <fa:IconImage Icon="Microchip" Width="12" VerticalAlignment="Center" Margin="2,0">
                         <fa:IconImage.Style>

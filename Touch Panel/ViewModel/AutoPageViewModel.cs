@@ -46,7 +46,7 @@ namespace Touch_Panel.View_Model
         [NotifyPropertyChangedFor(nameof(IsNotBusy))]
         private bool firmwareWriting;
 
-        // Auto đang test (state Testing). Dùng cho: Manual chỉ xem khi auto test.
+        // Auto đang test (state Testing = nhấn START hoặc auto main-down). Đây MỚI là "test".
         public bool IsTesting => Test == TestState.Testing;
         public bool IsNotTesting => Test != TestState.Testing;
 
