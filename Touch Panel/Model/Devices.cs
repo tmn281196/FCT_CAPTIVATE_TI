@@ -685,15 +685,26 @@ namespace Touch_Panel.Model
         public bool cylinderReset = false;
 
 
-        private async void Solenoid2Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void Solenoid2Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPortStream serialPort = (SerialPortStream)sender;
 
             if (!serialPort.IsOpen) return;
 
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 2");
+
+            bool gotData = false;
             while (DeviceManager.Solenoid2Port.BytesToRead > 0)
             {
                 sol2RxBuffer.Add((byte)DeviceManager.Solenoid2Port.ReadByte());
+                gotData = true;
+            }
+
+            // Nháy RX ngay khi có BẤT KỲ byte nào về (kể cả ACK ngắn/lẻ chưa đủ khung).
+            if (gotData && device != null)
+            {
+                device.RxReceived = true;
+                _ = Task.Delay(250).ContinueWith(_ => device.RxReceived = false);
             }
 
             while (sol2RxBuffer.Count >= 6)
@@ -710,8 +721,6 @@ namespace Touch_Panel.Model
 
                 byte b2 = sol2RxBuffer[startIndex + 1];
                 byte b6 = sol2RxBuffer[startIndex + 5];
-                var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 2");
-                device.RxReceived = true;
 
                 if (b2 != 0x45 || b6 != 0x56)
                 {
@@ -719,27 +728,34 @@ namespace Touch_Panel.Model
                     continue;
                 }
 
-                device.RxCount++;
+                if (device != null) device.RxCount++;
                 Logger.Instance.AddLog(2, $"RX: {BitConverter.ToString(sol2RxBuffer.GetRange(startIndex, 6).ToArray()).Replace("-", " ")}");
 
                 CompleteSolAck("Solenoid 2", sol2RxBuffer[startIndex + 3]);  // status byte của ACK
-                sol2RxBuffer.RemoveRange(startIndex, 5);
-
-                await Task.Delay(250);
-
-                device.RxReceived = false;
+                sol2RxBuffer.RemoveRange(startIndex, 6);
             }
         }
 
-        private async void Solenoid1Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void Solenoid1Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPortStream serialPort = (SerialPortStream)sender;
 
             if (!serialPort.IsOpen) return;
 
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 1");
+
+            bool gotData = false;
             while (DeviceManager.Solenoid1Port.BytesToRead > 0)
             {
                 sol1RxBuffer.Add((byte)DeviceManager.Solenoid1Port.ReadByte());
+                gotData = true;
+            }
+
+            // Nháy RX ngay khi có BẤT KỲ byte nào về (kể cả ACK ngắn/lẻ chưa đủ khung).
+            if (gotData && device != null)
+            {
+                device.RxReceived = true;
+                _ = Task.Delay(250).ContinueWith(_ => device.RxReceived = false);
             }
 
             while (sol1RxBuffer.Count >= 6)
@@ -756,8 +772,6 @@ namespace Touch_Panel.Model
 
                 byte b2 = sol1RxBuffer[startIndex + 1];
                 byte b6 = sol1RxBuffer[startIndex + 5];
-                var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 1");
-                device.RxReceived = true;
 
                 if (b2 != 0x45 || b6 != 0x56)
                 {
@@ -765,15 +779,11 @@ namespace Touch_Panel.Model
                     continue;
                 }
 
-                device.RxCount++;
+                if (device != null) device.RxCount++;
                 Logger.Instance.AddLog(1, $"RX: {BitConverter.ToString(sol1RxBuffer.GetRange(startIndex, 6).ToArray()).Replace("-", " ")}");
 
                 CompleteSolAck("Solenoid 1", sol1RxBuffer[startIndex + 3]);  // status byte của ACK
-                sol1RxBuffer.RemoveRange(startIndex, 5);
-
-                await Task.Delay(250);
-
-                device.RxReceived = false;
+                sol1RxBuffer.RemoveRange(startIndex, 6);
             }
         }
 
@@ -784,15 +794,26 @@ namespace Touch_Panel.Model
 
             if (!serialPort.IsOpen) return;
         }
-        private async void Solenoid3Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        private void Solenoid3Port_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
             SerialPortStream serialPort = (SerialPortStream)sender;
 
             if (!serialPort.IsOpen) return;
 
+            var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 3");
+
+            bool gotData = false;
             while (DeviceManager.Solenoid3Port.BytesToRead > 0)
             {
                 sol3RxBuffer.Add((byte)DeviceManager.Solenoid3Port.ReadByte());
+                gotData = true;
+            }
+
+            // Nháy RX ngay khi có BẤT KỲ byte nào về (kể cả ACK ngắn/lẻ chưa đủ khung).
+            if (gotData && device != null)
+            {
+                device.RxReceived = true;
+                _ = Task.Delay(250).ContinueWith(_ => device.RxReceived = false);
             }
 
             while (sol3RxBuffer.Count >= 6)
@@ -809,8 +830,6 @@ namespace Touch_Panel.Model
 
                 byte b2 = sol3RxBuffer[startIndex + 1];
                 byte b6 = sol3RxBuffer[startIndex + 5];
-                var device = DevicesStatus.FirstOrDefault(d => d.Name == "Solenoid 3");
-                device.RxReceived = true;
 
                 if (b2 != 0x45 || b6 != 0x56)
                 {
@@ -818,14 +837,10 @@ namespace Touch_Panel.Model
                     continue;
                 }
 
-                device.RxCount++;
+                if (device != null) device.RxCount++;
 
                 CompleteSolAck("Solenoid 3", sol3RxBuffer[startIndex + 3]);  // status byte của ACK
-                sol3RxBuffer.RemoveRange(startIndex, 5);
-
-                await Task.Delay(250);
-
-                device.RxReceived = false;
+                sol3RxBuffer.RemoveRange(startIndex, 6);
             }
         }
 

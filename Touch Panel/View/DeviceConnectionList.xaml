@@ -96,12 +96,12 @@
             </Button>
         </StackPanel>
 
-        <!-- 3) MICOM1 + MICOM2 + FIRMWARE: lưới 3 ô ĐỀU NHAU, lấp đầy đúng cột STATISTICS -->
+        <!-- 3) MICOM1 + MICOM2 (vừa đủ nội dung, bằng nhau) + FIRMWARE (chiếm phần còn lại, tránh xén) -->
         <Grid Grid.Column="4" VerticalAlignment="Stretch">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <!-- MICOM1: nền hơi đậm (nhạt hơn MICOM2 một chút) -->

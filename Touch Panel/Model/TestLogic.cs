@@ -389,7 +389,7 @@ namespace Touch_Panel.Model
                 device.RxCount = 0;
                 device.TxSent = true;
                 Model.Devices.DeviceManager.Solenoid1Port.Write(txFFinal, 0, txFFinal.Length);
-                device.TxSent = false;
+                _ = Task.Delay(250).ContinueWith(_ => device.TxSent = false);  // giữ nháy TX ~250ms
 
                 var start = DateTime.Now;
                 while (DateTime.Now.Subtract(start).TotalMilliseconds < 5000)
@@ -418,7 +418,7 @@ namespace Touch_Panel.Model
                 device.RxCount = 0;
                 device.TxSent = true;
                 Model.Devices.DeviceManager.Solenoid2Port.Write(txFFinal, 0, txFFinal.Length);
-                device.TxSent = false;
+                _ = Task.Delay(250).ContinueWith(_ => device.TxSent = false);  // giữ nháy TX ~250ms
 
                 var start = DateTime.Now;
                 while (DateTime.Now.Subtract(start).TotalMilliseconds < 5000)
