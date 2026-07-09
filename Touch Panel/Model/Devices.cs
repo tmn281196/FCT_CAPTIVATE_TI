@@ -964,7 +964,7 @@ namespace Touch_Panel.Model
             // =========================
             // PRINTER SETUP
             // =========================
-            sb.AppendLine("SIZE 20 mm, 20 mm");
+            sb.AppendLine("SIZE 18 mm, 18 mm");
             // GAP đã calibration sẵn trong EEPROM máy (nút FEED khi bật) → không cần khai báo
             sb.AppendLine("DIRECTION 1");
             sb.AppendLine("REFERENCE 0,0");
@@ -972,7 +972,7 @@ namespace Touch_Panel.Model
             sb.AppendLine("SPEED 3");
             sb.AppendLine("CLS");
 
-            // Label = 236 x 236 dots (20 x 20 mm, TSC TE310 = 300 DPI, 11.81 dots/mm)
+            // Label = 212 x 212 dots (18 x 18 mm, TSC TE310 = 300 DPI, 11.81 dots/mm)
 
             // =========================
             // QR CODE (cell 3, level M — chừa lề trắng quiet zone)
@@ -980,7 +980,7 @@ namespace Touch_Panel.Model
             // LƯU Ý: cell = kích thước module (to/nhỏ QR); DENSITY chỉ là độ đậm, không đổi cỡ.
             // Độ dài data đổi theo số bước MEAS -> version QR có thể đổi; chạm mép thì giảm cell (2).
             // =========================
-            sb.AppendLine($"QRCODE 67,50,M,3,A,0,\"{qrString}\"");
+            sb.AppendLine($"QRCODE 35,40,M,3,A,0,\"{qrString}\"");
 
             // =========================
             // TEXT FIELDS
@@ -988,9 +988,9 @@ namespace Touch_Panel.Model
             // Font "0" = CG Triumvirate (scalable, kiểu Arial/Helvetica); 2 số cuối = cỡ point.
             // Part number ngang phía TRÊN QR; date+serial xoay dọc 270° bên PHẢI (đọc từ dưới lên).
             // =========================
-            sb.AppendLine("TEXT 18,193,\"0\",270,7,7,\"HUMAN THAI\"");
-            sb.AppendLine($"TEXT 54,8,\"0\",0,7,7,\"{partNumber}\"");
-            sb.AppendLine($"TEXT 235,40,\"0\",90,7,7,\"{date} {serial}\"");
+            sb.AppendLine("TEXT 0,170,\"0\",270,6,6,\"HUMAN THAI\"");
+            sb.AppendLine($"TEXT 35,7,\"0\",0,6,6,\"{partNumber}\"");
+            sb.AppendLine($"TEXT 190,36,\"0\",90,6,6,\"{date} {serial}\"");
 
             // =========================
             // PRINT

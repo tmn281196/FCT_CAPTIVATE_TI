@@ -267,6 +267,22 @@ namespace Touch_Panel.View_Model
             AppState.SetSerial(Utility.CurrentModelFilePath, 0, Model.LastPrintDate);
         }
 
+        // -1 FAIL: trừ 1 khỏi số Fail (và Total) BẤT KỂ kết quả gần nhất là gì.
+        // Bấm nhiều lần được, còn Fail thì trừ tiếp; hết Fail (=0) thì thôi.
+        [RelayCommand]
+        private void UndoLastResult()
+        {
+            if (Fail <= 0) return; // không còn Fail để trừ
+
+            _resettingStats = true;
+            Fail -= 1;
+            if (Total > 0) Total -= 1;
+            PassPercent = Total > 0 ? Math.Round((double)Pass / Total * 100) : 0;
+            _resettingStats = false;
+
+            AppState.SetStats(Utility.CurrentModelFilePath, Pass, Fail);
+        }
+
         private async Task PrintNextLabelAsync()
         {
             if (!Model.Settings.ShouldPrintQr)
@@ -543,45 +559,52 @@ namespace Touch_Panel.View_Model
             if (!Model.Settings.ShouldSaveLog) return;
             string dir = Model.Settings.LogDir;
             if (dir == null) return;
-            if (!Directory.Exists(dir))
-            {
-                Directory.CreateDirectory(dir);
-            }
-            string today = DateTime.Now.ToString("ddMMyyyy");
-            string now = DateTime.Now.ToString("HHmmss");
-            string dateFolderPath = Path.Combine(dir, today);
-            if (!Directory.Exists(dateFolderPath))
-            {
-                Directory.CreateDirectory(dateFolderPath);
-            }
 
-            string filePath = "";
-            if (pass)
+            var nowDt = DateTime.Now;
+            // Cấu trúc mới: LogDir / YYYY / <Tháng January..December> / ddMM / (file từng test).
+            // 12 folder tháng được TẠO SẴN khi thư mục năm mới được tạo.
+            string yearFolder = Path.Combine(dir, nowDt.ToString("yyyy"));
+            if (!Directory.Exists(yearFolder))
             {
-                filePath = Path.Combine(dateFolderPath, "PASS_" + now + ".csv");
+                Directory.CreateDirectory(yearFolder);
+                foreach (var m in MonthFolderNames)
+                    Directory.CreateDirectory(Path.Combine(yearFolder, m));
             }
-            else
-            {
-                filePath = Path.Combine(dateFolderPath, "FAIL_" + now + ".csv");
-            }
+            string monthFolder = Path.Combine(yearFolder, MonthFolderNames[nowDt.Month - 1]);
+            string dayFolder = Path.Combine(monthFolder, nowDt.ToString("ddMM"));
+            Directory.CreateDirectory(dayFolder); // tạo cả monthFolder nếu còn thiếu
 
+            string now = nowDt.ToString("HHmmss");
+
+            var data1 = Model.Micom1TestStep.Steps as IEnumerable<Step>;
+            var data2 = Model.Micom2TestStep.Steps as IEnumerable<Step>;
+
+            // ===== 1) LOG 1 SAMPLE = 1 FILE: PASS_/FAIL_HHmmss.csv trong folder ngày (ddMM) =====
+            string filePath = Path.Combine(dayFolder, (pass ? "PASS_" : "FAIL_") + now + ".csv");
             using (StreamWriter sw = new StreamWriter(filePath, true, Encoding.UTF8))
             {
-                sw.WriteLine("Group,No,Test,Content,Spec,Value,Result");
-                var data1 = Model.Micom1TestStep.Steps as IEnumerable<Step>;
-                var data2 = Model.Micom2TestStep.Steps as IEnumerable<Step>;
-
+                sw.WriteLine("Group,No,CMD Name,Object ID,Spec Value,Value,Result");
                 foreach (var row in data1)
-                {
-                    string line = $"L,{row.No},{row.Test},{row.Objectid},{row.Specvalue},{row.Value},{row.Result}";
-                    sw.WriteLine(line);
-                }
-
+                    sw.WriteLine($"L,{row.No},{row.Test},{row.Objectid},{row.Specvalue},{row.Value},{row.Result}");
                 foreach (var row in data2)
-                {
-                    string line = $"R,{row.No},{row.Test},{row.Objectid},{row.Specvalue},{row.Value},{row.Result}";
-                    sw.WriteLine(line);
-                }
+                    sw.WriteLine($"R,{row.No},{row.Test},{row.Objectid},{row.Specvalue},{row.Value},{row.Result}");
+            }
+
+            // ===== 2) LOG GỘP: 1 CSV mỗi ngày, để ở cấp THÁNG: DAILY_ddMM.csv (vd DAILY_0907.csv) =====
+            string dailyPath = Path.Combine(monthFolder, "DAILY_" + nowDt.ToString("ddMM") + ".csv");
+            bool dailyExists = File.Exists(dailyPath);
+            string timeStamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            string serial = $"{Model.Settings.SerialNumber:D4}";
+            string overall = pass ? "PASS" : "FAIL";
+            using (StreamWriter sw = new StreamWriter(dailyPath, true, Encoding.UTF8))
+            {
+                if (!dailyExists)
+                    sw.WriteLine("DateTime,Serial,Overall,Group,No,CMD Name,Object ID,Spec Value,Value,Result");
+                foreach (var row in data1)
+                    sw.WriteLine($"{timeStamp},{serial},{overall},L,{row.No},{row.Test},{row.Objectid},{row.Specvalue},{row.Value},{row.Result}");
+                foreach (var row in data2)
+                    sw.WriteLine($"{timeStamp},{serial},{overall},R,{row.No},{row.Test},{row.Objectid},{row.Specvalue},{row.Value},{row.Result}");
+                sw.WriteLine(); // dòng trắng ngăn cách giữa các sample
             }
         }
 
@@ -591,6 +614,13 @@ namespace Touch_Panel.View_Model
             [2026] = 'L', [2027] = 'P', [2028] = 'Q', [2029] = 'S', [2030] = 'Z',
             [2031] = 'B', [2032] = 'C', [2033] = 'D', [2034] = 'E', [2035] = 'F',
             [2036] = 'G', [2037] = 'H', [2038] = 'J', [2039] = 'K', [2040] = 'M',
+        };
+
+        // Tên 12 folder tháng (index 0..11 = Tháng 1..12), tạo sẵn trong folder năm.
+        private static readonly string[] MonthFolderNames =
+        {
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
         };
 
         private static char EncodeMonth(int m) => m <= 9 ? (char)('0' + m) : (char)('A' + m - 10);
@@ -623,24 +653,23 @@ namespace Touch_Panel.View_Model
 
             var measSteps = steps.Where(x => x.Test == "MEAS").Take(3).ToList();
 
-            // ===== TEST MODE: chèn data MEAS giả cho đủ 3 bước để test cỡ QR =====
-            // Đặt false để quay về như cũ (chỉ dùng MEAS thật).
-            const bool USE_DUMMY_MEAS = true;
-
-            // Danh sách (giá trị đo, spec) lấy từ bước thật
+            // Danh sách (giá trị đo, spec) lấy từ bước MEAS thật
             var measData = measSteps
                 .Select(x => (
                     measured: string.IsNullOrEmpty(x.Value) ? "0" : x.Value,
                     spec: string.IsNullOrEmpty(x.Specvalue) ? "0" : x.Specvalue))
                 .ToList();
 
-            // Bù data giả cho đủ 3 bước (chỉ khi bật TEST MODE)
-            if (USE_DUMMY_MEAS)
+#if DEBUG
+            // CHỈ khi build DEBUG và model KHÔNG có bước MEAS nào -> chèn 3 data MEAS GIẢ để có QR text hợp lệ khi test.
+            // Bản Release (sản xuất) KHÔNG chèn giả. Model có MEAS thật cũng giữ nguyên.
+            if (measData.Count == 0)
             {
                 string[,] dummy = { { "123.45", "120.00" }, { "-67.89", "-70.00" }, { "999.99", "1000.0" } };
-                for (int i = measData.Count; i < 3; i++)
+                for (int i = 0; i < 3; i++)
                     measData.Add((dummy[i, 0], dummy[i, 1]));
             }
+#endif
 
             sb.Append($"{measData.Count:D2}");
             sb.Append($"/{testStartTime:yyyyMMddHHmmss}");

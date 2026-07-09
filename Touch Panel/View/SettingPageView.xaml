@@ -284,30 +284,6 @@
             <Separator/>
 
             <StackPanel Margin="5" IsEnabled="{Binding AutoState.IsNotBusy}">
-                <Label Padding="0" Content="Counters" FontWeight="Bold"/>
-                <StackPanel Orientation="Horizontal" Margin="5 5">
-                    <Button Width="170" Height="28" Margin="0,0,10,0"
-                            Command="{Binding AutoPageVM.ResetStatisticsCommand}"
-                            ToolTip="Đưa Pass / NG / Total / % về 0 (lưu theo đường dẫn file model).">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconBlock Icon="RotateLeft" FontSize="12" VerticalAlignment="Center" Margin="0,0,6,0"/>
-                            <TextBlock Text="RESET STATISTICS" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                    <Button Width="150" Height="28"
-                            Command="{Binding AutoPageVM.ResetSerialCommand}"
-                            ToolTip="Đưa serial kế tiếp về 0001 (lưu theo đường dẫn file model).">
-                        <StackPanel Orientation="Horizontal">
-                            <fa:IconBlock Icon="RotateLeft" FontSize="12" VerticalAlignment="Center" Margin="0,0,6,0"/>
-                            <TextBlock Text="RESET SERIAL" VerticalAlignment="Center"/>
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
-            </StackPanel>
-
-            <Separator/>
-
-            <StackPanel Margin="5" IsEnabled="{Binding AutoState.IsNotBusy}">
                 <Label Padding="0" Content="Product Info" FontWeight="Bold"/>
                 <StackPanel Orientation="Horizontal" Margin="5 5">
                     <StackPanel Margin="0 0 15 0">

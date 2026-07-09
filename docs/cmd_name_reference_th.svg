@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="620" viewBox="0 0 720 620" font-family="Leelawadee UI, Tahoma, sans-serif" role="img" aria-label="CMD Name คำสั่งขั้นตอนการทดสอบ">
+  <rect x="0" y="0" width="720" height="620" rx="16" fill="#1F2A35"/>
+
+  <text x="28" y="42" fill="#FFFFFF" font-size="22" font-weight="600">CMD Name — คำสั่งขั้นตอนการทดสอบ</text>
+  <rect x="28" y="54" width="664" height="1" fill="#3A4A57"/>
+
+  <!-- NOP -->
+  <g transform="translate(28,74)">
+    <rect x="0" y="0" width="664" height="92" rx="12" fill="#2A3744"/>
+    <rect x="0" y="0" width="6" height="92" rx="3" fill="#8A97A3"/>
+    <text x="26" y="38" fill="#8A97A3" font-size="20" font-weight="700" font-family="Consolas, monospace">NOP</text>
+    <text x="98" y="38" fill="#FFFFFF" font-size="16">ไม่มีการทำงาน</text>
+    <text x="26" y="68" fill="#B9C4CE" font-size="14.5">ไม่ทำอะไรเลย ใช้สำหรับหน่วงเวลาเท่านั้น (เมื่อ Time Delay &#8800; 0)</text>
+  </g>
+
+  <!-- CALIB -->
+  <g transform="translate(28,180)">
+    <rect x="0" y="0" width="664" height="92" rx="12" fill="#2A3744"/>
+    <rect x="0" y="0" width="6" height="92" rx="3" fill="#4A9FE0"/>
+    <text x="26" y="38" fill="#4A9FE0" font-size="20" font-weight="700" font-family="Consolas, monospace">CALIB</text>
+    <text x="118" y="38" fill="#FFFFFF" font-size="16">การสอบเทียบ</text>
+    <rect x="530" y="22" width="120" height="22" rx="11" fill="#1B3A52"/>
+    <text x="590" y="37" fill="#7FC0F0" font-size="12" text-anchor="middle">เริ่มลำดับ</text>
+    <text x="26" y="68" fill="#B9C4CE" font-size="14.5">เรียกใช้กระบวนการสอบเทียบเซนเซอร์ มักวางไว้ที่ต้นลำดับการทดสอบ</text>
+  </g>
+
+  <!-- LOAD -->
+  <g transform="translate(28,286)">
+    <rect x="0" y="0" width="664" height="92" rx="12" fill="#2A3744"/>
+    <rect x="0" y="0" width="6" height="92" rx="3" fill="#4A9FE0"/>
+    <text x="26" y="38" fill="#4A9FE0" font-size="20" font-weight="700" font-family="Consolas, monospace">LOAD</text>
+    <text x="110" y="38" fill="#FFFFFF" font-size="16">โหลดค่าก่อนสอบเทียบ</text>
+    <rect x="530" y="22" width="120" height="22" rx="11" fill="#1B3A52"/>
+    <text x="590" y="37" fill="#7FC0F0" font-size="12" text-anchor="middle">เริ่มลำดับ</text>
+    <text x="26" y="68" fill="#B9C4CE" font-size="14.5">โหลดค่าก่อนสอบเทียบที่กำหนดไว้เข้าสู่ MICOM มักวางไว้ที่ต้นลำดับ</text>
+  </g>
+
+  <!-- KEY -->
+  <g transform="translate(28,392)">
+    <rect x="0" y="0" width="664" height="92" rx="12" fill="#2A3744"/>
+    <rect x="0" y="0" width="6" height="92" rx="3" fill="#E0A100"/>
+    <text x="26" y="38" fill="#E0A100" font-size="20" font-weight="700" font-family="Consolas, monospace">KEY</text>
+    <text x="96" y="38" fill="#FFFFFF" font-size="16">การกดปุ่ม</text>
+    <text x="26" y="68" fill="#B9C4CE" font-size="14.5">ปากกา / โซลินอยด์ กดสัมผัสลงบนแผง</text>
+  </g>
+
+  <!-- MEAS -->
+  <g transform="translate(28,498)">
+    <rect x="0" y="0" width="664" height="92" rx="12" fill="#2A3744"/>
+    <rect x="0" y="0" width="6" height="92" rx="3" fill="#5BC271"/>
+    <text x="26" y="38" fill="#5BC271" font-size="20" font-weight="700" font-family="Consolas, monospace">MEAS</text>
+    <text x="112" y="38" fill="#FFFFFF" font-size="16">การวัด</text>
+    <text x="26" y="68" fill="#B9C4CE" font-size="14.5">อ่านและตรวจสอบค่าการรับรู้ ณ ตำแหน่งที่สัมผัส</text>
+  </g>
+</svg>

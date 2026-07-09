@@ -37,18 +37,78 @@
             </ItemsControl.ItemTemplate>
         </ItemsControl>
 
-        <!-- 2) START/STOP: canh GIỮA dưới STATUS (cột 3). Ngoài AUTO -> xám. -->
-        <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"
-                    IsEnabled="{Binding DataContext.AutoPageVM.AutoPageActive, RelativeSource={RelativeSource AncestorType=Window}}">
-            <Button Cursor="Hand" Height="30" Focusable="False" VerticalAlignment="Center" ToolTip="Start test (chỉ trang AUTO)"
+        <!-- 2) RESET counter + START/STOP: canh GIỮA dưới STATUS (cột 3). -->
+        <StackPanel Grid.Column="3" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <!-- Reset statistics (Total/Pass/Fail/%) - không khóa theo trang -->
+            <Button Height="26" Cursor="Hand" Focusable="False" Margin="0,0,4,0" ToolTip="Reset statistics (Total / Pass / Fail / %)"
+                    Command="{Binding DataContext.AutoPageVM.ResetStatisticsCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd" Background="#3A4A57" CornerRadius="5" Padding="9,0">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <fa:IconBlock Icon="RotateLeft" FontSize="11" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBlock Text="STATS" Foreground="White" FontWeight="SemiBold" FontSize="11" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="bd" Property="Background" Value="#4A5C6B"/></Trigger>
+                            <Trigger Property="IsPressed" Value="True"><Setter TargetName="bd" Property="Background" Value="#2C3944"/></Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- Reset next serial -> 0001 -->
+            <Button Height="26" Cursor="Hand" Focusable="False" Margin="0,0,4,0" ToolTip="Reset next serial to 0001"
+                    Command="{Binding DataContext.AutoPageVM.ResetSerialCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd" Background="#3A4A57" CornerRadius="5" Padding="9,0">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <fa:IconBlock Icon="RotateLeft" FontSize="11" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBlock Text="SERIAL" Foreground="White" FontWeight="SemiBold" FontSize="11" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="bd" Property="Background" Value="#4A5C6B"/></Trigger>
+                            <Trigger Property="IsPressed" Value="True"><Setter TargetName="bd" Property="Background" Value="#2C3944"/></Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- Undo kết quả gần nhất (trừ 1 Pass/NG + Total) -->
+            <Button Height="26" Cursor="Hand" Focusable="False" Margin="0,0,10,0" ToolTip="Undo last FAIL result (revert the most recent Fail count)"
+                    Command="{Binding DataContext.AutoPageVM.UndoLastResultCommand, RelativeSource={RelativeSource AncestorType=Window}}">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="bd" Background="#3A4A57" CornerRadius="5" Padding="9,0">
+                            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                <TextBlock Text="-1" Foreground="White" FontWeight="Bold" FontSize="12" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBlock Text="FAIL" Foreground="White" FontWeight="SemiBold" FontSize="11" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True"><Setter TargetName="bd" Property="Background" Value="#4A5C6B"/></Trigger>
+                            <Trigger Property="IsPressed" Value="True"><Setter TargetName="bd" Property="Background" Value="#2C3944"/></Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!-- START/STOP: chỉ bật ở trang AUTO -->
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                        IsEnabled="{Binding DataContext.AutoPageVM.AutoPageActive, RelativeSource={RelativeSource AncestorType=Window}}">
+            <Button Cursor="Hand" Height="26" Focusable="False" VerticalAlignment="Center" ToolTip="Start test (AUTO page only)"
                     Command="{Binding DataContext.AutoPageVM.ForceStartCommand, RelativeSource={RelativeSource AncestorType=Window}}"
                     Visibility="{Binding DataContext.AutoPageVM.State.IsNotTesting, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BoolToVis}}">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="bd" Background="#2E7D32" CornerRadius="5" Padding="16,0">
+                        <Border x:Name="bd" Background="#2E7D32" CornerRadius="5" Padding="9,0">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <fa:IconBlock Icon="Play" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,7,0"/>
-                                <TextBlock Text="START" Foreground="White" FontWeight="SemiBold" FontSize="13" VerticalAlignment="Center"/>
+                                <fa:IconBlock Icon="Play" FontSize="11" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBlock Text="START" Foreground="White" FontWeight="SemiBold" FontSize="11" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -59,15 +119,15 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-            <Button Cursor="Hand" Height="30" Focusable="False" VerticalAlignment="Center" ToolTip="Stop test (chỉ trang AUTO)"
+            <Button Cursor="Hand" Height="26" Focusable="False" VerticalAlignment="Center" ToolTip="Stop test (AUTO page only)"
                     Command="{Binding DataContext.AutoPageVM.ForceStopCommand, RelativeSource={RelativeSource AncestorType=Window}}"
                     Visibility="{Binding DataContext.AutoPageVM.State.IsTesting, RelativeSource={RelativeSource AncestorType=Window}, Converter={StaticResource BoolToVis}}">
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
-                        <Border x:Name="bd" Background="#D32F2F" CornerRadius="5" Padding="16,0">
+                        <Border x:Name="bd" Background="#D32F2F" CornerRadius="5" Padding="9,0">
                             <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
-                                <fa:IconBlock Icon="Stop" FontSize="12" Foreground="White" VerticalAlignment="Center" Margin="0,0,7,0"/>
-                                <TextBlock Text="STOP" Foreground="White" FontWeight="SemiBold" FontSize="13" VerticalAlignment="Center"/>
+                                <fa:IconBlock Icon="Stop" FontSize="11" Foreground="White" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <TextBlock Text="STOP" Foreground="White" FontWeight="SemiBold" FontSize="11" VerticalAlignment="Center"/>
                             </StackPanel>
                         </Border>
                         <ControlTemplate.Triggers>
@@ -78,6 +138,7 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+            </StackPanel>
         </StackPanel>
 
         <!-- 3) MICOM1 + MICOM2 (vừa đủ nội dung, bằng nhau) + FIRMWARE (chiếm phần còn lại, tránh xén) -->
@@ -168,7 +229,7 @@
                 </StackPanel>
             </Border>
 
-            <!-- FIRMWARE: ô thứ 3. Màu cam amber (như firmware file đang chọn). -->
+            <!-- FIRMWARE: ô cuối. Màu cam amber (như firmware file đang chọn). -->
             <Border Grid.Column="2">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
                     <fa:IconBlock Icon="Memory" FontSize="13" Foreground="Orange" VerticalAlignment="Center"/>
